@@ -34,6 +34,32 @@
     line-height:1.55;
     -webkit-font-smoothing:antialiased;
   }
+  
+  /* Skip Link for Accessibility */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 10px;
+    background: var(--amber);
+    color: var(--dark);
+    padding: 8px 16px;
+    z-index: 1000;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: top 0.2s ease;
+  }
+  .skip-link:focus {
+    top: 10px;
+  }
+
+  /* Keyboard Focus Indicators */
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 2px;
+  }
+
   h1,h2,h3,h4{
     font-family:'Barlow Condensed',sans-serif;
     font-weight:700;
@@ -119,8 +145,8 @@
     height:1px; background:var(--amber); transform:scaleX(0); transform-origin:left;
     transition:transform .25s ease;
   }
-  .navlinks a:hover{opacity:1;}
-  .navlinks a:hover::after{transform:scaleX(1);}
+  .navlinks a:hover, .navlinks a:focus-visible{opacity:1;}
+  .navlinks a:hover::after, .navlinks a:focus-visible::after{transform:scaleX(1);}
   .navcta{display:flex; gap:12px; align-items:center; position:relative; z-index:2;}
   .navcta .btn{padding:11px 20px; font-size:12px;}
   .navcta .btn-amber{
@@ -227,7 +253,7 @@
   .intro h2{font-size:34px; max-width:340px;}
   .intro-copy p{color:var(--ink-soft); font-size:16px; margin-bottom:16px; max-width:560px;}
 
-  /* ABOUT (FIXED FOR DARK OVERLAY CONTRAST) */
+  /* ABOUT */
   .about{color:var(--light);}
   .about .eyebrow{color:var(--amber);}
   .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:70px;}
@@ -282,16 +308,16 @@
 
   /* HOW IT WORKS */
   .how{background:var(--bg-panel);}
-  .steps{display:grid; grid-template-columns:repeat(6,1fr); gap:0; position:relative; margin-top:10px;}
+  .steps{display:grid; grid-template-columns:repeat(6,1fr); gap:0; position:relative; margin-top:10px; list-style:none;}
   .step{padding:26px 18px 0; border-top:1px solid var(--line); position:relative;}
   .step .idx{font-family:'Barlow Condensed',sans-serif; font-size:44px; font-weight:700; color:var(--line); margin-bottom:14px;}
-  .step h4{font-size:16px; text-transform:none; letter-spacing:0; margin-bottom:6px;}
+  .step h3{font-size:16px; text-transform:none; letter-spacing:0; margin-bottom:6px;}
   .step p{font-size:12.5px; color:var(--ink-soft);}
 
   /* WHY CHOOSE */
   .why-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
   .why-item{padding:26px 0; border-top:1px solid var(--line);}
-  .why-item h4{font-size:18px; text-transform:none; letter-spacing:0; margin-bottom:8px;}
+  .why-item h3{font-size:18px; text-transform:none; letter-spacing:0; margin-bottom:8px;}
   .why-item p{font-size:14px; color:var(--ink-soft);}
 
   /* IMPACT */
@@ -321,6 +347,7 @@
   }
 
   /* FAQ */
+  .faq-list{list-style:none;}
   .faq-item{border-bottom:1px solid var(--line);}
   .faq-q{
     width:100%; text-align:left; background:none; border:none; padding:22px 0;
@@ -357,7 +384,8 @@
   .footer-logo{font-family:'Barlow Condensed',sans-serif; font-size:24px; font-weight:700; color:var(--light); margin-bottom:14px;}
   .footer-logo span{color:var(--amber);}
   .footer-grid p{font-size:13.5px; max-width:280px;}
-  .footer-col h5{font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:#7C877F; margin-bottom:16px;}
+  .footer-col h3{font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:#7C877F; margin-bottom:16px;}
+  .footer-col ul{list-style:none;}
   .footer-col a{display:block; font-size:14px; margin-bottom:10px; color:#C8CDC4;}
   .footer-col a:hover{color:var(--amber);}
   .footer-bottom{display:flex; justify-content:space-between; align-items:center; padding-top:24px; font-size:12.5px; color:#7C877F; flex-wrap:wrap; gap:12px;}
@@ -409,13 +437,15 @@
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header>
   <div class="nav">
-    <a href="#top" class="logo">
-      <img src="assets/logo.png" alt="Rixle" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+    <a href="#top" class="logo" aria-label="Rixle Home">
+      <img src="assets/logo.png" alt="Rixle Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
       <span class="logo-text" style="display:none;">RIX<span style="color:var(--amber);">LE</span></span>
     </a>
-    <nav class="navlinks">
+    <nav class="navlinks" aria-label="Main Navigation">
       <a href="#top">Home</a>
       <a href="#about">About</a>
       <a href="#services">Solutions</a>
@@ -428,10 +458,10 @@
     <div class="navcta">
       <a href="#contact" class="btn btn-amber">Request Pickup</a>
     </div>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
   </div>
   <div class="nav-scrim" id="navScrim"></div>
-  <nav class="mobile-menu" id="mobileMenu">
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile Navigation">
     <a href="#top">Home</a>
     <a href="#about">About</a>
     <a href="#services">Solutions</a>
@@ -444,10 +474,10 @@
   </nav>
 </header>
 
-<main id="top">
+<main id="main-content">
 
   <!-- HERO SECTION -->
-  <section class="hero tight bg-overlay-section bg-hero" style="padding-top:100px;">
+  <section class="hero tight bg-overlay-section bg-hero" id="top" style="padding-top:100px;">
     <div class="wrap hero-inner">
       <div class="hero-tag">Rixle Private Limited · Latur, Maharashtra</div>
       <h1>Transforming <em>Waste</em> Into Valuable Resources</h1>
@@ -488,10 +518,10 @@
           <p>Rixle Private Limited was founded to solve a specific problem: industrial and municipal recyclers need consistent feedstock quality and reliable documentation, not just collection volume. We built our operations — collection, sorting, MRF processing and EPR support — around that requirement.</p>
           <p>Our network spans multiple states and covers plastics, textile waste, and RDF production, supported by AIRWSS, our AI-assisted sorting layer developed through our technology arm, Avency EcoSol.</p>
         </div>
-        <div class="founder-note">
+        <blockquote class="founder-note">
           <p>"Rixle exists to make recycling operationally reliable — for the businesses generating waste and for the recyclers who need clean, well-documented material to work with."</p>
-          <div class="who">— Founder's Note</div>
-        </div>
+          <cite class="who">— Founder's Note</cite>
+        </blockquote>
       </div>
       <div>
         <div class="mv-cards">
@@ -591,14 +621,14 @@
         <h2>How It Works</h2>
         <p>A fixed sequence from request to reporting — the same process regardless of client size.</p>
       </div>
-      <div class="steps">
-        <div class="step"><div class="idx">01</div><h4>Request Pickup</h4><p>Submit a pickup request with material type, quantity and location.</p></div>
-        <div class="step"><div class="idx">02</div><h4>Waste Collection</h4><p>Scheduled collection from your site by our logistics network.</p></div>
-        <div class="step"><div class="idx">03</div><h4>Sorting</h4><p>Material graded and sorted at our MRF facilities.</p></div>
-        <div class="step"><div class="idx">04</div><h4>Recycling</h4><p>Sorted material routed to recycling and processing partners.</p></div>
-        <div class="step"><div class="idx">05</div><h4>Digital Reports</h4><p>Volume and processing data shared through digital tracking.</p></div>
-        <div class="step"><div class="idx">06</div><h4>EPR Documentation</h4><p>Compliance paperwork issued for your records and filings.</p></div>
-      </div>
+      <ol class="steps">
+        <li class="step"><div class="idx" aria-hidden="true">01</div><h3>Request Pickup</h3><p>Submit a pickup request with material type, quantity and location.</p></li>
+        <li class="step"><div class="idx" aria-hidden="true">02</div><h3>Waste Collection</h3><p>Scheduled collection from your site by our logistics network.</p></li>
+        <li class="step"><div class="idx" aria-hidden="true">03</div><h3>Sorting</h3><p>Material graded and sorted at our MRF facilities.</p></li>
+        <li class="step"><div class="idx" aria-hidden="true">04</div><h3>Recycling</h3><p>Sorted material routed to recycling and processing partners.</p></li>
+        <li class="step"><div class="idx" aria-hidden="true">05</div><h3>Digital Reports</h3><p>Volume and processing data shared through digital tracking.</p></li>
+        <li class="step"><div class="idx" aria-hidden="true">06</div><h3>EPR Documentation</h3><p>Compliance paperwork issued for your records and filings.</p></li>
+      </ol>
     </div>
   </section>
 
@@ -610,12 +640,12 @@
         <h2>Why Choose Rixle</h2>
       </div>
       <div class="why-grid">
-        <div class="why-item"><h4>Certified Processes</h4><p>Operations aligned to applicable compliance and regulatory standards.</p></div>
-        <div class="why-item"><h4>Fast Collection</h4><p>Responsive scheduling across our multi-state network.</p></div>
-        <div class="why-item"><h4>Transparent Pricing</h4><p>Clear terms with no hidden costs on collection or processing.</p></div>
-        <div class="why-item"><h4>Digital Tracking</h4><p>Visibility into your material from pickup through processing.</p></div>
-        <div class="why-item"><h4>Sustainability Reports</h4><p>Data you can use directly in ESG and compliance reporting.</p></div>
-        <div class="why-item"><h4>Experienced Team</h4><p>Built by operators with direct waste management industry experience.</p></div>
+        <div class="why-item"><h3>Certified Processes</h3><p>Operations aligned to applicable compliance and regulatory standards.</p></div>
+        <div class="why-item"><h3>Fast Collection</h3><p>Responsive scheduling across our multi-state network.</p></div>
+        <div class="why-item"><h3>Transparent Pricing</h3><p>Clear terms with no hidden costs on collection or processing.</p></div>
+        <div class="why-item"><h3>Digital Tracking</h3><p>Visibility into your material from pickup through processing.</p></div>
+        <div class="why-item"><h3>Sustainability Reports</h3><p>Data you can use directly in ESG and compliance reporting.</p></div>
+        <div class="why-item"><h3>Experienced Team</h3><p>Built by operators with direct waste management industry experience.</p></div>
       </div>
     </div>
   </section>
@@ -662,11 +692,11 @@
         <p>Operational visual assets from MRF processing facilities and logistics infrastructure.</p>
       </div>
       <div class="gallery-grid">
-        <div class="gimg"><img src="assets/gallery/plant.jpg" alt="Plant" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Plant</span></div>
-        <div class="gimg"><img src="assets/gallery/vehicles.jpg" alt="Collection Vehicles" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Collection Vehicles</span></div>
-        <div class="gimg"><img src="assets/gallery/processing.jpg" alt="Waste Processing" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Waste Processing</span></div>
-        <div class="gimg"><img src="assets/gallery/team.jpg" alt="Team" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Team</span></div>
-        <div class="gimg"><img src="assets/gallery/before-after.jpg" alt="Before and After" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Before &amp; After</span></div>
+        <div class="gimg"><img src="assets/gallery/plant.jpg" alt="Rixle MRF Processing Facility" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Plant</span></div>
+        <div class="gimg"><img src="assets/gallery/vehicles.jpg" alt="Rixle Logistics and Collection Fleet" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Collection Vehicles</span></div>
+        <div class="gimg"><img src="assets/gallery/processing.jpg" alt="Industrial Recyclable Waste Processing Line" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Waste Processing</span></div>
+        <div class="gimg"><img src="assets/gallery/team.jpg" alt="Rixle Operational Team On Site" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Team</span></div>
+        <div class="gimg"><img src="assets/gallery/before-after.jpg" alt="Material Before and After AI Sorting Process" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Before &amp; After</span></div>
       </div>
     </div>
   </section>
@@ -678,28 +708,28 @@
         <div class="eyebrow">Questions</div>
         <h2>FAQ</h2>
       </div>
-      <div class="faq-list">
-        <article class="faq-item">
+      <ul class="faq-list">
+        <li class="faq-item">
           <h3><button type="button" class="faq-q" id="faq-q-1" aria-expanded="false" aria-controls="faq-a-1">How do I schedule a pickup? <span class="plus" aria-hidden="true">+</span></button></h3>
           <div class="faq-a" id="faq-a-1" role="region" aria-labelledby="faq-q-1" hidden><p>Submit the inquiry form below with your waste stream, tonnage and location. Our team will review the details and confirm the available collection schedule.</p></div>
-        </article>
-        <article class="faq-item">
+        </li>
+        <li class="faq-item">
           <h3><button type="button" class="faq-q" id="faq-q-2" aria-expanded="false" aria-controls="faq-a-2">Is there a minimum quantity? <span class="plus" aria-hidden="true">+</span></button></h3>
           <div class="faq-a" id="faq-a-2" role="region" aria-labelledby="faq-q-2" hidden><p>Minimum collection quantities vary by material, service location and pickup frequency. Share your requirements for a site-specific assessment.</p></div>
-        </article>
-        <article class="faq-item">
+        </li>
+        <li class="faq-item">
           <h3><button type="button" class="faq-q" id="faq-q-3" aria-expanded="false" aria-controls="faq-a-3">What locations do you service? <span class="plus" aria-hidden="true">+</span></button></h3>
           <div class="faq-a" id="faq-a-3" role="region" aria-labelledby="faq-q-3" hidden><p>Rixle operates through a multi-state sourcing and logistics network. Provide your facility location in the inquiry form so we can confirm current coverage.</p></div>
-        </article>
-        <article class="faq-item">
+        </li>
+        <li class="faq-item">
           <h3><button type="button" class="faq-q" id="faq-q-4" aria-expanded="false" aria-controls="faq-a-4">Do you support EPR compliance? <span class="plus" aria-hidden="true">+</span></button></h3>
           <div class="faq-a" id="faq-a-4" role="region" aria-labelledby="faq-q-4" hidden><p>Yes. Our services include EPR documentation and credit support aligned with the applicable waste stream and client requirements.</p></div>
-        </article>
-        <article class="faq-item">
+        </li>
+        <li class="faq-item">
           <h3><button type="button" class="faq-q" id="faq-q-5" aria-expanded="false" aria-controls="faq-a-5">What materials do you accept? <span class="plus" aria-hidden="true">+</span></button></h3>
           <div class="faq-a" id="faq-a-5" role="region" aria-labelledby="faq-q-5" hidden><p>We handle listed plastic grades, textile waste, paper, cardboard, metal and select e-waste streams. Final acceptance depends on material condition, location and volume.</p></div>
-        </article>
-      </div>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -753,27 +783,35 @@
     <div class="footer-grid">
       <div>
         <div class="footer-logo">
-          <img src="assets/logo.png" alt="Rixle" style="height:30px; width:auto; max-width:150px; object-fit:contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+          <img src="assets/logo.png" alt="Rixle Logo" style="height:30px; width:auto; max-width:150px; object-fit:contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
           <span style="display:none;">RIX<span>LE</span></span>
         </div>
         <p>Circular economy and recyclable material supply chain — collection, sorting, MRF operations, EPR compliance and RDF production.</p>
       </div>
       <div class="footer-col">
-        <h5>Quick Links</h5>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#faq">FAQ</a>
+        <h3>Quick Links</h3>
+        <nav aria-label="Footer Quick Links">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
       </div>
       <div class="footer-col">
-        <h5>Services</h5>
-        <a href="#services">Waste Collection</a>
-        <a href="#services">Recycling</a>
-        <a href="#services">EPR Solutions</a>
-        <a href="#services">MRF Operations</a>
+        <h3>Services</h3>
+        <nav aria-label="Footer Services Links">
+          <ul>
+            <li><a href="#services">Waste Collection</a></li>
+            <li><a href="#services">Recycling</a></li>
+            <li><a href="#services">EPR Solutions</a></li>
+            <li><a href="#services">MRF Operations</a></li>
+          </ul>
+        </nav>
       </div>
       <div class="footer-col">
-        <h5>Contact</h5>
+        <h3>Contact</h3>
         <a href="mailto:info@rixle.co.in">info@rixle.co.in</a>
         <a href="https://rixle.co.in">www.rixle.co.in</a>
       </div>
@@ -826,13 +864,20 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // mobile menu
+  // mobile menu accessibility handling
   const menuToggle = document.getElementById('menuToggle');
   const navScrim = document.getElementById('navScrim');
+  const mobileMenu = document.getElementById('mobileMenu');
   const mobileLinks = document.querySelectorAll('.mobile-menu a');
 
-  const closeMenu = () => document.body.classList.remove('nav-open');
-  const toggleMenu = () => document.body.classList.toggle('nav-open');
+  const closeMenu = () => {
+    document.body.classList.remove('nav-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  };
+  const toggleMenu = () => {
+    const isOpen = document.body.classList.toggle('nav-open');
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  };
 
   menuToggle.addEventListener('click', toggleMenu);
   navScrim.addEventListener('click', closeMenu);
