@@ -397,6 +397,43 @@
     html{scroll-behavior:auto;}
     *{transition:none !important;}
   }
+
+  .bg-overlay-section {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+
+  .bg-overlay-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 25, 21, 0.82);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .bg-hero {
+    background-image: url('assets/gallery/tech-env.jpg');
+  }
+
+  .bg-about {
+    background-image: url('assets/gallery/plant.jpg');
+  }
+
+  .bg-impact {
+    background-image: url('assets/gallery/processing.jpg');
+  }
+
+  .bg-about > .wrap > div:first-child > h2 {
+    color: var(--light);
+  }
+
+  .bg-about .about-copy > p {
+    color: #C8CDC4;
+  }
 </style>
 </head>
 <body>
@@ -441,7 +478,7 @@
 <main id="top">
 
   <!-- HERO -->
-  <section class="hero tight" style="padding-top:100px;">
+  <section class="hero tight bg-overlay-section bg-hero" style="padding-top:100px;">
     <div class="wrap hero-inner">
       <div class="hero-tag">Rixle Private Limited · Latur, Maharashtra</div>
       <h1>Transforming <em>Waste</em> Into Valuable Resources</h1>
@@ -473,7 +510,7 @@
   </section>
 
   <!-- ABOUT -->
-  <section class="about" id="about">
+  <section class="about bg-overlay-section bg-about" id="about">
     <div class="wrap about-grid">
       <div>
         <div class="eyebrow">About Rixle</div>
@@ -615,7 +652,7 @@
   </section>
 
   <!-- IMPACT -->
-  <section class="impact">
+  <section class="impact bg-overlay-section bg-impact">
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">Our Impact</div>
