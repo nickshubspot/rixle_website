@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rixle | Circular Economy &amp; Recyclable Material Supply Chain</title>
+<meta name="description" content="Rixle Private Limited — industrial waste collection, plastic &amp; textile recycling, EPR solutions, MRF operations and ESG consulting.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#EDEEE8;
+    --bg-panel:#E3E5DC;
+    --ink:#1B211D;
+    --ink-soft:#4A524C;
+    --steel:#6E7B76;
+    --line:#C7CBC0;
+    --dark:#171C18;
+    --dark-panel:#1F251F;
+    --light:#F3F2EA;
+    --green:#2F5233;
+    --green-deep:#203A24;
+    --amber:#D9A441;
+    --amber-deep:#B9852B;
+    --radius:2px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    line-height:1.05;
+    color:var(--ink);
+  }
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 28px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--green);
+    display:flex; align-items:center; gap:10px;
+    margin-bottom:14px;
+  }
+  .eyebrow::before{content:""; width:22px; height:2px; background:var(--amber); display:inline-block;}
+  section{padding:96px 0;}
+  section.tight{padding:72px 0;}
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px; letter-spacing:0.06em; text-transform:uppercase;
+    padding:14px 26px;
+    border:1px solid var(--ink);
+    border-radius:var(--radius);
+    transition:background .15s ease, color .15s ease, border-color .15s ease;
+    cursor:pointer;
+    background:none;
+  }
+  .btn-fill{background:var(--green); color:var(--light); border-color:var(--green);}
+  .btn-fill:hover{background:var(--green-deep); border-color:var(--green-deep);}
+  .btn-line{border-color:var(--ink); color:var(--ink);}
+  .btn-line:hover{background:var(--ink); color:var(--light);}
+  .btn-amber{background:var(--amber); color:var(--dark); border-color:var(--amber); font-weight:600;}
+  .btn-amber:hover{background:var(--amber-deep); border-color:var(--amber-deep);}
+
+  /* HEADER */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(237,238,232,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:18px 28px; max-width:1180px; margin:0 auto;}
+  .logo{font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:24px; letter-spacing:0.03em;}
+  .logo span{color:var(--green);}
+  .navlinks{display:flex; gap:28px; font-size:14px; font-weight:500;}
+  .navlinks a{opacity:0.8;}
+  .navlinks a:hover{opacity:1; color:var(--green);}
+  .navcta{display:flex; gap:12px;}
+  .navcta .btn{padding:10px 18px; font-size:12px;}
+  .menu-toggle{display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none;}
+  .menu-toggle span{width:22px; height:2px; background:var(--ink);}
+
+  /* HERO */
+  .hero{
+    background:var(--dark);
+    color:var(--light);
+    position:relative;
+    overflow:hidden;
+    padding:120px 0 90px;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      repeating-linear-gradient(115deg, rgba(217,164,65,0.05) 0 2px, transparent 2px 90px),
+      repeating-linear-gradient(-25deg, rgba(47,82,51,0.12) 0 2px, transparent 2px 120px);
+    pointer-events:none;
+  }
+  .hero-inner{position:relative; z-index:1; max-width:760px;}
+  .hero-tag{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em;
+    text-transform:uppercase; color:var(--amber); margin-bottom:22px; display:flex; align-items:center; gap:10px;
+  }
+  .hero-tag::before{content:"●"; font-size:8px;}
+  .hero h1{font-size:clamp(40px,7vw,74px); color:var(--light); margin-bottom:22px;}
+  .hero h1 em{font-style:normal; color:var(--amber);}
+  .hero p{font-size:18px; color:#C8CDC4; max-width:560px; margin-bottom:38px;}
+  .hero-actions{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:64px;}
+  .hero-actions .btn-line{border-color:#4A524C; color:var(--light);}
+  .hero-actions .btn-line:hover{background:var(--light); color:var(--dark);}
+
+  .hero-stats{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.1);
+  }
+  .stat{background:var(--dark); padding:22px 20px;}
+  .stat .num{font-family:'Barlow Condensed',sans-serif; font-size:34px; font-weight:700; color:var(--light);}
+  .stat .num span{color:var(--amber);}
+  .stat .label{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:#8B958E; margin-top:4px;}
+
+  /* INTRO STRIP */
+  .intro{padding:80px 0; border-bottom:1px solid var(--line);}
+  .intro-grid{display:grid; grid-template-columns:1fr 1.4fr; gap:60px; align-items:start;}
+  .intro h2{font-size:34px; max-width:340px;}
+  .intro-copy p{color:var(--ink-soft); font-size:16px; margin-bottom:16px; max-width:560px;}
+
+  /* ABOUT */
+  .about{background:var(--bg-panel);}
+  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:70px;}
+  .about h2{font-size:38px; margin-bottom:20px;}
+  .about-copy p{color:var(--ink-soft); margin-bottom:16px;}
+  .mv-cards{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); margin-top:20px;}
+  .mv-card{background:var(--bg-panel); padding:26px;}
+  .mv-card .eyebrow{margin-bottom:10px;}
+  .founder-note{
+    margin-top:28px; padding:24px; border-left:2px solid var(--amber); background:var(--bg);
+  }
+  .founder-note p{font-style:italic; color:var(--ink-soft); font-size:15px; margin-bottom:12px;}
+  .founder-note .who{font-family:'IBM Plex Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; color:var(--ink);}
+
+  /* SERVICES */
+  .section-head{max-width:640px; margin-bottom:50px;}
+  .section-head h2{font-size:38px;}
+  .section-head p{color:var(--ink-soft); margin-top:14px; font-size:16px;}
+  .services-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .svc{background:var(--bg); padding:30px 24px; min-height:190px; display:flex; flex-direction:column; justify-content:space-between;}
+  .svc .n{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--steel);}
+  .svc h3{font-size:20px; margin-top:26px; margin-bottom:8px; text-transform:none; letter-spacing:0;}
+  .svc p{font-size:13px; color:var(--ink-soft);}
+
+  /* INDUSTRIES */
+  .industries{background:var(--dark); color:var(--light);}
+  .industries .section-head h2{color:var(--light);}
+  .industries .section-head p{color:#B7BEB4;}
+  .industries .eyebrow{color:var(--amber);}
+  .ind-list{display:grid; grid-template-columns:repeat(4,1fr); gap:14px;}
+  .ind-item{
+    border:1px solid rgba(255,255,255,0.14); padding:20px 18px;
+    font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:0.03em;
+    display:flex; align-items:center; justify-content:space-between;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .ind-item:hover{border-color:var(--amber); background:rgba(217,164,65,0.06);}
+  .ind-item span{color:#7C877F;}
+
+  /* MATERIALS - signature element: sorting-bin labels */
+  .materials .section-head p{max-width:640px;}
+  .bins{display:grid; grid-template-columns:repeat(6,1fr); gap:12px; margin-top:10px;}
+  .bin{
+    background:var(--bg-panel); border:1px solid var(--line); border-top:4px solid var(--green);
+    padding:18px 14px 16px; text-align:left;
+  }
+  .bin.alt{border-top-color:var(--amber);}
+  .bin .code{font-family:'IBM Plex Mono',monospace; font-size:20px; font-weight:500; color:var(--ink);}
+  .bin .name{font-size:12px; color:var(--ink-soft); margin-top:6px; line-height:1.3;}
+  .materials-note{margin-top:22px; font-size:13px; color:var(--steel);}
+
+  /* HOW IT WORKS - legit numbered sequence */
+  .how{background:var(--bg-panel);}
+  .steps{display:grid; grid-template-columns:repeat(6,1fr); gap:0; position:relative; margin-top:10px;}
+  .step{padding:26px 18px 0; border-top:1px solid var(--line); position:relative;}
+  .step .idx{font-family:'Barlow Condensed',sans-serif; font-size:44px; font-weight:700; color:var(--line); margin-bottom:14px;}
+  .step h4{font-size:16px; text-transform:none; letter-spacing:0; margin-bottom:6px;}
+  .step p{font-size:12.5px; color:var(--ink-soft);}
+
+  /* WHY CHOOSE */
+  .why-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+  .why-item{padding:26px 0; border-top:1px solid var(--line);}
+  .why-item h4{font-size:18px; text-transform:none; letter-spacing:0; margin-bottom:8px;}
+  .why-item p{font-size:14px; color:var(--ink-soft);}
+
+  /* IMPACT */
+  .impact{background:var(--green-deep); color:var(--light);}
+  .impact .section-head h2{color:var(--light);}
+  .impact .section-head p{color:#C7D2C8;}
+  .impact .eyebrow{color:var(--amber);}
+  .impact-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(255,255,255,0.14); border:1px solid rgba(255,255,255,0.14);}
+  .impact-stat{background:var(--green-deep); padding:34px 26px;}
+  .impact-stat .num{font-family:'Barlow Condensed',sans-serif; font-size:46px; font-weight:700;}
+  .impact-stat .num sup{font-family:'IBM Plex Mono',monospace; font-size:14px; color:var(--amber); top:-18px; position:relative;}
+  .impact-stat .label{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:#9DB09E; margin-top:8px;}
+  .impact-note{margin-top:24px; font-size:12.5px; color:#9DB09E;}
+
+  /* PROJECTS */
+  .projects-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:20px;}
+  .project{border:1px solid var(--line); padding:28px; background:var(--bg-panel);}
+  .project .tag{font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; color:var(--green); letter-spacing:0.06em; margin-bottom:12px; display:block;}
+  .project h3{font-size:22px; margin-bottom:10px; text-transform:none; letter-spacing:0;}
+  .project p{color:var(--ink-soft); font-size:14px;}
+
+  /* GALLERY */
+  .gallery-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:10px;}
+  .gimg{aspect-ratio:1/1; background:linear-gradient(135deg,#DADCD2,#C7CBC0); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--steel); text-align:center; padding:10px;}
+
+  /* TESTIMONIALS */
+  .testimonials{background:var(--dark); color:var(--light);}
+  .testimonials .section-head h2{color:var(--light);}
+  .testimonials .eyebrow{color:var(--amber);}
+  .t-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.1);}
+  .t-card{background:var(--dark); padding:28px;}
+  .t-card p{font-size:14.5px; color:#C8CDC4; margin-bottom:18px; font-style:italic;}
+  .t-card .who{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--amber);}
+  .t-card .role{font-size:12px; color:#7C877F; margin-top:2px;}
+
+  /* FAQ */
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{
+    width:100%; text-align:left; background:none; border:none; padding:22px 0;
+    display:flex; align-items:center; justify-content:space-between;
+    font-family:'Inter',sans-serif; font-weight:600; font-size:16px; color:var(--ink); cursor:pointer;
+  }
+  .faq-q .plus{font-family:'IBM Plex Mono',monospace; font-size:18px; color:var(--green); transition:transform .2s ease;}
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .25s ease;}
+  .faq-a p{padding:0 0 22px; color:var(--ink-soft); font-size:14.5px; max-width:640px;}
+
+  /* CONTACT */
+  .contact{background:var(--bg-panel);}
+  .contact-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px;}
+  .contact-info h2{font-size:38px; margin-bottom:18px;}
+  .contact-info p{color:var(--ink-soft); margin-bottom:26px;}
+  .cinfo-row{display:flex; gap:14px; padding:16px 0; border-top:1px solid var(--line); font-size:14px;}
+  .cinfo-row .k{font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; color:var(--steel); width:110px; flex-shrink:0; padding-top:2px;}
+  form{background:var(--bg); border:1px solid var(--line); padding:32px;}
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px;}
+  .field{display:flex; flex-direction:column; gap:6px;}
+  .field.full{grid-column:1/-1;}
+  label{font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.04em; color:var(--ink-soft);}
+  input, select, textarea{
+    border:1px solid var(--line); background:var(--bg); padding:11px 12px; font-family:'Inter',sans-serif; font-size:14px; color:var(--ink); border-radius:var(--radius);
+  }
+  input:focus, select:focus, textarea:focus{outline:2px solid var(--green); outline-offset:1px; border-color:var(--green);}
+  textarea{resize:vertical; min-height:90px;}
+  form .btn{width:100%; justify-content:center; margin-top:6px;}
+  .form-note{font-size:12px; color:var(--steel); margin-top:12px;}
+
+  /* FOOTER */
+  footer{background:var(--dark); color:#B7BEB4; padding:64px 0 28px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1.2fr; gap:40px; padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,0.1);}
+  .footer-logo{font-family:'Barlow Condensed',sans-serif; font-size:24px; font-weight:700; color:var(--light); margin-bottom:14px;}
+  .footer-logo span{color:var(--amber);}
+  .footer-grid p{font-size:13.5px; max-width:280px;}
+  .footer-col h5{font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:#7C877F; margin-bottom:16px;}
+  .footer-col a{display:block; font-size:14px; margin-bottom:10px; color:#C8CDC4;}
+  .footer-col a:hover{color:var(--amber);}
+  .footer-bottom{display:flex; justify-content:space-between; align-items:center; padding-top:24px; font-size:12.5px; color:#7C877F; flex-wrap:wrap; gap:12px;}
+  .footer-bottom a{color:#7C877F;}
+  .footer-bottom a:hover{color:var(--light);}
+
+  @media(max-width:980px){
+    .navlinks{display:none;}
+    .menu-toggle{display:flex;}
+    .hero-stats{grid-template-columns:repeat(2,1fr);}
+    .intro-grid, .about-grid, .contact-grid{grid-template-columns:1fr; gap:36px;}
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .ind-list{grid-template-columns:repeat(2,1fr);}
+    .bins{grid-template-columns:repeat(3,1fr);}
+    .steps{grid-template-columns:repeat(3,1fr);}
+    .steps .step:nth-child(n+4){border-top:1px solid var(--line);}
+    .why-grid{grid-template-columns:1fr 1fr;}
+    .impact-grid{grid-template-columns:1fr 1fr;}
+    .projects-grid{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:repeat(3,1fr);}
+    .t-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr; gap:32px;}
+    .form-row{grid-template-columns:1fr;}
+  }
+  @media(max-width:600px){
+    section{padding:64px 0;}
+    .hero{padding:100px 0 60px;}
+    .hero-stats{grid-template-columns:1fr 1fr;}
+    .services-grid, .bins, .steps, .impact-grid, .gallery-grid{grid-template-columns:1fr 1fr;}
+    .why-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="logo">RIX<span>LE</span></a>
+    <nav class="navlinks">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#industries">Industries</a>
+      <a href="#projects">Projects</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="navcta">
+      <a href="#contact" class="btn btn-fill">Request Pickup</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero tight" style="padding-top:100px;">
+    <div class="wrap hero-inner">
+      <div class="hero-tag">Rixle Private Limited · Latur, Maharashtra</div>
+      <h1>Transforming <em>Waste</em> Into Valuable Resources</h1>
+      <p>A circular economy and recyclable material supply chain company — industrial waste collection, sorting, MRF operations, EPR compliance and RDF production across a multi-state network.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-amber">Request Pickup</a>
+        <a href="#contact" class="btn btn-line">Contact Us</a>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="hero-stats">
+        <div class="stat"><div class="num">MULTI<span>-STATE</span></div><div class="label">Sourcing Network</div></div>
+        <div class="stat"><div class="num">EPR</div><div class="label">Compliance Support</div></div>
+        <div class="stat"><div class="num">MRF</div><div class="label">Operations</div></div>
+        <div class="stat"><div class="num">AI<span>-</span>SORT</div><div class="label">AIRWSS Enabled</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="wrap intro-grid">
+      <h2>Built for consistent, traceable material recovery.</h2>
+      <div class="intro-copy">
+        <p>Rixle works across the full recovery chain — from industrial and municipal waste collection through sorting, recycling and documentation — so that businesses get a dependable, compliant route to move recyclable material out of their operations.</p>
+        <p>We work with manufacturers, FMCG brands, textile units and municipal bodies to build sourcing networks that hold up on quality and paperwork, not just volume.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <div class="eyebrow">About Rixle</div>
+        <h2>A supply chain company for recyclable materials.</h2>
+        <div class="about-copy">
+          <p>Rixle Private Limited was founded to solve a specific problem: industrial and municipal recyclers need consistent feedstock quality and reliable documentation, not just collection volume. We built our operations — collection, sorting, MRF processing and EPR support — around that requirement.</p>
+          <p>Our network spans multiple states and covers plastics, textile waste, and RDF production, supported by AIRWSS, our AI-assisted sorting layer developed through our technology arm, Avency EcoSol.</p>
+        </div>
+        <div class="founder-note">
+          <p>"Rixle exists to make recycling operationally reliable — for the businesses generating waste and for the recyclers who need clean, well-documented material to work with."</p>
+          <div class="who">— Founder's Note</div>
+        </div>
+      </div>
+      <div>
+        <div class="mv-cards">
+          <div class="mv-card">
+            <div class="eyebrow">Mission</div>
+            <p>To build dependable infrastructure that moves recyclable material from source to processor with consistent quality and full compliance.</p>
+          </div>
+          <div class="mv-card">
+            <div class="eyebrow">Vision</div>
+            <p>A circular material economy where waste is treated as structured feedstock, not liability.</p>
+          </div>
+          <div class="mv-card">
+            <div class="eyebrow">Why Rixle</div>
+            <p>Operational discipline across collection, sorting and documentation — built by a team with direct industry experience.</p>
+          </div>
+          <div class="mv-card">
+            <div class="eyebrow">How We Work</div>
+            <p>Digital tracking and reporting at every stage, from pickup request to EPR documentation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">What We Do</div>
+        <h2>Our Services</h2>
+        <p>End-to-end coverage across the material recovery chain, from first pickup to final compliance report.</p>
+      </div>
+      <div class="services-grid">
+        <div class="svc"><div class="n">01</div><h3>Industrial Waste Collection</h3><p>Scheduled and on-demand pickup from manufacturing and commercial sites.</p></div>
+        <div class="svc"><div class="n">02</div><h3>Plastic Recycling</h3><p>Sorting and processing of PET, HDPE, LDPE, PP and multi-layer plastics.</p></div>
+        <div class="svc"><div class="n">03</div><h3>Textile Waste Recycling</h3><p>Recovery and processing routes for pre- and post-consumer textile waste.</p></div>
+        <div class="svc"><div class="n">04</div><h3>EPR Solutions</h3><p>Extended Producer Responsibility compliance, documentation and credit support.</p></div>
+        <div class="svc"><div class="n">05</div><h3>Waste Audits</h3><p>On-site assessment of waste streams to identify recovery and cost opportunities.</p></div>
+        <div class="svc"><div class="n">06</div><h3>Material Trading</h3><p>Sourcing and sale of sorted recyclable material to processors and manufacturers.</p></div>
+        <div class="svc"><div class="n">07</div><h3>MRF Operations</h3><p>Material Recovery Facility setup and operations for structured sorting at scale.</p></div>
+        <div class="svc"><div class="n">08</div><h3>ESG &amp; Sustainability Consulting</h3><p>Reporting support and waste-stream strategy for corporate sustainability goals.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section class="industries" id="industries">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Sectors We Serve</div>
+        <h2>Industries We Serve</h2>
+        <p>Recovery programs built around how each sector actually generates and manages waste.</p>
+      </div>
+      <div class="ind-list">
+        <div class="ind-item">Manufacturing <span>01</span></div>
+        <div class="ind-item">FMCG <span>02</span></div>
+        <div class="ind-item">Textile <span>03</span></div>
+        <div class="ind-item">Automotive <span>04</span></div>
+        <div class="ind-item">Pharma <span>05</span></div>
+        <div class="ind-item">Packaging <span>06</span></div>
+        <div class="ind-item">Warehouses <span>07</span></div>
+        <div class="ind-item">Commercial Complexes <span>08</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATERIALS -->
+  <section class="materials">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Feedstock</div>
+        <h2>Materials We Accept</h2>
+        <p>Sorted and graded to the specification our processing and trading partners require.</p>
+      </div>
+      <div class="bins">
+        <div class="bin"><div class="code">PET</div><div class="name">Polyethylene Terephthalate</div></div>
+        <div class="bin"><div class="code">HDPE</div><div class="name">High-Density Polyethylene</div></div>
+        <div class="bin"><div class="code">LDPE</div><div class="name">Low-Density Polyethylene</div></div>
+        <div class="bin"><div class="code">PP</div><div class="name">Polypropylene</div></div>
+        <div class="bin"><div class="code">HM</div><div class="name">HM Plastics</div></div>
+        <div class="bin alt"><div class="code">MLP</div><div class="name">Multi-Layer Plastic</div></div>
+        <div class="bin alt"><div class="code">TEX</div><div class="name">Textile Waste</div></div>
+        <div class="bin alt"><div class="code">PPR</div><div class="name">Paper</div></div>
+        <div class="bin alt"><div class="code">CBD</div><div class="name">Cardboard</div></div>
+        <div class="bin alt"><div class="code">MTL</div><div class="name">Metal</div></div>
+        <div class="bin"><div class="code">E-W</div><div class="name">E-Waste (select streams)</div></div>
+      </div>
+      <p class="materials-note">Accepted categories vary by location and volume — confirm with our team before scheduling a pickup.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Process</div>
+        <h2>How It Works</h2>
+        <p>A fixed sequence from request to reporting — the same process regardless of client size.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="idx">01</div><h4>Request Pickup</h4><p>Submit a pickup request with material type, quantity and location.</p></div>
+        <div class="step"><div class="idx">02</div><h4>Waste Collection</h4><p>Scheduled collection from your site by our logistics network.</p></div>
+        <div class="step"><div class="idx">03</div><h4>Sorting</h4><p>Material graded and sorted at our MRF facilities.</p></div>
+        <div class="step"><div class="idx">04</div><h4>Recycling</h4><p>Sorted material routed to recycling and processing partners.</p></div>
+        <div class="step"><div class="idx">05</div><h4>Digital Reports</h4><p>Volume and processing data shared through digital tracking.</p></div>
+        <div class="step"><div class="idx">06</div><h4>EPR Documentation</h4><p>Compliance paperwork issued for your records and filings.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Our Edge</div>
+        <h2>Why Choose Rixle</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item"><h4>Certified Processes</h4><p>Operations aligned to applicable compliance and regulatory standards.</p></div>
+        <div class="why-item"><h4>Fast Collection</h4><p>Responsive scheduling across our multi-state network.</p></div>
+        <div class="why-item"><h4>Transparent Pricing</h4><p>Clear terms with no hidden costs on collection or processing.</p></div>
+        <div class="why-item"><h4>Digital Tracking</h4><p>Visibility into your material from pickup through processing.</p></div>
+        <div class="why-item"><h4>Sustainability Reports</h4><p>Data you can use directly in ESG and compliance reporting.</p></div>
+        <div class="why-item"><h4>Experienced Team</h4><p>Built by operators with direct waste management industry experience.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <section class="impact">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Our Impact</div>
+        <h2>Measured, Not Marketed</h2>
+        <p>Figures below are placeholders — replace with verified totals before publishing.</p>
+      </div>
+      <div class="impact-grid">
+        <div class="impact-stat"><div class="num">— <sup>t</sup></div><div class="label">Tons Recycled</div></div>
+        <div class="impact-stat"><div class="num">— <sup>t</sup></div><div class="label">CO₂ Emissions Reduced</div></div>
+        <div class="impact-stat"><div class="num">—</div><div class="label">Partner Industries</div></div>
+        <div class="impact-stat"><div class="num">—</div><div class="label">States Covered</div></div>
+      </div>
+      <p class="impact-note">Update these figures with your verified operating data before the site goes live.</p>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Track Record</div>
+        <h2>Projects</h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project"><span class="tag">MIDC · Latur</span><h3>MIDC Waste Management</h3><p>Material Recovery Facility development for industrial waste streams in MIDC Latur.</p></div>
+        <div class="project"><span class="tag">Industrial</span><h3>Industrial Recycling</h3><p>Structured collection and recycling programs for manufacturing clients.</p></div>
+        <div class="project"><span class="tag">Textile</span><h3>Textile Recycling (TRFS)</h3><p>Recovery and processing infrastructure for textile waste streams.</p></div>
+        <div class="project"><span class="tag">Technology</span><h3>AIRWSS AI Waste Sorting</h3><p>AI-robotic sorting system developed with our technology arm, Avency EcoSol.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="tight">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">On Site</div>
+        <h2>Gallery</h2>
+        <p>Add real photography before launch — placeholders shown below.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gimg">Plant</div>
+        <div class="gimg">Collection Vehicles</div>
+        <div class="gimg">Waste Processing</div>
+        <div class="gimg">Team</div>
+        <div class="gimg">Before &amp; After</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Client Feedback</div>
+        <h2>Testimonials</h2>
+        <p>Placeholder quotes — replace with real client feedback before publishing.</p>
+      </div>
+      <div class="t-grid">
+        <div class="t-card"><p>"Add a real client quote here describing the working relationship and outcome."</p><div class="who">Client Name</div><div class="role">Company · Sector</div></div>
+        <div class="t-card"><p>"Add a real client quote here describing the working relationship and outcome."</p><div class="who">Client Name</div><div class="role">Company · Sector</div></div>
+        <div class="t-card"><p>"Add a real client quote here describing the working relationship and outcome."</p><div class="who">Client Name</div><div class="role">Company · Sector</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Questions</div>
+        <h2>FAQ</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">How do I schedule a pickup? <span class="plus">+</span></button>
+          <div class="faq-a"><p>Submit the inquiry form below with your material type, quantity and location, and our team will confirm a schedule.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Is there a minimum quantity? <span class="plus">+</span></button>
+          <div class="faq-a"><p>Minimums vary by material and location. Contact our team for specifics on your site.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What locations do you service? <span class="plus">+</span></button>
+          <div class="faq-a"><p>We operate across a multi-state network. Share your location in the inquiry form to confirm coverage.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you support EPR compliance? <span class="plus">+</span></button>
+          <div class="faq-a"><p>Yes — EPR documentation and credit support is part of our standard service offering.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What materials do you accept? <span class="plus">+</span></button>
+          <div class="faq-a"><p>See the Materials We Accept section above. Acceptance varies by location and volume.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-info">
+        <div class="eyebrow">Get In Touch</div>
+        <h2>Contact Us</h2>
+        <p>Tell us about your waste stream and we'll get back with next steps and scheduling.</p>
+        <div class="cinfo-row"><div class="k">Email</div><div>info@rixle.co.in</div></div>
+        <div class="cinfo-row"><div class="k">Website</div><div>www.rixle.co.in</div></div>
+        <div class="cinfo-row"><div class="k">Location</div><div>Latur, Maharashtra, India</div></div>
+      </div>
+      <form id="inquiryForm">
+        <div class="form-row">
+          <div class="field"><label for="name">Name</label><input type="text" id="name" required></div>
+          <div class="field"><label for="company">Company</label><input type="text" id="company"></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="phone">Phone</label><input type="tel" id="phone" required></div>
+          <div class="field"><label for="email">Email</label><input type="email" id="email" required></div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="wasteType">Waste Type</label>
+            <select id="wasteType">
+              <option>Plastic</option><option>Textile</option><option>Paper/Cardboard</option>
+              <option>Metal</option><option>Mixed / Other</option>
+            </select>
+          </div>
+          <div class="field"><label for="quantity">Quantity (approx.)</label><input type="text" id="quantity" placeholder="e.g. 2 tons/month"></div>
+        </div>
+        <div class="form-row">
+          <div class="field full"><label for="city">City</label><input type="text" id="city"></div>
+        </div>
+        <div class="form-row">
+          <div class="field full"><label for="message">Message</label><textarea id="message"></textarea></div>
+        </div>
+        <button type="submit" class="btn btn-fill">Submit Inquiry</button>
+        <p class="form-note">This form needs a backend (e.g. Formspree or Google Forms) to actually send submissions on GitHub Pages — see setup notes.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">RIX<span>LE</span></div>
+        <p>Circular economy and recyclable material supply chain — collection, sorting, MRF operations, EPR compliance and RDF production.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="#services">Waste Collection</a>
+        <a href="#services">Recycling</a>
+        <a href="#services">EPR Solutions</a>
+        <a href="#services">MRF Operations</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="mailto:info@rixle.co.in">info@rixle.co.in</a>
+        <a href="https://rixle.co.in">www.rixle.co.in</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span id="year"></span> Rixle Private Limited. All rights reserved.</div>
+      <div><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms &amp; Conditions</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // mobile menu (simple toggle showing nav links stacked)
+  const toggle = document.getElementById('menuToggle');
+  const navlinks = document.querySelector('.navlinks');
+  toggle.addEventListener('click', () => {
+    const open = navlinks.style.display === 'flex';
+    navlinks.style.display = open ? 'none' : 'flex';
+    navlinks.style.flexDirection = 'column';
+    navlinks.style.position = 'absolute';
+    navlinks.style.top = '64px';
+    navlinks.style.left = '0';
+    navlinks.style.right = '0';
+    navlinks.style.background = '#EDEEE8';
+    navlinks.style.padding = '20px 28px';
+    navlinks.style.borderBottom = '1px solid #C7CBC0';
+    navlinks.style.gap = '16px';
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(o => {
+        o.classList.remove('open');
+        o.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // contact form (front-end only placeholder)
+  document.getElementById('inquiryForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Form submitted (demo only). Connect this form to Formspree or Google Forms to receive real submissions — see setup notes.');
+  });
+</script>
+
+</body>
+</html>
