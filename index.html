@@ -279,6 +279,7 @@
   .impact-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(255,255,255,0.14); border:1px solid rgba(255,255,255,0.14);}
   .impact-stat{background:var(--green-deep); padding:34px 26px;}
   .impact-stat .num{font-family:'Barlow Condensed',sans-serif; font-size:46px; font-weight:700;}
+  .impact-stat .num.metric{font-size:27px; line-height:1.1; color:var(--light);}
   .impact-stat .num sup{font-family:'IBM Plex Mono',monospace; font-size:14px; color:var(--amber); top:-18px; position:relative;}
   .impact-stat .label{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:#9DB09E; margin-top:8px;}
   .impact-note{margin-top:24px; font-size:12.5px; color:#9DB09E;}
@@ -353,6 +354,18 @@
   .footer-bottom{display:flex; justify-content:space-between; align-items:center; padding-top:24px; font-size:12.5px; color:#7C877F; flex-wrap:wrap; gap:12px;}
   .footer-bottom a{color:#7C877F;}
   .footer-bottom a:hover{color:var(--light);}
+
+  /* POLICY MODAL */
+  .modal[hidden]{display:none;}
+  .modal{position:fixed; inset:0; z-index:200; display:flex; align-items:center; justify-content:center; padding:24px;}
+  .modal-backdrop{position:absolute; inset:0; background:rgba(10,12,10,0.72);}
+  .modal-panel{position:relative; width:min(680px,100%); max-height:82vh; overflow-y:auto; background:var(--bg); border:1px solid var(--line); padding:32px; box-shadow:0 24px 60px rgba(0,0,0,0.35);}
+  .modal-panel h2{font-size:32px; margin-bottom:18px; padding-right:42px;}
+  .modal-panel h3{font-size:18px; margin:22px 0 8px; text-transform:none;}
+  .modal-panel p{color:var(--ink-soft); font-size:14px; margin-bottom:12px;}
+  .modal-close{position:absolute; top:18px; right:18px; width:36px; height:36px; border:1px solid var(--line); background:var(--bg-panel); color:var(--ink); font-family:'IBM Plex Mono',monospace; font-size:20px; cursor:pointer;}
+  .modal-close:hover{background:var(--ink); color:var(--light);}
+  body.modal-open{overflow:hidden;}
 
   @media(max-width:980px){
     .navlinks{display:none;}
@@ -607,15 +620,15 @@
       <div class="section-head">
         <div class="eyebrow">Our Impact</div>
         <h2>Measured, Not Marketed</h2>
-        <p>Figures below are placeholders — replace with verified totals before publishing.</p>
+        <p>Operational capabilities designed for traceable, compliant material recovery.</p>
       </div>
       <div class="impact-grid">
-        <div class="impact-stat"><div class="num">— <sup>t</sup></div><div class="label">Tons Recycled</div></div>
-        <div class="impact-stat"><div class="num">— <sup>t</sup></div><div class="label">CO₂ Emissions Reduced</div></div>
-        <div class="impact-stat"><div class="num">—</div><div class="label">Partner Industries</div></div>
-        <div class="impact-stat"><div class="num">—</div><div class="label">States Covered</div></div>
+        <div class="impact-stat"><div class="num metric">Collection Network</div><div class="label">Multi-State Sourcing</div></div>
+        <div class="impact-stat"><div class="num metric">EPR Documentation</div><div class="label">Compliance Support</div></div>
+        <div class="impact-stat"><div class="num metric">Material Processing</div><div class="label">MRF Operations</div></div>
+        <div class="impact-stat"><div class="num metric">AI Sorting</div><div class="label">AIRWSS Enabled</div></div>
       </div>
-      <p class="impact-note">Update these figures with your verified operating data before the site goes live.</p>
+      <p class="impact-note">Capabilities are configured around each client&apos;s waste stream, location and compliance requirements.</p>
     </div>
   </section>
 
@@ -641,30 +654,14 @@
       <div class="section-head">
         <div class="eyebrow">On Site</div>
         <h2>Gallery</h2>
-        <p>Add real photography before launch — placeholders shown below.</p>
+        <p>A view into our collection, sorting and material recovery operations across the supply chain.</p>
       </div>
       <div class="gallery-grid">
-        <div class="gimg"><img src="assets/gallery/Plant.png" alt="Plant" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Plant</span></div>
-        <div class="gimg"><img src="assets/gallery/vehicles.jpeg" alt="Collection Vehicles" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Collection Vehicles</span></div>
+        <div class="gimg"><img src="assets/gallery/plant.jpg" alt="Plant" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Plant</span></div>
+        <div class="gimg"><img src="assets/gallery/vehicles.jpg" alt="Collection Vehicles" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Collection Vehicles</span></div>
         <div class="gimg"><img src="assets/gallery/processing.jpg" alt="Waste Processing" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Waste Processing</span></div>
         <div class="gimg"><img src="assets/gallery/team.jpg" alt="Team" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Team</span></div>
         <div class="gimg"><img src="assets/gallery/before-after.jpg" alt="Before and After" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Before &amp; After</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="testimonials">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">Client Feedback</div>
-        <h2>Testimonials</h2>
-        <p>Placeholder quotes — replace with real client feedback before publishing.</p>
-      </div>
-      <div class="t-grid">
-        <div class="t-card"><p>"Add a real client quote here describing the working relationship and outcome."</p><div class="who">Client Name</div><div class="role">Company · Sector</div></div>
-        <div class="t-card"><p>"Add a real client quote here describing the working relationship and outcome."</p><div class="who">Client Name</div><div class="role">Company · Sector</div></div>
-        <div class="t-card"><p>"Add a real client quote here describing the working relationship and outcome."</p><div class="who">Client Name</div><div class="role">Company · Sector</div></div>
       </div>
     </div>
   </section>
@@ -677,26 +674,26 @@
         <h2>FAQ</h2>
       </div>
       <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-q">How do I schedule a pickup? <span class="plus">+</span></button>
-          <div class="faq-a"><p>Submit the inquiry form below with your material type, quantity and location, and our team will confirm a schedule.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Is there a minimum quantity? <span class="plus">+</span></button>
-          <div class="faq-a"><p>Minimums vary by material and location. Contact our team for specifics on your site.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">What locations do you service? <span class="plus">+</span></button>
-          <div class="faq-a"><p>We operate across a multi-state network. Share your location in the inquiry form to confirm coverage.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Do you support EPR compliance? <span class="plus">+</span></button>
-          <div class="faq-a"><p>Yes — EPR documentation and credit support is part of our standard service offering.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">What materials do you accept? <span class="plus">+</span></button>
-          <div class="faq-a"><p>See the Materials We Accept section above. Acceptance varies by location and volume.</p></div>
-        </div>
+        <article class="faq-item">
+          <h3><button type="button" class="faq-q" id="faq-q-1" aria-expanded="false" aria-controls="faq-a-1">How do I schedule a pickup? <span class="plus" aria-hidden="true">+</span></button></h3>
+          <div class="faq-a" id="faq-a-1" role="region" aria-labelledby="faq-q-1" hidden><p>Submit the inquiry form below with your waste stream, tonnage and location. Our team will review the details and confirm the available collection schedule.</p></div>
+        </article>
+        <article class="faq-item">
+          <h3><button type="button" class="faq-q" id="faq-q-2" aria-expanded="false" aria-controls="faq-a-2">Is there a minimum quantity? <span class="plus" aria-hidden="true">+</span></button></h3>
+          <div class="faq-a" id="faq-a-2" role="region" aria-labelledby="faq-q-2" hidden><p>Minimum collection quantities vary by material, service location and pickup frequency. Share your requirements for a site-specific assessment.</p></div>
+        </article>
+        <article class="faq-item">
+          <h3><button type="button" class="faq-q" id="faq-q-3" aria-expanded="false" aria-controls="faq-a-3">What locations do you service? <span class="plus" aria-hidden="true">+</span></button></h3>
+          <div class="faq-a" id="faq-a-3" role="region" aria-labelledby="faq-q-3" hidden><p>Rixle operates through a multi-state sourcing and logistics network. Provide your facility location in the inquiry form so we can confirm current coverage.</p></div>
+        </article>
+        <article class="faq-item">
+          <h3><button type="button" class="faq-q" id="faq-q-4" aria-expanded="false" aria-controls="faq-a-4">Do you support EPR compliance? <span class="plus" aria-hidden="true">+</span></button></h3>
+          <div class="faq-a" id="faq-a-4" role="region" aria-labelledby="faq-q-4" hidden><p>Yes. Our services include EPR documentation and credit support aligned with the applicable waste stream and client requirements.</p></div>
+        </article>
+        <article class="faq-item">
+          <h3><button type="button" class="faq-q" id="faq-q-5" aria-expanded="false" aria-controls="faq-a-5">What materials do you accept? <span class="plus" aria-hidden="true">+</span></button></h3>
+          <div class="faq-a" id="faq-a-5" role="region" aria-labelledby="faq-q-5" hidden><p>We handle listed plastic grades, textile waste, paper, cardboard, metal and select e-waste streams. Final acceptance depends on material condition, location and volume.</p></div>
+        </article>
       </div>
     </div>
   </section>
@@ -712,33 +709,34 @@
         <div class="cinfo-row"><div class="k">Website</div><div>www.rixle.co.in</div></div>
         <div class="cinfo-row"><div class="k">Location</div><div>Latur, Maharashtra, India</div></div>
       </div>
-      <form id="inquiryForm">
+      <form id="inquiryForm" action="mailto:info@rixle.co.in" method="post" enctype="text/plain">
         <div class="form-row">
-          <div class="field"><label for="name">Name</label><input type="text" id="name" required></div>
-          <div class="field"><label for="company">Company</label><input type="text" id="company"></div>
+          <div class="field"><label for="name">Name</label><input type="text" id="name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="company">Company</label><input type="text" id="company" name="company" autocomplete="organization"></div>
         </div>
         <div class="form-row">
-          <div class="field"><label for="phone">Phone</label><input type="tel" id="phone" required></div>
-          <div class="field"><label for="email">Email</label><input type="email" id="email" required></div>
+          <div class="field"><label for="phone">Phone</label><input type="tel" id="phone" name="phone" autocomplete="tel" required></div>
+          <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required></div>
         </div>
         <div class="form-row">
           <div class="field">
-            <label for="wasteType">Waste Type</label>
-            <select id="wasteType">
+            <label for="wasteStream">Waste Stream</label>
+            <select id="wasteStream" name="waste_stream" required>
+              <option value="" selected disabled>Select a waste stream</option>
               <option>Plastic</option><option>Textile</option><option>Paper/Cardboard</option>
-              <option>Metal</option><option>Mixed / Other</option>
+              <option>Metal</option><option>E-Waste</option><option>Mixed / Other</option>
             </select>
           </div>
-          <div class="field"><label for="quantity">Quantity (approx.)</label><input type="text" id="quantity" placeholder="e.g. 2 tons/month"></div>
+          <div class="field"><label for="tonnage">Tonnage (approx.)</label><input type="number" id="tonnage" name="tonnage" min="0.01" step="0.01" inputmode="decimal" placeholder="e.g. 2" required></div>
         </div>
         <div class="form-row">
-          <div class="field full"><label for="city">City</label><input type="text" id="city"></div>
+          <div class="field full"><label for="location">Location</label><input type="text" id="location" name="location" autocomplete="street-address" placeholder="City, State" required></div>
         </div>
         <div class="form-row">
-          <div class="field full"><label for="message">Message</label><textarea id="message"></textarea></div>
+          <div class="field full"><label for="message">Message</label><textarea id="message" name="message"></textarea></div>
         </div>
         <button type="submit" class="btn btn-fill">Submit Inquiry</button>
-        <p class="form-note">This form needs a backend (e.g. Formspree or Google Forms) to actually send submissions on GitHub Pages — see setup notes.</p>
+        <p class="form-note">Submitting opens your email application with the inquiry addressed to info@rixle.co.in.</p>
       </form>
     </div>
   </section>
@@ -777,10 +775,39 @@
     </div>
     <div class="footer-bottom">
       <div>© <span id="year"></span> Rixle Private Limited. All rights reserved.</div>
-      <div><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms &amp; Conditions</a></div>
+      <div><a href="#privacy-policy" data-policy="privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="#terms-conditions" data-policy="terms">Terms &amp; Conditions</a></div>
     </div>
   </div>
 </footer>
+
+<div class="modal" id="policyModal" role="dialog" aria-modal="true" aria-labelledby="privacyPolicyTitle" hidden>
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-panel" tabindex="-1">
+    <button type="button" class="modal-close" data-modal-close aria-label="Close policy dialog">×</button>
+    <section id="privacy-policy" class="policy-content" data-policy-content="privacy">
+      <h2 id="privacyPolicyTitle">Privacy Policy</h2>
+      <p><strong>Effective date:</strong> 5 August 2026</p>
+      <p>Rixle Private Limited collects the contact and operational information you provide through this website solely to respond to inquiries, assess service requirements and coordinate waste collection or related services.</p>
+      <h3>Information we collect</h3>
+      <p>We may receive your name, company, phone number, email address, waste stream, estimated tonnage, location and any details included in your message.</p>
+      <h3>How we use information</h3>
+      <p>Information is used to evaluate service coverage, prepare operational responses, maintain business records and meet applicable legal or compliance obligations. We do not sell personal information.</p>
+      <h3>Contact</h3>
+      <p>For privacy questions or requests, email <a href="mailto:info@rixle.co.in">info@rixle.co.in</a>.</p>
+    </section>
+    <section id="terms-conditions" class="policy-content" data-policy-content="terms" hidden>
+      <h2 id="termsPolicyTitle">Terms &amp; Conditions</h2>
+      <p><strong>Effective date:</strong> 5 August 2026</p>
+      <p>This website provides general information about Rixle Private Limited and its waste management, recycling, EPR and material recovery services. Website content does not constitute a binding service offer.</p>
+      <h3>Service inquiries</h3>
+      <p>Collection availability, accepted materials, pricing, schedules and documentation requirements are confirmed only after Rixle reviews the waste stream, quantity, location and applicable compliance requirements.</p>
+      <h3>Website use</h3>
+      <p>You agree to provide accurate inquiry information and not misuse the website. All website content remains the property of Rixle Private Limited unless otherwise stated.</p>
+      <h3>Contact</h3>
+      <p>Questions regarding these terms may be sent to <a href="mailto:info@rixle.co.in">info@rixle.co.in</a>.</p>
+    </section>
+  </div>
+</div>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
@@ -806,27 +833,79 @@
   navScrim.addEventListener('click', closeMenu);
   mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
 
-  // FAQ accordion
+  // accessible FAQ accordion
+  const closeFaqItem = item => {
+    const question = item.querySelector('.faq-q');
+    const answer = item.querySelector('.faq-a');
+    item.classList.remove('open');
+    question.setAttribute('aria-expanded', 'false');
+    answer.style.maxHeight = null;
+    answer.hidden = true;
+  };
+
   document.querySelectorAll('.faq-item').forEach(item => {
-    const q = item.querySelector('.faq-q');
-    const a = item.querySelector('.faq-a');
-    q.addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(o => {
-        o.classList.remove('open');
-        o.querySelector('.faq-a').style.maxHeight = null;
-      });
-      if(!isOpen){
+    const question = item.querySelector('.faq-q');
+    const answer = document.getElementById(question.getAttribute('aria-controls'));
+    question.addEventListener('click', () => {
+      const isOpen = question.getAttribute('aria-expanded') === 'true';
+      document.querySelectorAll('.faq-item.open').forEach(closeFaqItem);
+      if (!isOpen) {
         item.classList.add('open');
-        a.style.maxHeight = a.scrollHeight + 'px';
+        question.setAttribute('aria-expanded', 'true');
+        answer.hidden = false;
+        answer.style.maxHeight = answer.scrollHeight + 'px';
       }
     });
   });
 
-  // contact form (front-end only placeholder)
+  // email-client submission fallback
   document.getElementById('inquiryForm').addEventListener('submit', function(e){
     e.preventDefault();
-    alert('Form submitted (demo only). Connect this form to Formspree or Google Forms to receive real submissions — see setup notes.');
+    if (!this.reportValidity()) return;
+    const data = new FormData(this);
+    const subject = `Rixle service inquiry — ${data.get('company') || data.get('name')}`;
+    const body = [
+      `Name: ${data.get('name')}`,
+      `Company: ${data.get('company') || 'Not provided'}`,
+      `Phone: ${data.get('phone')}`,
+      `Email: ${data.get('email')}`,
+      `Waste Stream: ${data.get('waste_stream')}`,
+      `Tonnage: ${data.get('tonnage')} tons`,
+      `Location: ${data.get('location')}`,
+      '',
+      `Message: ${data.get('message') || 'Not provided'}`
+    ].join('\n');
+    window.location.href = `mailto:info@rixle.co.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+
+  // privacy and terms modal
+  const policyModal = document.getElementById('policyModal');
+  const modalPanel = policyModal.querySelector('.modal-panel');
+  const policyContents = policyModal.querySelectorAll('[data-policy-content]');
+  let policyTrigger = null;
+
+  const closePolicyModal = () => {
+    policyModal.hidden = true;
+    document.body.classList.remove('modal-open');
+    policyTrigger?.focus();
+  };
+
+  document.querySelectorAll('[data-policy]').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const policy = link.dataset.policy;
+      policyTrigger = link;
+      policyContents.forEach(content => { content.hidden = content.dataset.policyContent !== policy; });
+      policyModal.setAttribute('aria-labelledby', policy === 'privacy' ? 'privacyPolicyTitle' : 'termsPolicyTitle');
+      policyModal.hidden = false;
+      document.body.classList.add('modal-open');
+      modalPanel.focus();
+    });
+  });
+
+  policyModal.querySelectorAll('[data-modal-close]').forEach(control => control.addEventListener('click', closePolicyModal));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !policyModal.hidden) closePolicyModal();
   });
 </script>
 
