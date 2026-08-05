@@ -76,7 +76,7 @@
   .btn-amber{background:var(--amber); color:var(--dark); border-color:var(--amber); font-weight:600;}
   .btn-amber:hover{background:var(--amber-deep); border-color:var(--amber-deep);}
 
-  /* HEADER — transparent over hero, solidifies on scroll */
+  /* HEADER */
   body{padding-top:0;}
   header{
     position:fixed; top:0; left:0; right:0; z-index:100;
@@ -138,7 +138,6 @@
   body.nav-open .menu-toggle span:nth-child(2){opacity:0;}
   body.nav-open .menu-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
-  /* Mobile slide-in menu */
   .mobile-menu{
     position:fixed; top:0; right:0; height:100vh; width:min(340px,84vw);
     background:var(--dark-panel); z-index:105;
@@ -161,21 +160,43 @@
   }
   body.nav-open .nav-scrim{opacity:1; pointer-events:auto;}
 
+  /* BACKGROUND IMAGE OVERLAYS */
+  .bg-overlay-section {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+
+  .bg-overlay-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 25, 21, 0.82);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .bg-hero {
+    background-image: url('assets/gallery/tech-env.jpg');
+  }
+
+  .bg-about {
+    background-image: url('assets/gallery/plant.jpg');
+  }
+
+  .bg-impact {
+    background-image: url('assets/gallery/processing.jpg');
+  }
+
   /* HERO */
   .hero{
-    background:var(--dark);
+    background-color:var(--dark);
     color:var(--light);
     position:relative;
     overflow:hidden;
     padding:120px 0 90px;
-  }
-  .hero::before{
-    content:"";
-    position:absolute; inset:0;
-    background:
-      repeating-linear-gradient(115deg, rgba(217,164,65,0.05) 0 2px, transparent 2px 90px),
-      repeating-linear-gradient(-25deg, rgba(47,82,51,0.12) 0 2px, transparent 2px 120px);
-    pointer-events:none;
   }
   .hero-inner{position:relative; z-index:1; max-width:760px;}
   .hero-tag{
@@ -195,7 +216,7 @@
     background:rgba(255,255,255,0.1);
     border:1px solid rgba(255,255,255,0.1);
   }
-  .stat{background:var(--dark); padding:22px 20px;}
+  .stat{background:rgba(23, 28, 24, 0.85); padding:22px 20px;}
   .stat .num{font-family:'Barlow Condensed',sans-serif; font-size:34px; font-weight:700; color:var(--light);}
   .stat .num span{color:var(--amber);}
   .stat .label{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:#8B958E; margin-top:4px;}
@@ -207,15 +228,15 @@
   .intro-copy p{color:var(--ink-soft); font-size:16px; margin-bottom:16px; max-width:560px;}
 
   /* ABOUT */
-  .about{background:var(--bg-panel);}
+  .about{background-color:var(--bg-panel);}
   .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:70px;}
   .about h2{font-size:38px; margin-bottom:20px;}
   .about-copy p{color:var(--ink-soft); margin-bottom:16px;}
   .mv-cards{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); margin-top:20px;}
-  .mv-card{background:var(--bg-panel); padding:26px;}
+  .mv-card{background:rgba(227, 229, 220, 0.9); padding:26px;}
   .mv-card .eyebrow{margin-bottom:10px;}
   .founder-note{
-    margin-top:28px; padding:24px; border-left:2px solid var(--amber); background:var(--bg);
+    margin-top:28px; padding:24px; border-left:2px solid var(--amber); background:rgba(237, 238, 232, 0.9);
   }
   .founder-note p{font-style:italic; color:var(--ink-soft); font-size:15px; margin-bottom:12px;}
   .founder-note .who{font-family:'IBM Plex Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; color:var(--ink);}
@@ -245,7 +266,7 @@
   .ind-item:hover{border-color:var(--amber); background:rgba(217,164,65,0.06);}
   .ind-item span{color:#7C877F;}
 
-  /* MATERIALS - signature element: sorting-bin labels */
+  /* MATERIALS */
   .materials .section-head p{max-width:640px;}
   .bins{display:grid; grid-template-columns:repeat(6,1fr); gap:12px; margin-top:10px;}
   .bin{
@@ -257,7 +278,7 @@
   .bin .name{font-size:12px; color:var(--ink-soft); margin-top:6px; line-height:1.3;}
   .materials-note{margin-top:22px; font-size:13px; color:var(--steel);}
 
-  /* HOW IT WORKS - legit numbered sequence */
+  /* HOW IT WORKS */
   .how{background:var(--bg-panel);}
   .steps{display:grid; grid-template-columns:repeat(6,1fr); gap:0; position:relative; margin-top:10px;}
   .step{padding:26px 18px 0; border-top:1px solid var(--line); position:relative;}
@@ -272,17 +293,14 @@
   .why-item p{font-size:14px; color:var(--ink-soft);}
 
   /* IMPACT */
-  .impact{background:var(--green-deep); color:var(--light);}
+  .impact{background-color:var(--green-deep); color:var(--light);}
   .impact .section-head h2{color:var(--light);}
   .impact .section-head p{color:#C7D2C8;}
   .impact .eyebrow{color:var(--amber);}
   .impact-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(255,255,255,0.14); border:1px solid rgba(255,255,255,0.14);}
-  .impact-stat{background:var(--green-deep); padding:34px 26px;}
-  .impact-stat .num{font-family:'Barlow Condensed',sans-serif; font-size:46px; font-weight:700;}
-  .impact-stat .num.metric{font-size:27px; line-height:1.1; color:var(--light);}
-  .impact-stat .num sup{font-family:'IBM Plex Mono',monospace; font-size:14px; color:var(--amber); top:-18px; position:relative;}
+  .impact-stat{background:rgba(32, 58, 36, 0.85); padding:34px 26px;}
+  .impact-stat .num{font-family:'Barlow Condensed',sans-serif; font-size:28px; font-weight:700; color:var(--amber);}
   .impact-stat .label{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:#9DB09E; margin-top:8px;}
-  .impact-note{margin-top:24px; font-size:12.5px; color:#9DB09E;}
 
   /* PROJECTS */
   .projects-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:20px;}
@@ -299,16 +317,6 @@
     display:none; align-items:center; justify-content:center; width:100%; height:100%;
     font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--steel); text-align:center; padding:10px;
   }
-
-  /* TESTIMONIALS */
-  .testimonials{background:var(--dark); color:var(--light);}
-  .testimonials .section-head h2{color:var(--light);}
-  .testimonials .eyebrow{color:var(--amber);}
-  .t-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.1);}
-  .t-card{background:var(--dark); padding:28px;}
-  .t-card p{font-size:14.5px; color:#C8CDC4; margin-bottom:18px; font-style:italic;}
-  .t-card .who{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--amber);}
-  .t-card .role{font-size:12px; color:#7C877F; margin-top:2px;}
 
   /* FAQ */
   .faq-item{border-bottom:1px solid var(--line);}
@@ -340,7 +348,6 @@
   input:focus, select:focus, textarea:focus{outline:2px solid var(--green); outline-offset:1px; border-color:var(--green);}
   textarea{resize:vertical; min-height:90px;}
   form .btn{width:100%; justify-content:center; margin-top:6px;}
-  .form-note{font-size:12px; color:var(--steel); margin-top:12px;}
 
   /* FOOTER */
   footer{background:var(--dark); color:#B7BEB4; padding:64px 0 28px;}
@@ -381,7 +388,6 @@
     .impact-grid{grid-template-columns:1fr 1fr;}
     .projects-grid{grid-template-columns:1fr;}
     .gallery-grid{grid-template-columns:repeat(3,1fr);}
-    .t-grid{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr 1fr; gap:32px;}
     .form-row{grid-template-columns:1fr;}
   }
@@ -396,43 +402,6 @@
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
     *{transition:none !important;}
-  }
-
-  .bg-overlay-section {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 1;
-  }
-
-  .bg-overlay-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(20, 25, 21, 0.82);
-    z-index: -1;
-    pointer-events: none;
-  }
-
-  .bg-hero {
-    background-image: url('assets/gallery/tech-env.jpg');
-  }
-
-  .bg-about {
-    background-image: url('assets/gallery/plant.jpg');
-  }
-
-  .bg-impact {
-    background-image: url('assets/gallery/processing.jpg');
-  }
-
-  .bg-about > .wrap > div:first-child > h2 {
-    color: var(--light);
-  }
-
-  .bg-about .about-copy > p {
-    color: #C8CDC4;
   }
 </style>
 </head>
@@ -452,7 +421,6 @@
       <a href="#technology">Technology</a>
       <a href="#sustainability">Sustainability</a>
       <a href="#projects">Projects</a>
-      <a href="#careers">Careers</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="navcta">
@@ -469,7 +437,6 @@
     <a href="#technology">Technology</a>
     <a href="#sustainability">Sustainability</a>
     <a href="#projects">Projects</a>
-    <a href="#careers">Careers</a>
     <a href="#contact">Contact</a>
     <a href="#contact" class="btn btn-amber">Request Pickup</a>
   </nav>
@@ -477,12 +444,12 @@
 
 <main id="top">
 
-  <!-- HERO -->
+  <!-- HERO SECTION WITH OVERLAY -->
   <section class="hero tight bg-overlay-section bg-hero" style="padding-top:100px;">
     <div class="wrap hero-inner">
-      <div class="hero-tag">Rixle Private Limited </div>
+      <div class="hero-tag">Rixle Private Limited · Latur, Maharashtra</div>
       <h1>Transforming <em>Waste</em> Into Valuable Resources</h1>
-      <p>A circular economy and recyclable material supply chain company industrial waste collection, sorting, MRF operations, EPR compliance and RDF production across a multi-state network.</p>
+      <p>A circular economy and recyclable material supply chain company — industrial waste collection, sorting, MRF operations, EPR compliance and RDF production across a multi-state network.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-amber">Request Pickup</a>
         <a href="#contact" class="btn btn-line">Contact Us</a>
@@ -509,7 +476,7 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- ABOUT SECTION WITH OVERLAY -->
   <section class="about bg-overlay-section bg-about" id="about">
     <div class="wrap about-grid">
       <div>
@@ -651,21 +618,20 @@
     </div>
   </section>
 
-  <!-- IMPACT -->
-  <section class="impact bg-overlay-section bg-impact">
+  <!-- IMPACT SECTION WITH OVERLAY -->
+  <section class="impact bg-overlay-section bg-impact" id="sustainability">
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">Our Impact</div>
-        <h2>Measured, Not Marketed</h2>
-        <p>Operational capabilities designed for traceable, compliant material recovery.</p>
+        <h2>Measured, Operational Integrity</h2>
+        <p>Built around structured compliance, multi-state material sourcing, and technological transparency.</p>
       </div>
       <div class="impact-grid">
-        <div class="impact-stat"><div class="num metric">Collection Network</div><div class="label">Multi-State Sourcing</div></div>
-        <div class="impact-stat"><div class="num metric">EPR Documentation</div><div class="label">Compliance Support</div></div>
-        <div class="impact-stat"><div class="num metric">Material Processing</div><div class="label">MRF Operations</div></div>
-        <div class="impact-stat"><div class="num metric">AI Sorting</div><div class="label">AIRWSS Enabled</div></div>
+        <div class="impact-stat"><div class="num">MULTI-STATE</div><div class="label">Collection Network</div></div>
+        <div class="impact-stat"><div class="num">FULL TRACE</div><div class="label">EPR Documentation</div></div>
+        <div class="impact-stat"><div class="num">MRF INFRA</div><div class="label">Material Processing</div></div>
+        <div class="impact-stat"><div class="num">AIRWSS</div><div class="label">AI Sorting Enabled</div></div>
       </div>
-      <p class="impact-note">Capabilities are configured around each client&apos;s waste stream, location and compliance requirements.</p>
     </div>
   </section>
 
@@ -680,7 +646,7 @@
         <div class="project"><span class="tag">MIDC · Latur</span><h3>MIDC Waste Management</h3><p>Material Recovery Facility development for industrial waste streams in MIDC Latur.</p></div>
         <div class="project"><span class="tag">Industrial</span><h3>Industrial Recycling</h3><p>Structured collection and recycling programs for manufacturing clients.</p></div>
         <div class="project"><span class="tag">Textile</span><h3>Textile Recycling (TRFS)</h3><p>Recovery and processing infrastructure for textile waste streams.</p></div>
-        <div class="project"><span class="tag">Technology</span><h3>AIRWSS AI Waste Sorting</h3><p>AI-robotic sorting system developed with our technology arm, Avency EcoSol.</p></div>
+        <div class="project" id="technology"><span class="tag">Technology</span><h3>AIRWSS AI Waste Sorting</h3><p>AI-robotic sorting system developed with our technology arm, Avency EcoSol.</p></div>
       </div>
     </div>
   </section>
@@ -691,7 +657,7 @@
       <div class="section-head">
         <div class="eyebrow">On Site</div>
         <h2>Gallery</h2>
-        <p>A view into our collection, sorting and material recovery operations across the supply chain.</p>
+        <p>Operational visual assets from MRF processing facilities and logistics infrastructure.</p>
       </div>
       <div class="gallery-grid">
         <div class="gimg"><img src="assets/gallery/plant.jpg" alt="Plant" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Plant</span></div>
@@ -745,7 +711,6 @@
         <div class="cinfo-row"><div class="k">Email</div><div>info@rixle.co.in</div></div>
         <div class="cinfo-row"><div class="k">Website</div><div>www.rixle.co.in</div></div>
         <div class="cinfo-row"><div class="k">Location</div><div>Latur, Maharashtra, India</div></div>
-        <div class="cinfo-row"><div class="k">Contact No.</div><div>+91 8605 3636 82</div></div>
       </div>
       <form id="inquiryForm" action="mailto:info@rixle.co.in" method="post" enctype="text/plain">
         <div class="form-row">
@@ -850,7 +815,7 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // sticky header: solidify on scroll
+  // sticky header
   const siteHeader = document.querySelector('header');
   const onScroll = () => {
     if (window.scrollY > 40) siteHeader.classList.add('scrolled');
@@ -859,7 +824,7 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // mobile slide-in menu
+  // mobile menu
   const menuToggle = document.getElementById('menuToggle');
   const navScrim = document.getElementById('navScrim');
   const mobileLinks = document.querySelectorAll('.mobile-menu a');
@@ -871,7 +836,7 @@
   navScrim.addEventListener('click', closeMenu);
   mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
 
-  // accessible FAQ accordion
+  // FAQ accordion
   const closeFaqItem = item => {
     const question = item.querySelector('.faq-q');
     const answer = item.querySelector('.faq-a');
@@ -896,7 +861,7 @@
     });
   });
 
-  // email-client submission fallback
+  // email form handler
   document.getElementById('inquiryForm').addEventListener('submit', function(e){
     e.preventDefault();
     if (!this.reportValidity()) return;
@@ -916,7 +881,7 @@
     window.location.href = `mailto:info@rixle.co.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 
-  // privacy and terms modal
+  // modal logic
   const policyModal = document.getElementById('policyModal');
   const modalPanel = policyModal.querySelector('.modal-panel');
   const policyContents = policyModal.querySelectorAll('[data-policy-content]');
