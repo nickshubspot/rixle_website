@@ -76,23 +76,88 @@
   .btn-amber{background:var(--amber); color:var(--dark); border-color:var(--amber); font-weight:600;}
   .btn-amber:hover{background:var(--amber-deep); border-color:var(--amber-deep);}
 
-  /* HEADER */
+  /* HEADER — transparent over hero, solidifies on scroll */
+  body{padding-top:0;}
   header{
-    position:sticky; top:0; z-index:50;
-    background:rgba(237,238,232,0.92);
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--line);
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:transparent;
+    border-bottom:1px solid transparent;
+    transition:background .35s ease, border-color .35s ease, box-shadow .35s ease, padding .3s ease;
   }
-  .nav{display:flex; align-items:center; justify-content:space-between; padding:18px 28px; max-width:1180px; margin:0 auto;}
-  .logo{font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:24px; letter-spacing:0.03em;}
-  .logo span{color:var(--green);}
-  .navlinks{display:flex; gap:28px; font-size:14px; font-weight:500;}
-  .navlinks a{opacity:0.8;}
-  .navlinks a:hover{opacity:1; color:var(--green);}
-  .navcta{display:flex; gap:12px;}
-  .navcta .btn{padding:10px 18px; font-size:12px;}
-  .menu-toggle{display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none;}
-  .menu-toggle span{width:22px; height:2px; background:var(--ink);}
+  header.scrolled{
+    background:rgba(20,25,21,0.86);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border-bottom-color:rgba(255,255,255,0.08);
+    box-shadow:0 8px 24px rgba(0,0,0,0.18);
+  }
+  .nav{
+    position:relative;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:24px 28px; max-width:1280px; margin:0 auto;
+    transition:padding .3s ease;
+  }
+  header.scrolled .nav{padding:14px 28px;}
+  .logo{
+    font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:24px;
+    letter-spacing:0.03em; color:var(--light); position:relative; z-index:2;
+  }
+  .logo span{color:var(--amber);}
+  .navlinks{
+    display:flex; gap:8px; font-size:13.5px; font-weight:500;
+    position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+  }
+  .navlinks a{
+    position:relative; opacity:0.82; color:var(--light);
+    padding:8px 14px; letter-spacing:0.01em;
+    transition:opacity .2s ease;
+  }
+  .navlinks a::after{
+    content:""; position:absolute; left:14px; right:14px; bottom:4px;
+    height:1px; background:var(--amber); transform:scaleX(0); transform-origin:left;
+    transition:transform .25s ease;
+  }
+  .navlinks a:hover{opacity:1;}
+  .navlinks a:hover::after{transform:scaleX(1);}
+  .navcta{display:flex; gap:12px; align-items:center; position:relative; z-index:2;}
+  .navcta .btn{padding:11px 20px; font-size:12px;}
+  .navcta .btn-amber{
+    box-shadow:0 0 0 rgba(217,164,65,0.0);
+    transition:background .15s ease, border-color .15s ease, box-shadow .25s ease, transform .15s ease;
+  }
+  .navcta .btn-amber:hover{box-shadow:0 0 0 4px rgba(217,164,65,0.18); transform:translateY(-1px);}
+
+  .menu-toggle{
+    display:none; flex-direction:column; justify-content:center; gap:5px;
+    width:32px; height:32px; cursor:pointer; background:none; border:none; z-index:110;
+  }
+  .menu-toggle span{width:24px; height:2px; background:var(--light); transition:transform .25s ease, opacity .25s ease;}
+  body.nav-open .menu-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  body.nav-open .menu-toggle span:nth-child(2){opacity:0;}
+  body.nav-open .menu-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  /* Mobile slide-in menu */
+  .mobile-menu{
+    position:fixed; top:0; right:0; height:100vh; width:min(340px,84vw);
+    background:var(--dark-panel); z-index:105;
+    padding:100px 36px 40px;
+    transform:translateX(100%);
+    transition:transform .35s cubic-bezier(.65,0,.35,1);
+    display:flex; flex-direction:column; gap:6px;
+    box-shadow:-20px 0 40px rgba(0,0,0,0.3);
+  }
+  body.nav-open .mobile-menu{transform:translateX(0);}
+  .mobile-menu a{
+    color:var(--light); font-family:'Barlow Condensed',sans-serif; font-size:24px;
+    font-weight:600; text-transform:uppercase; letter-spacing:0.02em;
+    padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .mobile-menu .btn{margin-top:24px;}
+  .nav-scrim{
+    position:fixed; inset:0; background:rgba(10,12,10,0.5); z-index:104;
+    opacity:0; pointer-events:none; transition:opacity .3s ease;
+  }
+  body.nav-open .nav-scrim{opacity:1; pointer-events:auto;}
 
   /* HERO */
   .hero{
@@ -320,18 +385,34 @@
   <div class="nav">
     <a href="#top" class="logo">RIX<span>LE</span></a>
     <nav class="navlinks">
+      <a href="#top">Home</a>
       <a href="#about">About</a>
-      <a href="#services">Services</a>
+      <a href="#services">Solutions</a>
       <a href="#industries">Industries</a>
+      <a href="#technology">Technology</a>
+      <a href="#sustainability">Sustainability</a>
       <a href="#projects">Projects</a>
-      <a href="#faq">FAQ</a>
+      <a href="#careers">Careers</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="navcta">
-      <a href="#contact" class="btn btn-fill">Request Pickup</a>
+      <a href="#contact" class="btn btn-amber">Request Pickup</a>
     </div>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </div>
+  <div class="nav-scrim" id="navScrim"></div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="#top">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Solutions</a>
+    <a href="#industries">Industries</a>
+    <a href="#technology">Technology</a>
+    <a href="#sustainability">Sustainability</a>
+    <a href="#projects">Projects</a>
+    <a href="#careers">Careers</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="btn btn-amber">Request Pickup</a>
+  </nav>
 </header>
 
 <main id="top">
@@ -691,22 +772,26 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // mobile menu (simple toggle showing nav links stacked)
-  const toggle = document.getElementById('menuToggle');
-  const navlinks = document.querySelector('.navlinks');
-  toggle.addEventListener('click', () => {
-    const open = navlinks.style.display === 'flex';
-    navlinks.style.display = open ? 'none' : 'flex';
-    navlinks.style.flexDirection = 'column';
-    navlinks.style.position = 'absolute';
-    navlinks.style.top = '64px';
-    navlinks.style.left = '0';
-    navlinks.style.right = '0';
-    navlinks.style.background = '#EDEEE8';
-    navlinks.style.padding = '20px 28px';
-    navlinks.style.borderBottom = '1px solid #C7CBC0';
-    navlinks.style.gap = '16px';
-  });
+  // sticky header: solidify on scroll
+  const siteHeader = document.querySelector('header');
+  const onScroll = () => {
+    if (window.scrollY > 40) siteHeader.classList.add('scrolled');
+    else siteHeader.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // mobile slide-in menu
+  const menuToggle = document.getElementById('menuToggle');
+  const navScrim = document.getElementById('navScrim');
+  const mobileLinks = document.querySelectorAll('.mobile-menu a');
+
+  const closeMenu = () => document.body.classList.remove('nav-open');
+  const toggleMenu = () => document.body.classList.toggle('nav-open');
+
+  menuToggle.addEventListener('click', toggleMenu);
+  navScrim.addEventListener('click', closeMenu);
+  mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
 
   // FAQ accordion
   document.querySelectorAll('.faq-item').forEach(item => {
