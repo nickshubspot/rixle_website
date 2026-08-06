@@ -4,10 +4,45 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rixle Private Limited | Technology-Driven Circular Economy &amp; Material Supply Chain</title>
-<meta name="description" content="Rixle Private Limited — Industrial waste management, AIRWSS AI-powered robotic waste sorting, plastic &amp; textile recycling, and EPR compliance solutions.">
+<meta name="description" content="Rixle Private Limited — Industrial waste management, AIRWSS AI-powered robotic waste sorting, plastic &amp; textile recycling, and EPR compliance solutions based in Latur, Maharashtra.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.rixle.co.in/">
+
+<!-- Open Graph / Social -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rixle Private Limited">
+<meta property="og:title" content="Rixle Private Limited | Industrial Waste Management &amp; AI-Powered Resource Recovery">
+<meta property="og:description" content="Multi-state industrial waste collection, MRF operations, AIRWSS AI-robotic sorting, and end-to-end EPR compliance.">
+<meta property="og:locale" content="en_IN">
+<meta property="og:url" content="https://www.rixle.co.in/">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Structured data for local business SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Rixle Private Limited",
+  "url": "https://www.rixle.co.in/",
+  "logo": "https://www.rixle.co.in/assets/logo.png",
+  "email": "info@rixle.co.in",
+  "telephone": "+91-8605363682",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "MIDC Industrial Area",
+    "addressLocality": "Latur",
+    "addressRegion": "Maharashtra",
+    "postalCode": "413512",
+    "addressCountry": "IN"
+  },
+  "openingHours": "Mo-Sa 09:00-18:00",
+  "sameAs": []
+}
+</script>
+
 <style>
   :root{
     --bg:#EDEEE8;
@@ -34,7 +69,7 @@
     line-height:1.55;
     -webkit-font-smoothing:antialiased;
   }
-  
+
   /* ACCESSIBILITY FOCUS & SKIP LINKS */
   .skip-link {
     position: absolute; top: -50px; left: 10px;
@@ -57,17 +92,17 @@
   a{color:inherit; text-decoration:none;}
   img{max-width:100%; display:block;}
   .wrap{max-width:1200px; margin:0 auto; padding:0 28px;}
-  
+
   .eyebrow{
     font-family:'IBM Plex Mono',monospace; font-size:12px;
     letter-spacing:0.14em; text-transform:uppercase; color:var(--green);
     display:flex; align-items:center; gap:10px; margin-bottom:14px;
   }
   .eyebrow::before{content:""; width:22px; height:2px; background:var(--amber); display:inline-block;}
-  
+
   section{padding:92px 0; position:relative;}
   section.tight{padding:60px 0;}
-  
+
   .btn{
     display:inline-flex; align-items:center; gap:10px;
     font-family:'IBM Plex Mono',monospace; font-size:13px;
@@ -84,6 +119,9 @@
   .btn-line:hover{background:var(--ink); color:var(--light);}
   .btn-line-light{border-color:rgba(255,255,255,0.3); color:var(--light);}
   .btn-line-light:hover{background:var(--light); color:var(--dark);}
+  .btn[disabled], .btn[aria-disabled="true"]{
+    opacity:0.5; cursor:not-allowed; pointer-events:none;
+  }
 
   /* BACKGROUND TEXTURE OVERLAYS (92-95% OPACITY FOR READABILITY) */
   .bg-overlay-section {
@@ -94,10 +132,10 @@
     content: ""; position: absolute; inset: 0;
     background: rgba(18, 22, 19, 0.94); z-index: -1; pointer-events: none;
   }
-  .bg-hero { background-image: url('assets/gallery/tech-env.jpg'); }
-  .bg-about { background-image: url('assets/gallery/plant.jpg'); }
-  .bg-tech { background-image: url('assets/gallery/processing.jpg'); }
-  .bg-impact { background-image: url('assets/gallery/vehicles.jpg'); }
+  .bg-hero { background-image: url('assets/images/hero-tech-env.jpg'); }
+  .bg-about { background-image: url('assets/images/plant.jpg'); }
+  .bg-tech { background-image: url('assets/images/processing.jpg'); }
+  .bg-impact { background-image: url('assets/images/vehicles.jpg'); }
 
   /* HEADER */
   body{padding-top:0;}
@@ -142,6 +180,7 @@
     background:var(--dark-panel); z-index:105; padding:100px 36px 40px;
     transform:translateX(100%); transition:transform .35s cubic-bezier(.65,0,.35,1);
     display:flex; flex-direction:column; gap:8px; box-shadow:-20px 0 40px rgba(0,0,0,0.4);
+    overflow-y:auto;
   }
   body.nav-open .mobile-menu{transform:translateX(0);}
   .mobile-menu a{
@@ -164,8 +203,9 @@
   .hero h1{font-size:clamp(42px,6.5vw,72px); color:var(--light); margin-bottom:22px; line-height:1.02;}
   .hero h1 em{font-style:normal; color:var(--amber);}
   .hero p{font-size:18px; color:#C8CDC4; max-width:640px; margin-bottom:36px; line-height:1.6;}
-  .hero-actions{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:56px;}
-  
+  .hero-actions{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:56px; align-items:center;}
+  .hero-note{font-family:'IBM Plex Mono',monospace; font-size:11px; color:#8F9A90; width:100%; margin-top:-8px;}
+
   .trust-strip{
     display:flex; gap:24px; flex-wrap:wrap; align-items:center; padding-top:24px;
     border-top:1px solid rgba(255,255,255,0.12);
@@ -181,7 +221,7 @@
   .path-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
   .path-card{
     background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12); padding:32px 28px;
-    display:flex; flex-direction:column; justify-space-between; transition:all .25s ease;
+    display:flex; flex-direction:column; justify-content:space-between; transition:all .25s ease;
   }
   .path-card:hover{border-color:var(--amber); background:rgba(255,255,255,0.07); transform:translateY(-3px);}
   .path-card .icon{font-size:28px; margin-bottom:14px; display:block;}
@@ -241,6 +281,7 @@
   .epr-step{background:var(--bg); padding:24px 18px; text-align:center;}
   .epr-step .idx{font-family:'Barlow Condensed',sans-serif; font-size:28px; font-weight:700; color:var(--green); margin-bottom:8px;}
   .epr-step h4{font-size:15px; text-transform:none; margin-bottom:4px;}
+  .epr-step p{font-size:12px; color:var(--ink-soft);}
 
   /* OUR PROCESS TIMELINE */
   .process-sequence{display:grid; grid-template-columns:repeat(6,1fr); gap:0; border-top:1px solid var(--line); margin-top:40px;}
@@ -273,9 +314,14 @@
   .contact-section{background:var(--bg-panel);}
   .contact-layout{display:grid; grid-template-columns:1fr 1.2fr; gap:60px;}
   .c-info-card{background:var(--bg); border:1px solid var(--line); padding:32px; margin-bottom:20px;}
-  .c-info-row{display:flex; gap:16px; padding:12px 0; border-bottom:1px solid var(--line); font-size:14px;}
+  .c-info-row{display:flex; gap:16px; padding:12px 0; border-bottom:1px solid var(--line); font-size:14px; align-items:center;}
+  .c-info-row:last-child{border-bottom:none;}
   .c-info-row .lbl{font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; color:var(--steel); width:100px; flex-shrink:0;}
-  
+  .c-info-row a{color:var(--green); font-weight:600;}
+  .c-info-row a:hover{text-decoration:underline;}
+  .c-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:8px;}
+  .c-actions .btn{padding:10px 16px; font-size:11.5px;}
+
   form{background:var(--bg); border:1px solid var(--line); padding:36px;}
   .form-row{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;}
   .field{display:flex; flex-direction:column; gap:6px;}
@@ -285,17 +331,25 @@
     border:1px solid var(--line); background:var(--bg); padding:12px 14px; font-family:'Inter',sans-serif; font-size:14px; color:var(--ink); border-radius:var(--radius);
   }
   textarea{resize:vertical; min-height:100px;}
-  .map-container{width:100%; height:220px; border:1px solid var(--line); margin-top:20px; background:#e0e0e0;}
+  .map-container{width:100%; height:220px; border:1px solid var(--line); margin-top:20px; background:#e0e0e0; position:relative;}
+  .map-note{position:absolute; bottom:8px; left:8px; background:rgba(243,242,234,0.9); font-family:'IBM Plex Mono',monospace; font-size:10px; padding:4px 8px; color:var(--ink-soft); border:1px solid var(--line);}
+  .quick-form{margin-bottom:28px;}
+  .quick-form h3{font-size:20px; text-transform:none; margin-bottom:6px;}
+  .quick-form .sub{font-size:13px; color:var(--ink-soft); margin-bottom:20px;}
+  .hp-field{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;}
 
   /* FLOATING BUTTONS */
   .floating-actions{position:fixed; bottom:24px; right:24px; z-index:99; display:flex; flex-direction:column; gap:12px;}
   .float-btn{
     width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center;
-    color:var(--light); font-weight:bold; box-shadow:0 6px 16px rgba(0,0,0,0.3); transition:transform .2s ease;
+    color:var(--light); font-weight:bold; box-shadow:0 6px 16px rgba(0,0,0,0.3); transition:transform .2s ease, opacity .25s ease, visibility .25s ease;
+    font-size:13px; border:none; cursor:pointer;
   }
   .float-btn:hover{transform:scale(1.08);}
   .float-wa{background:#25D366;}
   .float-call{background:var(--green);}
+  .float-top{background:var(--dark); opacity:0; visibility:hidden; pointer-events:none;}
+  .float-top.visible{opacity:1; visibility:visible; pointer-events:auto;}
 
   /* FOOTER */
   footer{background:var(--dark); color:#B7BEB4; padding:80px 0 32px;}
@@ -306,6 +360,7 @@
   .footer-col a{display:block; font-size:14px; margin-bottom:10px; color:#C8CDC4;}
   .footer-col a:hover{color:var(--amber);}
   .footer-bottom{display:flex; justify-content:space-between; align-items:center; padding-top:28px; font-size:12.5px; color:#7C877F; flex-wrap:wrap; gap:12px;}
+  .footer-legal{font-size:11.5px; color:#657069; margin-top:6px;}
 
   /* POLICY MODAL */
   .modal[hidden]{display:none;}
@@ -335,16 +390,45 @@
     .form-row{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr;}
   }
+
+  @media(prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition-duration:0.01ms !important; animation-duration:0.01ms !important;}
+  }
 </style>
 </head>
 <body>
+
+<!--
+=========================================================
+ASSETS REQUIRED (not included in this build — add before deploy)
+=========================================================
+/assets/logo.png                    — header/footer logo (text fallback active until added)
+/assets/images/hero-tech-env.jpg    — hero background (industrial/tech environment)
+/assets/images/plant.jpg            — MRF plant / facility photo
+/assets/images/processing.jpg       — sorting / processing line photo
+/assets/images/vehicles.jpg         — collection fleet photo
+/assets/images/team.jpg             — field/operations team photo
+/assets/images/before-after.jpg     — sorted material purity photo
+/assets/docs/Rixle_Company_Profile.pdf — corporate profile PDF (button disabled until available)
+All <img> tags below fail gracefully to a labelled text placeholder via onerror.
+=========================================================
+FORM SETUP REQUIRED BEFORE GO-LIVE
+=========================================================
+Both forms below post to Formspree. Replace the placeholder endpoint IDs:
+  - Quick Pickup Request form action: https://formspree.io/f/REPLACE_WITH_PICKUP_FORM_ID
+  - Detailed Service Inquiry form action: https://formspree.io/f/REPLACE_WITH_INQUIRY_FORM_ID
+Create both forms at https://formspree.io and swap in the real IDs.
+=========================================================
+-->
 
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- FLOATING ACTION BUTTONS -->
 <div class="floating-actions">
-  <a href="https://wa.me/919000000000?text=Hello%20Rixle%20Team,%20I%20have%20a%20waste%20management%20inquiry." class="float-btn float-wa" aria-label="Contact us on WhatsApp" target="_blank" rel="noopener">WA</a>
-  <a href="tel:+919000000000" class="float-btn float-call" aria-label="Call Rixle directly">Call</a>
+  <a href="https://wa.me/918605363682?text=Hello%20Rixle%20Team%2C%20I%20would%20like%20to%20enquire%20about%20your%20waste%20management%20and%20recycling%20services." class="float-btn float-wa" aria-label="Contact Rixle on WhatsApp" target="_blank" rel="noopener">WA</a>
+  <a href="tel:+918605363682" class="float-btn float-call" aria-label="Call Rixle directly">Call</a>
+  <button type="button" class="float-btn float-top" id="backToTop" aria-label="Back to top">↑</button>
 </div>
 
 <header>
@@ -363,7 +447,7 @@
       <a href="#contact">Contact</a>
     </nav>
     <div class="navcta">
-      <a href="#contact" class="btn btn-amber">Request Pickup</a>
+      <a href="#pickup-request" class="btn btn-amber">Request Pickup</a>
     </div>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
   </div>
@@ -376,7 +460,7 @@
     <a href="#materials">Materials</a>
     <a href="#technology">Technology</a>
     <a href="#contact">Contact</a>
-    <a href="#contact" class="btn btn-amber">Request Pickup</a>
+    <a href="#pickup-request" class="btn btn-amber">Request Pickup</a>
   </nav>
 </header>
 
@@ -389,8 +473,9 @@
       <h1>Industrial Waste Management &amp; <em>AI-Powered</em> Resource Recovery</h1>
       <p>A technology-driven circular economy company operating multi-state collection networks, material recovery facilities (MRF), and Extended Producer Responsibility (EPR) compliance frameworks.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-amber">Request Pickup</a>
-        <a href="assets/docs/Rixle_Company_Profile.pdf" class="btn btn-line-light" download>Download Corporate Profile ↓</a>
+        <a href="#pickup-request" class="btn btn-amber">Request Pickup</a>
+        <button type="button" class="btn btn-line-light" disabled aria-disabled="true" title="Corporate profile PDF is being finalized">Company Profile (Coming Soon)</button>
+        <span class="hero-note">Prefer to talk? Call <a href="tel:+918605363682" style="color:var(--amber);">+91 86053 63682</a> or <a href="https://wa.me/918605363682" style="color:var(--amber);" target="_blank" rel="noopener">WhatsApp us</a>.</span>
       </div>
       <div class="trust-strip">
         <div class="trust-item">Technology Driven</div>
@@ -417,7 +502,7 @@
               <li>Material Recovery Audit</li>
             </ul>
           </div>
-          <a href="#contact" class="btn btn-amber" style="width:100%;">Schedule Pickup →</a>
+          <a href="#pickup-request" class="btn btn-amber" style="width:100%;">Schedule Pickup →</a>
         </div>
 
         <div class="path-card">
@@ -431,7 +516,7 @@
               <li>Material Trading Terms</li>
             </ul>
           </div>
-          <a href="materials.html" class="btn btn-line-light" style="width:100%;">View Feedstock Catalog →</a>
+          <a href="#materials" class="btn btn-line-light" style="width:100%;">View Feedstock Catalog →</a>
         </div>
 
         <div class="path-card">
@@ -555,7 +640,7 @@
       <div class="section-head">
         <div class="eyebrow">Feedstock Catalog</div>
         <h2>Featured Materials Accepted</h2>
-        <p style="color:var(--ink-soft); margin-top:8px;">Quality specifications and technical purity grades available on our dedicated materials portal.</p>
+        <p style="color:var(--ink-soft); margin-top:8px;">Quality specifications and technical purity grades confirmed at the time of quotation.</p>
       </div>
       <div class="materials-list">
         <div class="mat-item"><h3>PP Woven Bags</h3><p>Industrial cement, grain, and chemical packaging sacks.</p></div>
@@ -568,7 +653,7 @@
         <div class="mat-item"><h3>Mixed Plastics</h3><p>Laminated flexible packaging routed for RDF production.</p></div>
       </div>
       <div style="margin-top:28px; text-align:center;">
-        <a href="materials.html" class="btn btn-line">View Technical Specifications &amp; Quality Parameters →</a>
+        <a href="#contact" class="btn btn-line">Request Technical Specifications &amp; Quality Parameters →</a>
       </div>
     </div>
   </section>
@@ -582,7 +667,7 @@
           <h2 style="color:var(--light); font-size:42px;">AIRWSS — AI-Assisted Waste Sorting</h2>
           <p style="color:#C8CDC4; margin-top:16px; line-height:1.6;">Developed with our technology arm, <strong>Avency EcoSol</strong>, AIRWSS replaces manual sorting bottlenecks with computer vision and automated pneumatic separation.</p>
           <div style="margin-top:28px;">
-            <a href="airwss.html" class="btn btn-amber">Learn More About AIRWSS →</a>
+            <a href="#contact" class="btn btn-amber">Talk to Us About AIRWSS →</a>
           </div>
         </div>
         <div class="tech-features">
@@ -616,12 +701,12 @@
         <p style="color:var(--ink-soft); margin-top:8px;">A transparent, audit-ready workflow for Brand Owners and Producers under Plastic Waste Management rules.</p>
       </div>
       <div class="epr-flow">
-        <div class="epr-step"><div class="idx">01</div><h4>Waste Collection</h4></div>
-        <div class="epr-step"><div class="idx">02</div><h4>Verification</h4></div>
-        <div class="epr-step"><div class="idx">03</div><h4>Authorized Recycler</h4></div>
-        <div class="epr-step"><div class="idx">04</div><h4>Documentation</h4></div>
-        <div class="epr-step"><div class="idx">05</div><h4>EPR Credits</h4></div>
-        <div class="epr-step"><div class="idx">06</div><h4>Compliance Reports</h4></div>
+        <div class="epr-step"><div class="idx">01</div><h4>Waste Collection</h4><p>Segregated intake from source.</p></div>
+        <div class="epr-step"><div class="idx">02</div><h4>Verification</h4><p>Volume &amp; category checks.</p></div>
+        <div class="epr-step"><div class="idx">03</div><h4>Authorized Recycler</h4><p>Routed to licensed partners.</p></div>
+        <div class="epr-step"><div class="idx">04</div><h4>Documentation</h4><p>Chain-of-custody records.</p></div>
+        <div class="epr-step"><div class="idx">05</div><h4>EPR Credits</h4><p>Credit generation on portal.</p></div>
+        <div class="epr-step"><div class="idx">06</div><h4>Compliance Reports</h4><p>Audit-ready reporting pack.</p></div>
       </div>
     </div>
   </section>
@@ -679,11 +764,11 @@
         <h2 style="color:var(--light);">Operational Infrastructure</h2>
       </div>
       <div class="gallery-grid">
-        <div class="gimg"><img src="assets/gallery/plant.jpg" alt="Rixle Processing Facility" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Plant Infrastructure</span></div>
-        <div class="gimg"><img src="assets/gallery/vehicles.jpg" alt="Collection Fleet Vehicles" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Logistics Fleet</span></div>
-        <div class="gimg"><img src="assets/gallery/processing.jpg" alt="Material Sorting Operations" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Waste Sorting</span></div>
-        <div class="gimg"><img src="assets/gallery/team.jpg" alt="Operational Field Team" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Operations Team</span></div>
-        <div class="gimg"><img src="assets/gallery/before-after.jpg" alt="Sorted Material Quality" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Purity Output</span></div>
+        <div class="gimg"><img src="assets/images/plant.jpg" alt="Rixle Processing Facility" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Plant Infrastructure</span></div>
+        <div class="gimg"><img src="assets/images/vehicles.jpg" alt="Collection Fleet Vehicles" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Logistics Fleet</span></div>
+        <div class="gimg"><img src="assets/images/processing.jpg" alt="Material Sorting Operations" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Waste Sorting</span></div>
+        <div class="gimg"><img src="assets/images/team.jpg" alt="Operational Field Team" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Operations Team</span></div>
+        <div class="gimg"><img src="assets/images/before-after.jpg" alt="Sorted Material Quality" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="gimg-fallback">Purity Output</span></div>
       </div>
     </div>
   </section>
@@ -697,19 +782,19 @@
       </div>
       <ul class="faq-list">
         <li class="faq-item">
-          <button class="faq-q">How do I schedule a waste pickup? <span class="plus">+</span></button>
-          <div class="faq-a"><p>Submit the inquiry form below with your facility location, waste stream type, and estimated quantity. Our commercial team will confirm a collection schedule within 24 hours.</p></div>
+          <button class="faq-q" aria-expanded="false">How do I schedule a waste pickup? <span class="plus">+</span></button>
+          <div class="faq-a"><p>Submit the Quick Pickup Request form below with your facility location, waste stream type, and estimated quantity. Our commercial team will confirm a collection schedule within 24 hours.</p></div>
         </li>
         <li class="faq-item">
-          <button class="faq-q">What materials does Rixle accept? <span class="plus">+</span></button>
+          <button class="faq-q" aria-expanded="false">What materials does Rixle accept? <span class="plus">+</span></button>
           <div class="faq-a"><p>We accept PP woven bags, jumbo bags, PET bottles, HDPE drums, LD film, textile waste, cardboard, and select mixed plastic streams.</p></div>
         </li>
         <li class="faq-item">
-          <button class="faq-q">Do you provide EPR compliance certificates? <span class="plus">+</span></button>
+          <button class="faq-q" aria-expanded="false">Do you provide EPR compliance certificates? <span class="plus">+</span></button>
           <div class="faq-a"><p>Yes, we provide end-to-end Extended Producer Responsibility documentation and credit transfer support fully compliant with SPCB/CPCB guidelines.</p></div>
         </li>
         <li class="faq-item">
-          <button class="faq-q">What regions do you service? <span class="plus">+</span></button>
+          <button class="faq-q" aria-expanded="false">What regions do you service? <span class="plus">+</span></button>
           <div class="faq-a"><p>Rixle operates a multi-state collection and logistics network across Maharashtra and neighboring regional industrial hubs.</p></div>
         </li>
       </ul>
@@ -723,70 +808,119 @@
         <div class="eyebrow">Get In Touch</div>
         <h2>Connect With Our Commercial Team</h2>
         <p style="color:var(--ink-soft); margin-top:10px; margin-bottom:24px;">Submit your waste management requirements or scheduling requests. Our team responds within 24 business hours.</p>
-        
+
         <div class="c-info-card">
-          <div class="c-info-row"><div class="lbl">Email</div><div>info@rixle.co.in</div></div>
+          <div class="c-info-row"><div class="lbl">Phone</div><div><a href="tel:+918605363682">+91 86053 63682</a></div></div>
+          <div class="c-info-row"><div class="lbl">WhatsApp</div><div><a href="https://wa.me/918605363682?text=Hello%20Rixle%20Team%2C%20I%20would%20like%20to%20enquire%20about%20your%20waste%20management%20and%20recycling%20services." target="_blank" rel="noopener">Message us on WhatsApp</a></div></div>
+          <div class="c-info-row"><div class="lbl">Email</div><div><a href="mailto:info@rixle.co.in">info@rixle.co.in</a> &nbsp;/&nbsp; <a href="mailto:contact@rixle.co.in">contact@rixle.co.in</a></div></div>
           <div class="c-info-row"><div class="lbl">Website</div><div>www.rixle.co.in</div></div>
-          <div class="c-info-row"><div class="lbl">Headquarters</div><div>MIDC Industrial Area, Latur, Maharashtra 413512</div></div>
+          <div class="c-info-row"><div class="lbl">Office</div><div>MIDC Industrial Area, Latur, Maharashtra 413512</div></div>
           <div class="c-info-row"><div class="lbl">Hours</div><div>Monday – Saturday: 09:00 – 18:00 IST</div></div>
+          <div class="c-actions">
+            <a href="tel:+918605363682" class="btn btn-fill">Call Now</a>
+            <a href="https://wa.me/918605363682?text=Hello%20Rixle%20Team%2C%20I%20would%20like%20to%20enquire%20about%20your%20waste%20management%20and%20recycling%20services." class="btn btn-line" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
         </div>
 
         <div class="map-container">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60503.25680108398!2d76.54133405!3d18.4087934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcf83bd71131107%3A0x7000d23f7988360!2sLatur%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60503.25680108398!2d76.54133405!3d18.4087934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcf83bd71131107%3A0x7000d23f7988360!2sLatur%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map showing Latur, Maharashtra area"></iframe>
+          <span class="map-note">Area view shown — exact facility pin: Data Required</span>
         </div>
       </div>
 
-      <form id="inquiryForm" action="mailto:info@rixle.co.in" method="post" enctype="text/plain">
-        <h3 style="font-size:22px; margin-bottom:20px; text-transform:none;">Service Inquiry &amp; Pickup Request</h3>
-        
-        <div class="form-row">
-          <div class="field">
-            <label for="inquiryType">Inquiry Type *</label>
-            <select id="inquiryType" name="inquiry_type" required>
-              <option value="Pickup Request">Pickup Request</option>
-              <option value="EPR Compliance">EPR Compliance Inquiry</option>
-              <option value="Feedstock Purchase">Feedstock / Material Purchase</option>
-              <option value="AIRWSS Tech Integration">AIRWSS Technology Integration</option>
-              <option value="General Inquiry">General Enterprise Inquiry</option>
-            </select>
+      <div>
+        <!-- QUICK PICKUP REQUEST FORM (Formspree-ready) -->
+        <form id="pickupForm" class="quick-form" action="https://formspree.io/f/REPLACE_WITH_PICKUP_FORM_ID" method="POST">
+          <h3 id="pickup-request">Quick Pickup Request</h3>
+          <p class="sub">Fastest way to get a collection scheduled — our team calls back within 24 hours.</p>
+          <input type="hidden" name="_subject" value="New Pickup Request — Rixle Website">
+          <input type="hidden" name="form_name" value="Quick Pickup Request">
+          <label class="hp-field" for="pickup_hp">Leave this field empty</label>
+          <input class="hp-field" type="text" id="pickup_hp" name="_gotcha" tabindex="-1" autocomplete="off">
+
+          <div class="form-row">
+            <div class="field"><label for="p_name">Full Name *</label><input type="text" id="p_name" name="name" required></div>
+            <div class="field"><label for="p_phone">Phone Number *</label><input type="tel" id="p_phone" name="phone" required></div>
           </div>
-          <div class="field"><label for="name">Full Name *</label><input type="text" id="name" name="name" required></div>
-        </div>
-
-        <div class="form-row">
-          <div class="field"><label for="company">Company Name</label><input type="text" id="company" name="company"></div>
-          <div class="field"><label for="phone">Phone Number *</label><input type="tel" id="phone" name="phone" required></div>
-        </div>
-
-        <div class="form-row">
-          <div class="field"><label for="email">Corporate Email *</label><input type="email" id="email" name="email" required></div>
-          <div class="field">
-            <label for="material">Material Category *</label>
-            <select id="material" name="material" required>
-              <option value="" disabled selected>Select Material</option>
-              <option value="PP Woven Bags">PP Woven Bags / Jumbo Bags</option>
-              <option value="LD Film">Plastic Film / LDPE</option>
-              <option value="PET Bottles">PET Bottles</option>
-              <option value="HDPE Drums">HDPE Drums / Containers</option>
-              <option value="Textile Scrap">Textile Waste Scrap</option>
-              <option value="Cardboard">Corrugated Cardboard</option>
-              <option value="Mixed Plastics">Mixed Plastics / Other</option>
-            </select>
+          <div class="form-row">
+            <div class="field"><label for="p_company">Company Name</label><input type="text" id="p_company" name="company"></div>
+            <div class="field">
+              <label for="p_material">Material Category *</label>
+              <select id="p_material" name="material" required>
+                <option value="" disabled selected>Select Material</option>
+                <option value="PP Woven Bags">PP Woven Bags / Jumbo Bags</option>
+                <option value="LD Film">Plastic Film / LDPE</option>
+                <option value="PET Bottles">PET Bottles</option>
+                <option value="HDPE Drums">HDPE Drums / Containers</option>
+                <option value="Textile Scrap">Textile Waste Scrap</option>
+                <option value="Cardboard">Corrugated Cardboard</option>
+                <option value="Mixed Plastics">Mixed Plastics / Other</option>
+              </select>
+            </div>
           </div>
-        </div>
+          <div class="form-row">
+            <div class="field full"><label for="p_location">Facility Location *</label><input type="text" id="p_location" name="location" placeholder="City, State" required></div>
+          </div>
+          <button type="submit" class="btn btn-amber" style="width:100%;">Request Pickup →</button>
+        </form>
 
-        <div class="form-row">
-          <div class="field"><label for="tonnage">Est. Monthly Tonnage</label><input type="text" id="tonnage" name="tonnage" placeholder="e.g. 5 Tons/Month"></div>
-          <div class="field"><label for="location">Facility Location *</label><input type="text" id="location" name="location" placeholder="City, State" required></div>
-        </div>
+        <!-- DETAILED SERVICE INQUIRY FORM (Formspree-ready) -->
+        <form id="inquiryForm" action="https://formspree.io/f/REPLACE_WITH_INQUIRY_FORM_ID" method="POST">
+          <h3 style="font-size:22px; margin-bottom:6px; text-transform:none;">Detailed Service Inquiry</h3>
+          <p class="sub" style="font-size:13px; color:var(--ink-soft); margin-bottom:20px;">For EPR compliance, feedstock purchase, AIRWSS technology integration, or general enterprise inquiries.</p>
+          <input type="hidden" name="_subject" value="New Service Inquiry — Rixle Website">
+          <label class="hp-field" for="inquiry_hp">Leave this field empty</label>
+          <input class="hp-field" type="text" id="inquiry_hp" name="_gotcha" tabindex="-1" autocomplete="off">
 
-        <div class="form-row">
-          <div class="field full"><label for="message">Specific Requirements</label><textarea id="message" name="message" placeholder="Include details regarding material state, pickup frequency, or EPR requirements..."></textarea></div>
-        </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="inquiryType">Inquiry Type *</label>
+              <select id="inquiryType" name="inquiry_type" required>
+                <option value="EPR Compliance">EPR Compliance Inquiry</option>
+                <option value="Feedstock Purchase">Feedstock / Material Purchase</option>
+                <option value="AIRWSS Tech Integration">AIRWSS Technology Integration</option>
+                <option value="General Inquiry">General Enterprise Inquiry</option>
+              </select>
+            </div>
+            <div class="field"><label for="name">Full Name *</label><input type="text" id="name" name="name" required></div>
+          </div>
 
-        <button type="submit" class="btn btn-fill" style="width:100%;">Submit Inquiry</button>
-        <p style="font-size:11px; color:var(--steel); margin-top:12px; text-align:center;">Submitting opens an email addressed directly to info@rixle.co.in.</p>
-      </form>
+          <div class="form-row">
+            <div class="field"><label for="company">Company Name</label><input type="text" id="company" name="company"></div>
+            <div class="field"><label for="phone">Phone Number *</label><input type="tel" id="phone" name="phone" required></div>
+          </div>
+
+          <div class="form-row">
+            <div class="field"><label for="email">Corporate Email *</label><input type="email" id="email" name="email" required></div>
+            <div class="field">
+              <label for="material">Material Category</label>
+              <select id="material" name="material">
+                <option value="" disabled selected>Select Material</option>
+                <option value="PP Woven Bags">PP Woven Bags / Jumbo Bags</option>
+                <option value="LD Film">Plastic Film / LDPE</option>
+                <option value="PET Bottles">PET Bottles</option>
+                <option value="HDPE Drums">HDPE Drums / Containers</option>
+                <option value="Textile Scrap">Textile Waste Scrap</option>
+                <option value="Cardboard">Corrugated Cardboard</option>
+                <option value="Mixed Plastics">Mixed Plastics / Other</option>
+                <option value="Not Applicable">Not Applicable</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field"><label for="tonnage">Est. Monthly Tonnage</label><input type="text" id="tonnage" name="tonnage" placeholder="e.g. 5 Tons/Month"></div>
+            <div class="field"><label for="location">Facility Location *</label><input type="text" id="location" name="location" placeholder="City, State" required></div>
+          </div>
+
+          <div class="form-row">
+            <div class="field full"><label for="message">Specific Requirements</label><textarea id="message" name="message" placeholder="Include details regarding material state, pickup frequency, or EPR requirements..."></textarea></div>
+          </div>
+
+          <button type="submit" class="btn btn-fill" style="width:100%;">Submit Inquiry</button>
+          <p style="font-size:11px; color:var(--steel); margin-top:12px; text-align:center;">We reply to every inquiry within 24 business hours.</p>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -799,8 +933,9 @@
       <div>
         <div class="footer-logo">RIX<span style="color:var(--amber);">LE</span></div>
         <p style="font-size:13.5px; line-height:1.6; max-width:280px;">Rixle Private Limited is a technology-driven circular economy company specializing in industrial waste collection, material recovery, AIRWSS AI sorting, and EPR compliance.</p>
+        <p class="footer-legal">CIN: U37200PN2021PTC206358<br>GSTIN: 27AALCR4657C1Z7</p>
       </div>
-      
+
       <div class="footer-col">
         <h3>Quick Links</h3>
         <ul>
@@ -826,26 +961,27 @@
       <div class="footer-col">
         <h3>Materials</h3>
         <ul>
-          <li><a href="materials.html">PP Woven Bags</a></li>
-          <li><a href="materials.html">Jumbo Bags (FIBC)</a></li>
-          <li><a href="materials.html">PET Bottles</a></li>
-          <li><a href="materials.html">HDPE Drums</a></li>
-          <li><a href="materials.html">Textile Scrap</a></li>
+          <li><a href="#materials">PP Woven Bags</a></li>
+          <li><a href="#materials">Jumbo Bags (FIBC)</a></li>
+          <li><a href="#materials">PET Bottles</a></li>
+          <li><a href="#materials">HDPE Drums</a></li>
+          <li><a href="#materials">Textile Scrap</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
         <h3>Contact</h3>
         <p style="font-size:13.5px; margin-bottom:8px;">MIDC Industrial Area, Latur, Maharashtra</p>
+        <a href="tel:+918605363682">+91 86053 63682</a>
         <a href="mailto:info@rixle.co.in">info@rixle.co.in</a>
-        <a href="https://rixle.co.in">www.rixle.co.in</a>
+        <a href="https://wa.me/918605363682" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
 
     <div class="footer-bottom">
       <div>© <span id="year"></span> Rixle Private Limited. All rights reserved.</div>
       <div>
-        <a href="#privacy-policy" data-policy="privacy">Privacy Policy</a> &nbsp;·&nbsp; 
+        <a href="#privacy-policy" data-policy="privacy">Privacy Policy</a> &nbsp;·&nbsp;
         <a href="#terms-conditions" data-policy="terms">Terms &amp; Conditions</a>
       </div>
     </div>
@@ -873,14 +1009,22 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // STICKY HEADER
+  // STICKY HEADER + BACK TO TOP VISIBILITY
   const siteHeader = document.querySelector('header');
+  const backToTop = document.getElementById('backToTop');
   const onScroll = () => {
     if (window.scrollY > 40) siteHeader.classList.add('scrolled');
     else siteHeader.classList.remove('scrolled');
+
+    if (window.scrollY > 500) backToTop.classList.add('visible');
+    else backToTop.classList.remove('visible');
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 
   // ACCESSIBLE NAVIGATION
   const menuToggle = document.getElementById('menuToggle');
@@ -910,32 +1054,14 @@
       document.querySelectorAll('.faq-item.open').forEach(o => {
         o.classList.remove('open');
         o.querySelector('.faq-a').style.maxHeight = null;
+        o.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
       });
       if(!isOpen){
         item.classList.add('open');
         a.style.maxHeight = a.scrollHeight + 'px';
+        q.setAttribute('aria-expanded', 'true');
       }
     });
-  });
-
-  // FORM SUBMISSION HANDLER
-  document.getElementById('inquiryForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    const data = new FormData(this);
-    const subject = `[Rixle B2B Inquiry] ${data.get('inquiry_type')} - ${data.get('company') || data.get('name')}`;
-    const body = [
-      `Inquiry Type: ${data.get('inquiry_type')}`,
-      `Name: ${data.get('name')}`,
-      `Company: ${data.get('company') || 'N/A'}`,
-      `Phone: ${data.get('phone')}`,
-      `Email: ${data.get('email')}`,
-      `Material Category: ${data.get('material')}`,
-      `Est. Monthly Tonnage: ${data.get('tonnage') || 'Unspecified'}`,
-      `Facility Location: ${data.get('location')}`,
-      '',
-      `Requirements: ${data.get('message') || 'None provided'}`
-    ].join('\n');
-    window.location.href = `mailto:info@rixle.co.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 
   // MODAL HANDLER
