@@ -62,9 +62,7 @@ section { padding: 85px 0; position: relative; }
 .light-text { color: var(--light) !important; }
 .light-subtext { color: #C8CDC4 !important; }
 
-/* --------------------------------------------------------------------------
-   HERO VECTOR BACKDROP & ANIMATIONS
-   -------------------------------------------------------------------------- */
+/* HERO VECTOR BACKDROP */
 .bg-overlay-section {
   position: relative;
   background-color: var(--dark);
@@ -96,6 +94,16 @@ section { padding: 85px 0; position: relative; }
 }
 
 .hero-inner { position: relative; z-index: 1; max-width: 880px; }
+
+.hero-actions {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
 
 .hero-tag-badge {
   display: inline-flex;
@@ -135,9 +143,7 @@ section { padding: 85px 0; position: relative; }
   margin-bottom: 28px;
 }
 
-/* --------------------------------------------------------------------------
-   ISOMETRIC VECTOR ILLUSTRATION (ABOUT SECTION)
-   -------------------------------------------------------------------------- */
+/* ISOMETRIC VECTOR ILLUSTRATION */
 .isometric-mrf-container {
   background: var(--dark-panel);
   border: 1px solid var(--line);
@@ -146,6 +152,8 @@ section { padding: 85px 0; position: relative; }
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .isometric-svg {
@@ -154,9 +162,76 @@ section { padding: 85px 0; position: relative; }
   max-height: 280px;
 }
 
-/* --------------------------------------------------------------------------
-   ENGINEERING DIAGRAMS (AIRWSS & WORKFLOW)
-   -------------------------------------------------------------------------- */
+/* WORKFLOW STAGE PANELS & RAIL */
+.workflow-rail-container {
+  overflow-x: auto;
+  padding: 10px 0 20px;
+  margin-bottom: 24px;
+}
+
+.workflow-rail-track {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 900px;
+}
+
+.wf-rail-node {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  color: var(--light);
+  padding: 8px 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  cursor: pointer;
+  border-radius: var(--radius);
+  white-space: nowrap;
+}
+
+.wf-rail-node.active, .wf-rail-node:hover {
+  background: var(--amber);
+  color: var(--dark);
+  border-color: var(--amber);
+}
+
+.workflow-stage-card {
+  background: var(--dark-panel);
+  border: 1px solid var(--glass-border);
+  padding: 30px;
+  min-height: 260px;
+}
+
+.wf-stage-panel {
+  display: none;
+}
+
+.wf-stage-panel.active {
+  display: block;
+}
+
+.wf-panel-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.wf-stage-svg {
+  width: 100%;
+  height: auto;
+}
+
+.wf-stage-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--amber);
+  background: rgba(217, 164, 65, 0.15);
+  padding: 4px 8px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+/* ENGINEERING DIAGRAMS */
 .airwss-diagram-card {
   background: var(--dark-panel);
   border: 1px solid var(--glass-border);
@@ -168,14 +243,7 @@ section { padding: 85px 0; position: relative; }
   height: auto;
 }
 
-.wf-stage-svg {
-  width: 100%;
-  height: auto;
-}
-
-/* --------------------------------------------------------------------------
-   VECTOR COMMODITY CARDS (MATERIALS)
-   -------------------------------------------------------------------------- */
+/* VECTOR COMMODITY CARDS */
 .materials-grid-matrix {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -203,9 +271,7 @@ section { padding: 85px 0; position: relative; }
   height: 60px;
 }
 
-/* --------------------------------------------------------------------------
-   BUTTONS, NAV & UTILITIES
-   -------------------------------------------------------------------------- */
+/* BUTTONS, NAV & FORM */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -217,10 +283,13 @@ section { padding: 85px 0; position: relative; }
   border: 1px solid var(--ink);
   cursor: pointer;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .btn-amber { background: var(--amber); color: var(--dark); border-color: var(--amber); }
 .btn-amber:hover { background: var(--amber-deep); }
+.btn-line-light { border-color: rgba(255,255,255,0.3); color: var(--light); }
+.btn-line-light:hover { background: var(--light); color: var(--dark); }
 .btn-full { width: 100%; }
 
 .top-bar {
@@ -246,11 +315,39 @@ header {
 .nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; }
 .logo-text { font-family: var(--font-condensed); font-size: 28px; color: var(--light); font-weight: 700; }
 .navlinks { display: flex; gap: 18px; }
-.navlinks a { color: var(--light); font-size: 13px; opacity: 0.8; }
+.navlinks a { color: var(--light); font-size: 13px; opacity: 0.8; text-decoration: none; }
 .navlinks a:hover, .navlinks a.active { opacity: 1; color: var(--amber); }
 
-/* Responsive Adapters */
+.enterprise-form {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  padding: 24px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-family: var(--font-sans);
+  font-size: 14px;
+}
+
+/* RESPONSIVE BREAKPOINTS */
 @media (max-width: 900px) {
-  .grid-2-col, .materials-grid-matrix { grid-template-columns: 1fr; }
+  .grid-2-col, .materials-grid-matrix, .wf-panel-grid { grid-template-columns: 1fr; }
   .navlinks { display: none; }
 }
