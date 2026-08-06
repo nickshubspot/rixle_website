@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navScrim) navScrim.addEventListener('click', closeMobileMenu);
     mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
 
-    // 3. Workflow Interactive Stage Rail
+    // 3. Workflow Interactive Rail Switching (Steps 1 to 10)
     const railNodes = document.querySelectorAll('.wf-rail-node');
     const stagePanels = document.querySelectorAll('.wf-stage-panel');
     const progressFill = document.getElementById('wfProgressFill');
@@ -58,5 +58,23 @@ document.addEventListener('DOMContentLoaded', () => {
             if (progressText) progressText.textContent = `${String(index + 1).padStart(2, '0')} / 10`;
         });
     });
+
+    // 4. Contact Form Handler (Fallback to mailto)
+    const leadForm = document.getElementById('leadContactForm');
+    if (leadForm) {
+        leadForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nameEl = document.getElementById('fullName');
+            const emailEl = document.getElementById('email');
+
+            if (!nameEl.value.trim() || !emailEl.value.trim()) {
+                alert('Please complete all required fields.');
+                return;
+            }
+
+            const mailtoBody = `Name: ${nameEl.value}\nEmail: ${emailEl.value}\nRequesting consultation for Rixle Industrial Services.`;
+            window.location.href = `mailto:info@rixle.co.in?subject=Consultation Request - ${encodeURIComponent(nameEl.value)}&body=${encodeURIComponent(mailtoBody)}`;
+        });
+    }
 
 });
