@@ -85,7 +85,7 @@
                 </span>
             </div>
             <div class="top-bar-right">
-                <a href="#contact" class="top-portal-link" aria-label="Access Client Portal">🔒 Client Portal</a>
+                <button class="top-portal-link" id="openPortalBtn" style="background:none; border:none; cursor:pointer;" aria-label="Access Client Portal">🔒 Client Portal</button>
                 <span class="top-info-item mono">
                     <span>CIN: U38210MH2024PTC420000</span>
                     <button class="copy-inline-btn" data-copy="U38210MH2024PTC420000" aria-label="Copy CIN">📋</button>
@@ -377,7 +377,7 @@
             </div>
         </section>
 
-        <!-- SECTION 4: WORKFLOW (FULL 10 STAGES DEFINED) -->
+        <!-- SECTION 4: WORKFLOW -->
         <section class="workflow-section bg-overlay-section" id="infrastructure" aria-label="10-Stage Operational Workflow">
             <div class="wrap">
                 <div class="section-head center-head dark-bg-head">
@@ -779,6 +779,29 @@
             </div>
         </div>
     </footer>
+
+    <!-- CLIENT PORTAL INTERACTIVE MODAL -->
+    <div class="portal-modal-overlay" id="portalModal" aria-hidden="true">
+        <div class="portal-modal-card">
+            <button class="portal-modal-close" id="closePortalBtn" aria-label="Close Modal">&times;</button>
+            <div class="eyebrow amber-text">Enterprise Access</div>
+            <h3 class="light-text" style="margin-bottom: 12px;">Rixle Client Portal</h3>
+            <p class="light-subtext" style="font-size: 13.5px; margin-bottom: 20px;">
+                Authorized access for registered suppliers, recycling partners, and corporate buyers.
+            </p>
+            <form id="portalLoginForm" onsubmit="event.preventDefault(); alert('Client portal authentication is restricted to onboarded enterprise accounts.');">
+                <div class="form-group">
+                    <label for="portalAccount" style="color: var(--amber);">Account ID / Email</label>
+                    <input type="text" id="portalAccount" required placeholder="ENT-2026-X89">
+                </div>
+                <div class="form-group">
+                    <label for="portalPass" style="color: var(--amber);">Passcode</label>
+                    <input type="password" id="portalPass" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn btn-amber btn-full">Secure Sign In</button>
+            </form>
+        </div>
+    </div>
 
     <script src="assets/js/supabase-client.js" defer></script>
     <script src="assets/js/app.js" defer></script>
