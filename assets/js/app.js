@@ -3,34 +3,36 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Rixle Ecosol Industrial Platform Loaded.');
+  console.log('Rixle Platform Engine Active.');
 
-  // Navbar Scroll Trigger
+  // Navbar Scroll Trigger State
   const navbar = document.getElementById('mainNav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
+  if (navbar) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  }
 
   // Local Gallery Fallback Guard
   const images = document.querySelectorAll('img');
   images.forEach(img => {
     img.addEventListener('error', () => {
-      console.warn(`Local fallback applied for: ${img.src}`);
       img.src = 'assets/gallery/plant.jpg';
       img.alt = 'Rixle Ecosol Facility Operations';
     });
   });
 
-  // Scroll Motion Animation Observer
+  // Safe Scroll Motion Animation Observer
   const scrollElements = document.querySelectorAll('.animate-on-scroll');
   
-  const elementInView = (el, dividend = 1.25) => {
+  const elementInView = (el) => {
+    if (!el) return false;
     const elementTop = el.getBoundingClientRect().top;
-    return (elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend);
+    return (elementTop <= (window.innerHeight || document.documentElement.clientHeight) / 1.2);
   };
 
   const handleScrollAnimation = () => {
