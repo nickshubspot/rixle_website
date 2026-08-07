@@ -3,9 +3,9 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Rixle Ecosol Platform Loaded.');
+  console.log('Rixle Ecosol Industrial Platform Loaded.');
 
-  // Dynamic Navbar Scroll State
+  // Navbar Scroll Trigger
   const navbar = document.getElementById('mainNav');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
@@ -15,13 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Image Fallback Guard
+  // Local Gallery Fallback Guard
   const images = document.querySelectorAll('img');
   images.forEach(img => {
     img.addEventListener('error', () => {
-      console.warn(`Fallback triggered for: ${img.src}`);
-      img.src = 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1200&q=80';
-      img.alt = 'Rixle Ecosol Industrial Operations';
+      console.warn(`Local fallback applied for: ${img.src}`);
+      img.src = 'assets/gallery/plant.jpg';
+      img.alt = 'Rixle Ecosol Facility Operations';
     });
   });
 
