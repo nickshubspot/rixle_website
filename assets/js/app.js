@@ -1,5 +1,6 @@
 /**
  * RIXLE PRIVATE LIMITED - ENTERPRISE CORE UI SCRIPT
+ * Production Version 2026.2
  */
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -28,7 +29,45 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navScrim) navScrim.addEventListener('click', closeMobileMenu);
     mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
 
-    // 3. Workflow Interactive Rail Switching (Steps 1 to 10)
+    // 3. Client Portal Interactive Modal Handler
+    const openPortalBtn = document.getElementById('openPortalBtn');
+    const closePortalBtn = document.getElementById('closePortalBtn');
+    const portalModal = document.getElementById('portalModal');
+    const portalLoginForm = document.getElementById('portalLoginForm');
+
+    const openModal = () => {
+        if (portalModal) {
+            portalModal.classList.add('is-active');
+            portalModal.setAttribute('aria-hidden', 'false');
+        }
+    };
+
+    const closeModal = () => {
+        if (portalModal) {
+            portalModal.classList.remove('is-active');
+            portalModal.setAttribute('aria-hidden', 'true');
+        }
+    };
+
+    if (openPortalBtn) openPortalBtn.addEventListener('click', openModal);
+    if (closePortalBtn) closePortalBtn.addEventListener('click', closeModal);
+
+    if (portalModal) {
+        portalModal.addEventListener('click', (e) => {
+            if (e.target === portalModal) {
+                closeModal();
+            }
+        });
+    }
+
+    if (portalLoginForm) {
+        portalLoginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Client portal authentication is restricted to onboarded enterprise accounts.');
+        });
+    }
+
+    // 4. Workflow Interactive Rail Switching (Steps 1 to 10)
     const railNodes = document.querySelectorAll('.wf-rail-node');
     const stagePanels = document.querySelectorAll('.wf-stage-panel');
     const progressFill = document.getElementById('wfProgressFill');
@@ -59,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3b. Workflow Keyboard Navigation (Left/Right Arrow Keys)
+    // 4b. Workflow Keyboard Navigation (Left/Right Arrow Keys)
     if (railNodes.length) {
         const railTrack = document.querySelector('.workflow-rail-track');
         if (railTrack) {
@@ -81,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 3c. Copy-to-Clipboard Buttons (address / email / CIN)
+    // 4c. Copy-to-Clipboard Buttons (address / email / CIN)
     const copyButtons = document.querySelectorAll('.copy-inline-btn[data-copy]');
     copyButtons.forEach(btn => {
         btn.addEventListener('click', async () => {
@@ -107,8 +146,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1500);
         });
     });
-
-    // 4. Contact Form submission is handled by assets/js/supabase-client.js
-    // (kept as a single handler to avoid duplicate listeners on #leadContactForm)
 
 });
