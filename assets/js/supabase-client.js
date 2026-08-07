@@ -15,7 +15,7 @@ if (typeof supabase !== 'undefined' && supabase.createClient) {
   }
 }
 
-// Client Validation & Inline Alert Banner Logic
+// Client Validation & Inline Alert Banner
 window.handleContactFormSubmit = async function (event) {
   event.preventDefault();
   
