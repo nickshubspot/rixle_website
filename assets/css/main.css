@@ -50,7 +50,7 @@ body {
 
 /* Full-Screen 100vh Hero */
 .hero-cinematic {
-  background-image: url('../gallery/hero-bg.webp');
+  background-image: url('../gallery/plant.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -197,7 +197,7 @@ body {
 
 /* CTA Background Section */
 .cta-section {
-  background-image: url('../gallery/hero-bg.webp');
+  background-image: url('../gallery/plant.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
