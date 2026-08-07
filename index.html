@@ -18,6 +18,7 @@
 
   <!-- External Stylesheets & Frameworks -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
 
   <!-- Schema.org JSON-LD -->
@@ -50,6 +51,10 @@
           <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
           <li class="nav-item"><a class="nav-link" href="#solutions">Solutions</a></li>
           <li class="nav-item"><a class="nav-link" href="#technology">AIRWSS Tech</a></li>
+          <li class="nav-item"><a class="nav-link" href="#workflow">Workflow</a></li>
+          <li class="nav-item"><a class="nav-link" href="#materials">Materials</a></li>
+          <li class="nav-item"><a class="nav-link" href="#trust">Why Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#stats">Metrics</a></li>
           <li class="nav-item"><a class="nav-link" href="#gallery">Facility Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
@@ -58,38 +63,42 @@
   </nav>
 
   <!-- Hero Section -->
-  <header id="hero" class="hero-section py-5 text-white bg-dark position-relative">
-    <div class="container py-5">
+  <header id="hero" class="hero-section py-5 text-white position-relative">
+    <div class="hero-overlay"></div>
+    <div class="container py-5 position-relative z-1">
       <div class="row align-items-center">
-        <div class="col-lg-6 mb-4 mb-lg-0">
-          <h1 class="display-4 fw-bold mb-3">Next-Gen AI & Robotics Automated Waste Sorting</h1>
-          <p class="lead text-light mb-4">Driving the circular economy with industrial-grade AI-powered material recovery facility (MRF) solutions, automated polymer sorting, and complete Extended Producer Responsibility (EPR) execution.</p>
-          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <a href="#solutions" class="btn btn-primary btn-lg px-4 me-md-2">Explore Solutions</a>
-            <a href="#contact" class="btn btn-outline-light btn-lg px-4">Partner With Us</a>
+        <div class="col-lg-7 mb-4 mb-lg-0">
+          <span class="badge bg-success fs-6 fw-normal mb-3 px-3 py-2">World-Class Industrial Recycling</span>
+          <h1 class="display-3 fw-bold mb-3">Next-Gen AI & Robotics Automated Waste Sorting</h1>
+          <p class="lead text-light mb-4 fs-4">Driving the circular economy with industrial-grade AI-powered material recovery facility (MRF) solutions, automated polymer sorting, and complete Extended Producer Responsibility (EPR) execution.</p>
+          <div class="d-grid gap-3 d-sm-flex justify-content-sm-start">
+            <a href="#solutions" class="btn btn-primary btn-lg px-4 py-3 fw-semibold">Explore Solutions <i class="bi bi-arrow-right ms-2"></i></a>
+            <a href="#contact" class="btn btn-outline-light btn-lg px-4 py-3 fw-semibold">Partner With Us</a>
           </div>
         </div>
-        <div class="col-lg-6">
-          <img src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&w=1200&q=80" alt="Robotic Waste Sorting Conveyor System in Modern Recycling Plant" width="1200" height="800" loading="eager" decoding="async" class="img-fluid rounded-3 shadow-lg">
+        <div class="col-lg-5">
+          <div class="position-relative rounded-3 overflow-hidden shadow-lg border border-secondary">
+            <img src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&w=1200&q=80" alt="Robotic Waste Sorting Conveyor System in Modern Recycling Plant" width="1200" height="800" loading="eager" decoding="async" class="img-fluid rounded-3">
+          </div>
         </div>
       </div>
     </div>
   </header>
 
   <!-- About Section -->
-  <section id="about" class="py-5 bg-light">
+  <section id="about" class="py-5 bg-light position-relative">
     <div class="container py-4">
       <div class="row align-items-center">
         <div class="col-lg-6 mb-4 mb-lg-0">
           <img src="assets/gallery/plant.jpg" alt="Modern Material Recovery Facility and Industrial Plastic Recycling Plant" width="1200" height="800" loading="lazy" decoding="async" class="img-fluid rounded-3 shadow">
         </div>
         <div class="col-lg-6">
-          <h2 class="fw-bold mb-3">Pioneering Industrial Sustainability</h2>
-          <p class="text-secondary">Rixle Ecosol integrates state-of-the-art computer vision, deep learning, and high-speed robotic actuation to redefine material recovery infrastructure. We process industrial recyclables—including PET bottles, HDPE drums, LDPE films, and PP scrap—into high-purity recycled granules and raw materials.</p>
-          <ul class="list-unstyled text-secondary">
-            <li class="mb-2"><strong>✓ Automated AI Sorting (AIRWSS):</strong> High-precision real-time polymer and fraction segregation.</li>
-            <li class="mb-2"><strong>✓ Circular Economy Integration:</strong> Closing the loop for consumer brands and industrial packaging.</li>
-            <li class="mb-2"><strong>✓ End-to-End EPR Execution:</strong> Full compliance auditing, traceability, and material credit supply.</li>
+          <h2 class="fw-bold mb-3 display-5">Pioneering Industrial Sustainability</h2>
+          <p class="text-secondary fs-5">Rixle Ecosol integrates state-of-the-art computer vision, deep learning, and high-speed robotic actuation to redefine material recovery infrastructure. We process industrial recyclables—including PET bottles, HDPE drums, LDPE films, and PP scrap—into high-purity recycled granules and raw materials.</p>
+          <ul class="list-unstyled text-secondary fs-6">
+            <li class="mb-3 d-flex align-items-center"><i class="bi bi-check-circle-fill text-success fs-5 me-2"></i> <span><strong>Automated AI Sorting (AIRWSS):</strong> High-precision real-time polymer and fraction segregation.</span></li>
+            <li class="mb-3 d-flex align-items-center"><i class="bi bi-check-circle-fill text-success fs-5 me-2"></i> <span><strong>Circular Economy Integration:</strong> Closing the loop for consumer brands and industrial packaging.</span></li>
+            <li class="mb-3 d-flex align-items-center"><i class="bi bi-check-circle-fill text-success fs-5 me-2"></i> <span><strong>End-to-End EPR Execution:</strong> Full compliance auditing, traceability, and material credit supply.</span></li>
           </ul>
         </div>
       </div>
@@ -100,34 +109,61 @@
   <section id="solutions" class="py-5">
     <div class="container py-4">
       <div class="text-center mb-5">
-        <h2 class="fw-bold">Industrial Recycling Solutions</h2>
-        <p class="text-muted">High-volume material processing tailored for industrial sustainability</p>
+        <h2 class="fw-bold display-5">Industrial Recycling Services</h2>
+        <p class="text-muted fs-5">High-volume material processing tailored for industrial sustainability</p>
       </div>
       <div class="row g-4">
         <div class="col-md-4">
-          <div class="card h-100 border-0 shadow-sm">
-            <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80" alt="Plastic Bales and PET Bottles Sorted for Baling Machine" width="800" height="533" loading="lazy" decoding="async" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Polymer Segregation</h5>
-              <p class="card-text text-muted">High-speed automated optical and robotic sorting for PET, HDPE, LDPE, PP, and multi-layered flexible plastics.</p>
+          <div class="card h-100 border-0 shadow-sm service-card">
+            <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80" alt="Industrial Waste Collection Fleet" width="800" height="533" loading="lazy" decoding="async" class="card-img-top">
+            <div class="card-body p-4">
+              <h5 class="card-title fw-bold fs-4">Industrial Collection</h5>
+              <p class="card-text text-muted">Scheduled, large-scale waste pickup and logistics for commercial facilities, factories, and municipal bins.</p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card h-100 border-0 shadow-sm">
-            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Industrial Granulator and Plastic Granules Processing Line" width="800" height="533" loading="lazy" decoding="async" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Granulation & Washing</h5>
-              <p class="card-text text-muted">Advanced washing lines, friction washers, and precision granulators converting scrap into premium recycled flakes.</p>
+          <div class="card h-100 border-0 shadow-sm service-card">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Material Recovery Facility Floor" width="800" height="533" loading="lazy" decoding="async" class="card-img-top">
+            <div class="card-body p-4">
+              <h5 class="card-title fw-bold fs-4">MRF Operations</h5>
+              <p class="card-text text-muted">Automated sorting lines with ballistic separators, magnetic pulleys, and optical sorting infrastructure.</p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card h-100 border-0 shadow-sm">
-            <img src="assets/gallery/tech-env.jpg" alt="Circular Economy and EPR Compliance Infrastructure" width="800" height="533" loading="lazy" decoding="async" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title fw-bold">EPR Compliance & Trading</h5>
-              <p class="card-text text-muted">Complete Extended Producer Responsibility fulfillment, legal auditing, and bulk supply to industrial converters.</p>
+          <div class="card h-100 border-0 shadow-sm service-card">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Plastic Bales Trading" width="800" height="533" loading="lazy" decoding="async" class="card-img-top">
+            <div class="card-body p-4">
+              <h5 class="card-title fw-bold fs-4">Plastic Trading</h5>
+              <p class="card-text text-muted">Bulk buying and supplying of baled, flaked, and granulated plastic polymers across international markets.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm service-card">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="AIRWSS Robotic System" width="800" height="533" loading="lazy" decoding="async" class="card-img-top">
+            <div class="card-body p-4">
+              <h5 class="card-title fw-bold fs-4">AIRWSS Deployment</h5>
+              <p class="card-text text-muted">Custom installation of AI-powered robotic arms and spectral vision modules for existing facilities.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm service-card">
+            <img src="assets/gallery/tech-env.jpg" alt="EPR Compliance and Auditing" width="800" height="533" loading="lazy" decoding="async" class="card-img-top">
+            <div class="card-body p-4">
+              <h5 class="card-title fw-bold fs-4">EPR Compliance</h5>
+              <p class="card-text text-muted">End-to-end Extended Producer Responsibility fulfillment, digital credits tracking, and legal auditing.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm service-card">
+            <img src="assets/gallery/vehicles.jpg" alt="Logistics Fleet Management" width="800" height="533" loading="lazy" decoding="async" class="card-img-top">
+            <div class="card-body p-4">
+              <h5 class="card-title fw-bold fs-4">Supply Logistics</h5>
+              <p class="card-text text-muted">Fleet management, real-time material tracking, and seamless cross-border recyclable transportation.</p>
             </div>
           </div>
         </div>
@@ -140,25 +176,240 @@
     <div class="container py-4">
       <div class="row align-items-center">
         <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
-          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80" alt="Robotic Sorting Arm and Conveyor System in Waste Facility" width="1200" height="800" loading="lazy" decoding="async" class="img-fluid rounded-3 shadow">
+          <div class="position-relative">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80" alt="AIRWSS AI Vision Cameras and Robotic Delta Arm" width="1200" height="800" loading="lazy" decoding="async" class="img-fluid rounded-3 shadow">
+            <div class="position-absolute bottom-0 end-0 bg-primary text-white p-3 rounded-start-3 shadow fw-bold">
+              <i class="bi bi-cpu-fill me-2"></i> Edge AI Processing
+            </div>
+          </div>
         </div>
         <div class="col-lg-6 order-lg-1">
-          <h2 class="fw-bold mb-3 text-white">AIRWSS - AI Robotic Waste Sorting System</h2>
-          <p class="text-light">Our proprietary AIRWSS technology combines high-resolution spectral cameras, edge computing neural networks, and delta robots to sort mixed municipal and commercial waste fractions with over 98% purity accuracy.</p>
-          <div class="row g-3 mt-2">
+          <span class="text-primary fw-bold text-uppercase tracking-wider">Proprietary Innovation</span>
+          <h2 class="fw-bold mb-3 text-white display-5">AIRWSS - AI Robotic Waste Sorting System</h2>
+          <p class="text-light fs-5">Our proprietary AIRWSS technology combines high-resolution spectral vision cameras, edge computing neural networks, and high-speed delta robots to sort mixed municipal and commercial waste fractions with over 98% purity accuracy.</p>
+          <div class="row g-3 mt-3">
             <div class="col-sm-6">
-              <div class="p-3 bg-secondary bg-opacity-25 rounded-3">
-                <h4 class="fw-bold text-primary mb-1">98.5%</h4>
-                <p class="mb-0 text-light small">Purity Sorting Rate</p>
+              <div class="p-3 bg-secondary bg-opacity-25 border border-secondary rounded-3">
+                <h3 class="fw-bold text-primary mb-1">98.5%</h3>
+                <p class="mb-0 text-light small">Purity Sorting Accuracy</p>
               </div>
             </div>
             <div class="col-sm-6">
-              <div class="p-3 bg-secondary bg-opacity-25 rounded-3">
-                <h4 class="fw-bold text-success mb-1">4,500+</h4>
-                <p class="mb-0 text-light small">Picks Per Hour / Arm</p>
+              <div class="p-3 bg-secondary bg-opacity-25 border border-secondary rounded-3">
+                <h3 class="fw-bold text-success mb-1">4,500+</h3>
+                <p class="mb-0 text-light small">Picks Per Hour / Robotic Arm</p>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workflow Section -->
+  <section id="workflow" class="py-5 bg-light">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold display-5">End-to-End Circular Workflow</h2>
+        <p class="text-muted fs-5">How material flows from raw industrial waste into high-grade circular commodities</p>
+      </div>
+      <div class="row g-4 text-center">
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-white rounded-3 shadow-sm h-100">
+            <div class="fs-1 text-primary mb-2"><i class="bi bi-truck-front-fill"></i></div>
+            <h6 class="fw-bold">1. Collection</h6>
+            <p class="small text-muted mb-0">Bulk waste pickup from industrial sources.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-white rounded-3 shadow-sm h-100">
+            <div class="fs-1 text-primary mb-2"><i class="bi bi-geo-alt-fill"></i></div>
+            <h6 class="fw-bold">2. Transport</h6>
+            <p class="small text-muted mb-0">GPS-tracked route delivery to MRF.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-white rounded-3 shadow-sm h-100">
+            <div class="fs-1 text-primary mb-2"><i class="bi bi-funnel-fill"></i></div>
+            <h6 class="fw-bold">3. Sorting</h6>
+            <p class="small text-muted mb-0">Mechanical pre-separation on conveyor.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-white rounded-3 shadow-sm h-100">
+            <div class="fs-1 text-primary mb-2"><i class="bi bi-cpu-fill"></i></div>
+            <h6 class="fw-bold">4. AI Detection</h6>
+            <p class="small text-muted mb-0">AIRWSS optical polymer identification.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-white rounded-3 shadow-sm h-100">
+            <div class="fs-1 text-primary mb-2"><i class="bi bi-box-seam-fill"></i></div>
+            <h6 class="fw-bold">5. Baling</h6>
+            <p class="small text-muted mb-0">Automated hydraulic compression.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-white rounded-3 shadow-sm h-100">
+            <div class="fs-1 text-primary mb-2"><i class="bi bi-building-fill"></i></div>
+            <h6 class="fw-bold">6. Storage</h6>
+            <p class="small text-muted mb-0">Quality audit in warehouse facility.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-white rounded-3 shadow-sm h-100">
+            <div class="fs-1 text-primary mb-2"><i class="bi bi-recycle"></i></div>
+            <h6 class="fw-bold">7. Recycler</h6>
+            <p class="small text-muted mb-0">Washing, flaking, and granulation.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-white rounded-3 shadow-sm h-100">
+            <div class="fs-1 text-success mb-2"><i class="bi bi-arrow-repeat"></i></div>
+            <h6 class="fw-bold">8. Circular Product</h6>
+            <p class="small text-muted mb-0">Supply to manufacturer converters.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Materials Section -->
+  <section id="materials" class="py-5">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold display-5">Materials We Process & Trade</h2>
+        <p class="text-muted fs-5">Premium Grade Recyclable Polymer Commodities</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card border-0 shadow-sm h-100 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=500&q=80" alt="PET Polymer Bottles" width="500" height="333" loading="lazy" decoding="async" class="card-img-top card-img-sm">
+            <div class="card-body text-center p-3">
+              <h5 class="fw-bold mb-1">PET</h5>
+              <p class="small text-muted mb-0">Clear & Color Flakes</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card border-0 shadow-sm h-100 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=500&q=80" alt="HDPE Industrial Drums" width="500" height="333" loading="lazy" decoding="async" class="card-img-top card-img-sm">
+            <div class="card-body text-center p-3">
+              <h5 class="fw-bold mb-1">HDPE</h5>
+              <p class="small text-muted mb-0">Blow & Injection Grade</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card border-0 shadow-sm h-100 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&w=500&q=80" alt="LDPE Baled Films" width="500" height="333" loading="lazy" decoding="async" class="card-img-top card-img-sm">
+            <div class="card-body text-center p-3">
+              <h5 class="fw-bold mb-1">LDPE</h5>
+              <p class="small text-muted mb-0">Film & Packaging Scraps</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card border-0 shadow-sm h-100 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500&q=80" alt="PP Scrap Granules" width="500" height="333" loading="lazy" decoding="async" class="card-img-top card-img-sm">
+            <div class="card-body text-center p-3">
+              <h5 class="fw-bold mb-1">PP</h5>
+              <p class="small text-muted mb-0">Rigid Containers & Bags</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card border-0 shadow-sm h-100 overflow-hidden">
+            <img src="assets/gallery/tech-env.jpg" alt="Multi-Layered Flexible Plastics" width="500" height="333" loading="lazy" decoding="async" class="card-img-top card-img-sm">
+            <div class="card-body text-center p-3">
+              <h5 class="fw-bold mb-1">MLP</h5>
+              <p class="small text-muted mb-0">Multi-Layered Flexibles</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card border-0 shadow-sm h-100 overflow-hidden">
+            <img src="assets/gallery/plant.jpg" alt="Industrial Textile Scrap" width="500" height="333" loading="lazy" decoding="async" class="card-img-top card-img-sm">
+            <div class="card-body text-center p-3">
+              <h5 class="fw-bold mb-1">Textile</h5>
+              <p class="small text-muted mb-0">Synthetic Fiber Scrap</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card border-0 shadow-sm h-100 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500&q=80" alt="Plastic Granules Granulator" width="500" height="333" loading="lazy" decoding="async" class="card-img-top card-img-sm">
+            <div class="card-body text-center p-3">
+              <h5 class="fw-bold mb-1">Granules</h5>
+              <p class="small text-muted mb-0">Extruded Regrind Pellets</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card border-0 shadow-sm h-100 overflow-hidden">
+            <img src="assets/gallery/vehicles.jpg" alt="Industrial Metal Scrap" width="500" height="333" loading="lazy" decoding="async" class="card-img-top card-img-sm">
+            <div class="card-body text-center p-3">
+              <h5 class="fw-bold mb-1">Industrial Scrap</h5>
+              <p class="small text-muted mb-0">Commercial Waste Bulk</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Section -->
+  <section id="trust" class="py-5 bg-light">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold display-5">Why Choose Rixle Ecosol</h2>
+        <p class="text-muted fs-5">Trusted by Global Recyclers, Enterprise Brands, and Municipal Authorities</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="p-4 bg-white rounded-3 shadow-sm h-100">
+            <div class="fs-2 text-primary mb-3"><i class="bi bi-shield-check"></i></div>
+            <h5 class="fw-bold mb-2">100% Compliance & EPR</h5>
+            <p class="text-muted">Full legal registration, audit trails, and certified EPR documentation for brand compliance.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-white rounded-3 shadow-sm h-100">
+            <div class="fs-2 text-primary mb-3"><i class="bi bi-lightning-charge-fill"></i></div>
+            <h5 class="fw-bold mb-2">High-Speed Robotics</h5>
+            <p class="text-muted">Deploying state-of-the-art vision systems with automated 4,500+ picks per hour efficiency.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-white rounded-3 shadow-sm h-100">
+            <div class="fs-2 text-primary mb-3"><i class="bi bi-globe-americas"></i></div>
+            <h5 class="fw-bold mb-2">Industrial Network</h5>
+            <p class="text-muted">Direct ties with recyclers, converters, and global trading hubs for reliable material off-take.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section id="stats" class="py-5 bg-primary text-white">
+    <div class="container py-4">
+      <div class="row g-4 text-center">
+        <div class="col-6 col-md-3">
+          <h2 class="display-4 fw-bold counter mb-1" data-target="150">0</h2>
+          <p class="lead mb-0">Industrial Clients</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h2 class="display-4 fw-bold counter mb-1" data-target="25000">0</h2>
+          <p class="lead mb-0">Tons Traded / Yr</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h2 class="display-4 fw-bold counter mb-1" data-target="85">0</h2>
+          <p class="lead mb-0">Partner Recyclers</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h2 class="display-4 fw-bold counter mb-1" data-target="12">0</h2>
+          <p class="lead mb-0">Cities Served</p>
         </div>
       </div>
     </div>
@@ -168,8 +419,8 @@
   <section id="gallery" class="py-5 bg-light">
     <div class="container py-4">
       <div class="text-center mb-5">
-        <h2 class="fw-bold">Facility & Logistics Gallery</h2>
-        <p class="text-muted">Inside our modern recovery facilities, sorting lines, and material fleets</p>
+        <h2 class="fw-bold display-5">Facility & Logistics Gallery</h2>
+        <p class="text-muted fs-5">Inside our modern recovery facilities, sorting lines, and material fleets</p>
       </div>
       <div class="row g-4">
         <div class="col-md-4">
@@ -185,28 +436,38 @@
     </div>
   </section>
 
+  <!-- Call To Action -->
+  <section class="cta-section py-5 text-white position-relative">
+    <div class="cta-overlay"></div>
+    <div class="container py-5 text-center position-relative z-1">
+      <h2 class="display-4 fw-bold mb-3">Ready to Scale Your Circular Economy Strategy?</h2>
+      <p class="lead fs-4 text-light mb-4 max-w-700 mx-auto">Contact our technical engineering team to discuss AIRWSS automated sorting integration or raw polymer material trading.</p>
+      <a href="#contact" class="btn btn-success btn-lg px-5 py-3 fw-bold fs-5">Inquire Today <i class="bi bi-arrow-right ms-2"></i></a>
+    </div>
+  </section>
+
   <!-- Contact Form Section -->
   <section id="contact" class="py-5">
     <div class="container py-4">
       <div class="row justify-content-center">
         <div class="col-lg-8">
           <div class="text-center mb-5">
-            <h2 class="fw-bold">Contact Our Engineering & Sales Team</h2>
-            <p class="text-muted">Inquire about AIRWSS integration, bulk material procurement, or EPR partnerships.</p>
+            <h2 class="fw-bold display-5">Contact Our Engineering & Sales Team</h2>
+            <p class="text-muted fs-5">Inquire about AIRWSS integration, bulk material procurement, or EPR partnerships.</p>
           </div>
-          <form id="contactForm" onsubmit="window.handleContactFormSubmit(event)" class="needs-validation" novalidate>
+          <form id="contactForm" onsubmit="window.handleContactFormSubmit(event)" class="needs-validation p-4 p-md-5 bg-light rounded-3 shadow-sm" novalidate>
             <div class="row g-3">
               <div class="col-md-6">
                 <label for="fullName" class="form-label fw-semibold">Full Name</label>
-                <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Nikhil Sakhare" required>
+                <input type="text" class="form-control form-control-lg" id="fullName" name="fullName" placeholder="Nikhil Sakhare" required>
               </div>
               <div class="col-md-6">
                 <label for="email" class="form-label fw-semibold">Work Email</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="name@company.com" required>
+                <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="name@company.com" required>
               </div>
               <div class="col-12">
                 <label for="subject" class="form-label fw-semibold">Inquiry Type</label>
-                <select class="form-select" id="subject" name="subject" required>
+                <select class="form-select form-select-lg" id="subject" name="subject" required>
                   <option value="" selected disabled>Select an option</option>
                   <option value="AIRWSS Systems">AIRWSS Robotic System Integration</option>
                   <option value="Material Purchase">Recyclable Polymer Procurement (PET/HDPE/PP)</option>
@@ -216,10 +477,10 @@
               </div>
               <div class="col-12">
                 <label for="message" class="form-label fw-semibold">Message</label>
-                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Detail your requirements or facility capacity..." required></textarea>
+                <textarea class="form-control form-control-lg" id="message" name="message" rows="4" placeholder="Detail your requirements or facility capacity..." required></textarea>
               </div>
               <div class="col-12 text-center mt-4">
-                <button type="submit" class="btn btn-primary btn-lg px-5">Send Message</button>
+                <button type="submit" class="btn btn-primary btn-lg px-5 py-3 fw-bold">Send Message</button>
               </div>
             </div>
           </form>
@@ -229,15 +490,47 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-dark text-white py-4 border-top border-secondary">
-    <div class="container text-center text-md-start">
+  <footer class="bg-dark text-white pt-5 pb-4 border-top border-secondary">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <div class="col-lg-4 col-md-6">
+          <img src="assets/logo.png" alt="Rixle Ecosol Logo" width="160" height="48" loading="lazy" decoding="async" class="mb-3">
+          <p class="text-muted small">Rixle Ecosol is a pioneering deep-tech environmental company developing AI & Robotics automated sorting infrastructure for material recovery and circular economy sustainability.</p>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h6 class="fw-bold mb-3 text-uppercase text-light">Quick Links</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="#hero" class="text-muted text-decoration-none small">Home</a></li>
+            <li class="mb-2"><a href="#about" class="text-muted text-decoration-none small">About Us</a></li>
+            <li class="mb-2"><a href="#solutions" class="text-muted text-decoration-none small">Solutions</a></li>
+            <li class="mb-2"><a href="#technology" class="text-muted text-decoration-none small">AIRWSS Tech</a></li>
+            <li class="mb-2"><a href="#contact" class="text-muted text-decoration-none small">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h6 class="fw-bold mb-3 text-uppercase text-light">Contact Info</h6>
+          <p class="text-muted small mb-1"><i class="bi bi-geo-alt-fill text-primary me-2"></i> Pune, Maharashtra, India</p>
+          <p class="text-muted small mb-1"><i class="bi bi-envelope-fill text-primary me-2"></i> contact@rixle.co.in</p>
+          <p class="text-muted small mb-1"><i class="bi bi-telephone-fill text-primary me-2"></i> +91 98765 43210</p>
+          <p class="text-muted small mb-0"><i class="bi bi-clock-fill text-primary me-2"></i> Mon - Sat: 9:00 AM - 6:00 PM</p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h6 class="fw-bold mb-3 text-uppercase text-light">Location</h6>
+          <div class="ratio ratio-16x9 rounded-2 overflow-hidden">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121059.0471115617!2d73.79292679233633!3d18.52456485994464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2e67461101%3A0x828d43bf9d9ee343!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+      <hr class="border-secondary">
       <div class="row align-items-center">
         <div class="col-md-6 mb-3 mb-md-0">
-          <span class="text-light">&copy; 2026 Rixle Ecosol. All Rights Reserved.</span>
+          <span class="text-muted small">&copy; 2026 Rixle Ecosol. All Rights Reserved.</span>
         </div>
         <div class="col-md-6 text-md-end">
-          <a href="#hero" class="text-light text-decoration-none me-3">Privacy Policy</a>
-          <a href="#hero" class="text-light text-decoration-none">Terms of Service</a>
+          <a href="#hero" class="text-muted text-decoration-none small me-3">Privacy Policy</a>
+          <a href="#hero" class="text-muted text-decoration-none small me-3">Terms of Service</a>
+          <a href="#" class="text-muted text-decoration-none me-2"><i class="bi bi-linkedin fs-5"></i></a>
+          <a href="#" class="text-muted text-decoration-none"><i class="bi bi-twitter-x fs-5"></i></a>
         </div>
       </div>
     </div>
