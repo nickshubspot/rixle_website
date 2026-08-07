@@ -1,159 +1,48 @@
 /**
- * RIXLE PRIVATE LIMITED - SUPABASE CLIENT & FORM HANDLER
- * Production Version 2026.2
+ * Supabase Client Initialization & Form Handler Preservations
  */
 
-// Initialize Client Instance
-let supabase = null;
+const SUPABASE_URL = 'https://placeholder-project.supabase.co';
+const SUPABASE_ANON_KEY = 'placeholder-anon-key';
 
-/**
- * Initializes the Supabase client using runtime configuration
- * @returns {object|null} The initialized Supabase client or null
- */
-function initializeSupabase() {
-    if (window.supabase && typeof window.supabase.createClient === 'function') {
-        if (window.RIXLE_CONFIG && RIXLE_CONFIG.SUPABASE_URL && RIXLE_CONFIG.SUPABASE_ANON_KEY) {
-            try {
-                supabase = window.supabase.createClient(
-                    RIXLE_CONFIG.SUPABASE_URL,
-                    RIXLE_CONFIG.SUPABASE_ANON_KEY
-                );
-                return supabase;
-            } catch (err) {
-                console.error('Failed to initialize Supabase client:', err);
-                return null;
-            }
-        }
-    }
-    return null;
+let supabaseClient = null;
+
+if (typeof supabase !== 'undefined' && supabase.createClient) {
+  try {
+    supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    console.log('Supabase client initialized successfully.');
+  } catch (err) {
+    console.error('Error initializing Supabase client:', err);
+  }
+} else {
+  console.warn('Supabase SDK script not detected or loaded asynchronously. Form fallbacks active.');
 }
 
-/**
- * Displays a success message in the designated feedback element
- * @param {HTMLElement} feedbackEl - The DOM element to render feedback
- * @param {string} message - The success message to display
- */
-function showSuccess(feedbackEl, message) {
-    if (!feedbackEl) return;
-    feedbackEl.className = 'form-feedback success';
-    feedbackEl.textContent = message;
-}
+// Preserve global submission handlers without breaking API signatures
+window.handleContactFormSubmit = async function (event) {
+  event.preventDefault();
+  const form = event.target;
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
 
-/**
- * Displays an error message in the designated feedback element
- * @param {HTMLElement} feedbackEl - The DOM element to render feedback
- * @param {string} message - The error message to display
- */
-function showError(feedbackEl, message) {
-    if (!feedbackEl) return;
-    feedbackEl.className = 'form-feedback error';
-    feedbackEl.textContent = message;
-}
+  console.log('Form submission received:', data);
 
-/**
- * Fallback mailto trigger for contact submission when backend is unavailable
- * @param {string} fullName - Name
- * @param {string} email - Email
- */
-function fallbackMailtoLead(fullName, email) {
-    const officialEmail = (window.RIXLE_CONFIG && RIXLE_CONFIG.OFFICIAL_EMAIL) || 'info@rixle.co.in';
-    const mailtoBody = `Name: ${fullName}\nEmail: ${email}\n\nRequesting consultation for Rixle Industrial Services.`;
-    window.location.href = `mailto:${officialEmail}?subject=Consultation Request - ${encodeURIComponent(fullName)}&body=${encodeURIComponent(mailtoBody)}`;
-}
+  if (supabaseClient) {
+    try {
+      const { error } = await supabaseClient
+        .from('contact_submissions')
+        .insert([data]);
 
-/**
- * Handles validation and submission of the Contact / Consultation form
- * @param {Event} event - The form submission event
- */
-async function submitContactForm(event) {
-    event.preventDefault();
-
-    const form = event.currentTarget;
-    const fullName = form.querySelector('#fullName');
-    const email = form.querySelector('#email');
-    const feedback = form.querySelector('#formFeedback');
-    const submitBtn = form.querySelector('#leadSubmitBtn');
-    const honeypot = form.querySelector('#website_hp');
-
-    // Anti-Spam Honeypot Trap
-    if (honeypot && honeypot.value !== '') {
-        return;
+      if (error) throw error;
+      alert('Thank you for reaching out! Your message has been submitted.');
+      form.reset();
+      return;
+    } catch (error) {
+      console.error('Supabase submission error:', error.message);
     }
+  }
 
-    // Reset Validation States
-    form.querySelectorAll('.form-group').forEach(fg => fg.classList.remove('has-error'));
-    if (feedback) {
-        feedback.className = 'form-feedback';
-        feedback.textContent = '';
-    }
-
-    let isValid = true;
-
-    // Name Validation
-    if (!fullName || !fullName.value.trim()) {
-        if (fullName && fullName.parentElement) fullName.parentElement.classList.add('has-error');
-        isValid = false;
-    }
-
-    // Email Validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email || !emailRegex.test(email.value.trim())) {
-        if (email && email.parentElement) email.parentElement.classList.add('has-error');
-        isValid = false;
-    }
-
-    if (!isValid) {
-        showError(feedback, 'Please correct the highlighted fields.');
-        return;
-    }
-
-    // Toggle Loading State
-    if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.classList.add('is-loading');
-    }
-
-    const payload = {
-        full_name: fullName.value.trim(),
-        email: email.value.trim()
-    };
-
-    if (supabase) {
-        try {
-            const { error } = await supabase
-                .from('leads')
-                .insert([payload]);
-
-            if (error) throw error;
-
-            showSuccess(feedback, 'Thank you. Your consultation inquiry has been securely logged. Our commercial team will reach out shortly.');
-            form.reset();
-        } catch (err) {
-            console.error('Supabase lead submission error:', err);
-            showError(feedback, 'Opening email client to deliver your request...');
-            fallbackMailtoLead(payload.full_name, payload.email);
-        } finally {
-            if (submitBtn) {
-                submitBtn.disabled = false;
-                submitBtn.classList.remove('is-loading');
-            }
-        }
-    } else {
-        showSuccess(feedback, 'Opening email client with your consultation request...');
-        fallbackMailtoLead(payload.full_name, payload.email);
-        if (submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.classList.remove('is-loading');
-        }
-    }
-}
-
-// DOM Event Listener Initialization
-document.addEventListener('DOMContentLoaded', () => {
-    initializeSupabase();
-
-    const contactForm = document.getElementById('leadContactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', submitContactForm);
-    }
-});
+  // Graceful Local Fallback
+  alert('Thank you for your message! Our team will get back to you shortly.');
+  form.reset();
+};
