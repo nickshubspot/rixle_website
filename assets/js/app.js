@@ -32,4 +32,42 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Animated Counters for Trust / Statistics Section
+  const counters = document.querySelectorAll('.counter');
+  let animated = false;
+
+  const animateCounters = () => {
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      const speed = 200;
+      const increment = target / speed;
+
+      const updateCount = () => {
+        const count = +counter.innerText.replace('+', '');
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 15);
+        } else {
+          counter.innerText = target.toLocaleString() + '+';
+        }
+      };
+
+      updateCount();
+    });
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !animated) {
+        animated = true;
+        animateCounters();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  const statsSection = document.querySelector('#stats');
+  if (statsSection) {
+    observer.observe(statsSection);
+  }
 });
