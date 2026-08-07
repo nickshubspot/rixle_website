@@ -753,6 +753,9 @@
                 <div class="col-form">
                     <form id="leadContactForm" class="enterprise-form" novalidate>
                         <h3>Request Consultation</h3>
+                        <!-- Anti-Spam Honeypot Field -->
+                        <input type="text" id="website_hp" name="website_hp" tabindex="-1" style="display:none;" autocomplete="off">
+                        
                         <div class="form-group">
                             <label for="fullName">Full Name *</label>
                             <input type="text" id="fullName" name="fullName" required placeholder="John Doe">
@@ -803,6 +806,14 @@
         </div>
     </div>
 
+    <!-- GLOBAL RUNTIME CONFIGURATION -->
+    <script>
+        window.RIXLE_CONFIG = {
+            SUPABASE_URL: '',
+            SUPABASE_ANON_KEY: '',
+            OFFICIAL_EMAIL: 'info@rixle.co.in'
+        };
+    </script>
     <script src="assets/js/supabase-client.js" defer></script>
     <script src="assets/js/app.js" defer></script>
 </body>
