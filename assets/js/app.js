@@ -3,7 +3,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Rixle Platform Engine Active.');
+  console.log('Rixle Ecosol Platform Engine Active.');
 
   // Navbar Scroll Trigger State
   const navbar = document.getElementById('mainNav');
@@ -17,16 +17,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Local Gallery Fallback Guard
+  // Image Fallback Guard
   const images = document.querySelectorAll('img');
   images.forEach(img => {
     img.addEventListener('error', () => {
-      img.src = 'assets/gallery/plant.jpg';
+      img.src = 'assets/gallery/hero-bg.webp';
       img.alt = 'Rixle Ecosol Facility Operations';
     });
   });
 
-  // Safe Scroll Motion Animation Observer
+  // Scroll Motion Animation Observer
   const scrollElements = document.querySelectorAll('.animate-on-scroll');
   
   const elementInView = (el) => {
