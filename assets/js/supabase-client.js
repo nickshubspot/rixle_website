@@ -1,68 +1,862 @@
-/**
- * Supabase Client & Form Validation Handler
- */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rixle Ecosol - Industrial Waste Management, AI-Powered Robotic Recycling Infrastructure, Polymer Commodities Trading, and EPR Compliance.">
+  <meta name="keywords" content="Rixle Ecosol, AIRWSS, Industrial Recycling, Waste Management, Polymer Sorting, PET Flakes, HDPE Granules, EPR Compliance, Circular Economy">
+  <meta name="author" content="Rixle Ecosol">
 
-const SUPABASE_URL = 'https://placeholder-project.supabase.co';
-const SUPABASE_ANON_KEY = 'placeholder-anon-key';
+  <!-- Open Graph / Social Meta Tags -->
+  <meta property="og:title" content="Rixle Ecosol | Industrial Waste Management & AI Recycling Infrastructure">
+  <meta property="og:description" content="Transforming industrial waste management through AI-driven automated recovery, polymer processing, and circular commodity trading.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rixle.co.in/">
+  <meta property="og:image" content="assets/gallery/plant.jpg">
 
-let supabaseClient = null;
+  <title>Rixle Ecosol | Industrial Waste Management & AI Recycling</title>
 
-if (typeof supabase !== 'undefined' && supabase.createClient) {
-  try {
-    supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-  } catch (err) {
-    console.warn('Supabase initialization deferred.');
-  }
-}
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-// Client Validation & Processing
-window.handleContactFormSubmit = async function (event) {
-  event.preventDefault();
-  
-  const form = event.target;
-  const alertBanner = document.getElementById('formAlertBanner');
-  const submitBtn = document.getElementById('submitBtn');
-  const spinner = document.getElementById('submitSpinner');
+  <!-- Frameworks & Iconography -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
 
-  if (!form.checkValidity()) {
-    event.stopPropagation();
-    form.classList.add('was-validated');
-    return;
-  }
-
-  form.classList.add('was-validated');
-  
-  if (submitBtn && spinner) {
-    submitBtn.disabled = true;
-    spinner.classList.remove('d-none');
-  }
-
-  const formData = new FormData(form);
-  const data = Object.fromEntries(formData.entries());
-
-  if (supabaseClient) {
-    try {
-      await supabaseClient
-        .from('contact_submissions')
-        .insert([data]);
-    } catch (err) {
-      console.error('Supabase error:', err);
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Rixle Ecosol",
+    "url": "https://rixle.co.in",
+    "logo": "assets/logo.png",
+    "description": "Industrial Waste Management, AI-Powered Sorting Infrastructure, and Circular Material Trading.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pune",
+      "addressRegion": "Maharashtra",
+      "addressCountry": "India"
     }
   }
+  </script>
+</head>
+<body>
 
-  setTimeout(() => {
-    if (submitBtn && spinner) {
-      submitBtn.disabled = false;
-      spinner.classList.add('d-none');
-    }
+  <!-- Floating Quick Conversion Bar -->
+  <div class="quick-conversion-bar d-none d-md-flex">
+    <a href="tel:+919876543210" class="conversion-btn" title="Call Sales Engineering"><i class="bi bi-telephone-fill"></i> <span>Call</span></a>
+    <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="conversion-btn whatsapp-btn" title="WhatsApp Instant"><i class="bi bi-whatsapp"></i> <span>WhatsApp</span></a>
+    <a href="mailto:contact@rixle.co.in" class="conversion-btn" title="Email Inquiry"><i class="bi bi-envelope-fill"></i> <span>Email</span></a>
+    <a href="#contact" class="conversion-btn cta-fill" title="Request Bulk Pickup"><i class="bi bi-truck-front-fill"></i> <span>Request Pickup</span></a>
+  </div>
 
-    if (alertBanner) {
-      alertBanner.classList.remove('d-none', 'alert-danger', 'alert-success');
-      alertBanner.classList.add('alert-success');
-      alertBanner.innerHTML = '<strong>Inquiry Submitted!</strong> Our sales engineering team will contact you within 24 operational hours.';
-    }
+  <!-- Transparent to Solid Sticky Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-transparent transition-all" id="mainNav">
+    <div class="container-fluid px-lg-5">
+      <a class="navbar-brand d-flex align-items-center" href="#hero">
+        <img src="assets/logo.png" alt="Rixle Ecosol Logo - Modern Industrial Recovery" width="150" height="44" loading="eager" decoding="async">
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-semibold text-uppercase fs-7 tracking-wider">
+          <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pillars">Pillars</a></li>
+          <li class="nav-item"><a class="nav-link" href="#solutions">Solutions</a></li>
+          <li class="nav-item"><a class="nav-link" href="#airwss">AIRWSS Tech</a></li>
+          <li class="nav-item"><a class="nav-link" href="#workflow">Workflow</a></li>
+          <li class="nav-item"><a class="nav-link" href="#materials">Materials</a></li>
+          <li class="nav-item"><a class="nav-link" href="#industries">Industries</a></li>
+          <li class="nav-item"><a class="nav-link" href="#trust">Why Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#resources">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <div class="ms-lg-3 d-none d-lg-block">
+          <a href="#contact" class="btn btn-success btn-sm text-uppercase fw-bold px-3 py-2 fs-7 tracking-wider shadow">Request Pickup</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-    form.reset();
-    form.classList.remove('was-validated');
-  }, 1000);
-};
+  <!-- Full-Screen 100vh Hero Section -->
+  <header id="hero" class="hero-cinematic text-white position-relative overflow-hidden d-flex align-items-center">
+    <div class="hero-bg-overlay"></div>
+    <div class="container position-relative z-2">
+      <div class="row align-items-center min-vh-100 py-6">
+        <div class="col-lg-10 col-xl-9 animate-on-scroll">
+          <span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-50 text-uppercase tracking-widest px-3 py-2 mb-4 rounded-1">Industrial Waste Management + AI Recycling + Material Trading</span>
+          <h1 class="display-1 fw-black text-white mb-4 tracking-tight leading-tight">AI-Powered Industrial Recovery. Zero Waste To Landfill.</h1>
+          <p class="fs-4 text-light text-opacity-75 fw-light mb-5 max-w-700">We design, deploy, and operate high-speed automated sorting robotics (AIRWSS) while processing commercial waste streams into certified high-purity recycled raw commodities.</p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#contact" class="btn btn-success btn-lg px-4 py-3 fw-bold text-uppercase fs-6 tracking-wider shadow-lg"><i class="bi bi-truck-front-fill me-2"></i> Request Pickup</a>
+            <a href="#airwss" class="btn btn-outline-light btn-lg px-4 py-3 fw-bold text-uppercase fs-6 tracking-wider"><i class="bi bi-cpu-fill me-2"></i> Explore AIRWSS Tech</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 4 Business Pillars Section -->
+  <section id="pillars" class="py-6 bg-industrial-darker text-white border-top border-dark-subtle">
+    <div class="container py-4">
+      <div class="text-center mb-5 animate-on-scroll">
+        <span class="text-success fw-bold text-uppercase fs-7 tracking-widest">Core Architecture</span>
+        <h2 class="display-5 fw-bold mb-3">Our 4 Core Business Pillars</h2>
+        <p class="text-secondary fs-5 max-w-700 mx-auto fw-light">A vertically integrated industrial framework driving sustainability across commercial ecosystems.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3 animate-on-scroll">
+          <div class="glass-card p-4 rounded-2 h-100 border border-secondary border-opacity-25 d-flex flex-column justify-content-between">
+            <div>
+              <div class="fs-1 text-success mb-3"><i class="bi bi-truck"></i></div>
+              <h3 class="fw-bold fs-5 text-white mb-2">1. Industrial Waste Management</h3>
+              <p class="text-secondary fs-7 fw-light mb-0">Bulk waste collection, factory scrap management, and segregated material transport logistics.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 animate-on-scroll">
+          <div class="glass-card p-4 rounded-2 h-100 border border-secondary border-opacity-25 d-flex flex-column justify-content-between">
+            <div>
+              <div class="fs-1 text-primary mb-3"><i class="bi bi-box-seam-fill"></i></div>
+              <h3 class="fw-bold fs-5 text-white mb-2">2. Material Recovery & Trading</h3>
+              <p class="text-secondary fs-7 fw-light mb-0">High-volume processing and bulk trading of PET flakes, HDPE regrind, LDPE bales, and PP scrap granules.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 animate-on-scroll">
+          <div class="glass-card p-4 rounded-2 h-100 border border-secondary border-opacity-25 d-flex flex-column justify-content-between">
+            <div>
+              <div class="fs-1 text-warning mb-3"><i class="bi bi-cpu-fill"></i></div>
+              <h3 class="fw-bold fs-5 text-white mb-2">3. AIRWSS Technology</h3>
+              <p class="text-secondary fs-7 fw-light mb-0">Proprietary AI computer vision modules, spectral NIR identification, and pneumatic robotic sorting arms.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 animate-on-scroll">
+          <div class="glass-card p-4 rounded-2 h-100 border border-secondary border-opacity-25 d-flex flex-column justify-content-between">
+            <div>
+              <div class="fs-1 text-info mb-3"><i class="bi bi-shield-check"></i></div>
+              <h3 class="fw-bold fs-5 text-white mb-2">4. EPR & Circular Economy</h3>
+              <p class="text-secondary fs-7 fw-light mb-0">Full Extended Producer Responsibility compliance, digital credit issuance, and MPCB/CPCB audit trails.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions & Facilities Section -->
+  <section id="solutions" class="py-6 bg-industrial-dark text-white">
+    <div class="container py-4">
+      <div class="text-center mb-5 animate-on-scroll">
+        <span class="text-success fw-bold text-uppercase fs-7 tracking-widest">End-to-End Capabilities</span>
+        <h2 class="display-5 fw-bold mb-3">Enterprise Recovery Solutions</h2>
+        <p class="text-secondary fs-5 max-w-700 mx-auto fw-light">Seamlessly bridging commercial waste generators, automated MRFs, and industrial packaging converters.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div class="industrial-card rounded-2 overflow-hidden h-100 bg-industrial-card border border-secondary border-opacity-25">
+            <div class="card-img-wrapper position-relative overflow-hidden">
+              <img src="assets/gallery/vehicles.jpg" alt="Industrial Waste Collection Fleet Trucks" width="800" height="533" loading="lazy" decoding="async" class="img-fluid card-img-top">
+              <div class="card-badge">Logistics</div>
+            </div>
+            <div class="p-4">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-truck fs-3 text-success me-3"></i>
+                <h3 class="fw-bold fs-5 mb-0 text-white">Industrial Collection</h3>
+              </div>
+              <p class="text-secondary fs-7 fw-light mb-4">Scheduled, GPS-tracked fleet logistics for heavy commercial waste, factory scrap, and municipal MRF transport.</p>
+              <a href="#contact" class="btn btn-link text-success text-decoration-none p-0 fw-bold fs-7 tracking-wider text-uppercase">Request Transport <i class="bi bi-chevron-right ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div class="industrial-card rounded-2 overflow-hidden h-100 bg-industrial-card border border-secondary border-opacity-25">
+            <div class="card-img-wrapper position-relative overflow-hidden">
+              <img src="assets/gallery/plant.jpg" alt="Material Recovery Facility Operations Floor" width="800" height="533" loading="lazy" decoding="async" class="img-fluid card-img-top">
+              <div class="card-badge">Infrastructure</div>
+            </div>
+            <div class="p-4">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-building-gear fs-3 text-success me-3"></i>
+                <h3 class="fw-bold fs-5 mb-0 text-white">MRF Plant Operations</h3>
+              </div>
+              <p class="text-secondary fs-7 fw-light mb-4">High-throughput sorting facilities equipped with ballistic separators, magnetic drums, and baling presses.</p>
+              <a href="#contact" class="btn btn-link text-success text-decoration-none p-0 fw-bold fs-7 tracking-wider text-uppercase">Facility Tour <i class="bi bi-chevron-right ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div class="industrial-card rounded-2 overflow-hidden h-100 bg-industrial-card border border-secondary border-opacity-25">
+            <div class="card-img-wrapper position-relative overflow-hidden">
+              <img src="assets/gallery/plant.jpg" alt="PET Bottles Bales and Plastic Scrap Warehouse" width="800" height="533" loading="lazy" decoding="async" class="img-fluid card-img-top">
+              <div class="card-badge">Commodities</div>
+            </div>
+            <div class="p-4">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-currency-exchange fs-3 text-success me-3"></i>
+                <h3 class="fw-bold fs-5 mb-0 text-white">Polymer Trading</h3>
+              </div>
+              <p class="text-secondary fs-7 fw-light mb-4">Bulk procurement and supply of sorted PET bales, HDPE drums, LDPE films, and granulated PP flakes.</p>
+              <a href="#materials" class="btn btn-link text-success text-decoration-none p-0 fw-bold fs-7 tracking-wider text-uppercase">View Inventory <i class="bi bi-chevron-right ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AIRWSS Technology Section & Vector Diagram -->
+  <section id="airwss" class="py-6 bg-industrial-darker text-white position-relative border-top border-dark-subtle">
+    <div class="container py-4">
+      <div class="row align-items-center g-5 mb-5">
+        <div class="col-lg-6 animate-on-scroll">
+          <span class="badge bg-primary bg-opacity-25 text-primary border border-primary border-opacity-50 text-uppercase tracking-widest px-3 py-2 mb-3 rounded-1">Core Deep-Tech Centerpiece</span>
+          <h2 class="display-4 fw-bold mb-4 tracking-tight">AIRWSS — AI Robotic Waste Sorting System</h2>
+          <p class="text-secondary fs-5 fw-light mb-4">Our proprietary technology pairs high-resolution RGB/NIR spectral vision cameras with edge-computing neural models to actuate high-speed delta robots—achieving pure polymer segregation at industrial speeds.</p>
+          
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="border-start border-2 border-primary ps-3">
+                <div class="fs-2 fw-black text-white">98.5%</div>
+                <div class="text-secondary fs-7 text-uppercase tracking-wider">Purity Accuracy Rate</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="border-start border-2 border-success ps-3">
+                <div class="fs-2 fw-black text-white">4,500+</div>
+                <div class="text-secondary fs-7 text-uppercase tracking-wider">Picks / Hour / Arm</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 animate-on-scroll">
+          <div class="position-relative rounded-2 overflow-hidden border border-secondary border-opacity-25 shadow-2xl">
+            <img src="assets/gallery/tech-env.jpg" alt="AIRWSS AI Camera and Robotic Arm Conveyor System" width="1200" height="800" loading="lazy" decoding="async" class="img-fluid">
+            <div class="position-absolute top-0 start-0 m-3 bg-dark bg-opacity-75 backdrop-blur px-3 py-2 rounded border border-secondary border-opacity-50 fs-7 text-light">
+              <i class="bi bi-circle-fill text-danger me-2 animate-pulse"></i> SENSOR FEED ACTIVE
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vector AIRWSS Architecture Pipeline Schematic -->
+      <div class="mt-5 animate-on-scroll">
+        <h3 class="text-center fw-bold fs-4 mb-4 text-uppercase tracking-wider text-secondary">AIRWSS System & Hardware Pipeline</h3>
+        <div class="row g-2 text-center align-items-center">
+          <div class="col-md">
+            <div class="p-3 bg-industrial-card rounded border border-secondary border-opacity-25 h-100">
+              <i class="bi bi-camera-video-fill text-primary fs-3 mb-2 d-block"></i>
+              <h4 class="fs-6 fw-bold mb-1">1. RGB Camera</h4>
+              <p class="fs-8 text-secondary mb-0">High-speed optical visual capture</p>
+            </div>
+          </div>
+          <div class="col-md-auto d-none d-md-block text-secondary"><i class="bi bi-arrow-right fs-4"></i></div>
+          <div class="col-md">
+            <div class="p-3 bg-industrial-card rounded border border-secondary border-opacity-25 h-100">
+              <i class="bi bi-eye-fill text-info fs-3 mb-2 d-block"></i>
+              <h4 class="fs-6 fw-bold mb-1">2. NIR Scanner</h4>
+              <p class="fs-8 text-secondary mb-0">Infrared polymer resin identification</p>
+            </div>
+          </div>
+          <div class="col-md-auto d-none d-md-block text-secondary"><i class="bi bi-arrow-right fs-4"></i></div>
+          <div class="col-md">
+            <div class="p-3 bg-industrial-card rounded border border-secondary border-opacity-25 h-100">
+              <i class="bi bi-cpu-fill text-warning fs-3 mb-2 d-block"></i>
+              <h4 class="fs-6 fw-bold mb-1">3. AI Model</h4>
+              <p class="fs-8 text-secondary mb-0">Edge CNN classification algorithm</p>
+            </div>
+          </div>
+          <div class="col-md-auto d-none d-md-block text-secondary"><i class="bi bi-arrow-right fs-4"></i></div>
+          <div class="col-md">
+            <div class="p-3 bg-industrial-card rounded border border-secondary border-opacity-25 h-100">
+              <i class="bi bi-robot text-danger fs-3 mb-2 d-block"></i>
+              <h4 class="fs-6 fw-bold mb-1">4. Robot Arm</h4>
+              <p class="fs-8 text-secondary mb-0">High-speed pneumatically actuated delta pick</p>
+            </div>
+          </div>
+          <div class="col-md-auto d-none d-md-block text-secondary"><i class="bi bi-arrow-right fs-4"></i></div>
+          <div class="col-md">
+            <div class="p-3 bg-industrial-card rounded border border-secondary border-opacity-25 h-100">
+              <i class="bi bi-box-seam-fill text-success fs-3 mb-2 d-block"></i>
+              <h4 class="fs-6 fw-bold mb-1">5. Material Bin</h4>
+              <p class="fs-8 text-secondary mb-0">Sorted single-resin purity output</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8-Step Circular Workflow Pipeline -->
+  <section id="workflow" class="py-6 bg-industrial-dark text-white">
+    <div class="container py-4">
+      <div class="text-center mb-5 animate-on-scroll">
+        <span class="text-success fw-bold text-uppercase fs-7 tracking-widest">Value Chain Flow</span>
+        <h2 class="display-5 fw-bold mb-3">8-Step End-to-End Circular Workflow</h2>
+        <p class="text-secondary fs-5 max-w-700 mx-auto fw-light">From raw commercial waste pickup to high-purity industrial raw commodities.</p>
+      </div>
+
+      <div class="row g-3 text-center animate-on-scroll">
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-industrial-card rounded-2 border border-secondary border-opacity-25 h-100">
+            <div class="fs-2 text-success mb-2"><i class="bi bi-truck-front-fill"></i></div>
+            <h4 class="fs-6 fw-bold text-white mb-1">1. Collection</h4>
+            <p class="fs-8 text-secondary mb-0">Bulk pickup from industrial sites.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-industrial-card rounded-2 border border-secondary border-opacity-25 h-100">
+            <div class="fs-2 text-success mb-2"><i class="bi bi-geo-alt-fill"></i></div>
+            <h4 class="fs-6 fw-bold text-white mb-1">2. Transport</h4>
+            <p class="fs-8 text-secondary mb-0">GPS-tracked route delivery to MRF.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-industrial-card rounded-2 border border-secondary border-opacity-25 h-100">
+            <div class="fs-2 text-success mb-2"><i class="bi bi-funnel-fill"></i></div>
+            <h4 class="fs-6 fw-bold text-white mb-1">3. Sorting</h4>
+            <p class="fs-8 text-secondary mb-0">Mechanical conveyor pre-separation.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-industrial-card rounded-2 border border-secondary border-opacity-25 h-100">
+            <div class="fs-2 text-success mb-2"><i class="bi bi-cpu-fill"></i></div>
+            <h4 class="fs-6 fw-bold text-white mb-1">4. AIRWSS</h4>
+            <p class="fs-8 text-secondary mb-0">AI optical polymer identification.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-industrial-card rounded-2 border border-secondary border-opacity-25 h-100">
+            <div class="fs-2 text-success mb-2"><i class="bi bi-box-seam-fill"></i></div>
+            <h4 class="fs-6 fw-bold text-white mb-1">5. Baling</h4>
+            <p class="fs-8 text-secondary mb-0">Automated hydraulic compression.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-industrial-card rounded-2 border border-secondary border-opacity-25 h-100">
+            <div class="fs-2 text-success mb-2"><i class="bi bi-building-fill"></i></div>
+            <h4 class="fs-6 fw-bold text-white mb-1">6. Storage</h4>
+            <p class="fs-8 text-secondary mb-0">Quality audit in warehouse facility.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-industrial-card rounded-2 border border-secondary border-opacity-25 h-100">
+            <div class="fs-2 text-success mb-2"><i class="bi bi-recycle"></i></div>
+            <h4 class="fs-6 fw-bold text-white mb-1">7. Recycling</h4>
+            <p class="fs-8 text-secondary mb-0">Washing, flaking, and granulation.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-industrial-card rounded-2 border border-secondary border-opacity-25 h-100">
+            <div class="fs-2 text-success mb-2"><i class="bi bi-arrow-repeat"></i></div>
+            <h4 class="fs-6 fw-bold text-white mb-1">8. Circular Product</h4>
+            <p class="fs-8 text-secondary mb-0">Supply to manufacturer converters.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Materials Portal Section -->
+  <section id="materials" class="py-6 bg-industrial-darker text-white border-top border-dark-subtle">
+    <div class="container py-4">
+      <div class="text-center mb-5 animate-on-scroll">
+        <span class="text-success fw-bold text-uppercase fs-7 tracking-widest">Commodity Off-Take</span>
+        <h2 class="display-5 fw-bold mb-3">Processed Polymer Commodities</h2>
+        <p class="text-secondary fs-5 max-w-700 mx-auto fw-light">We process and supply high-purity recycled plastic resins for industrial converters and packaging manufacturers.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- PET -->
+        <div class="col-md-6 col-lg-3 animate-on-scroll">
+          <div class="glass-card rounded-2 overflow-hidden h-100 border border-secondary border-opacity-25 d-flex flex-column">
+            <img src="assets/gallery/plant.jpg" alt="PET Clear Plastic Flakes" width="600" height="400" loading="lazy" decoding="async" class="img-fluid card-img-sm">
+            <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h3 class="fw-bold fs-4 text-white mb-0">PET</h3>
+                  <span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-25">98.5% Purity</span>
+                </div>
+                <p class="text-secondary fs-7 mb-1"><strong>Form:</strong> Clear / Blue Washed Flakes</p>
+                <p class="text-secondary fs-7 mb-1"><strong>Availability:</strong> Ready Batch Supply</p>
+                <p class="text-secondary fs-7 mb-3"><strong>Applications:</strong> Bottle preforms, thermoforming, polyester fiber.</p>
+              </div>
+              <a href="#contact" class="btn btn-outline-light btn-sm w-full text-uppercase tracking-wider fw-bold mt-2"><i class="bi bi-file-earmark-pdf-fill me-1"></i> Request TDS Sheet</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- HDPE -->
+        <div class="col-md-6 col-lg-3 animate-on-scroll">
+          <div class="glass-card rounded-2 overflow-hidden h-100 border border-secondary border-opacity-25 d-flex flex-column">
+            <img src="assets/gallery/plant.jpg" alt="HDPE Baled Drums and Rigids" width="600" height="400" loading="lazy" decoding="async" class="img-fluid card-img-sm">
+            <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h3 class="fw-bold fs-4 text-white mb-0">HDPE</h3>
+                  <span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-25">97.0% Purity</span>
+                </div>
+                <p class="text-secondary fs-7 mb-1"><strong>Form:</strong> Regrind Granules & Bales</p>
+                <p class="text-secondary fs-7 mb-1"><strong>Availability:</strong> Ready Batch Supply</p>
+                <p class="text-secondary fs-7 mb-3"><strong>Applications:</strong> Blow-molded drums, pipes, crates, pallets.</p>
+              </div>
+              <a href="#contact" class="btn btn-outline-light btn-sm w-full text-uppercase tracking-wider fw-bold mt-2"><i class="bi bi-file-earmark-pdf-fill me-1"></i> Request TDS Sheet</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- LDPE -->
+        <div class="col-md-6 col-lg-3 animate-on-scroll">
+          <div class="glass-card rounded-2 overflow-hidden h-100 border border-secondary border-opacity-25 d-flex flex-column">
+            <img src="assets/gallery/plant.jpg" alt="LDPE Baled Clear Film" width="600" height="400" loading="lazy" decoding="async" class="img-fluid card-img-sm">
+            <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h3 class="fw-bold fs-4 text-white mb-0">LDPE</h3>
+                  <span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-25">96.5% Purity</span>
+                </div>
+                <p class="text-secondary fs-7 mb-1"><strong>Form:</strong> Compressed Bales & Pellets</p>
+                <p class="text-secondary fs-7 mb-1"><strong>Availability:</strong> Continuous Supply</p>
+                <p class="text-secondary fs-7 mb-3"><strong>Applications:</strong> Commercial stretch wraps, agricultural films, liners.</p>
+              </div>
+              <a href="#contact" class="btn btn-outline-light btn-sm w-full text-uppercase tracking-wider fw-bold mt-2"><i class="bi bi-file-earmark-pdf-fill me-1"></i> Request TDS Sheet</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PP -->
+        <div class="col-md-6 col-lg-3 animate-on-scroll">
+          <div class="glass-card rounded-2 overflow-hidden h-100 border border-secondary border-opacity-25 d-flex flex-column">
+            <img src="assets/gallery/plant.jpg" alt="PP Scrap Granules" width="600" height="400" loading="lazy" decoding="async" class="img-fluid card-img-sm">
+            <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h3 class="fw-bold fs-4 text-white mb-0">PP</h3>
+                  <span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-25">97.5% Purity</span>
+                </div>
+                <p class="text-secondary fs-7 mb-1"><strong>Form:</strong> Injection Grade Pellets</p>
+                <p class="text-secondary fs-7 mb-1"><strong>Availability:</strong> Ready Batch Supply</p>
+                <p class="text-secondary fs-7 mb-3"><strong>Applications:</strong> Battery casings, furniture, woven sacks, buckets.</p>
+              </div>
+              <a href="#contact" class="btn btn-outline-light btn-sm w-full text-uppercase tracking-wider fw-bold mt-2"><i class="bi bi-file-earmark-pdf-fill me-1"></i> Request TDS Sheet</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries We Serve Section -->
+  <section id="industries" class="py-6 bg-industrial-dark text-white">
+    <div class="container py-4">
+      <div class="text-center mb-5 animate-on-scroll">
+        <span class="text-success fw-bold text-uppercase fs-7 tracking-widest">Market Coverage</span>
+        <h2 class="display-5 fw-bold mb-3">Industries We Serve</h2>
+        <p class="text-secondary fs-5 max-w-700 mx-auto fw-light">Tailored commercial waste management, recycling, and EPR fulfillment for major enterprise sectors.</p>
+      </div>
+
+      <div class="row g-4 animate-on-scroll">
+        <div class="col-6 col-md-3">
+          <div class="p-4 bg-industrial-card rounded border border-secondary border-opacity-25 h-100 text-center">
+            <i class="bi bi-gear-wide-connected text-success fs-1 mb-2 d-block"></i>
+            <h4 class="fs-6 fw-bold mb-0">Manufacturing</h4>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-4 bg-industrial-card rounded border border-secondary border-opacity-25 h-100 text-center">
+            <i class="bi bi-cart-check-fill text-success fs-1 mb-2 d-block"></i>
+            <h4 class="fs-6 fw-bold mb-0">FMCG Brands</h4>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-4 bg-industrial-card rounded border border-secondary border-opacity-25 h-100 text-center">
+            <i class="bi bi-car-front-fill text-success fs-1 mb-2 d-block"></i>
+            <h4 class="fs-6 fw-bold mb-0">Automotive</h4>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-4 bg-industrial-card rounded border border-secondary border-opacity-25 h-100 text-center">
+            <i class="bi bi-scissors text-success fs-1 mb-2 d-block"></i>
+            <h4 class="fs-6 fw-bold mb-0">Textile & Fibers</h4>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-4 bg-industrial-card rounded border border-secondary border-opacity-25 h-100 text-center">
+            <i class="bi bi-box2-fill text-success fs-1 mb-2 d-block"></i>
+            <h4 class="fs-6 fw-bold mb-0">Packaging</h4>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-4 bg-industrial-card rounded border border-secondary border-opacity-25 h-100 text-center">
+            <i class="bi bi-building-fill text-success fs-1 mb-2 d-block"></i>
+            <h4 class="fs-6 fw-bold mb-0">Warehousing</h4>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-4 bg-industrial-card rounded border border-secondary border-opacity-25 h-100 text-center">
+            <i class="bi bi-buildings-fill text-success fs-1 mb-2 d-block"></i>
+            <h4 class="fs-6 fw-bold mb-0">Industrial Estates</h4>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-4 bg-industrial-card rounded border border-secondary border-opacity-25 h-100 text-center">
+            <i class="bi bi-bank2 text-success fs-1 mb-2 d-block"></i>
+            <h4 class="fs-6 fw-bold mb-0">Municipal Bodies</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Real Project Case Study Card -->
+  <section id="case-study" class="py-6 bg-industrial-darker text-white border-top border-dark-subtle">
+    <div class="container py-4">
+      <div class="row align-items-center g-5 animate-on-scroll">
+        <div class="col-lg-6">
+          <span class="text-success fw-bold text-uppercase fs-7 tracking-widest">Operational Success</span>
+          <h2 class="display-5 fw-bold mb-4">Commercial Waste Optimization Case Study</h2>
+          <p class="text-secondary fs-5 fw-light mb-4">How Rixle Ecosol audited, segregated, and diverted mixed industrial scrap streams into high-value polymer off-take.</p>
+          <div class="row g-3">
+            <div class="col-4">
+              <div class="p-3 bg-industrial-card rounded text-center border border-secondary border-opacity-25">
+                <div class="fs-4 fw-bold text-success mb-0">100%</div>
+                <div class="fs-8 text-secondary">EPR Compliance</div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="p-3 bg-industrial-card rounded text-center border border-secondary border-opacity-25">
+                <div class="fs-4 fw-bold text-success mb-0">98%+</div>
+                <div class="fs-8 text-secondary">Resin Purity</div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="p-3 bg-industrial-card rounded text-center border border-secondary border-opacity-25">
+                <div class="fs-4 fw-bold text-success mb-0">0%</div>
+                <div class="fs-8 text-secondary">Landfill Tipping</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="p-4 p-md-5 bg-industrial-card rounded-2 border border-secondary border-opacity-25">
+            <h3 class="fs-5 fw-bold text-white mb-3"><i class="bi bi-clipboard-data-fill text-success me-2"></i> Facility Audit Summary</h3>
+            <ul class="list-unstyled text-secondary fs-7 mb-4">
+              <li class="mb-2"><strong>Before:</strong> Unsegregated mixed commercial waste with high tipping costs and zero EPR credit monetization.</li>
+              <li class="mb-2"><strong>During:</strong> Deployed Rixle fleet logistics and automated optical sorting line at regional hub.</li>
+              <li class="mb-0"><strong>After:</strong> 100% clean segregation into PET, HDPE, and PP granules with digital audit certificates.</li>
+            </ul>
+            <a href="#contact" class="btn btn-outline-success btn-sm text-uppercase fw-bold tracking-wider">Request Similar Facility Audit</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Rixle & Trust Section -->
+  <section id="trust" class="py-6 bg-industrial-dark text-white">
+    <div class="container py-4">
+      <div class="text-center mb-5 animate-on-scroll">
+        <span class="text-success fw-bold text-uppercase fs-7 tracking-widest">Why Choose Rixle</span>
+        <h2 class="display-5 fw-bold mb-3">Enterprise Advantage & Certifications</h2>
+        <p class="text-secondary fs-5 max-w-700 mx-auto fw-light">Supported by national innovation programs and regional regulatory authorities.</p>
+      </div>
+
+      <div class="row g-4 mb-5 animate-on-scroll">
+        <div class="col-md-4">
+          <div class="p-4 bg-industrial-card rounded border border-secondary border-opacity-25 h-100">
+            <i class="bi bi-shield-check text-success fs-1 mb-2 d-block"></i>
+            <h4 class="fs-5 fw-bold mb-2">1. 100% EPR Compliance</h4>
+            <p class="fs-7 text-secondary mb-0">Audit-ready certificate management aligning with CPCB and MPCB frameworks.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-industrial-card rounded border border-secondary border-opacity-25 h-100">
+            <i class="bi bi-cpu-fill text-warning fs-1 mb-2 d-block"></i>
+            <h4 class="fs-5 fw-bold mb-2">2. Deep-Tech Sorting</h4>
+            <p class="fs-7 text-secondary mb-0">AIRWSS proprietary vision algorithms ensuring pure single-resin fraction streams.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-industrial-card rounded border border-secondary border-opacity-25 h-100">
+            <i class="bi bi-truck-front-fill text-info fs-1 mb-2 d-block"></i>
+            <h4 class="fs-5 fw-bold mb-2">3. Fleet Logistics</h4>
+            <p class="fs-7 text-secondary mb-0">Reliable bulk waste collection and time-bound facility clearance schedules.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-industrial-card rounded border border-secondary border-opacity-25 h-100">
+            <i class="bi bi-diagram-3-fill text-primary fs-1 mb-2 d-block"></i>
+            <h4 class="fs-5 fw-bold mb-2">4. Direct Off-take Network</h4>
+            <p class="fs-7 text-secondary mb-0">Established trading channels with major industrial converters and recyclers.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-industrial-card rounded border border-secondary border-opacity-25 h-100">
+            <i class="bi bi-award-fill text-success fs-1 mb-2 d-block"></i>
+            <h4 class="fs-5 fw-bold mb-2">5. Recognized Enterprise</h4>
+            <p class="fs-7 text-secondary mb-0">Recognized by Startup India and certified under MSME Udyam framework.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-industrial-card rounded border border-secondary border-opacity-25 h-100">
+            <i class="bi bi-arrow-repeat text-secondary fs-1 mb-2 d-block"></i>
+            <h4 class="fs-5 fw-bold mb-2">6. Circular Economy Impact</h4>
+            <p class="fs-7 text-secondary mb-0">Diverting thousands of tons from landfills into closed-loop industrial commodities.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources & Download Section -->
+  <section id="resources" class="py-6 bg-industrial-darker text-white border-top border-dark-subtle">
+    <div class="container py-4">
+      <div class="text-center mb-5 animate-on-scroll">
+        <span class="text-success fw-bold text-uppercase fs-7 tracking-widest">Documentation</span>
+        <h2 class="display-5 fw-bold mb-3">Resources & Technical Downloads</h2>
+        <p class="text-secondary fs-5 max-w-700 mx-auto fw-light">Access technical specifications, enterprise decks, and corporate literature.</p>
+      </div>
+
+      <div class="row g-4 animate-on-scroll">
+        <div class="col-md-4">
+          <div class="glass-card p-4 rounded-2 border border-secondary border-opacity-25 h-100 text-center">
+            <i class="bi bi-file-earmark-pdf-fill text-danger fs-1 mb-3 d-block"></i>
+            <h4 class="fs-5 fw-bold mb-2">Company Profile</h4>
+            <p class="fs-7 text-secondary mb-4">Complete corporate overview, leadership background, and operational scope.</p>
+            <a href="#contact" class="btn btn-outline-light btn-sm text-uppercase fw-bold"><i class="bi bi-download me-1"></i> Download Profile PDF</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="glass-card p-4 rounded-2 border border-secondary border-opacity-25 h-100 text-center">
+            <i class="bi bi-file-earmark-pdf-fill text-danger fs-1 mb-3 d-block"></i>
+            <h4 class="fs-5 fw-bold mb-2">Capability Deck</h4>
+            <p class="fs-7 text-secondary mb-4">Detailed AIRWSS technical architecture, sorting specs, and MRF capacity.</p>
+            <a href="#contact" class="btn btn-outline-light btn-sm text-uppercase fw-bold"><i class="bi bi-download me-1"></i> Download Capability PDF</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="glass-card p-4 rounded-2 border border-secondary border-opacity-25 h-100 text-center">
+            <i class="bi bi-file-earmark-pdf-fill text-danger fs-1 mb-3 d-block"></i>
+            <h4 class="fs-5 fw-bold mb-2">Polymer Spec Sheets</h4>
+            <p class="fs-7 text-secondary mb-4">Technical Data Sheets (TDS) for PET, HDPE, LDPE, and PP recycled resins.</p>
+            <a href="#materials" class="btn btn-outline-light btn-sm text-uppercase fw-bold"><i class="bi bi-download me-1"></i> View TDS Sheets</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-6 bg-industrial-dark text-white">
+    <div class="container py-4">
+      <div class="text-center mb-5 animate-on-scroll">
+        <span class="text-success fw-bold text-uppercase fs-7 tracking-widest">Inquiries</span>
+        <h2 class="display-5 fw-bold mb-3">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="row justify-content-center animate-on-scroll">
+        <div class="col-lg-8">
+          <div class="accordion accordion-flush" id="faqAccordion">
+            <div class="accordion-item bg-industrial-card border border-secondary border-opacity-25 mb-3 rounded">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed bg-transparent text-white fw-bold fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                  What waste categories does Rixle Ecosol handle?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-secondary fs-7">
+                  We specialize in commercial industrial waste, rigid plastics (PET, HDPE, PP), flexible LDPE films, multi-layered plastics (MLP), synthetic textile scrap, and mixed manufacturing waste.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item bg-industrial-card border border-secondary border-opacity-25 mb-3 rounded">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed bg-transparent text-white fw-bold fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                  How does AIRWSS improve sorting efficiency?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-secondary fs-7">
+                  AIRWSS combines high-speed RGB optical cameras and NIR spectral imaging to classify polymer resin types in real-time, driving delta robotic pickers at up to 4,500 picks/hour with 98.5% purity.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item bg-industrial-card border border-secondary border-opacity-25 mb-3 rounded">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed bg-transparent text-white fw-bold fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                  Do you provide audit-ready EPR certificates?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-secondary fs-7">
+                  Yes, we provide end-to-end Extended Producer Responsibility fulfillment with digital chain-of-custody tracking compliant with CPCB and MPCB regulations.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pre-Footer Strong CTA -->
+  <section class="cta-section py-6 text-white position-relative">
+    <div class="cta-overlay"></div>
+    <div class="container py-5 text-center position-relative z-2 animate-on-scroll">
+      <h2 class="display-3 fw-black mb-3 tracking-tight">Ready to Optimize Your Waste Supply Chain?</h2>
+      <p class="fs-4 text-light text-opacity-75 mb-5 max-w-700 mx-auto fw-light">Schedule a facility audit, inquire about AIRWSS integration, or procure high-purity polymer commodities today.</p>
+      <a href="#contact" class="btn btn-success btn-lg px-5 py-3 fw-bold text-uppercase fs-6 tracking-wider shadow-lg"><i class="bi bi-truck-front-fill me-2"></i> Request Facility Audit</a>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section id="contact" class="py-6 bg-industrial-darker text-white border-top border-dark-subtle">
+    <div class="container py-4">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 animate-on-scroll">
+          <div class="text-center mb-5">
+            <span class="text-success fw-bold text-uppercase fs-7 tracking-widest">Get In Touch</span>
+            <h2 class="display-5 fw-bold mb-3">Partner With Rixle Ecosol</h2>
+            <p class="text-secondary fs-5 fw-light">Inquire about AIRWSS automated sorting integration, bulk polymer procurement, or commercial waste collection.</p>
+          </div>
+
+          <form id="contactForm" onsubmit="window.handleContactFormSubmit(event)" class="glass-card p-4 p-md-5 rounded-2 border border-secondary border-opacity-25 needs-validation" novalidate>
+            <div id="formAlertBanner" class="alert d-none mb-4" role="alert"></div>
+            
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="fullName" class="form-label fs-7 text-uppercase tracking-wider text-secondary fw-semibold">Full Name *</label>
+                <input type="text" class="form-control form-control-lg bg-dark text-white border-secondary border-opacity-50" id="fullName" name="fullName" placeholder="Nikhil Sakhare" required>
+                <div class="invalid-feedback fs-8">Please enter your full name.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label fs-7 text-uppercase tracking-wider text-secondary fw-semibold">Work Email *</label>
+                <input type="email" class="form-control form-control-lg bg-dark text-white border-secondary border-opacity-50" id="email" name="email" placeholder="name@company.com" required>
+                <div class="invalid-feedback fs-8">Please enter a valid work email address.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="phone" class="form-label fs-7 text-uppercase tracking-wider text-secondary fw-semibold">Phone Number *</label>
+                <input type="tel" class="form-control form-control-lg bg-dark text-white border-secondary border-opacity-50" id="phone" name="phone" placeholder="+91 98765 43210" required>
+                <div class="invalid-feedback fs-8">Please enter your phone number.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="company" class="form-label fs-7 text-uppercase tracking-wider text-secondary fw-semibold">Company Name</label>
+                <input type="text" class="form-control form-control-lg bg-dark text-white border-secondary border-opacity-50" id="company" name="company" placeholder="Rixle Ecosol / Enterprise">
+              </div>
+              <div class="col-12">
+                <label for="subject" class="form-label fs-7 text-uppercase tracking-wider text-secondary fw-semibold">Inquiry Category *</label>
+                <select class="form-select form-select-lg bg-dark text-white border-secondary border-opacity-50" id="subject" name="subject" required>
+                  <option value="" selected disabled>Select primary inquiry category</option>
+                  <option value="Industrial Waste Collection">Commercial Waste Pickup & Transport</option>
+                  <option value="Material Purchase">Recyclable Polymer Procurement (PET/HDPE/PP)</option>
+                  <option value="AIRWSS Systems">AIRWSS Robotic System Integration</option>
+                  <option value="EPR Consulting">EPR Compliance & Circularity Advisory</option>
+                  <option value="General Inquiry">General Business Inquiry</option>
+                </select>
+                <div class="invalid-feedback fs-8">Please select an inquiry type.</div>
+              </div>
+              <div class="col-12">
+                <label for="message" class="form-label fs-7 text-uppercase tracking-wider text-secondary fw-semibold">Message / Monthly Tonnage *</label>
+                <textarea class="form-control form-control-lg bg-dark text-white border-secondary border-opacity-50" id="message" name="message" rows="4" placeholder="Detail your monthly material volume or plant technical requirements..." required></textarea>
+                <div class="invalid-feedback fs-8">Please include message details.</div>
+              </div>
+              <div class="col-12 text-center mt-4">
+                <button type="submit" id="submitBtn" class="btn btn-success btn-lg w-full py-3 fw-bold text-uppercase tracking-wider">
+                  <span id="submitSpinner" class="spinner-border spinner-border-sm d-none me-2" role="status" aria-hidden="true"></span>
+                  <span>Submit Inquiry</span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expanded Enterprise Footer -->
+  <footer class="bg-industrial-darker text-white pt-6 pb-4 border-top border-dark-subtle">
+    <div class="container">
+      <div class="row g-5 mb-5">
+        <div class="col-lg-4 col-md-6">
+          <img src="assets/logo.png" alt="Rixle Ecosol Industrial Logo" width="160" height="48" loading="lazy" decoding="async" class="mb-4">
+          <p class="text-secondary fs-7 fw-light mb-3">Rixle Ecosol is an environmental company engineering AI-driven robotic sorting infrastructure (AIRWSS) and processing industrial plastics for circular economy markets.</p>
+          <div class="mb-3">
+            <span class="badge bg-secondary bg-opacity-25 text-secondary border border-secondary border-opacity-25 fs-8">Udyam / MSME Registered</span>
+            <span class="badge bg-secondary bg-opacity-25 text-secondary border border-secondary border-opacity-25 fs-8 ms-1">Startup India</span>
+          </div>
+          <div class="d-flex gap-3 fs-5">
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="text-secondary hover-text-success" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener" class="text-secondary hover-text-success" aria-label="Twitter X"><i class="bi bi-twitter-x"></i></a>
+            <a href="mailto:contact@rixle.co.in" class="text-secondary hover-text-success" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6">
+          <h4 class="fs-6 fw-bold mb-3 text-uppercase text-light tracking-wider">Pillars</h4>
+          <ul class="list-unstyled mb-0 fs-7 text-secondary">
+            <li class="mb-2"><a href="#pillars" class="text-decoration-none text-secondary hover-text-white">Waste Management</a></li>
+            <li class="mb-2"><a href="#pillars" class="text-decoration-none text-secondary hover-text-white">Material Trading</a></li>
+            <li class="mb-2"><a href="#airwss" class="text-decoration-none text-secondary hover-text-white">AIRWSS Robotics</a></li>
+            <li class="mb-2"><a href="#pillars" class="text-decoration-none text-secondary hover-text-white">EPR Services</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6">
+          <h4 class="fs-6 fw-bold mb-3 text-uppercase text-light tracking-wider">Downloads</h4>
+          <ul class="list-unstyled mb-0 fs-7 text-secondary">
+            <li class="mb-2"><a href="#resources" class="text-decoration-none text-secondary hover-text-white"><i class="bi bi-file-earmark-pdf me-1"></i> Company Profile</a></li>
+            <li class="mb-2"><a href="#resources" class="text-decoration-none text-secondary hover-text-white"><i class="bi bi-file-earmark-pdf me-1"></i> Capability Deck</a></li>
+            <li class="mb-2"><a href="#materials" class="text-decoration-none text-secondary hover-text-white"><i class="bi bi-file-earmark-pdf me-1"></i> Polymer TDS Sheets</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <h4 class="fs-6 fw-bold mb-3 text-uppercase text-light tracking-wider">Contact & Location</h4>
+          <p class="text-secondary fs-7 mb-2"><i class="bi bi-geo-alt-fill text-success me-2"></i> Pune, Maharashtra, India</p>
+          <p class="text-secondary fs-7 mb-2"><i class="bi bi-envelope-fill text-success me-2"></i> contact@rixle.co.in</p>
+          <p class="text-secondary fs-7 mb-2"><i class="bi bi-telephone-fill text-success me-2"></i> +91 98765 43210</p>
+          <p class="text-secondary fs-7 mb-3"><i class="bi bi-clock-fill text-success me-2"></i> Mon - Sat (09:00 - 18:00 IST)</p>
+          <div class="ratio ratio-21x9 rounded overflow-hidden border border-secondary border-opacity-25">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121059.0471115617!2d73.79292679233633!3d18.52456485994464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2e67461101%3A0x828d43bf9d9ee343!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-secondary opacity-25">
+
+      <div class="row align-items-center fs-7 text-secondary">
+        <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+          <span>&copy; 2026 Rixle Ecosol. All Rights Reserved.</span>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <a href="#hero" class="text-secondary text-decoration-none me-3 hover-text-white">Privacy Policy</a>
+          <a href="#hero" class="text-secondary text-decoration-none hover-text-white">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/supabase-client.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
