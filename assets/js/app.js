@@ -1,21 +1,31 @@
 /**
- * Rixle Ecosol - Industrial Application & Motion Engine
+ * Rixle Ecosol - Application Engine & Scroll Effects
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Rixle Ecosol Industrial Platform Initialized.');
+  console.log('Rixle Ecosol Platform Loaded.');
 
-  // LEVEL 13: Image Fallback & Laziness Guard
+  // Dynamic Navbar Scroll State
+  const navbar = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
+  // Image Fallback Guard
   const images = document.querySelectorAll('img');
   images.forEach(img => {
     img.addEventListener('error', () => {
       console.warn(`Fallback triggered for: ${img.src}`);
       img.src = 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1200&q=80';
-      img.alt = 'Rixle Ecosol Industrial Facility Operations';
+      img.alt = 'Rixle Ecosol Industrial Operations';
     });
   });
 
-  // LEVEL 4: Scroll Animation Observer (Fade Up & Slide In)
+  // Scroll Motion Animation Observer
   const scrollElements = document.querySelectorAll('.animate-on-scroll');
   
   const elementInView = (el, dividend = 1.25) => {
@@ -23,23 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
     return (elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend);
   };
 
-  const displayScrollElement = (element) => {
-    element.classList.add('animated');
-  };
-
   const handleScrollAnimation = () => {
     scrollElements.forEach((el) => {
       if (elementInView(el)) {
-        displayScrollElement(el);
+        el.classList.add('animated');
       }
     });
   };
 
-  window.addEventListener('scroll', () => {
-    handleScrollAnimation();
-  });
-
-  // Trigger once on load for above-the-fold
+  window.addEventListener('scroll', handleScrollAnimation);
   handleScrollAnimation();
 
   // Smooth Anchor Navigation
