@@ -3,818 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#121613">
+    <title>RIXLE PRIVATE LIMITED | Advanced Waste Management Solutions</title>
+    <meta name="description" content="RIXLE PRIVATE LIMITED provides end-to-end dry waste management, plastic recycling, material trading, and EPR compliance solutions in Maharashtra.">
     
-    <title>Rixle Private Limited | Industrial Resource Recovery &amp; Circular Infrastructure</title>
-    <meta name="title" content="Rixle Private Limited | Industrial Resource Recovery &amp; Circular Infrastructure">
-    <meta name="description" content="Rixle Private Limited delivers technology-driven industrial scrap solutions, AIRWSS AI-assisted material segregation, MRF infrastructure, and Extended Producer Responsibility (EPR) compliance across India.">
-    <meta name="keywords" content="Rixle Private Limited, Resource Recovery, Secondary Raw Materials, Industrial Scrap Solutions, AIRWSS, EPR Compliance, MRF Operations, Waste Insights">
-    <meta name="author" content="Rixle Private Limited">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://rixle.co.in/">
-    <link rel="icon" type="image/png" href="assets/img/favicon.png">
-
+    <!-- Open Graph / Meta -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://rixle.co.in/">
-    <meta property="og:title" content="Rixle Private Limited | Industrial Resource Recovery &amp; Circular Infrastructure">
-    <meta property="og:description" content="Technology-driven industrial scrap solutions, AIRWSS AI-assisted material segregation, MRF infrastructure, and EPR compliance across India.">
-    <meta property="og:image" content="https://rixle.co.in/assets/img/hero-facility.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Rixle Private Limited | Industrial Resource Recovery &amp; Circular Infrastructure">
-    <meta name="twitter:description" content="Technology-driven industrial scrap solutions, AIRWSS AI-assisted material segregation, MRF infrastructure, and EPR compliance across India.">
-    <meta name="twitter:image" content="https://rixle.co.in/assets/img/hero-facility.jpg">
+    <meta property="og:title" content="RIXLE PRIVATE LIMITED | Sustainable Waste Management">
+    <meta property="og:description" content="Innovating dry waste segregation, plastic processing, and material trading for a circular economy.">
+    <!-- TEMP IMAGE - Replace with Rixle original photo later -->
+    <meta property="og:image" content="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1200&h=630&q=80">
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "@id": "https://rixle.co.in/#organization",
-          "name": "Rixle Private Limited",
-          "url": "https://rixle.co.in",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "contactType": "sales",
-            "email": "info@rixle.co.in",
-            "areaServed": "IN",
-            "availableLanguage": ["en", "hi", "mr"]
-          },
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "MIDC Industrial Area",
-            "addressLocality": "Latur",
-            "addressRegion": "Maharashtra",
-            "postalCode": "413512",
-            "addressCountry": "IN"
-          }
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://rixle.co.in/#website",
-          "url": "https://rixle.co.in",
-          "name": "Rixle Private Limited",
-          "publisher": { "@id": "https://rixle.co.in/#organization" }
-        }
-      ]
-    }
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/main.css">
+    
+    <!-- Supabase JS Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
-    <a href="#main-content" class="skip-link">Skip to Main Content</a>
-
-    <!-- TOP UTILITY BAR -->
-    <div class="top-bar">
-        <div class="wrap top-bar-inner">
-            <div class="top-bar-left">
-                <span class="top-info-item">
-                    <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
-                    <span>MIDC Latur, Maharashtra, India</span>
-                    <button class="copy-inline-btn" data-copy="MIDC Industrial Area, Latur, Maharashtra - 413512, India" aria-label="Copy Address">📋</button>
-                </span>
-                <span class="top-info-item">
-                    <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                    <a href="mailto:info@rixle.co.in" aria-label="Send email to info@rixle.co.in">info@rixle.co.in</a>
-                    <button class="copy-inline-btn" data-copy="info@rixle.co.in" aria-label="Copy Email">📋</button>
-                </span>
-            </div>
-            <div class="top-bar-right">
-                <button class="top-portal-link" id="openPortalBtn" style="background:none; border:none; cursor:pointer;" aria-label="Access Client Portal">🔒 Client Portal</button>
-                <span class="top-info-item mono">
-                    <span>CIN: U38210MH2024PTC420000</span>
-                    <button class="copy-inline-btn" data-copy="U38210MH2024PTC420000" aria-label="Copy CIN">📋</button>
-                </span>
-            </div>
-        </div>
-    </div>
-
-    <!-- HEADER -->
-    <header id="site-header">
-        <div class="nav wrap">
-            <a href="index.html" class="logo" aria-label="Rixle Private Limited Home">
-                <span class="logo-text">RIX<span class="amber-text">LE</span></span>
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo-link">
+                <!-- TEMP IMAGE - Replace with Rixle original photo later -->
+                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=200&h=60&q=80" alt="Rixle Logo" class="logo-img" width="200" height="60" loading="lazy" decoding="async">
             </a>
-            <nav class="navlinks" aria-label="Primary Navigation">
-                <a href="index.html" class="active" aria-current="page">Home</a>
-                <a href="#about">About</a>
-                <a href="#services">Solutions</a>
-                <a href="#infrastructure">Workflow</a>
-                <a href="#technology">AIRWSS Tech</a>
-                <a href="#materials">Materials</a>
-                <a href="#contact">Contact</a>
-            </nav>
-            <div class="navcta">
-                <a href="#contact" class="btn btn-amber">Schedule Consultation</a>
-            </div>
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="mobileMenu">
-                <span></span><span></span><span></span>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#materials" class="nav-link">Materials</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#contact" class="nav-link btn-contact">Contact Us</a>
+            </nav>
         </div>
     </header>
 
-    <!-- MOBILE DRAWER -->
-    <div class="nav-scrim" id="navScrim"></div>
-    <aside class="mobile-menu" id="mobileMenu" aria-label="Mobile Navigation">
-        <a href="index.html">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#services">Solutions</a>
-        <a href="#infrastructure">Workflow</a>
-        <a href="#technology">AIRWSS Tech</a>
-        <a href="#materials">Recovered Commodities</a>
-        <a href="#contact">Contact Us</a>
-        <a href="#contact" class="btn btn-amber" style="margin-top:10px;">Schedule Consultation</a>
-    </aside>
-
-    <main id="main-content">
-
-        <!-- SECTION 1: HERO -->
-        <section class="hero bg-overlay-section" id="hero-section" aria-label="Hero Introduction">
-            <div class="hero-photo-layer" aria-hidden="true">
-                <img src="assets/img/hero-facility.jpg" alt="" class="hero-photo-img" loading="eager" onerror="this.remove();">
-            </div>
-            <div class="hero-vector-backdrop" aria-hidden="true">
-                <svg viewBox="0 0 1200 500" class="hero-svg-skyline" preserveAspectRatio="xMidYMid slice">
-                    <defs>
-                        <pattern id="heroGrid" width="40" height="40" patternUnits="userSpaceOnUse">
-                            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1"/>
-                        </pattern>
-                        <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#D9A441" stop-opacity="0.15"/>
-                            <stop offset="100%" stop-color="#121613" stop-opacity="0"/>
-                        </linearGradient>
-                    </defs>
-                    <rect width="1200" height="500" fill="url(#heroGrid)"/>
-                    <rect width="1200" height="500" fill="url(#glowGrad)"/>
-                    <path d="M600 500 L600 280 L750 200 L900 280 L900 500 Z" fill="#19201A" stroke="rgba(217, 164, 65, 0.2)" stroke-width="1.5"/>
-                    <path d="M850 500 L850 220 L1020 130 L1200 220 L1200 500 Z" fill="#151B16" stroke="rgba(217, 164, 65, 0.15)" stroke-width="1.5"/>
-                    <line x1="500" y1="120" x2="1200" y2="120" stroke="#D9A441" stroke-width="3" stroke-dasharray="8 4"/>
-                    <path d="M 550 480 Q 750 350 1150 380" fill="none" stroke="#D9A441" stroke-width="2" stroke-dasharray="6 4" class="vector-pulse-line"/>
-                </svg>
-            </div>
-
-            <div class="wrap hero-inner">
-                <div class="hero-tag-badge">
-                    <span class="static-badge-dot" aria-hidden="true"></span>
-                    Rixle Private Limited · Enterprise Resource Optimization
-                </div>
-
-                <h1>India's Circular Economy Partner for <em>Industrial Waste Recovery</em></h1>
-                <p class="hero-lead">Transforming complex commercial scrap and municipal waste into high-purity secondary raw materials through automated MRF operations, optical segregation, and circular supply chains.</p>
-
-                <div class="hero-summary-bar">
-                    <span>Industrial Scrap Collection</span>
-                    <span class="bar-sep">•</span>
-                    <span>Material Trading</span>
-                    <span class="bar-sep">•</span>
-                    <span>MRF Operations</span>
-                    <span class="bar-sep">•</span>
-                    <span>AI Sorting (AIRWSS)</span>
-                    <span class="bar-sep">•</span>
-                    <span>EPR Services</span>
-                </div>
-
-                <div class="hero-actions">
-                    <a href="#contact" class="btn btn-amber hero-btn-primary">
-                        <span>Schedule Consultation</span>
-                        <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </a>
-                    <a href="#contact" class="btn btn-line-light hero-btn-secondary">Request Industrial Pickup</a>
-                </div>
-
-                <div class="hero-industries-container">
-                    <div class="industries-label">Industries We Serve:</div>
-                    <div class="industries-grid">
-                        <span class="ind-chip">⚙️ Manufacturing</span>
-                        <span class="ind-chip">📦 Packaging</span>
-                        <span class="ind-chip">🧵 Textile</span>
-                        <span class="ind-chip">🚗 Automotive</span>
-                        <span class="ind-chip">🛒 FMCG</span>
-                        <span class="ind-chip">🏛 Municipalities</span>
-                    </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="badge">Innovating Circular Economy</span>
+                <h1>Transforming Waste Into Sustainable Resources</h1>
+                <p>RIXLE PRIVATE LIMITED is at the forefront of modern dry waste management, offering automated segregation, plastic polymer recovery, and end-to-end EPR compliance.</p>
+                <div class="hero-btns">
+                    <a href="#services" class="btn btn-primary">Our Services</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
                 </div>
             </div>
-        </section>
+            <div class="hero-image-wrapper">
+                <!-- TEMP IMAGE - Replace with Rixle original photo later -->
+                <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&h=600&q=80" alt="Material Recovery Facility automated conveyor line" class="hero-img" width="800" height="600" loading="lazy" decoding="async">
+            </div>
+        </div>
+    </section>
 
-        <!-- WHY RIXLE -->
-        <section class="why-rixle-strip bg-panel">
-            <div class="wrap">
-                <div class="why-grid">
-                    <div class="why-card">
-                        <div class="why-icon-svg">
-                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#2F5233" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                        </div>
-                        <div class="why-content">
-                            <h4>Faster Material Recovery</h4>
-                            <p>Automated processing lines reduce site clearing cycles and prevent scrap backlog.</p>
-                        </div>
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container grid-2">
+            <div class="about-image">
+                <!-- TEMP IMAGE - Replace with Rixle original photo later -->
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&h=600&q=80" alt="Rixle waste processing facility interior" class="rounded-img" width="800" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="about-text">
+                <h2>About RIXLE PRIVATE LIMITED</h2>
+                <p>Founded with a commitment to environmental stewardship, RIXLE operates high-efficiency processing facilities designed to divert recyclable plastics and dry waste from landfills.</p>
+                <p>Through strategic partnerships, modern sorting operations, and direct supply channels, we bridge the gap between waste generators and recyclers.</p>
+                <ul class="check-list">
+                    <li>Industrial & Commercial Waste Collection</li>
+                    <li>Advanced Material Recovery Facilities (MRF)</li>
+                    <li>High-Purity Plastic Polymer Trading</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section bg-light" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Core Services</h2>
+                <p>Integrated solutions tailored for businesses, municipalities, and recycling industries.</p>
+            </div>
+            <div class="services-grid">
+                
+                <div class="card service-card">
+                    <div class="card-image">
+                        <!-- TEMP IMAGE - Replace with Rixle original photo later -->
+                        <img src="https://images.unsplash.com/photo-1605600659873-d808a13e4d2a?auto=format&fit=crop&w=600&h=400&q=80" alt="Commercial waste collection truck for industrial scrap logistics" width="600" height="400" loading="lazy" decoding="async">
                     </div>
-                    <div class="why-card">
-                        <div class="why-icon-svg">
-                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#2F5233" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-                        </div>
-                        <div class="why-content">
-                            <h4>Higher Recovery Value</h4>
-                            <p>High-purity optical grading yields premium commodity pricing for industrial scrap.</p>
-                        </div>
+                    <div class="card-body">
+                        <h3>Industrial Waste Collection</h3>
+                        <p>Scheduled pickup, transportation, and bulk handling of commercial scrap and dry waste fractions.</p>
                     </div>
-                    <div class="why-card">
-                        <div class="why-icon-svg">
-                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#2F5233" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        </div>
-                        <div class="why-content">
-                            <h4>Transparent Traceability</h4>
-                            <p>Digital chain-of-custody tracking for verifiable Extended Producer Responsibility reporting.</p>
-                        </div>
+                </div>
+
+                <div class="card service-card">
+                    <div class="card-image">
+                        <!-- TEMP IMAGE - Replace with Rixle original photo later -->
+                        <img src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&w=600&h=400&q=80" alt="Material Recovery Facility manual and automated sorting line" width="600" height="400" loading="lazy" decoding="async">
                     </div>
+                    <div class="card-body">
+                        <h3>Material Recovery Facility (MRF)</h3>
+                        <p>Mechanical and manual segregation channels ensuring high purity standards across waste streams.</p>
+                    </div>
+                </div>
+
+                <div class="card service-card">
+                    <div class="card-image">
+                        <!-- TEMP IMAGE - Replace with Rixle original photo later -->
+                        <img src="https://images.unsplash.com/photo-1595278069441-2cf29f8005a4?auto=format&fit=crop&w=600&h=400&q=80" alt="Plastic polymer bales and regrind stock prepared for trading" width="600" height="400" loading="lazy" decoding="async">
+                    </div>
+                    <div class="card-body">
+                        <h3>Plastic Polymer Trading</h3>
+                        <p>Bulk distribution of sorted plastic polymers including PET, HDPE, LDPE, PP, and MLP grades.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Materials Section -->
+    <section class="materials section" id="materials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Materials We Process</h2>
+                <p>We handle and supply a broad range of post-consumer and industrial plastics.</p>
+            </div>
+            <div class="materials-grid">
+                
+                <div class="material-box">
+                    <!-- TEMP IMAGE - Replace with Rixle original photo later -->
+                    <img src="https://images.unsplash.com/photo-1528323273322-d81458248d40?auto=format&fit=crop&w=300&h=300&q=80" alt="PET clear bottle waste baled for reprocessing" class="mat-img" width="300" height="300" loading="lazy" decoding="async">
+                    <h4>PET</h4>
+                    <p>Polyethylene Terephthalate</p>
+                </div>
+
+                <div class="material-box">
+                    <!-- TEMP IMAGE - Replace with Rixle original photo later -->
+                    <img src="https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?auto=format&fit=crop&w=300&h=300&q=80" alt="HDPE plastic containers sorted for regrind" class="mat-img" width="300" height="300" loading="lazy" decoding="async">
+                    <h4>HDPE</h4>
+                    <p>High-Density Polyethylene</p>
+                </div>
+
+                <div class="material-box">
+                    <!-- TEMP IMAGE - Replace with Rixle original photo later -->
+                    <img src="https://images.unsplash.com/photo-1604186837056-8e7c286766f2?auto=format&fit=crop&w=300&h=300&q=80" alt="LDPE commercial film waste baled" class="mat-img" width="300" height="300" loading="lazy" decoding="async">
+                    <h4>LDPE</h4>
+                    <p>Low-Density Polyethylene</p>
+                </div>
+
+                <div class="material-box">
+                    <!-- TEMP IMAGE - Replace with Rixle original photo later -->
+                    <img src="https://images.unsplash.com/photo-1574974671999-24b7df5b3017?auto=format&fit=crop&w=300&h=300&q=80" alt="PP polypropylene plastic scrap" class="mat-img" width="300" height="300" loading="lazy" decoding="async">
+                    <h4>PP</h4>
+                    <p>Polypropylene</p>
+                </div>
+
+                <div class="material-box">
+                    <!-- TEMP IMAGE - Replace with Rixle original photo later -->
+                    <img src="https://images.unsplash.com/photo-1618477461853-cf6ed80faba5?auto=format&fit=crop&w=300&h=300&q=80" alt="MLP multi-layer plastic waste streams" class="mat-img" width="300" height="300" loading="lazy" decoding="async">
+                    <h4>MLP</h4>
+                    <p>Multi-Layer Plastics</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery section bg-light" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Operations & Facilities</h2>
+                <p>A glance at our processing capabilities and field activity.</p>
+            </div>
+            <div class="gallery-grid">
+                <!-- TEMP IMAGE - Replace with Rixle original photo later -->
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&h=600&q=80" alt="Recycling facility sorting warehouse" class="gallery-item" width="800" height="600" loading="lazy" decoding="async">
+                <!-- TEMP IMAGE - Replace with Rixle original photo later -->
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&h=600&q=80" alt="Optical sorting technology equipment" class="gallery-item" width="800" height="600" loading="lazy" decoding="async">
+                <!-- TEMP IMAGE - Replace with Rixle original photo later -->
+                <img src="https://images.unsplash.com/photo-1605600659873-d808a13e4d2a?auto=format&fit=crop&w=800&h=600&q=80" alt="Waste collection vehicles fleet" class="gallery-item" width="800" height="600" loading="lazy" decoding="async">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container grid-2">
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <p>Have questions about bulk material procurement, waste collection, or partnership opportunities? Reach out to us directly.</p>
+                <div class="info-item">
+                    <strong>Location:</strong>
+                    <p>Latur, Maharashtra, India</p>
+                </div>
+                <div class="info-item">
+                    <strong>Email:</strong>
+                    <p>contact@rixle.co.in</p>
                 </div>
             </div>
-        </section>
-
-        <!-- SECTION 2: ABOUT -->
-        <section class="about-section" id="about" aria-label="About Rixle Private Limited">
-            <div class="wrap grid-2-col">
-                <div class="col-visual">
-                    <div class="about-image-frame">
-                        <div class="premium-img-frame" style="height: 220px; margin-bottom: 14px;">
-                            <img src="assets/img/facility-floor.jpg" alt="Rixle material recovery facility floor, Latur" loading="lazy" onerror="this.closest('.premium-img-frame').style.display='none';">
-                        </div>
-                        <div class="isometric-mrf-container">
-                            <svg viewBox="0 0 500 350" class="isometric-svg">
-                                <g transform="translate(250, 60) scale(1, 0.5) rotate(45)">
-                                    <rect x="-150" y="-150" width="300" height="300" fill="#19201A" stroke="#2F5233" stroke-width="2"/>
-                                    <rect x="-130" y="-130" width="100" height="120" fill="#252D27" stroke="#6E7B76" stroke-width="1"/>
-                                    <rect x="-20" y="-120" width="40" height="240" fill="#121613" stroke="#D9A441" stroke-width="2"/>
-                                    <line x1="0" y1="-120" x2="0" y2="120" stroke="#D9A441" stroke-width="2" stroke-dasharray="10 5"/>
-                                    <rect x="-30" y="-20" width="60" height="40" fill="#2F5233" stroke="#D9A441" stroke-width="1.5"/>
-                                    <rect x="50" y="40" width="70" height="70" fill="#1E3821" stroke="#C7CBC0" stroke-width="1.5"/>
-                                    <rect x="-130" y="50" width="30" height="30" fill="#D9A441"/>
-                                    <rect x="-95" y="50" width="30" height="30" fill="#D9A441"/>
-                                    <rect x="-130" y="85" width="30" height="30" fill="#2F5233"/>
-                                </g>
-                            </svg>
-                        </div>
-
-                        <div class="about-image-badge">
-                            <svg class="badge-svg-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 22h20V8l-7 5V8l-7 5V2H2v20z"/><path d="M6 12h2v2H6zM6 16h2v2H6z"/></svg>
-                            <div class="badge-text-group">
-                                <span class="badge-title">Operational Hub</span>
-                                <span class="badge-sub">MIDC, Latur, Maharashtra · Resource Recovery Facility</span>
-                            </div>
-                        </div>
+            <div class="contact-form-container">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your Name">
                     </div>
-                </div>
-
-                <div class="col-text">
-                    <div class="eyebrow">Enterprise Overview</div>
-                    <h2>Structured Infrastructure for India's <em>Circular Economy</em></h2>
-                    <p class="lead-text">Rixle Private Limited helps manufacturers address feedstock quality, traceability, and resource recovery challenges across industrial supply chains.</p>
-                    <p>We pair mechanical processing infrastructure with automated optical segregation research — converting commercial scrap into structured inventory that keeps industrial processors supplied and compliant.</p>
-
-                    <div class="about-pillars-grid">
-                        <div class="pillar-item">
-                            <div class="pillar-num">01</div>
-                            <div class="pillar-content">
-                                <strong>Tech-Driven Processing</strong>
-                                <span>Developing AIRWSS, an AI-assisted optical sorting platform designed to improve material recovery.</span>
-                            </div>
-                        </div>
-                        <div class="pillar-item">
-                            <div class="pillar-num">02</div>
-                            <div class="pillar-content">
-                                <strong>Chain of Custody</strong>
-                                <span>Structuring material flow records across collection, segregation, and final dispatch.</span>
-                            </div>
-                        </div>
-                        <div class="pillar-item pillar-full-width">
-                            <div class="pillar-num">03</div>
-                            <div class="pillar-content">
-                                <strong>Circular Value Recovery</strong>
-                                <span>Returning high-purity sorted fractions back into manufacturing supply chains as secondary feedstock.</span>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="Your Email">
                     </div>
-
-                    <div class="highlight-callout">
-                        <strong>Traceability Framework:</strong> Our operational workflow is designed to support traceable records that assist regulatory reporting and Extended Producer Responsibility (EPR) documentation.
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number">
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" required placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" id="submitBtn" class="btn btn-primary">Send Message</button>
+                    <p id="formStatus" class="form-status"></p>
+                </form>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- SECTION 3: SERVICES -->
-        <section class="services-section bg-panel" id="services" aria-label="Solutions Portfolio">
-            <div class="wrap">
-                <div class="section-head center-head">
-                    <div class="eyebrow">Solutions Portfolio</div>
-                    <h2>Enterprise Resource Recovery Services</h2>
-                    <p>End-to-end industrial waste management, material recovery, and circular supply chain frameworks engineered for manufacturing ecosystems and municipal bodies.</p>
-                </div>
-
-                <div class="services-enterprise-grid">
-                    <article class="svc-b2b-card">
-                        <div class="svc-card-header">
-                            <div class="svc-icon-wrapper">
-                                <svg class="svc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-                            </div>
-                            <div class="svc-header-meta">
-                                <h3>Industrial Waste Collection</h3>
-                                <span class="svc-kpi-badge">KPI: Site Scrap Containment</span>
-                            </div>
-                        </div>
-                        <div class="svc-card-body">
-                            <div class="svc-meta-block"><strong>Business Problem:</strong> Unmanaged scrap accumulation causing floor hazards and lost recyclable value.</div>
-                            <div class="svc-meta-block"><strong>How Rixle Solves It:</strong> Scheduled logistics, on-site containers, and direct scrap evacuation from your premises.</div>
-                        </div>
-                        <div class="svc-card-footer">
-                            <a href="#contact" class="btn btn-line btn-full">Schedule Scrap Audit</a>
-                        </div>
-                    </article>
-
-                    <article class="svc-b2b-card">
-                        <div class="svc-card-header">
-                            <div class="svc-icon-wrapper">
-                                <svg class="svc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20"/><path d="M5 20V8l7-5 7 5v12"/><path d="M9 12h6"/><path d="M12 9v6"/></svg>
-                            </div>
-                            <div class="svc-header-meta">
-                                <h3>MRF Operations</h3>
-                                <span class="svc-kpi-badge">KPI: High-Throughput Sorting</span>
-                            </div>
-                        </div>
-                        <div class="svc-card-body">
-                            <div class="svc-meta-block"><strong>Business Problem:</strong> Mixed waste streams going to landfill for lack of processing infrastructure.</div>
-                            <div class="svc-meta-block"><strong>How Rixle Solves It:</strong> Multi-stage MRFs with trommels, mechanical separators, and compaction balers.</div>
-                        </div>
-                        <div class="svc-card-footer">
-                            <a href="#contact" class="btn btn-line btn-full">Inquire MRF Partnership</a>
-                        </div>
-                    </article>
-
-                    <article class="svc-b2b-card">
-                        <div class="svc-card-header">
-                            <div class="svc-icon-wrapper">
-                                <svg class="svc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 16V4M7 4L3 8M7 4L11 8"/><path d="M17 8v12M17 20l4-4M17 20l-4-4"/></svg>
-                            </div>
-                            <div class="svc-header-meta">
-                                <h3>Material Trading</h3>
-                                <span class="svc-kpi-badge">KPI: Mill-Grade Feedstock</span>
-                            </div>
-                        </div>
-                        <div class="svc-card-body">
-                            <div class="svc-meta-block"><strong>Business Problem:</strong> Unreliable commodity quality and unpredictable supply volumes.</div>
-                            <div class="svc-meta-block"><strong>How Rixle Solves It:</strong> Sourcing and supplying bulk secondary raw materials graded by purity.</div>
-                        </div>
-                        <div class="svc-card-footer">
-                            <a href="#contact" class="btn btn-line btn-full">Request Feedstock Quotes</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 4: WORKFLOW -->
-        <section class="workflow-section bg-overlay-section" id="infrastructure" aria-label="10-Stage Operational Workflow">
-            <div class="wrap">
-                <div class="section-head center-head dark-bg-head">
-                    <div class="eyebrow amber-text">Industrial Process Architecture</div>
-                    <h2 class="light-text">10-Stage Material Recovery Flow</h2>
-                    <p class="light-subtext">Our multi-stage MRF ecosystem transforms heterogeneous industrial waste into mill-grade secondary raw materials through systematic triage, mechanical separation, and quality control.</p>
-                </div>
-
-                <div class="wf-progress-bar-container" aria-label="Workflow Overall Progress">
-                    <div class="wf-progress-text">
-                        <span>Stage Progress: <strong id="wfStageProgressText">01 / 10</strong></span>
-                        <span class="wf-keyboard-hint">Use Left/Right Arrow Keys to Navigate Stages</span>
-                    </div>
-                    <div class="wf-progress-track">
-                        <div class="wf-progress-fill" id="wfProgressFill" style="width: 10%;"></div>
-                    </div>
-                </div>
-
-                <div class="workflow-rail-container" role="tablist" aria-label="Workflow Steps Rail">
-                    <div class="workflow-rail-track">
-                        <button class="wf-rail-node active" role="tab" aria-selected="true" data-step="1">01 Collection</button>
-                        <button class="wf-rail-node" role="tab" aria-selected="false" data-step="2">02 Weighbridge</button>
-                        <button class="wf-rail-node" role="tab" aria-selected="false" data-step="3">03 Inspection</button>
-                        <button class="wf-rail-node" role="tab" aria-selected="false" data-step="4">04 Presort</button>
-                        <button class="wf-rail-node" role="tab" aria-selected="false" data-step="5">05 Mechanical</button>
-                        <button class="wf-rail-node wf-dev-node" role="tab" aria-selected="false" data-step="6">06 AIRWSS •</button>
-                        <button class="wf-rail-node" role="tab" aria-selected="false" data-step="7">07 Baling</button>
-                        <button class="wf-rail-node" role="tab" aria-selected="false" data-step="8">08 Storage</button>
-                        <button class="wf-rail-node" role="tab" aria-selected="false" data-step="9">09 Dispatch</button>
-                        <button class="wf-rail-node" role="tab" aria-selected="false" data-step="10">10 Loop</button>
-                    </div>
-                </div>
-
-                <div class="workflow-stage-card">
-                    <!-- Stage 1 -->
-                    <div class="wf-stage-panel active" id="wf-panel-1" role="tabpanel">
-                        <div class="wf-panel-grid">
-                            <div class="wf-vector-frame">
-                                <svg viewBox="0 0 300 200" class="wf-stage-svg">
-                                    <rect width="300" height="200" fill="#151B16" rx="4"/>
-                                    <path d="M 40 130 L 160 130 L 200 90 L 240 90 L 250 130 L 260 130 V 150 H 40 Z" fill="none" stroke="#D9A441" stroke-width="2.5"/>
-                                    <circle cx="80" cy="150" r="14" fill="#121613" stroke="#D9A441" stroke-width="2.5"/>
-                                    <circle cx="220" cy="150" r="14" fill="#121613" stroke="#D9A441" stroke-width="2.5"/>
-                                </svg>
-                            </div>
-                            <div class="wf-panel-body">
-                                <span class="wf-stage-badge">Stage 01</span>
-                                <h3>Industrial Waste Collection</h3>
-                                <p class="wf-stage-desc">Scheduled evacuation of segregated or mixed industrial scrap from manufacturing premises using specialized heavy logistics fleets.</p>
-                                <div class="wf-spec-grid">
-                                    <div class="wf-spec-box"><span>Input</span><strong>Unprocessed Factory Scrap</strong></div>
-                                    <div class="wf-spec-box"><span>Output</span><strong>Secured Ingress Load</strong></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Stage 2 -->
-                    <div class="wf-stage-panel" id="wf-panel-2" role="tabpanel">
-                        <div class="wf-panel-grid">
-                            <div class="wf-vector-frame">
-                                <svg viewBox="0 0 300 200" class="wf-stage-svg">
-                                    <rect width="300" height="200" fill="#151B16" rx="4"/>
-                                    <rect x="50" y="140" width="200" height="10" fill="#D9A441"/>
-                                    <rect x="110" y="70" width="80" height="60" fill="none" stroke="#D9A441" stroke-width="2"/>
-                                </svg>
-                            </div>
-                            <div class="wf-panel-body">
-                                <span class="wf-stage-badge">Stage 02</span>
-                                <h3>Weighbridge &amp; Registration</h3>
-                                <p class="wf-stage-desc">Gross vehicle weight verification on certified weighbridge platforms, generating digital receipts and shipment tracking ledgers.</p>
-                                <div class="wf-spec-grid">
-                                    <div class="wf-spec-box"><span>Input</span><strong>Arriving Vehicle</strong></div>
-                                    <div class="wf-spec-box"><span>Output</span><strong>Certified Tonnage Log</strong></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Stage 3 -->
-                    <div class="wf-stage-panel" id="wf-panel-3" role="tabpanel">
-                        <div class="wf-panel-grid">
-                            <div class="wf-vector-frame">
-                                <svg viewBox="0 0 300 200" class="wf-stage-svg">
-                                    <rect width="300" height="200" fill="#151B16" rx="4"/>
-                                    <circle cx="150" cy="100" r="40" fill="none" stroke="#2F5233" stroke-width="3"/>
-                                    <path d="M130 100 L145 115 L175 85" fill="none" stroke="#D9A441" stroke-width="3"/>
-                                </svg>
-                            </div>
-                            <div class="wf-panel-body">
-                                <span class="wf-stage-badge">Stage 03</span>
-                                <h3>Waste Inspection &amp; Triage</h3>
-                                <p class="wf-stage-desc">Triage floor screening where quality personnel isolate non-conforming items, hazardous materials, and moisture contamination.</p>
-                                <div class="wf-spec-grid">
-                                    <div class="wf-spec-box"><span>Input</span><strong>Bulk Scrap Stream</strong></div>
-                                    <div class="wf-spec-box"><span>Output</span><strong>Screened Triage Feed</strong></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Stage 4 -->
-                    <div class="wf-stage-panel" id="wf-panel-4" role="tabpanel">
-                        <div class="wf-panel-grid">
-                            <div class="wf-vector-frame">
-                                <svg viewBox="0 0 300 200" class="wf-stage-svg">
-                                    <rect width="300" height="200" fill="#151B16" rx="4"/>
-                                    <line x1="30" y1="100" x2="270" y2="100" stroke="#D9A441" stroke-width="4"/>
-                                </svg>
-                            </div>
-                            <div class="wf-panel-body">
-                                <span class="wf-stage-badge">Stage 04</span>
-                                <h3>Primary Manual Segregation</h3>
-                                <p class="wf-stage-desc">Incline conveyor feeding to manual presort lines where operators extract large cardboard sheets, bulky plastics, and foreign debris.</p>
-                                <div class="wf-spec-grid">
-                                    <div class="wf-spec-box"><span>Input</span><strong>Raw Conveyor Stream</strong></div>
-                                    <div class="wf-spec-box"><span>Output</span><strong>Presorted Fractions</strong></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Stage 5 -->
-                    <div class="wf-stage-panel" id="wf-panel-5" role="tabpanel">
-                        <div class="wf-panel-grid">
-                            <div class="wf-vector-frame">
-                                <svg viewBox="0 0 300 200" class="wf-stage-svg">
-                                    <rect width="300" height="200" fill="#151B16" rx="4"/>
-                                    <circle cx="150" cy="100" r="50" fill="none" stroke="#D9A441" stroke-width="2.5" stroke-dasharray="6 3"/>
-                                </svg>
-                            </div>
-                            <div class="wf-panel-body">
-                                <span class="wf-stage-badge">Stage 05</span>
-                                <h3>Mechanical Processing (Trommel Screen)</h3>
-                                <p class="wf-stage-desc">Rotary trommel drums and air classifiers separate material fractions by dimensional size and weight density.</p>
-                                <div class="wf-spec-grid">
-                                    <div class="wf-spec-box"><span>Input</span><strong>Commingled Presorted Stream</strong></div>
-                                    <div class="wf-spec-box"><span>Output</span><strong>Sized Material Fractions</strong></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Stage 6 -->
-                    <div class="wf-stage-panel" id="wf-panel-6" role="tabpanel">
-                        <div class="wf-panel-grid">
-                            <div class="wf-vector-frame">
-                                <svg viewBox="0 0 300 200" class="wf-stage-svg">
-                                    <rect width="300" height="200" fill="#151B16" rx="4"/>
-                                    <circle cx="150" cy="100" r="30" fill="none" stroke="#2F5233" stroke-width="2"/>
-                                    <circle cx="150" cy="100" r="8" fill="#D9A441"/>
-                                </svg>
-                            </div>
-                            <div class="wf-panel-body">
-                                <span class="wf-stage-badge dev-stage-badge">Stage 06 · Under Development</span>
-                                <h3>AIRWSS AI Optical Sorting</h3>
-                                <p class="wf-stage-desc">Proprietary computer-vision platform under R&amp;D designed to classify polymer resins and actuate high-speed pneumatic air jets.</p>
-                                <div class="wf-spec-grid">
-                                    <div class="wf-spec-box"><span>Input</span><strong>Mixed Polymer Stream</strong></div>
-                                    <div class="wf-spec-box"><span>Output (Target)</span><strong>Resin-Categorized Stock</strong></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Stage 7 -->
-                    <div class="wf-stage-panel" id="wf-panel-7" role="tabpanel">
-                        <div class="wf-panel-grid">
-                            <div class="wf-vector-frame">
-                                <svg viewBox="0 0 300 200" class="wf-stage-svg">
-                                    <rect width="300" height="200" fill="#151B16" rx="4"/>
-                                    <rect x="100" y="60" width="100" height="80" fill="none" stroke="#D9A441" stroke-width="3"/>
-                                </svg>
-                            </div>
-                            <div class="wf-panel-body">
-                                <span class="wf-stage-badge">Stage 07</span>
-                                <h3>Baling &amp; Quality Inspection</h3>
-                                <p class="wf-stage-desc">Sorted material fractions are compacted into high-density industrial bales using hydraulic presses, wire-bound, and inspected.</p>
-                                <div class="wf-spec-grid">
-                                    <div class="wf-spec-box"><span>Input</span><strong>Sorted Loose Scrap</strong></div>
-                                    <div class="wf-spec-box"><span>Output</span><strong>High-Density Standard Bales</strong></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Stage 8 -->
-                    <div class="wf-stage-panel" id="wf-panel-8" role="tabpanel">
-                        <div class="wf-panel-grid">
-                            <div class="wf-vector-frame">
-                                <svg viewBox="0 0 300 200" class="wf-stage-svg">
-                                    <rect width="300" height="200" fill="#151B16" rx="4"/>
-                                    <rect x="70" y="110" width="40" height="40" fill="none" stroke="#D9A441" stroke-width="2"/>
-                                    <rect x="130" y="110" width="40" height="40" fill="none" stroke="#D9A441" stroke-width="2"/>
-                                    <rect x="190" y="110" width="40" height="40" fill="none" stroke="#2F5233" stroke-width="2"/>
-                                </svg>
-                            </div>
-                            <div class="wf-panel-body">
-                                <span class="wf-stage-badge">Stage 08</span>
-                                <h3>Warehouse Stacking &amp; Indexing</h3>
-                                <p class="wf-stage-desc">Quality-checked bales are barcoded by resin grade, weight, and origin date, then stored in designated dry warehouse bays.</p>
-                                <div class="wf-spec-grid">
-                                    <div class="wf-spec-box"><span>Input</span><strong>Certified Bales</strong></div>
-                                    <div class="wf-spec-box"><span>Output</span><strong>Indexed Warehouse Inventory</strong></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Stage 9 -->
-                    <div class="wf-stage-panel" id="wf-panel-9" role="tabpanel">
-                        <div class="wf-panel-grid">
-                            <div class="wf-vector-frame">
-                                <svg viewBox="0 0 300 200" class="wf-stage-svg">
-                                    <rect width="300" height="200" fill="#151B16" rx="4"/>
-                                    <path d="M 50 100 H 210" stroke="#D9A441" stroke-width="3"/>
-                                    <polyline points="190 80 220 100 190 120" fill="none" stroke="#D9A441" stroke-width="3"/>
-                                </svg>
-                            </div>
-                            <div class="wf-panel-body">
-                                <span class="wf-stage-badge">Stage 09</span>
-                                <h3>Material Trading &amp; Dispatch</h3>
-                                <p class="wf-stage-desc">Outbound commercial fulfillment to authorized reprocessors, spinning mills, and manufacturing buyers with manifest documentation.</p>
-                                <div class="wf-spec-grid">
-                                    <div class="wf-spec-box"><span>Input</span><strong>Allocated Stock Bales</strong></div>
-                                    <div class="wf-spec-box"><span>Output</span><strong>Outbound Shipment</strong></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Stage 10 -->
-                    <div class="wf-stage-panel" id="wf-panel-10" role="tabpanel">
-                        <div class="wf-panel-grid">
-                            <div class="wf-vector-frame">
-                                <svg viewBox="0 0 300 200" class="wf-stage-svg">
-                                    <rect width="300" height="200" fill="#151B16" rx="4"/>
-                                    <path d="M150 40 A60 60 0 1 1 90 100" fill="none" stroke="#D9A441" stroke-width="3" stroke-dasharray="6 3"/>
-                                    <polyline points="90 80 90 100 110 100" fill="none" stroke="#D9A441" stroke-width="3"/>
-                                </svg>
-                            </div>
-                            <div class="wf-panel-body">
-                                <span class="wf-stage-badge">Stage 10</span>
-                                <h3>Circular Economy Recirculation</h3>
-                                <p class="wf-stage-desc">Recovered secondary raw materials are reintroduced into manufacturing production cycles, closing the material loop.</p>
-                                <div class="wf-spec-grid">
-                                    <div class="wf-spec-box"><span>Input</span><strong>Secondary Commodities</strong></div>
-                                    <div class="wf-spec-box"><span>Output</span><strong>Circulated Products</strong></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 5: AIRWSS TECH -->
-        <section class="tech-section bg-overlay-section" id="technology" aria-label="AIRWSS Technology Platform">
-            <div class="wrap">
-                <div class="section-head center-head dark-bg-head">
-                    <div class="tech-hero-badge">
-                        <span class="static-rd-dot" aria-hidden="true"></span>
-                        R&amp;D Initiative · Under Active Development · Co-Developed with Avency EcoSol
-                    </div>
-                    <h2 class="light-text">AIRWSS — AI-Assisted Waste Sorting System</h2>
-                    <p class="light-subtext">Developing next-generation optical machine vision models and pneumatic actuation to upgrade Material Recovery Facilities from manual triage to automated polymer segregation.</p>
-                </div>
-
-                <div class="airwss-diagram-card">
-                    <div class="tech-diagram-header">
-                        <h4 class="light-text">AIRWSS System Architecture Schematic</h4>
-                        <span class="mono-tag">FIG 5.1 · OPTICAL RECOGNITION LOOP</span>
-                    </div>
-
-                    <div class="airwss-svg-container">
-                        <svg viewBox="0 0 800 300" class="airwss-engineering-svg">
-                            <defs>
-                                <pattern id="diagGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-                                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
-                                </pattern>
-                            </defs>
-                            <rect width="800" height="300" fill="url(#diagGrid)"/>
-                            <rect x="50" y="200" width="700" height="20" rx="4" fill="#19201A" stroke="#C7CBC0" stroke-width="2"/>
-                            <circle cx="80" cy="210" r="8" fill="#D9A441"/>
-                            <circle cx="720" cy="210" r="8" fill="#D9A441"/>
-                            <line x1="80" y1="210" x2="720" y2="210" stroke="#D9A441" stroke-width="2" stroke-dasharray="8 4"/>
-                            <rect x="320" y="40" width="160" height="80" rx="4" fill="#121613" stroke="#D9A441" stroke-width="2"/>
-                            <circle cx="400" cy="80" r="18" fill="none" stroke="#D9A441" stroke-width="2"/>
-                            <circle cx="400" cy="80" r="6" fill="#2F5233"/>
-                            <text x="400" y="30" font-family="IBM Plex Mono" font-size="11" fill="#D9A441" text-anchor="middle">OPTICAL RGB/NIR SENSOR</text>
-                            <polygon points="340,120 460,120 520,200 280,200" fill="rgba(217, 164, 65, 0.12)" stroke="rgba(217, 164, 65, 0.4)" stroke-width="1" stroke-dasharray="4 2"/>
-                            <rect x="580" y="230" width="80" height="40" rx="2" fill="#121613" stroke="#D9A441" stroke-width="2"/>
-                            <text x="620" y="255" font-family="IBM Plex Mono" font-size="10" fill="#C8CDC4" text-anchor="middle">AIR JETS</text>
-                            <line x1="620" y1="230" x2="620" y2="200" stroke="#D9A441" stroke-width="2" stroke-dasharray="2 2"/>
-                            <path d="M 480 80 H 620 V 170" fill="none" stroke="#2F5233" stroke-width="2" stroke-dasharray="4 2"/>
-                            <text x="560" y="70" font-family="IBM Plex Mono" font-size="10" fill="#2F5233">ACTUATION SIGNAL</text>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 6: MATERIALS -->
-        <section class="materials-section bg-panel" id="materials" aria-label="Materials Catalog">
-            <div class="wrap">
-                <div class="section-head center-head">
-                    <div class="eyebrow">Feedstock Catalog</div>
-                    <h2>Recovered Secondary Commodity Matrix</h2>
-                    <p>Quality-indexed secondary raw material output fractions processed and graded for industrial buyers and manufacturing mills.</p>
-                </div>
-
-                <div class="materials-grid-matrix">
-                    <article class="mat-b2b-card">
-                        <div class="mat-vector-header has-photo">
-                            <img src="assets/img/mat-pet.jpg" alt="Sorted PET scrap bales" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-                            <svg viewBox="0 0 100 80" class="mat-svg-icon" style="display:none;">
-                                <path d="M40 10 h20 v10 h-20 z" fill="#D9A441"/>
-                                <path d="M35 20 h30 l10 50 h-50 z" fill="none" stroke="#D9A441" stroke-width="2"/>
-                                <text x="50" y="50" font-family="IBM Plex Mono" font-size="14" fill="#2F5233" text-anchor="middle" font-weight="bold">PET</text>
-                            </svg>
-                        </div>
-                        <div class="mat-card-body">
-                            <span class="mat-resin-code">PET · POLYETHYLENE TEREPHTHALATE</span>
-                            <h3>Clear &amp; Amber PET Scrap</h3>
-                            <p class="mat-desc">Double-sorted clear, amber, and mixed thermoform bottle scrap recovered from commercial streams.</p>
-                        </div>
-                    </article>
-
-                    <article class="mat-b2b-card">
-                        <div class="mat-vector-header has-photo">
-                            <img src="assets/img/mat-hdpe.jpg" alt="HDPE drums and crates" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-                            <svg viewBox="0 0 100 80" class="mat-svg-icon" style="display:none;">
-                                <rect x="30" y="15" width="40" height="55" rx="4" fill="none" stroke="#D9A441" stroke-width="2"/>
-                                <rect x="42" y="5" width="16" height="10" fill="#2F5233"/>
-                                <text x="50" y="50" font-family="IBM Plex Mono" font-size="12" fill="#D9A441" text-anchor="middle" font-weight="bold">HDPE</text>
-                            </svg>
-                        </div>
-                        <div class="mat-card-body">
-                            <span class="mat-resin-code">HDPE · HIGH-DENSITY POLYETHYLENE</span>
-                            <h3>Rigid HDPE Drums &amp; Crates</h3>
-                            <p class="mat-desc">Blow-molded industrial drums, jerrycans, crates, and rigid pipe scrap pre-sorted by color density.</p>
-                        </div>
-                    </article>
-
-                    <article class="mat-b2b-card">
-                        <div class="mat-vector-header has-photo">
-                            <img src="assets/img/mat-ldpe.jpg" alt="LDPE stretch film rolls" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-                            <svg viewBox="0 0 100 80" class="mat-svg-icon" style="display:none;">
-                                <path d="M20 20 Q 50 5, 80 20 T 20 60" fill="none" stroke="#2F5233" stroke-width="2"/>
-                                <text x="50" y="50" font-family="IBM Plex Mono" font-size="12" fill="#D9A441" text-anchor="middle" font-weight="bold">LDPE</text>
-                            </svg>
-                        </div>
-                        <div class="mat-card-body">
-                            <span class="mat-resin-code">LDPE · LOW-DENSITY POLYETHYLENE</span>
-                            <h3>Commercial Stretch Film &amp; Wraps</h3>
-                            <p class="mat-desc">Clean industrial stretch wrap, pallet film, and transparent liner sheeting recovered from warehousing hubs.</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 7: CONTACT -->
-        <section class="contact-section bg-panel" id="contact" aria-label="Enterprise Contact Gateway">
-            <div class="wrap grid-2-col">
-                <div class="col-text">
-                    <div class="eyebrow">Enterprise Gateway</div>
-                    <h2>Start Optimizing Your Material Recovery</h2>
-                    <p>Connect with our engineering and commercial teams to schedule an on-site scrap audit or request secondary raw material supply quotes.</p>
-                </div>
-
-                <div class="col-form">
-                    <form id="leadContactForm" class="enterprise-form" novalidate>
-                        <h3>Request Consultation</h3>
-                        <!-- Anti-Spam Honeypot Field -->
-                        <input type="text" id="website_hp" name="website_hp" tabindex="-1" style="display:none;" autocomplete="off">
-                        
-                        <div class="form-group">
-                            <label for="fullName">Full Name *</label>
-                            <input type="text" id="fullName" name="fullName" required placeholder="John Doe">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Corporate Email *</label>
-                            <input type="email" id="email" name="email" required placeholder="john@company.com">
-                        </div>
-                        <button type="submit" id="leadSubmitBtn" class="btn btn-amber btn-full">Submit Request</button>
-                        <div id="formFeedback" class="form-feedback" role="status" aria-live="polite"></div>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="wrap">
-            <div class="footer-bottom">
-                <div class="f-copyright">© <span id="currentYear">2026</span> Rixle Private Limited. All Rights Reserved.</div>
-                <div class="f-cin">CIN: U38210MH2024PTC420000</div>
-            </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 RIXLE PRIVATE LIMITED. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- CLIENT PORTAL INTERACTIVE MODAL -->
-    <div class="portal-modal-overlay" id="portalModal" aria-hidden="true">
-        <div class="portal-modal-card">
-            <button class="portal-modal-close" id="closePortalBtn" aria-label="Close Modal">&times;</button>
-            <div class="eyebrow amber-text">Enterprise Access</div>
-            <h3 class="light-text" style="margin-bottom: 12px;">Rixle Client Portal</h3>
-            <p class="light-subtext" style="font-size: 13.5px; margin-bottom: 20px;">
-                Authorized access for registered suppliers, recycling partners, and corporate buyers.
-            </p>
-            <form id="portalLoginForm" onsubmit="event.preventDefault(); alert('Client portal authentication is restricted to onboarded enterprise accounts.');">
-                <div class="form-group">
-                    <label for="portalAccount" style="color: var(--amber);">Account ID / Email</label>
-                    <input type="text" id="portalAccount" required placeholder="ENT-2026-X89">
-                </div>
-                <div class="form-group">
-                    <label for="portalPass" style="color: var(--amber);">Passcode</label>
-                    <input type="password" id="portalPass" required placeholder="••••••••">
-                </div>
-                <button type="submit" class="btn btn-amber btn-full">Secure Sign In</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- GLOBAL RUNTIME CONFIGURATION -->
-    <script>
-        window.RIXLE_CONFIG = {
-            SUPABASE_URL: '',
-            SUPABASE_ANON_KEY: '',
-            OFFICIAL_EMAIL: 'info@rixle.co.in'
-        };
-    </script>
-    <script src="assets/js/supabase-client.js" defer></script>
-    <script src="assets/js/app.js" defer></script>
+    <!-- JavaScript Files -->
+    <script src="assets/js/supabase-client.js"></script>
+    <script src="assets/js/app.js"></script>
 </body>
 </html>
