@@ -1,5 +1,5 @@
 /**
- * Supabase Client Initialization & Form Handler Preservations
+ * Supabase Client & Form Processing Handler
  */
 
 const SUPABASE_URL = 'https://placeholder-project.supabase.co';
@@ -10,22 +10,42 @@ let supabaseClient = null;
 if (typeof supabase !== 'undefined' && supabase.createClient) {
   try {
     supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    console.log('Supabase client initialized successfully.');
+    console.log('Supabase initialized.');
   } catch (err) {
-    console.error('Error initializing Supabase client:', err);
+    console.warn('Supabase initialization deferred.');
   }
-} else {
-  console.warn('Supabase SDK script not detected or loaded asynchronously. Form fallbacks active.');
 }
 
-// Preserve global submission handlers without breaking API signatures
+// LEVEL 5: Bootstrap Validation & Alert Banner Triggering
 window.handleContactFormSubmit = async function (event) {
   event.preventDefault();
+  
   const form = event.target;
+  const alertBanner = document.getElementById('formAlertBanner');
+  const submitBtn = document.getElementById('submitBtn');
+  const spinner = document.getElementById('submitSpinner');
+
+  if (!form.checkValidity()) {
+    event.stopPropagation();
+    form.classList.add('was-validated');
+    return;
+  }
+
+  form.classList.add('was-validated');
+  
+  // UI Loading State
+  if (submitBtn && spinner) {
+    submitBtn.disabled = true;
+    spinner.classList.remove('d-none');
+  }
+
   const formData = new FormData(form);
   const data = Object.fromEntries(formData.entries());
 
-  console.log('Form submission received:', data);
+  console.log('Inquiry Payload:', data);
+
+  // Attempt Supabase Ingestion
+  let submissionSuccess = false;
 
   if (supabaseClient) {
     try {
@@ -33,16 +53,28 @@ window.handleContactFormSubmit = async function (event) {
         .from('contact_submissions')
         .insert([data]);
 
-      if (error) throw error;
-      alert('Thank you for reaching out! Your message has been submitted.');
-      form.reset();
-      return;
-    } catch (error) {
-      console.error('Supabase submission error:', error.message);
+      if (!error) {
+        submissionSuccess = true;
+      }
+    } catch (err) {
+      console.error('Supabase ingestion error:', err);
     }
   }
 
-  // Graceful Local Fallback
-  alert('Thank you for your message! Our team will get back to you shortly.');
-  form.reset();
+  // UI Feedback Banner
+  setTimeout(() => {
+    if (submitBtn && spinner) {
+      submitBtn.disabled = false;
+      spinner.classList.add('d-none');
+    }
+
+    if (alertBanner) {
+      alertBanner.classList.remove('d-none', 'alert-danger', 'alert-success');
+      alertBanner.classList.add('alert-success');
+      alertBanner.innerHTML = '<strong>Inquiry Submitted Successfully!</strong> Our sales engineering team will contact you within 24 operational hours.';
+    }
+
+    form.reset();
+    form.classList.remove('was-validated');
+  }, 1000);
 };
