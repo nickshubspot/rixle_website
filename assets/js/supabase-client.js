@@ -1,5 +1,5 @@
 /**
- * Supabase Client & Form Processing Handler
+ * Supabase Client & Form Validation Handler
  */
 
 const SUPABASE_URL = 'https://placeholder-project.supabase.co';
@@ -10,13 +10,12 @@ let supabaseClient = null;
 if (typeof supabase !== 'undefined' && supabase.createClient) {
   try {
     supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    console.log('Supabase initialized.');
   } catch (err) {
     console.warn('Supabase initialization deferred.');
   }
 }
 
-// LEVEL 5: Bootstrap Validation & Alert Banner Triggering
+// Client Validation & Processing
 window.handleContactFormSubmit = async function (event) {
   event.preventDefault();
   
@@ -33,7 +32,6 @@ window.handleContactFormSubmit = async function (event) {
 
   form.classList.add('was-validated');
   
-  // UI Loading State
   if (submitBtn && spinner) {
     submitBtn.disabled = true;
     spinner.classList.remove('d-none');
@@ -42,26 +40,16 @@ window.handleContactFormSubmit = async function (event) {
   const formData = new FormData(form);
   const data = Object.fromEntries(formData.entries());
 
-  console.log('Inquiry Payload:', data);
-
-  // Attempt Supabase Ingestion
-  let submissionSuccess = false;
-
   if (supabaseClient) {
     try {
-      const { error } = await supabaseClient
+      await supabaseClient
         .from('contact_submissions')
         .insert([data]);
-
-      if (!error) {
-        submissionSuccess = true;
-      }
     } catch (err) {
-      console.error('Supabase ingestion error:', err);
+      console.error('Supabase error:', err);
     }
   }
 
-  // UI Feedback Banner
   setTimeout(() => {
     if (submitBtn && spinner) {
       submitBtn.disabled = false;
@@ -71,7 +59,7 @@ window.handleContactFormSubmit = async function (event) {
     if (alertBanner) {
       alertBanner.classList.remove('d-none', 'alert-danger', 'alert-success');
       alertBanner.classList.add('alert-success');
-      alertBanner.innerHTML = '<strong>Inquiry Submitted Successfully!</strong> Our sales engineering team will contact you within 24 operational hours.';
+      alertBanner.innerHTML = '<strong>Inquiry Submitted!</strong> Our sales engineering team will contact you within 24 operational hours.';
     }
 
     form.reset();
