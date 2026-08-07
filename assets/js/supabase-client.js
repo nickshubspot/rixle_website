@@ -1,13 +1,6 @@
 /**
  * RIXLE PRIVATE LIMITED - SUPABASE CLIENT & FORM HANDLER
  * Production Version 2026.2
- *
- * NOTE: Trimmed to match the current contact form (#leadContactForm), which
- * only collects Full Name + Corporate Email. The previous version of this
- * file also handled Phone/Service Type/Message and a Career Application
- * form, but no matching HTML exists in index.html today. If/when a fuller
- * lead form or Careers section is added back to the site, those handlers
- * (uploadResume, submitCareerForm) can be restored from version control.
  */
 
 // Initialize Client Instance
@@ -82,7 +75,7 @@ async function submitContactForm(event) {
     const submitBtn = form.querySelector('#leadSubmitBtn');
     const honeypot = form.querySelector('#website_hp');
 
-    // Anti-Spam Honeypot Trap (only checked if the field exists in the HTML)
+    // Anti-Spam Honeypot Trap
     if (honeypot && honeypot.value !== '') {
         return;
     }
@@ -98,14 +91,14 @@ async function submitContactForm(event) {
 
     // Name Validation
     if (!fullName || !fullName.value.trim()) {
-        if (fullName) fullName.parentElement.classList.add('has-error');
+        if (fullName && fullName.parentElement) fullName.parentElement.classList.add('has-error');
         isValid = false;
     }
 
     // Email Validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email || !emailRegex.test(email.value.trim())) {
-        if (email) email.parentElement.classList.add('has-error');
+        if (email && email.parentElement) email.parentElement.classList.add('has-error');
         isValid = false;
     }
 
