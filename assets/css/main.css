@@ -50,7 +50,7 @@ body {
 
 /* Full-Screen 100vh Hero */
 .hero-cinematic {
-  background-image: url('../gallery/plant.jpg');
+  background-image: url('../gallery/hero-bg.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -122,6 +122,17 @@ body {
   object-fit: cover;
 }
 
+.gallery-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.03);
+}
+
 /* Scroll Animations */
 .animate-on-scroll {
   opacity: 0;
@@ -186,7 +197,7 @@ body {
 
 /* CTA Background Section */
 .cta-section {
-  background-image: url('../gallery/plant.jpg');
+  background-image: url('../gallery/hero-bg.webp');
   background-size: cover;
   background-position: center;
   position: relative;
