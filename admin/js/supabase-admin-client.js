@@ -35,9 +35,16 @@ window.RixleAdmin = window.RixleAdmin || {};
     }
   }
 
-  window.RixleAdmin.supabase = initClient();
+  const client = initClient();
+
+  window.RixleAdmin.supabase = client;
   window.RixleAdmin.PAGE_SIZE = PAGE_SIZE;
   window.RixleAdmin.STATUSES = STATUSES;
+
+  // admin-auth.js and admin-dashboard.js read window.supabaseAdminClient
+  // directly (see getClient() in each file) — expose the same client
+  // instance under that name so both entry points share one client.
+  window.supabaseAdminClient = client;
 
   window.RixleAdmin.escapeHtml = function escapeHtml(value) {
     return String(value ?? '')
