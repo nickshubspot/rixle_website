@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 permissions:
   contents: read
@@ -18,7 +18,9 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,28 +30,39 @@ jobs:
 
       - name: Build Public Distribution
         run: |
+          set -e
+
           rm -rf dist
           mkdir -p dist
-          
-          # Copy mandatory files
+
+          # Copy public website
           cp index.html dist/
-          
-          # Copy assets directory if it exists
+
+          # Copy public assets
           if [ -d "assets" ]; then
             cp -r assets dist/
           fi
-          
-          # Safely copy optional root files only if they exist
+
+          # Copy admin console
+          if [ -d "admin" ]; then
+            cp -r admin dist/
+          fi
+
+          # Copy optional public root files
           for file in CNAME 404.html .nojekyll robots.txt sitemap.xml; do
             if [ -f "$file" ]; then
               cp "$file" dist/
             fi
           done
 
+          # Show exactly what will be published
+          echo "===== DIST CONTENTS ====="
+          find dist -maxdepth 3 -type f | sort
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          path: ./dist
 
       - name: Deploy to GitHub Pages
         id: deployment
