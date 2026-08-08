@@ -63,4 +63,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Contact Form Submission Wiring
+  // The actual validation + Supabase insert logic lives in
+  // window.handleContactFormSubmit (assets/js/supabase-client.js).
+  // This just connects the form's submit event to that handler so
+  // the browser never performs its default full-page submission.
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (event) => {
+      if (typeof window.handleContactFormSubmit === 'function') {
+        window.handleContactFormSubmit(event);
+      } else {
+        event.preventDefault();
+        console.error('Contact form handler is unavailable. Submission blocked.');
+      }
+    });
+  }
 });
