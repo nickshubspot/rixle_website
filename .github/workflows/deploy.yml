@@ -2,8 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 permissions:
   contents: read
@@ -19,44 +18,38 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Source
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Build public website
-        shell: bash
+      - name: Build Public Distribution
         run: |
-          set -e
-
           rm -rf dist
           mkdir -p dist
-
-          # Public website
+          
+          # Copy mandatory files
           cp index.html dist/
+          
+          # Copy assets directory if it exists
+          if [ -d "assets" ]; then
+            cp -r assets dist/
+          fi
+          
+          # Safely copy optional root files only if they exist
+          for file in CNAME 404.html .nojekyll robots.txt sitemap.xml; do
+            if [ -f "$file" ]; then
+              cp "$file" dist/
+            fi
+          done
 
-          # Existing public files
-          [ -f 404.html ] && cp 404.html dist/
-          [ -f CNAME ] && cp CNAME dist/
-          [ -f .nojekyll ] && cp .nojekyll dist/
-          [ -f robots.txt ] && cp robots.txt dist/
-          [ -f sitemap.xml ] && cp sitemap.xml dist/
-          [ -f privacy-policy.html ] && cp privacy-policy.html dist/
-          [ -f terms.html ] && cp terms.html dist/
-
-          # Public assets
-          [ -d assets ] && cp -r assets dist/
-          [ -d gallery ] && cp -r gallery dist/
-
-      - name: Upload Pages Artifact
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: './dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
