@@ -19,18 +19,44 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Source
         uses: actions/checkout@v4
 
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
 
-      - name: Upload Artifacts
+      - name: Build public website
+        shell: bash
+        run: |
+          set -e
+
+          rm -rf dist
+          mkdir -p dist
+
+          # Public website
+          cp index.html dist/
+
+          # Existing public files
+          [ -f 404.html ] && cp 404.html dist/
+          [ -f CNAME ] && cp CNAME dist/
+          [ -f .nojekyll ] && cp .nojekyll dist/
+          [ -f robots.txt ] && cp robots.txt dist/
+          [ -f sitemap.xml ] && cp sitemap.xml dist/
+          [ -f privacy-policy.html ] && cp privacy-policy.html dist/
+          [ -f terms.html ] && cp terms.html dist/
+
+          # Public assets
+          [ -d assets ] && cp -r assets dist/
+          [ -d gallery ] && cp -r gallery dist/
+
+      - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: ./dist
 
       - name: Deploy to GitHub Pages
         id: deployment
