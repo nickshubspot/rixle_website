@@ -147,9 +147,8 @@ body {
 
 /* Floating Conversion Widget */
 .quick-conversion-bar {
-  position: fixed;
   bottom: 20px;
-  right: 24px;
+  right: 20px;
   z-index: 999;
   background: rgba(17, 24, 39, 0.9);
   backdrop-filter: blur(16px);
