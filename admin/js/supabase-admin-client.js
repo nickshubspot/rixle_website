@@ -9,7 +9,7 @@ window.RixleAdmin = window.RixleAdmin || {};
 (function () {
   'use strict';
 
-  const SUPABASE_URL = 'https://lumvxwwbfoucfckycdal.supabase.co/rest/v1/';
+  const SUPABASE_URL = 'https://lumvxwwbfoucfckycdal.supabase.co';
   const SUPABASE_ANON_KEY = 'sb_publishable_Lbfszemvg7eE8ieBfwzlJA_CKjHI_9k';
 
   const PAGE_SIZE = 10;
