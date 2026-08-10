@@ -1,81 +1,61 @@
 /* ================================================================= *
- * FIX: Responsive UI, Floating Contact Bar, Navbar, and Footer      *
+ * FIX: Floating Conversion Bar (Collapsible/Minimized) & Footer Line  *
  * ================================================================= */
 
-/* 1. FLOATING CONTACT BAR FIXES */
-.floating-contact-bar,
-.floating-action-bar,
-.floating-bar {
+/* 1. COLLAPSIBLE / COMPACT FLOATING CONVERSION BAR */
+.quick-conversion-bar {
     position: fixed !important;
     bottom: 16px !important;
-    top: auto !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
+    right: 16px !important;
+    left: auto !important;
+    transform: none !important;
     z-index: 9999 !important;
-    width: auto !important;
-    max-width: 92vw !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 8px !important;
-    padding: 8px 12px !important;
-    box-sizing: border-box !important;
+    background: rgba(15, 23, 42, 0.95) !important;
+    backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 50px !important;
+    padding: 6px 12px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+    transition: all 0.3s ease !important;
+    max-width: calc(100vw - 32px) !important;
 }
 
+/* Mobile adjustments to keep it small and unobtrusive without covering terms */
 @media (max-width: 768px) {
-    .floating-contact-bar,
-    .floating-action-bar,
-    .floating-bar {
-        bottom: 12px !important;
-        padding: 6px 10px !important;
-        gap: 6px !important;
+    .quick-conversion-bar {
+        bottom: 10px !important;
+        right: 10px !important;
+        padding: 4px 8px !important;
+        gap: 4px !important;
+        border-radius: 30px !important;
     }
-    
-    .floating-contact-bar a,
-    .floating-action-bar a,
-    .floating-bar a {
-        font-size: 12px !important;
-        padding: 6px 10px !important;
+
+    .quick-conversion-bar .conversion-btn {
+        padding: 6px 8px !important;
+        font-size: 11px !important;
+    }
+
+    /* Hide text labels on very small screens to keep it compact (icons only) */
+    @media (max-width: 480px) {
+        .quick-conversion-bar .conversion-btn span {
+            display: none !important;
+        }
+        .quick-conversion-bar .conversion-btn {
+            padding: 8px 10px !important;
+        }
     }
 }
 
-/* 2. NAVBAR & LOGO FIXES */
-header, nav, .navbar {
-    position: relative !important;
-    z-index: 1000 !important;
+/* 2. FOOTER DIVIDER LINE SPACING CORRECTION */
+footer.bg-industrial-darker hr,
+.footer hr {
+    margin-top: 3rem !important;
+    margin-bottom: 1.5rem !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
 }
 
-.logo, img[alt*="Rixle"], .navbar-brand {
-    display: flex !important;
-    align-items: center !important;
-}
-
-/* 3. FOOTER FIXES & MAP OVERFLOW */
-footer, .footer {
-    position: relative !important;
-    z-index: 10 !important;
-    padding-bottom: 80px !important; /* Prevents floating bar from covering footer content */
-}
-
-footer iframe, 
-footer .map-container, 
-.footer iframe, 
-.footer .map-container {
-    max-width: 100% !important;
-    height: auto !important;
-    overflow: hidden !important;
-}
-
-@media (max-width: 768px) {
-    footer .row,
-    .footer .row {
-        flex-direction: column !important;
-        gap: 24px !important;
-    }
-    
-    footer .col,
-    .footer .col {
-        width: 100% !important;
-        text-align: left !important;
-    }
+/* Ensure footer has enough bottom padding so floating bar never touches content */
+footer.bg-industrial-darker,
+.footer {
+    padding-bottom: 90px !important;
 }
