@@ -4,36 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Rixle Pvt Ltd | Waste Management, Material Recovery & Circular Supply</title>
+  <title>Rixle Pvt Ltd | Waste Management, Material Recovery &amp; Circular Supply</title>
 
-  <meta name="description" content="Rixle Pvt Ltd provides industrial and dry waste management, material recovery, recycled material trading, Textile Recycling, EPR support, and AIRWSS technology R&D.">
+  <meta name="description" content="Rixle Pvt Ltd provides industrial and dry waste management, material recovery, recycled material trading, Textile Recycling, EPR support, and AIRWSS technology R&amp;D.">
   <meta name="keywords" content="Rixle, waste management, MRF, material recovery, recycled materials, PET, HDPE, LDPE, PP, textile recycling, EPR, AIRWSS">
   <meta name="author" content="Rixle Pvt Ltd">
+  <meta name="robots" content="index, follow">
 
-  <meta property="og:title" content="Rixle Pvt Ltd | Waste Management & Circular Material Recovery">
-  <meta property="og:description" content="Waste management, material recovery, recycled material trading, Textile Recycling and technology R&D.">
+  <meta property="og:title" content="Rixle Pvt Ltd | Waste Management &amp; Circular Material Recovery">
+  <meta property="og:description" content="Waste management, material recovery, recycled material trading, Textile Recycling and technology R&amp;D.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rixle.co.in/">
   <meta property="og:image" content="https://rixle.co.in/assets/gallery/plant.jpg">
   <meta property="og:image:width" content="1536">
   <meta property="og:image:height" content="1024">
+  <meta property="og:image:alt" content="Rixle industrial material recovery facility">
   <meta property="og:site_name" content="Rixle Pvt Ltd">
   <meta property="og:locale" content="en_IN">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Rixle Pvt Ltd | Waste Management & Circular Material Recovery">
-  <meta name="twitter:description" content="Waste management, material recovery, recycled material trading, Textile Recycling and technology R&D.">
+  <meta name="twitter:title" content="Rixle Pvt Ltd | Waste Management &amp; Circular Material Recovery">
+  <meta name="twitter:description" content="Waste management, material recovery, recycled material trading, Textile Recycling and technology R&amp;D.">
   <meta name="twitter:image" content="https://rixle.co.in/assets/gallery/plant.jpg">
 
   <link rel="canonical" href="https://rixle.co.in/">
   <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
 
-  <!-- Google Fonts -->
+  <!-- Preload hero image early for better LCP -->
+  <link rel="preload" as="image" href="assets/gallery/plant.jpg" fetchpriority="high">
+
+  <!-- Google Fonts — subset to used weights only -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 
-  <!-- Bootstrap -->
+  <!-- Bootstrap CSS -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -48,7 +54,7 @@
   >
 
   <!-- Production CSS -->
-  <link rel="stylesheet" href="assets/css/main.css?v=12">
+  <link rel="stylesheet" href="assets/css/main.css?v=20">
 
   <!-- Organization Schema -->
   <script type="application/ld+json">
@@ -74,16 +80,30 @@
 <body>
 
   <!-- =========================================================
+       SCROLL-TO-TOP BUTTON
+  ========================================================== -->
+  <a
+    id="scrollToTop"
+    href="#hero"
+    title="Back to top"
+    aria-label="Scroll to top"
+  >
+    <i class="bi bi-arrow-up" aria-hidden="true"></i>
+  </a>
+
+
+  <!-- =========================================================
        FLOATING CONTACT BAR
   ========================================================== -->
-  <div class="quick-conversion-bar d-none d-md-flex">
+  <div class="quick-conversion-bar d-none d-md-flex" role="complementary" aria-label="Quick contact">
 
     <a
       href="tel:+918605363682"
       class="conversion-btn"
       title="Call Rixle"
+      aria-label="Call Rixle"
     >
-      <i class="bi bi-telephone-fill"></i>
+      <i class="bi bi-telephone-fill" aria-hidden="true"></i>
       <span>Call</span>
     </a>
 
@@ -91,10 +111,11 @@
       href="https://wa.me/918605363682"
       target="_blank"
       rel="noopener"
-      class="conversion-btn whatsapp-btn"
+      class="conversion-btn"
       title="WhatsApp Rixle"
+      aria-label="WhatsApp Rixle"
     >
-      <i class="bi bi-whatsapp"></i>
+      <i class="bi bi-whatsapp" aria-hidden="true"></i>
       <span>WhatsApp</span>
     </a>
 
@@ -102,18 +123,20 @@
       href="mailto:contact@rixle.co.in"
       class="conversion-btn"
       title="Email Rixle"
+      aria-label="Email Rixle"
     >
-      <i class="bi bi-envelope-fill"></i>
+      <i class="bi bi-envelope-fill" aria-hidden="true"></i>
       <span>Email</span>
     </a>
 
     <a
       href="#contact"
       class="conversion-btn cta-fill"
-      title="Contact Rixle"
+      title="Start a business inquiry"
+      aria-label="Start an inquiry"
     >
-      <i class="bi bi-chat-dots-fill"></i>
-      <span>Contact Us</span>
+      <i class="bi bi-chat-dots-fill" aria-hidden="true"></i>
+      <span>Inquiry</span>
     </a>
 
   </div>
@@ -123,8 +146,10 @@
        NAVIGATION
   ========================================================== -->
   <nav
-    class="navbar navbar-expand-lg navbar-dark fixed-top navbar-transparent transition-all"
+    class="navbar navbar-expand-lg navbar-dark fixed-top navbar-transparent"
     id="mainNav"
+    role="navigation"
+    aria-label="Main navigation"
   >
     <div class="container-fluid px-lg-5">
 
@@ -135,6 +160,7 @@
           width="150"
           height="44"
           loading="eager"
+          fetchpriority="high"
           decoding="async"
         >
       </a>
@@ -153,30 +179,22 @@
 
       <div class="collapse navbar-collapse" id="navbarNav">
 
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-semibold text-uppercase fs-7 tracking-wider">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-semibold text-uppercase tracking-wider" style="font-size:0.76rem;">
 
           <li class="nav-item">
             <a class="nav-link active" href="#hero">Home</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#pillars">Waste Management</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#solutions">Material Trading</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#textile">Textile Recycling</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#technology">Technology</a>
+            <a class="nav-link" href="#pillars">Operations</a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link" href="#materials">Materials</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#technology">Technology</a>
           </li>
 
           <li class="nav-item">
@@ -188,7 +206,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
+            <a class="nav-link" href="#faq">FAQ</a>
           </li>
 
         </ul>
@@ -196,7 +214,8 @@
         <div class="ms-lg-3 d-none d-lg-block">
           <a
             href="#contact"
-            class="btn btn-success btn-sm text-uppercase fw-bold px-3 py-2 fs-7 tracking-wider shadow"
+            class="btn btn-success btn-sm text-uppercase fw-bold px-3 py-2 tracking-wider"
+            style="font-size:0.72rem; letter-spacing:0.08em;"
           >
             Start an Inquiry
           </a>
@@ -215,25 +234,29 @@
     class="hero-cinematic text-white position-relative overflow-hidden d-flex align-items-center"
   >
 
-    <div class="hero-bg-overlay"></div>
+    <div class="hero-bg-overlay" aria-hidden="true"></div>
 
-    <div class="container position-relative z-2">
+    <div class="container position-relative" style="z-index:2;">
 
-      <div class="row align-items-center min-vh-100 py-6">
+      <div class="row align-items-center min-vh-100 py-5">
 
-        <div class="col-lg-10 col-xl-9 animate-on-scroll">
+        <div class="col-lg-7 col-xl-6 animate-on-scroll">
 
-          <span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-50 text-uppercase tracking-widest px-3 py-2 mb-4 rounded-1">
-            Industrial Waste Management + Material Recovery + Circular Supply
-          </span>
+          <div class="section-label mb-3">
+            Industrial Recovery · Circular Economy
+          </div>
 
-          <h1 class="display-1 fw-black text-white mb-4 tracking-tight leading-tight">
-            Industrial Waste Recovery.
+          <h1 class="display-2 fw-black text-white mb-4 tracking-tight leading-tight">
+            Industrial Waste
             <br>
-            Materials Back Into the Circular Economy.
+            Recovery.
+            <br>
+            <span style="color: var(--rx-green);">Materials Back</span>
+            <br>
+            Into Circulation.
           </h1>
 
-          <p class="fs-4 text-light text-opacity-75 fw-light mb-5 max-w-700">
+          <p class="fs-5 mb-5" style="color: rgba(240,244,248,0.82); font-weight:300; max-width:520px; line-height:1.7;">
             Rixle Pvt Ltd works across waste management, material recovery,
             recycled material trading, Textile Recycling and technology
             development for more efficient circular supply chains.
@@ -243,19 +266,89 @@
 
             <a
               href="#contact"
-              class="btn btn-success btn-lg px-4 py-3 fw-bold text-uppercase fs-6 tracking-wider shadow-lg"
+              class="btn btn-success btn-lg px-4 py-3 fw-bold text-uppercase tracking-wider"
+              style="font-size:0.85rem;"
             >
-              <i class="bi bi-chat-dots-fill me-2"></i>
+              <i class="bi bi-chat-dots-fill me-2" aria-hidden="true"></i>
               Start an Inquiry
             </a>
 
             <a
               href="#materials"
-              class="btn btn-outline-light btn-lg px-4 py-3 fw-bold text-uppercase fs-6 tracking-wider"
+              class="btn btn-outline-light btn-lg px-4 py-3 fw-bold text-uppercase tracking-wider"
+              style="font-size:0.85rem;"
             >
-              <i class="bi bi-box-seam-fill me-2"></i>
+              <i class="bi bi-box-seam-fill me-2" aria-hidden="true"></i>
               Explore Materials
             </a>
+
+          </div>
+
+        </div>
+
+        <!-- Right column: compact info panel -->
+        <div class="col-lg-5 col-xl-4 offset-xl-2 d-none d-lg-block animate-on-scroll">
+
+          <div style="
+            background: rgba(12, 20, 32, 0.82);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 2rem;
+            backdrop-filter: blur(16px);
+          ">
+
+            <p class="section-label mb-3">What We Do</p>
+
+            <ul class="list-unstyled mb-0" style="color: var(--rx-muted-light);">
+
+              <li class="d-flex align-items-start gap-3 mb-3">
+                <span style="color:var(--rx-green); font-size:1.1rem; flex-shrink:0; margin-top:2px;">
+                  <i class="bi bi-recycle" aria-hidden="true"></i>
+                </span>
+                <span style="font-size:0.875rem; line-height:1.5;">
+                  <strong style="color:var(--rx-text);">Dry Waste Management</strong><br>
+                  MRF operations, collection &amp; segregation
+                </span>
+              </li>
+
+              <li class="d-flex align-items-start gap-3 mb-3">
+                <span style="color:var(--rx-green); font-size:1.1rem; flex-shrink:0; margin-top:2px;">
+                  <i class="bi bi-box-seam-fill" aria-hidden="true"></i>
+                </span>
+                <span style="font-size:0.875rem; line-height:1.5;">
+                  <strong style="color:var(--rx-text);">Material Trading</strong><br>
+                  Recovered polymers &amp; secondary materials
+                </span>
+              </li>
+
+              <li class="d-flex align-items-start gap-3 mb-3">
+                <span style="color:var(--rx-green); font-size:1.1rem; flex-shrink:0; margin-top:2px;">
+                  <i class="bi bi-layers-fill" aria-hidden="true"></i>
+                </span>
+                <span style="font-size:0.875rem; line-height:1.5;">
+                  <strong style="color:var(--rx-text);">Textile Recycling</strong><br>
+                  Post-industrial &amp; post-consumer fabric recovery
+                </span>
+              </li>
+
+              <li class="d-flex align-items-start gap-3">
+                <span style="color:var(--rx-muted); font-size:1.1rem; flex-shrink:0; margin-top:2px;">
+                  <i class="bi bi-cpu-fill" aria-hidden="true"></i>
+                </span>
+                <span style="font-size:0.875rem; line-height:1.5;">
+                  <strong style="color:var(--rx-muted-light);">Technology R&amp;D</strong><br>
+                  <span style="color:var(--rx-muted); font-size:0.8rem;">AIRWSS — future development</span>
+                </span>
+              </li>
+
+            </ul>
+
+            <div style="border-top: 1px solid rgba(255,255,255,0.07); margin-top:1.5rem; padding-top:1.25rem;">
+              <p style="font-size:0.78rem; color:var(--rx-muted); margin:0;">
+                Maharashtra, India ·
+                <a href="tel:+918605363682" style="color:var(--rx-green); text-decoration:none;">+91 86053 63682</a>
+              </p>
+            </div>
 
           </div>
 
@@ -273,119 +366,90 @@
   ========================================================== -->
   <section
     id="pillars"
-    class="py-6 bg-industrial-darker text-white border-top border-dark-subtle"
+    class="py-6 bg-industrial-dark text-white"
   >
 
     <div class="container py-4">
 
       <div class="text-center mb-5 animate-on-scroll">
 
-        <span class="text-success fw-bold text-uppercase fs-7 tracking-widest">
-          Core Business
-        </span>
+        <div class="section-label">Core Business</div>
 
         <h2 class="display-5 fw-bold mb-3">
-          Four Core Business Pillars
+          Four Business Pillars
         </h2>
 
-        <p class="text-secondary fs-5 max-w-700 mx-auto fw-light">
-          Practical waste recovery and circular material activities supported
-          by technology development.
+        <p class="fs-5 max-w-700 mx-auto fw-light" style="color:var(--rx-muted);">
+          Practical waste recovery and circular material activities
+          supported by technology development.
         </p>
 
       </div>
 
       <div class="row g-4">
 
-        <!-- Pillar 1 -->
+        <!-- Pillar 1 — Waste Management -->
         <div class="col-md-6 col-lg-3 animate-on-scroll">
-
-          <div class="glass-card p-4 rounded-2 h-100 border border-secondary border-opacity-25">
-
-            <div class="fs-1 text-success mb-3">
-              <i class="bi bi-recycle"></i>
+          <div class="pillar-card">
+            <div class="pillar-icon">
+              <i class="bi bi-recycle" aria-hidden="true"></i>
             </div>
-
             <h3 class="fw-bold fs-5 text-white mb-2">
-              1. Waste Management
+              Waste Management
             </h3>
-
-            <p class="text-secondary fs-7 fw-light mb-0">
+            <p style="color:var(--rx-muted); font-size:0.875rem; font-weight:300; margin:0; line-height:1.65;">
               Dry waste collection, segregation, material recovery and MRF
               operations for commercial and industrial waste streams.
             </p>
-
           </div>
-
         </div>
 
-
-        <!-- Pillar 2 -->
+        <!-- Pillar 2 — Material Trading -->
         <div class="col-md-6 col-lg-3 animate-on-scroll">
-
-          <div class="glass-card p-4 rounded-2 h-100 border border-secondary border-opacity-25">
-
-            <div class="fs-1 text-primary mb-3">
-              <i class="bi bi-box-seam-fill"></i>
+          <div class="pillar-card">
+            <div class="pillar-icon">
+              <i class="bi bi-box-seam-fill" aria-hidden="true"></i>
             </div>
-
             <h3 class="fw-bold fs-5 text-white mb-2">
-              2. Material Trading
+              Material Trading
             </h3>
-
-            <p class="text-secondary fs-7 fw-light mb-0">
+            <p style="color:var(--rx-muted); font-size:0.875rem; font-weight:300; margin:0; line-height:1.65;">
               Procurement and trading of recovered polymers and secondary
               raw materials, subject to batch availability and specification.
             </p>
-
           </div>
-
         </div>
 
-
-        <!-- Pillar 3 -->
+        <!-- Pillar 3 — Textile Recycling -->
         <div class="col-md-6 col-lg-3 animate-on-scroll">
-
-          <div class="glass-card p-4 rounded-2 h-100 border border-secondary border-opacity-25">
-
-            <div class="fs-1 text-warning mb-3">
-              <i class="bi bi-layers-fill"></i>
+          <div class="pillar-card">
+            <div class="pillar-icon">
+              <i class="bi bi-layers-fill" aria-hidden="true"></i>
             </div>
-
             <h3 class="fw-bold fs-5 text-white mb-2">
-              3. Textile Recycling
+              Textile Recycling
             </h3>
-
-            <p class="text-secondary fs-7 fw-light mb-0">
+            <p style="color:var(--rx-muted); font-size:0.875rem; font-weight:300; margin:0; line-height:1.65;">
               Recovery and processing of post-industrial and post-consumer
               textile waste for circular and secondary-use applications.
             </p>
-
           </div>
-
         </div>
 
-
-        <!-- Pillar 4 -->
+        <!-- Pillar 4 — Technology R&D -->
         <div class="col-md-6 col-lg-3 animate-on-scroll">
-
-          <div class="glass-card p-4 rounded-2 h-100 border border-secondary border-opacity-25">
-
-            <div class="fs-1 text-info mb-3">
-              <i class="bi bi-cpu-fill"></i>
+          <div class="pillar-card" style="border-color: rgba(255,255,255,0.05);">
+            <div class="pillar-icon" style="background:rgba(255,255,255,0.04); border-color:rgba(255,255,255,0.08); color:var(--rx-muted-light);">
+              <i class="bi bi-cpu-fill" aria-hidden="true"></i>
             </div>
-
-            <h3 class="fw-bold fs-5 text-white mb-2">
-              4. Technology R&D
+            <h3 class="fw-bold fs-5 mb-2" style="color:var(--rx-muted-light);">
+              Technology R&amp;D
             </h3>
-
-            <p class="text-secondary fs-7 fw-light mb-0">
+            <p style="color:var(--rx-muted); font-size:0.875rem; font-weight:300; margin:0; line-height:1.65;">
               Research and development in AI-assisted material identification
-              and future automation for waste sorting.
+              and future automation for waste sorting. Currently under development.
             </p>
-
           </div>
-
         </div>
 
       </div>
@@ -396,26 +460,24 @@
 
 
   <!-- =========================================================
-       MATERIAL RECOVERY / OPERATIONS
+       OPERATIONS — MRF / MATERIAL TRADING / TEXTILE
   ========================================================== -->
   <section
     id="solutions"
-    class="py-6 bg-industrial-dark text-white"
+    class="py-6 bg-industrial-darker text-white"
   >
 
     <div class="container py-4">
 
       <div class="text-center mb-5 animate-on-scroll">
 
-        <span class="text-success fw-bold text-uppercase fs-7 tracking-widest">
-          Operations
-        </span>
+        <div class="section-label">Operations</div>
 
         <h2 class="display-5 fw-bold mb-3">
-          Waste & Material Recovery
+          Waste &amp; Material Recovery
         </h2>
 
-        <p class="text-secondary fs-5 max-w-700 mx-auto fw-light">
+        <p class="fs-5 max-w-700 mx-auto fw-light" style="color:var(--rx-muted);">
           Connecting waste generators, recovery operations and downstream
           recycling markets.
         </p>
@@ -425,52 +487,46 @@
 
       <div class="row g-4">
 
-        <!-- MRF -->
+        <!-- MRF — uses plant.jpg (industrial facility) -->
         <div class="col-md-6 col-lg-4 animate-on-scroll">
 
-          <div class="industrial-card rounded-2 overflow-hidden h-100 bg-industrial-card border border-secondary border-opacity-25">
+          <div class="industrial-card rounded-2 h-100">
 
-            <div class="card-img-wrapper position-relative overflow-hidden">
+            <div class="card-img-wrapper position-relative">
 
               <img
                 src="assets/gallery/plant.jpg"
-                alt="Material Recovery Facility operations"
+                alt="Material recovery facility operations — sorting and segregation"
                 width="800"
                 height="533"
                 loading="lazy"
                 decoding="async"
-                class="img-fluid card-img-top"
+                class="card-img-top"
               >
 
-              <div class="card-badge">
-                MRF Operations
-              </div>
+              <div class="card-badge">MRF Operations</div>
 
             </div>
 
             <div class="p-4">
 
               <div class="d-flex align-items-center mb-3">
-
-                <i class="bi bi-building-gear fs-3 text-success me-3"></i>
-
-                <h3 class="fw-bold fs-5 mb-0 text-white">
-                  MRF Operations
-                </h3>
-
+                <i class="bi bi-building-gear fs-3 me-3" aria-hidden="true" style="color:var(--rx-green);"></i>
+                <h3 class="fw-bold fs-5 mb-0 text-white">MRF Operations</h3>
               </div>
 
-              <p class="text-secondary fs-7 fw-light mb-4">
+              <p style="color:var(--rx-muted); font-size:0.875rem; font-weight:300; margin-bottom:1.25rem; line-height:1.65;">
                 Dry waste sorting, segregation, baling and preparation of
                 recoverable materials for downstream buyers.
               </p>
 
               <a
                 href="#contact"
-                class="btn btn-link text-success text-decoration-none p-0 fw-bold fs-7 tracking-wider text-uppercase"
+                class="btn btn-link text-decoration-none p-0 fw-bold tracking-wider text-uppercase"
+                style="color:var(--rx-green); font-size:0.78rem;"
               >
                 Discuss Operations
-                <i class="bi bi-chevron-right ms-1"></i>
+                <i class="bi bi-chevron-right ms-1" aria-hidden="true"></i>
               </a>
 
             </div>
@@ -480,52 +536,46 @@
         </div>
 
 
-        <!-- Material Trading -->
+        <!-- Material Trading — uses vehicles.jpg (logistics/movement) -->
         <div class="col-md-6 col-lg-4 animate-on-scroll">
 
-          <div class="industrial-card rounded-2 overflow-hidden h-100 bg-industrial-card border border-secondary border-opacity-25">
+          <div class="industrial-card rounded-2 h-100">
 
-            <div class="card-img-wrapper position-relative overflow-hidden">
+            <div class="card-img-wrapper position-relative">
 
               <img
-                src="assets/gallery/plant.jpg"
-                alt="Recovered materials and industrial recovery facility"
+                src="assets/gallery/vehicles.jpg"
+                alt="Industrial vehicles and logistics for recovered material movement"
                 width="800"
                 height="533"
                 loading="lazy"
                 decoding="async"
-                class="img-fluid card-img-top"
+                class="card-img-top"
               >
 
-              <div class="card-badge">
-                Material Trading
-              </div>
+              <div class="card-badge">Material Trading</div>
 
             </div>
 
             <div class="p-4">
 
               <div class="d-flex align-items-center mb-3">
-
-                <i class="bi bi-box-seam-fill fs-3 text-success me-3"></i>
-
-                <h3 class="fw-bold fs-5 mb-0 text-white">
-                  Recycled Material Trading
-                </h3>
-
+                <i class="bi bi-box-seam-fill fs-3 me-3" aria-hidden="true" style="color:var(--rx-green);"></i>
+                <h3 class="fw-bold fs-5 mb-0 text-white">Recycled Material Trading</h3>
               </div>
 
-              <p class="text-secondary fs-7 fw-light mb-4">
+              <p style="color:var(--rx-muted); font-size:0.875rem; font-weight:300; margin-bottom:1.25rem; line-height:1.65;">
                 Bulk procurement and supply of recovered polymer and secondary
                 raw material grades, subject to batch availability.
               </p>
 
               <a
                 href="#materials"
-                class="btn btn-link text-success text-decoration-none p-0 fw-bold fs-7 tracking-wider text-uppercase"
+                class="btn btn-link text-decoration-none p-0 fw-bold tracking-wider text-uppercase"
+                style="color:var(--rx-green); font-size:0.78rem;"
               >
                 View Materials
-                <i class="bi bi-chevron-right ms-1"></i>
+                <i class="bi bi-chevron-right ms-1" aria-hidden="true"></i>
               </a>
 
             </div>
@@ -535,55 +585,50 @@
         </div>
 
 
-        <!-- Textile -->
+        <!-- Textile Recycling — uses plant.jpg (processing environment) -->
         <div
           class="col-md-6 col-lg-4 animate-on-scroll"
           id="textile"
         >
 
-          <div class="industrial-card rounded-2 overflow-hidden h-100 bg-industrial-card border border-secondary border-opacity-25">
+          <div class="industrial-card rounded-2 h-100">
 
-            <div class="card-img-wrapper position-relative overflow-hidden">
+            <div class="card-img-wrapper position-relative">
 
               <img
                 src="assets/gallery/plant.jpg"
-                alt="Industrial recovery facility representing textile and dry waste processing"
+                alt="Industrial facility for textile and dry waste processing"
                 width="800"
                 height="533"
                 loading="lazy"
                 decoding="async"
-                class="img-fluid card-img-top"
+                class="card-img-top"
+                style="object-position: center 60%;"
               >
 
-              <div class="card-badge">
-                Textile Recycling
-              </div>
+              <div class="card-badge">Textile Recycling</div>
 
             </div>
 
             <div class="p-4">
 
               <div class="d-flex align-items-center mb-3">
-
-                <i class="bi bi-layers fs-3 text-success me-3"></i>
-
-                <h3 class="fw-bold fs-5 mb-0 text-white">
-                  Textile Recycling
-                </h3>
-
+                <i class="bi bi-layers fs-3 me-3" aria-hidden="true" style="color:var(--rx-green);"></i>
+                <h3 class="fw-bold fs-5 mb-0 text-white">Textile Recycling</h3>
               </div>
 
-              <p class="text-secondary fs-7 fw-light mb-4">
+              <p style="color:var(--rx-muted); font-size:0.875rem; font-weight:300; margin-bottom:1.25rem; line-height:1.65;">
                 Recovery and processing pathways for textile cuttings,
                 industrial fabric waste and other suitable textile streams.
               </p>
 
               <a
                 href="#contact"
-                class="btn btn-link text-success text-decoration-none p-0 fw-bold fs-7 tracking-wider text-uppercase"
+                class="btn btn-link text-decoration-none p-0 fw-bold tracking-wider text-uppercase"
+                style="color:var(--rx-green); font-size:0.78rem;"
               >
                 Discuss Textile Waste
-                <i class="bi bi-chevron-right ms-1"></i>
+                <i class="bi bi-chevron-right ms-1" aria-hidden="true"></i>
               </a>
 
             </div>
@@ -599,74 +644,116 @@
   </section>
 
 
-  <!-- Technology & Future Projects -->
-<section id="technology" class="py-5 bg-dark border-top border-secondary">
-    <div class="container py-5">
-        <div class="row align-items-center g-5">
-            <div class="col-lg-8">
-                <span class="badge bg-secondary bg-opacity-25 text-secondary border border-secondary px-3 py-2 rounded-pill mb-3">
-                    FUTURE PROJECTS & R&D
-                </span>
+  <!-- =========================================================
+       TECHNOLOGY & FUTURE PROJECTS
+       AIRWSS is R&D / not commercially deployed.
+  ========================================================== -->
+  <section id="technology" class="py-6 bg-industrial-dark text-white">
 
-                <h2 class="fw-bold display-6 text-white mb-3">
-                    Technology & Future Projects
-                </h2>
+    <div class="container py-4">
 
-                <p class="text-secondary mb-4">
-                    Rixle is exploring technology-led solutions for the future of
-                    material recovery, identification and recycling infrastructure.
-                    These initiatives are currently under research and development
-                    and are not presented as deployed commercial systems.
-                </p>
+      <div class="row align-items-center g-5">
 
-                <a href="technology.html"
-                   class="btn btn-outline-light px-4 py-2">
-                    Explore Technology & R&D
-                </a>
-            </div>
+        <div class="col-lg-7 animate-on-scroll">
 
-            <div class="col-lg-4">
-                <div class="card bg-black border border-secondary p-4 h-100">
-                    <span class="text-success small fw-bold text-uppercase mb-2">
-                        Upcoming Project
-                    </span>
+          <div class="section-label mb-3">Future Projects &amp; R&amp;D</div>
 
-                    <h3 class="h4 fw-bold text-white mb-3">
-                        AIRWSS
-                    </h3>
+          <h2 class="fw-bold display-5 text-white mb-4">
+            Technology &amp; Future Projects
+          </h2>
 
-                    <p class="text-secondary small mb-0">
-                        AI Robotic Waste Sorting System — an R&D initiative
-                        under development for future material identification
-                        and sorting applications.
-                    </p>
-                </div>
-            </div>
+          <p style="color:var(--rx-muted); font-size:1rem; line-height:1.75; margin-bottom:1.25rem;">
+            Rixle is exploring technology-led solutions for the future of
+            material recovery, identification and recycling infrastructure.
+            These initiatives are currently under research and development
+            and are not presented as deployed commercial systems.
+          </p>
+
+          <p style="color:var(--rx-muted); font-size:0.875rem; line-height:1.7; margin-bottom:2rem;">
+            Our current commercial focus remains on practical waste management,
+            material recovery and recycled material trading operations.
+          </p>
+
+          <!-- Fixed: was href="technology.html" (404) — now in-page anchor -->
+          <a href="#technology" class="btn btn-outline-light px-4 py-2 fw-bold text-uppercase tracking-wider" style="font-size:0.78rem;">
+            <i class="bi bi-cpu me-2" aria-hidden="true"></i>
+            Technology Overview
+          </a>
+
         </div>
+
+
+        <div class="col-lg-5 animate-on-scroll">
+
+          <!-- tech-env.jpg used contextually in the technology section -->
+          <div style="position:relative; border-radius:10px; overflow:hidden; margin-bottom:1.5rem;">
+            <img
+              src="assets/gallery/tech-env.jpg"
+              alt="Technology and environmental R&D environment"
+              width="600"
+              height="400"
+              loading="lazy"
+              decoding="async"
+              style="width:100%; height:220px; object-fit:cover; display:block; filter:brightness(0.82);"
+            >
+            <div style="
+              position:absolute; inset:0;
+              background: linear-gradient(to top, rgba(6,10,15,0.85) 0%, transparent 55%);
+              pointer-events:none;
+            " aria-hidden="true"></div>
+          </div>
+
+          <div class="airwss-card">
+
+            <div class="rd-badge">
+              <i class="bi bi-flask" aria-hidden="true"></i>
+              Upcoming Project
+            </div>
+
+            <h3 class="h4 fw-bold text-white mb-2">
+              AIRWSS
+            </h3>
+
+            <p style="color:var(--rx-muted-light); font-size:0.82rem; font-weight:600; margin-bottom:0.5rem;">
+              AI Robotic Waste Sorting System
+            </p>
+
+            <p style="color:var(--rx-muted); font-size:0.82rem; line-height:1.7; margin:0;">
+              An R&amp;D initiative under development for future material
+              identification and sorting applications. Not commercially
+              deployed.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
-</section>
+
+  </section>
+
 
   <!-- =========================================================
-       WORKFLOW
+       WORKFLOW — 8-STEP RECOVERY FLOW
   ========================================================== -->
   <section
     id="workflow"
-    class="py-6 bg-industrial-dark text-white"
+    class="py-6 bg-industrial-darker text-white"
   >
 
     <div class="container py-4">
 
       <div class="text-center mb-5 animate-on-scroll">
 
-        <span class="text-success fw-bold text-uppercase fs-7 tracking-widest">
-          Recovery Flow
-        </span>
+        <div class="section-label">Recovery Flow</div>
 
         <h2 class="display-5 fw-bold mb-3">
           From Waste to Recovered Material
         </h2>
 
-        <p class="text-secondary fs-5 max-w-700 mx-auto fw-light">
+        <p class="fs-5 max-w-700 mx-auto fw-light" style="color:var(--rx-muted);">
           A practical recovery workflow from incoming material through
           sorting, preparation and downstream supply.
         </p>
@@ -674,115 +761,107 @@
       </div>
 
 
-      <div class="row g-3 text-center animate-on-scroll">
+      <div class="row g-3 animate-on-scroll">
 
         <div class="col-6 col-md-3">
-          <div class="p-3 bg-industrial-card rounded-2 border border-secondary border-opacity-25 h-100">
-            <div class="fs-2 text-success mb-2">
-              <i class="bi bi-truck-front-fill"></i>
+          <div class="workflow-step text-center">
+            <div class="workflow-step-number">Step 1</div>
+            <div class="fs-2 mb-2" style="color:var(--rx-green);">
+              <i class="bi bi-truck-front-fill" aria-hidden="true"></i>
             </div>
-            <h4 class="fs-6 fw-bold text-white mb-1">
-              1. Collection
-            </h4>
-            <p class="fs-8 text-secondary mb-0">
+            <h4 class="fs-6 fw-bold text-white mb-1">Collection</h4>
+            <p class="mb-0" style="font-size:0.75rem; color:var(--rx-muted);">
               Waste received from applicable sources.
             </p>
           </div>
         </div>
 
         <div class="col-6 col-md-3">
-          <div class="p-3 bg-industrial-card rounded-2 border border-secondary border-opacity-25 h-100">
-            <div class="fs-2 text-success mb-2">
-              <i class="bi bi-boxes"></i>
+          <div class="workflow-step text-center">
+            <div class="workflow-step-number">Step 2</div>
+            <div class="fs-2 mb-2" style="color:var(--rx-green);">
+              <i class="bi bi-boxes" aria-hidden="true"></i>
             </div>
-            <h4 class="fs-6 fw-bold text-white mb-1">
-              2. Receiving
-            </h4>
-            <p class="fs-8 text-secondary mb-0">
+            <h4 class="fs-6 fw-bold text-white mb-1">Receiving</h4>
+            <p class="mb-0" style="font-size:0.75rem; color:var(--rx-muted);">
               Material inspection and handling.
             </p>
           </div>
         </div>
 
         <div class="col-6 col-md-3">
-          <div class="p-3 bg-industrial-card rounded-2 border border-secondary border-opacity-25 h-100">
-            <div class="fs-2 text-success mb-2">
-              <i class="bi bi-funnel-fill"></i>
+          <div class="workflow-step text-center">
+            <div class="workflow-step-number">Step 3</div>
+            <div class="fs-2 mb-2" style="color:var(--rx-green);">
+              <i class="bi bi-funnel-fill" aria-hidden="true"></i>
             </div>
-            <h4 class="fs-6 fw-bold text-white mb-1">
-              3. Sorting
-            </h4>
-            <p class="fs-8 text-secondary mb-0">
+            <h4 class="fs-6 fw-bold text-white mb-1">Sorting</h4>
+            <p class="mb-0" style="font-size:0.75rem; color:var(--rx-muted);">
               Segregation by material category.
             </p>
           </div>
         </div>
 
         <div class="col-6 col-md-3">
-          <div class="p-3 bg-industrial-card rounded-2 border border-secondary border-opacity-25 h-100">
-            <div class="fs-2 text-success mb-2">
-              <i class="bi bi-stack"></i>
+          <div class="workflow-step text-center">
+            <div class="workflow-step-number">Step 4</div>
+            <div class="fs-2 mb-2" style="color:var(--rx-green);">
+              <i class="bi bi-stack" aria-hidden="true"></i>
             </div>
-            <h4 class="fs-6 fw-bold text-white mb-1">
-              4. Preparation
-            </h4>
-            <p class="fs-8 text-secondary mb-0">
+            <h4 class="fs-6 fw-bold text-white mb-1">Preparation</h4>
+            <p class="mb-0" style="font-size:0.75rem; color:var(--rx-muted);">
               Baling or preparation where applicable.
             </p>
           </div>
         </div>
 
         <div class="col-6 col-md-3">
-          <div class="p-3 bg-industrial-card rounded-2 border border-secondary border-opacity-25 h-100">
-            <div class="fs-2 text-success mb-2">
-              <i class="bi bi-clipboard-check"></i>
+          <div class="workflow-step text-center">
+            <div class="workflow-step-number">Step 5</div>
+            <div class="fs-2 mb-2" style="color:var(--rx-green);">
+              <i class="bi bi-clipboard-check" aria-hidden="true"></i>
             </div>
-            <h4 class="fs-6 fw-bold text-white mb-1">
-              5. Quality Review
-            </h4>
-            <p class="fs-8 text-secondary mb-0">
+            <h4 class="fs-6 fw-bold text-white mb-1">Quality Review</h4>
+            <p class="mb-0" style="font-size:0.75rem; color:var(--rx-muted);">
               Batch-level material assessment.
             </p>
           </div>
         </div>
 
         <div class="col-6 col-md-3">
-          <div class="p-3 bg-industrial-card rounded-2 border border-secondary border-opacity-25 h-100">
-            <div class="fs-2 text-success mb-2">
-              <i class="bi bi-building"></i>
+          <div class="workflow-step text-center">
+            <div class="workflow-step-number">Step 6</div>
+            <div class="fs-2 mb-2" style="color:var(--rx-green);">
+              <i class="bi bi-building" aria-hidden="true"></i>
             </div>
-            <h4 class="fs-6 fw-bold text-white mb-1">
-              6. Storage
-            </h4>
-            <p class="fs-8 text-secondary mb-0">
+            <h4 class="fs-6 fw-bold text-white mb-1">Storage</h4>
+            <p class="mb-0" style="font-size:0.75rem; color:var(--rx-muted);">
               Prepared material held for dispatch.
             </p>
           </div>
         </div>
 
         <div class="col-6 col-md-3">
-          <div class="p-3 bg-industrial-card rounded-2 border border-secondary border-opacity-25 h-100">
-            <div class="fs-2 text-success mb-2">
-              <i class="bi bi-recycle"></i>
+          <div class="workflow-step text-center">
+            <div class="workflow-step-number">Step 7</div>
+            <div class="fs-2 mb-2" style="color:var(--rx-green);">
+              <i class="bi bi-recycle" aria-hidden="true"></i>
             </div>
-            <h4 class="fs-6 fw-bold text-white mb-1">
-              7. Downstream Recycling
-            </h4>
-            <p class="fs-8 text-secondary mb-0">
+            <h4 class="fs-6 fw-bold text-white mb-1">Downstream Recycling</h4>
+            <p class="mb-0" style="font-size:0.75rem; color:var(--rx-muted);">
               Supply into appropriate recycling chains.
             </p>
           </div>
         </div>
 
         <div class="col-6 col-md-3">
-          <div class="p-3 bg-industrial-card rounded-2 border border-secondary border-opacity-25 h-100">
-            <div class="fs-2 text-success mb-2">
-              <i class="bi bi-arrow-repeat"></i>
+          <div class="workflow-step text-center">
+            <div class="workflow-step-number">Step 8</div>
+            <div class="fs-2 mb-2" style="color:var(--rx-green);">
+              <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
             </div>
-            <h4 class="fs-6 fw-bold text-white mb-1">
-              8. Circular Supply
-            </h4>
-            <p class="fs-8 text-secondary mb-0">
+            <h4 class="fs-6 fw-bold text-white mb-1">Circular Supply</h4>
+            <p class="mb-0" style="font-size:0.75rem; color:var(--rx-muted);">
               Recovered material returns to industry.
             </p>
           </div>
@@ -796,26 +875,24 @@
 
 
   <!-- =========================================================
-       MATERIALS
+       MATERIALS — GROUPED BY CATEGORY
   ========================================================== -->
   <section
     id="materials"
-    class="py-6 bg-industrial-darker text-white border-top border-dark-subtle"
+    class="py-6 bg-industrial-dark text-white"
   >
 
     <div class="container py-4">
 
       <div class="text-center mb-5 animate-on-scroll">
 
-        <span class="text-success fw-bold text-uppercase fs-7 tracking-widest">
-          Material Portfolio
-        </span>
+        <div class="section-label">Material Portfolio</div>
 
         <h2 class="display-5 fw-bold mb-3">
           Recovered Material Categories
         </h2>
 
-        <p class="text-secondary fs-5 max-w-700 mx-auto fw-light">
+        <p class="fs-5 max-w-700 mx-auto fw-light" style="color:var(--rx-muted);">
           Material availability, condition, grade and specification vary by
           recovered batch. Contact Rixle for current availability.
         </p>
@@ -823,214 +900,174 @@
       </div>
 
 
-      <div class="row g-4">
+      <!-- POLYMERS -->
+      <div class="animate-on-scroll">
+        <div class="material-group-label">Polymers</div>
+        <div class="row g-3 mb-4">
 
-
-        <!-- PET -->
-        <div class="col-md-6 col-lg-3 animate-on-scroll">
-          <div class="glass-card p-4 rounded-2 h-100 border border-secondary border-opacity-25">
-            <span class="text-success fs-8 text-uppercase fw-bold">
-              Polymer
-            </span>
-            <h3 class="fw-bold fs-4 text-white mt-2">
-              PET
-            </h3>
-            <p class="text-secondary fs-7 mb-0">
-              Recovered PET bottles, flakes and suitable packaging scrap.
-            </p>
+          <div class="col-sm-6 col-md-4 col-lg-2">
+            <div class="material-card">
+              <div class="material-card-tag">Polymer</div>
+              <h3 class="fw-bold fs-4 text-white mb-1">PET</h3>
+              <p style="font-size:0.78rem; color:var(--rx-muted); margin:0; line-height:1.55;">
+                Recovered PET bottles, flakes and suitable packaging scrap.
+              </p>
+            </div>
           </div>
-        </div>
 
-
-        <!-- HDPE -->
-        <div class="col-md-6 col-lg-3 animate-on-scroll">
-          <div class="glass-card p-4 rounded-2 h-100 border border-secondary border-opacity-25">
-            <span class="text-success fs-8 text-uppercase fw-bold">
-              Polymer
-            </span>
-            <h3 class="fw-bold fs-4 text-white mt-2">
-              HDPE
-            </h3>
-            <p class="text-secondary fs-7 mb-0">
-              Rigid HDPE containers, industrial scrap and recovered material.
-            </p>
+          <div class="col-sm-6 col-md-4 col-lg-2">
+            <div class="material-card">
+              <div class="material-card-tag">Polymer</div>
+              <h3 class="fw-bold fs-4 text-white mb-1">HDPE</h3>
+              <p style="font-size:0.78rem; color:var(--rx-muted); margin:0; line-height:1.55;">
+                Rigid HDPE containers, industrial scrap and recovered material.
+              </p>
+            </div>
           </div>
-        </div>
 
-
-        <!-- LDPE -->
-        <div class="col-md-6 col-lg-3 animate-on-scroll">
-          <div class="glass-card p-4 rounded-2 h-100 border border-secondary border-opacity-25">
-            <span class="text-success fs-8 text-uppercase fw-bold">
-              Polymer
-            </span>
-            <h3 class="fw-bold fs-4 text-white mt-2">
-              LDPE
-            </h3>
-            <p class="text-secondary fs-7 mb-0">
-              Flexible films, packaging and suitable industrial film waste.
-            </p>
+          <div class="col-sm-6 col-md-4 col-lg-2">
+            <div class="material-card">
+              <div class="material-card-tag">Polymer</div>
+              <h3 class="fw-bold fs-4 text-white mb-1">LDPE</h3>
+              <p style="font-size:0.78rem; color:var(--rx-muted); margin:0; line-height:1.55;">
+                Flexible films, packaging and suitable industrial film waste.
+              </p>
+            </div>
           </div>
-        </div>
 
-
-        <!-- PP -->
-        <div class="col-md-6 col-lg-3 animate-on-scroll">
-          <div class="glass-card p-4 rounded-2 h-100 border border-secondary border-opacity-25">
-            <span class="text-success fs-8 text-uppercase fw-bold">
-              Polymer
-            </span>
-            <h3 class="fw-bold fs-4 text-white mt-2">
-              PP
-            </h3>
-            <p class="text-secondary fs-7 mb-0">
-              Recovered polypropylene scrap, woven materials and rigid items.
-            </p>
+          <div class="col-sm-6 col-md-4 col-lg-2">
+            <div class="material-card">
+              <div class="material-card-tag">Polymer</div>
+              <h3 class="fw-bold fs-4 text-white mb-1">PP</h3>
+              <p style="font-size:0.78rem; color:var(--rx-muted); margin:0; line-height:1.55;">
+                Recovered polypropylene scrap, woven materials and rigid items.
+              </p>
+            </div>
           </div>
-        </div>
 
-
-        <!-- HM -->
-        <div class="col-md-6 col-lg-3 animate-on-scroll">
-          <div class="glass-card p-4 rounded-2 h-100 border border-secondary border-opacity-25">
-            <span class="text-success fs-8 text-uppercase fw-bold">
-              Polymer
-            </span>
-            <h3 class="fw-bold fs-4 text-white mt-2">
-              HM
-            </h3>
-            <p class="text-secondary fs-7 mb-0">
-              Selected high-molecular-weight film and industrial plastic waste.
-            </p>
+          <div class="col-sm-6 col-md-4 col-lg-2">
+            <div class="material-card">
+              <div class="material-card-tag">Polymer</div>
+              <h3 class="fw-bold fs-4 text-white mb-1">HM</h3>
+              <p style="font-size:0.78rem; color:var(--rx-muted); margin:0; line-height:1.55;">
+                Selected high-molecular-weight film and industrial plastic waste.
+              </p>
+            </div>
           </div>
-        </div>
 
-
-        <!-- MLP -->
-        <div class="col-md-6 col-lg-3 animate-on-scroll">
-          <div class="glass-card p-4 rounded-2 h-100 border border-secondary border-opacity-25">
-            <span class="text-success fs-8 text-uppercase fw-bold">
-              Composite
-            </span>
-            <h3 class="fw-bold fs-4 text-white mt-2">
-              MLP
-            </h3>
-            <p class="text-secondary fs-7 mb-0">
-              Multi-layer packaging and laminated plastic waste streams.
-            </p>
+          <div class="col-sm-6 col-md-4 col-lg-2">
+            <div class="material-card">
+              <div class="material-card-tag">Polymer</div>
+              <h3 class="fw-bold fs-4 text-white mb-1">PVC</h3>
+              <p style="font-size:0.78rem; color:var(--rx-muted); margin:0; line-height:1.55;">
+                Suitable recovered PVC profiles, piping and industrial scrap.
+              </p>
+            </div>
           </div>
+
         </div>
-
-
-        <!-- PVC -->
-        <div class="col-md-6 col-lg-3 animate-on-scroll">
-          <div class="glass-card p-4 rounded-2 h-100 border border-secondary border-opacity-25">
-            <span class="text-success fs-8 text-uppercase fw-bold">
-              Polymer
-            </span>
-            <h3 class="fw-bold fs-4 text-white mt-2">
-              PVC
-            </h3>
-            <p class="text-secondary fs-7 mb-0">
-              Suitable recovered PVC profiles, piping and industrial scrap.
-            </p>
-          </div>
-        </div>
-
-
-        <!-- Paper -->
-        <div class="col-md-6 col-lg-3 animate-on-scroll">
-          <div class="glass-card p-4 rounded-2 h-100 border border-secondary border-opacity-25">
-            <span class="text-success fs-8 text-uppercase fw-bold">
-              Fibre
-            </span>
-            <h3 class="fw-bold fs-4 text-white mt-2">
-              Paper
-            </h3>
-            <p class="text-secondary fs-7 mb-0">
-              Sorted paper grades recovered from suitable dry waste streams.
-            </p>
-          </div>
-        </div>
-
-
-        <!-- Cardboard -->
-        <div class="col-md-6 col-lg-3 animate-on-scroll">
-          <div class="glass-card p-4 rounded-2 h-100 border border-secondary border-opacity-25">
-            <span class="text-success fs-8 text-uppercase fw-bold">
-              Fibre
-            </span>
-            <h3 class="fw-bold fs-4 text-white mt-2">
-              Cardboard / OCC
-            </h3>
-            <p class="text-secondary fs-7 mb-0">
-              Recovered corrugated packaging and cardboard material.
-            </p>
-          </div>
-        </div>
-
-
-        <!-- Glass -->
-        <div class="col-md-6 col-lg-3 animate-on-scroll">
-          <div class="glass-card p-4 rounded-2 h-100 border border-secondary border-opacity-25">
-            <span class="text-success fs-8 text-uppercase fw-bold">
-              Recovered Material
-            </span>
-            <h3 class="fw-bold fs-4 text-white mt-2">
-              Glass
-            </h3>
-            <p class="text-secondary fs-7 mb-0">
-              Recovered glass fractions subject to sorting and batch quality.
-            </p>
-          </div>
-        </div>
-
-
-        <!-- Textile -->
-        <div class="col-md-6 col-lg-3 animate-on-scroll">
-          <div class="glass-card p-4 rounded-2 h-100 border border-secondary border-opacity-25">
-            <span class="text-success fs-8 text-uppercase fw-bold">
-              Textile
-            </span>
-            <h3 class="fw-bold fs-4 text-white mt-2">
-              Textile Waste
-            </h3>
-            <p class="text-secondary fs-7 mb-0">
-              Post-industrial textile cuttings, fabric scrap and suitable
-              textile residues.
-            </p>
-          </div>
-        </div>
-
-
-        <!-- RDF -->
-        <div class="col-md-6 col-lg-3 animate-on-scroll">
-          <div class="glass-card p-4 rounded-2 h-100 border border-secondary border-opacity-25">
-            <span class="text-success fs-8 text-uppercase fw-bold">
-              Dry Waste
-            </span>
-            <h3 class="fw-bold fs-4 text-white mt-2">
-              Industrial Dry Waste / RDF
-            </h3>
-            <p class="text-secondary fs-7 mb-0">
-              Suitable non-hazardous dry waste fractions for appropriate
-              downstream recovery or energy-use pathways.
-            </p>
-          </div>
-        </div>
-
       </div>
 
 
-      <div class="text-center mt-5">
+      <!-- COMPOSITES -->
+      <div class="animate-on-scroll">
+        <div class="material-group-label">Composites</div>
+        <div class="row g-3 mb-4">
 
-        <p class="text-secondary fs-7 mb-3">
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="material-card">
+              <div class="material-card-tag">Composite</div>
+              <h3 class="fw-bold fs-4 text-white mb-1">MLP</h3>
+              <p style="font-size:0.78rem; color:var(--rx-muted); margin:0; line-height:1.55;">
+                Multi-layer packaging and laminated plastic waste streams.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- FIBRE -->
+      <div class="animate-on-scroll">
+        <div class="material-group-label">Fibre</div>
+        <div class="row g-3 mb-4">
+
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="material-card">
+              <div class="material-card-tag">Fibre</div>
+              <h3 class="fw-bold fs-4 text-white mb-1">Paper</h3>
+              <p style="font-size:0.78rem; color:var(--rx-muted); margin:0; line-height:1.55;">
+                Sorted paper grades recovered from suitable dry waste streams.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="material-card">
+              <div class="material-card-tag">Fibre</div>
+              <h3 class="fw-bold fs-4 text-white mb-1">Cardboard / OCC</h3>
+              <p style="font-size:0.78rem; color:var(--rx-muted); margin:0; line-height:1.55;">
+                Recovered corrugated packaging and cardboard material.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- OTHER RECOVERED MATERIALS -->
+      <div class="animate-on-scroll">
+        <div class="material-group-label">Other Recovered Materials</div>
+        <div class="row g-3 mb-5">
+
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="material-card">
+              <div class="material-card-tag">Recovered Material</div>
+              <h3 class="fw-bold fs-4 text-white mb-1">Glass</h3>
+              <p style="font-size:0.78rem; color:var(--rx-muted); margin:0; line-height:1.55;">
+                Recovered glass fractions subject to sorting and batch quality.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="material-card">
+              <div class="material-card-tag">Textile</div>
+              <h3 class="fw-bold fs-4 text-white mb-1">Textile Waste</h3>
+              <p style="font-size:0.78rem; color:var(--rx-muted); margin:0; line-height:1.55;">
+                Post-industrial textile cuttings, fabric scrap and suitable
+                textile residues.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="material-card">
+              <div class="material-card-tag">Dry Waste</div>
+              <h3 class="fw-bold fs-4 text-white mb-1">Industrial Dry Waste / RDF</h3>
+              <p style="font-size:0.78rem; color:var(--rx-muted); margin:0; line-height:1.55;">
+                Suitable non-hazardous dry waste fractions for appropriate
+                downstream recovery or energy-use pathways.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="text-center">
+
+        <p style="font-size:0.82rem; color:var(--rx-muted); margin-bottom:1.25rem;">
           Material availability and specification are batch dependent.
         </p>
 
         <a
           href="#contact"
-          class="btn btn-outline-light px-4 py-2 text-uppercase fw-bold"
+          class="btn btn-outline-light px-4 py-2 text-uppercase fw-bold tracking-wider"
+          style="font-size:0.78rem;"
         >
           Request Current Material Availability
         </a>
@@ -1047,16 +1084,14 @@
   ========================================================== -->
   <section
     id="industries"
-    class="py-6 bg-industrial-dark text-white"
+    class="py-6 bg-industrial-darker text-white"
   >
 
     <div class="container py-4">
 
       <div class="text-center mb-5 animate-on-scroll">
 
-        <span class="text-success fw-bold text-uppercase fs-7 tracking-widest">
-          Industries
-        </span>
+        <div class="section-label">Industries</div>
 
         <h2 class="display-5 fw-bold mb-3">
           Who We Work With
@@ -1068,62 +1103,36 @@
       <div class="row g-4">
 
         <div class="col-md-4 animate-on-scroll">
-
-          <div class="p-4 bg-industrial-card rounded border border-secondary border-opacity-25 h-100">
-
-            <i class="bi bi-buildings text-success fs-1 mb-3 d-block"></i>
-
-            <h3 class="fs-5 fw-bold mb-3">
-              Manufacturing & FMCG
-            </h3>
-
-            <p class="fs-7 text-secondary mb-0">
+          <div class="industry-card">
+            <i class="bi bi-buildings fs-1 mb-3 d-block" aria-hidden="true" style="color:var(--rx-green);"></i>
+            <h3 class="fs-5 fw-bold mb-3">Manufacturing &amp; FMCG</h3>
+            <p style="font-size:0.875rem; color:var(--rx-muted); margin:0; line-height:1.65;">
               Waste recovery, material segregation and secondary material
               sourcing for manufacturing and consumer-product ecosystems.
             </p>
-
           </div>
-
         </div>
 
-
         <div class="col-md-4 animate-on-scroll">
-
-          <div class="p-4 bg-industrial-card rounded border border-secondary border-opacity-25 h-100">
-
-            <i class="bi bi-bank text-success fs-1 mb-3 d-block"></i>
-
-            <h3 class="fs-5 fw-bold mb-3">
-              Municipal & Institutional
-            </h3>
-
-            <p class="fs-7 text-secondary mb-0">
+          <div class="industry-card">
+            <i class="bi bi-bank fs-1 mb-3 d-block" aria-hidden="true" style="color:var(--rx-green);"></i>
+            <h3 class="fs-5 fw-bold mb-3">Municipal &amp; Institutional</h3>
+            <p style="font-size:0.875rem; color:var(--rx-muted); margin:0; line-height:1.65;">
               Dry waste recovery, MRF operations and circular material
               management initiatives.
             </p>
-
           </div>
-
         </div>
 
-
         <div class="col-md-4 animate-on-scroll">
-
-          <div class="p-4 bg-industrial-card rounded border border-secondary border-opacity-25 h-100">
-
-            <i class="bi bi-boxes text-success fs-1 mb-3 d-block"></i>
-
-            <h3 class="fs-5 fw-bold mb-3">
-              Recyclers & Processors
-            </h3>
-
-            <p class="fs-7 text-secondary mb-0">
+          <div class="industry-card">
+            <i class="bi bi-boxes fs-1 mb-3 d-block" aria-hidden="true" style="color:var(--rx-green);"></i>
+            <h3 class="fs-5 fw-bold mb-3">Recyclers &amp; Processors</h3>
+            <p style="font-size:0.875rem; color:var(--rx-muted); margin:0; line-height:1.65;">
               Material sourcing and supply connections for recycling and
               secondary raw material processing.
             </p>
-
           </div>
-
         </div>
 
       </div>
@@ -1138,7 +1147,7 @@
   ========================================================== -->
   <section
     id="about"
-    class="py-6 bg-industrial-darker text-white border-top border-dark-subtle"
+    class="py-6 bg-industrial-dark text-white"
   >
 
     <div class="container py-4">
@@ -1147,20 +1156,18 @@
 
         <div class="col-lg-6 animate-on-scroll">
 
-          <span class="text-success fw-bold text-uppercase fs-7 tracking-widest">
-            About Rixle
-          </span>
+          <div class="section-label mb-3">About Rixle</div>
 
           <h2 class="display-5 fw-bold mb-4">
             Building Practical Circular Supply Chains
           </h2>
 
-          <p class="text-secondary fs-5 fw-light mb-4">
+          <p class="fs-5 fw-light mb-4" style="color:var(--rx-muted);">
             Rixle Pvt Ltd works at the intersection of waste recovery,
             secondary material trading and environmental technology.
           </p>
 
-          <p class="text-secondary fs-7 fw-light mb-0">
+          <p style="font-size:0.875rem; color:var(--rx-muted); font-weight:300; margin:0; line-height:1.7;">
             Our focus is on practical recovery operations, responsible
             material sourcing and development of technologies that can improve
             the efficiency of future waste-sorting systems.
@@ -1174,82 +1181,47 @@
           <div class="row g-3">
 
             <div class="col-md-6">
-
-              <div class="p-4 bg-industrial-card rounded border border-secondary border-opacity-25 h-100">
-
-                <i class="bi bi-check-circle text-success fs-1 mb-3 d-block"></i>
-
-                <h4 class="fs-5 fw-bold mb-2">
-                  Batch-Based Supply
-                </h4>
-
-                <p class="fs-7 text-secondary mb-0">
+              <div class="about-card">
+                <i class="bi bi-check-circle fs-1 mb-3 d-block" aria-hidden="true" style="color:var(--rx-green);"></i>
+                <h4 class="fs-5 fw-bold mb-2">Batch-Based Supply</h4>
+                <p style="font-size:0.82rem; color:var(--rx-muted); margin:0; line-height:1.65;">
                   Material availability and specifications are confirmed
                   before commercial supply.
                 </p>
-
               </div>
-
             </div>
 
-
             <div class="col-md-6">
-
-              <div class="p-4 bg-industrial-card rounded border border-secondary border-opacity-25 h-100">
-
-                <i class="bi bi-diagram-3 text-success fs-1 mb-3 d-block"></i>
-
-                <h4 class="fs-5 fw-bold mb-2">
-                  Recovery Network
-                </h4>
-
-                <p class="fs-7 text-secondary mb-0">
+              <div class="about-card">
+                <i class="bi bi-diagram-3 fs-1 mb-3 d-block" aria-hidden="true" style="color:var(--rx-green);"></i>
+                <h4 class="fs-5 fw-bold mb-2">Recovery Network</h4>
+                <p style="font-size:0.82rem; color:var(--rx-muted); margin:0; line-height:1.65;">
                   Connecting waste streams with appropriate downstream
                   recovery and recycling channels.
                 </p>
-
               </div>
-
             </div>
 
-
             <div class="col-md-6">
-
-              <div class="p-4 bg-industrial-card rounded border border-secondary border-opacity-25 h-100">
-
-                <i class="bi bi-cpu text-warning fs-1 mb-3 d-block"></i>
-
-                <h4 class="fs-5 fw-bold mb-2">
-                  Technology R&D
-                </h4>
-
-                <p class="fs-7 text-secondary mb-0">
+              <div class="about-card">
+                <i class="bi bi-cpu fs-1 mb-3 d-block" aria-hidden="true" style="color:var(--rx-muted-light);"></i>
+                <h4 class="fs-5 fw-bold mb-2" style="color:var(--rx-muted-light);">Technology R&amp;D</h4>
+                <p style="font-size:0.82rem; color:var(--rx-muted); margin:0; line-height:1.65;">
                   AIRWSS remains positioned as a technology-development
-                  initiative.
+                  initiative under development.
                 </p>
-
               </div>
-
             </div>
 
-
             <div class="col-md-6">
-
-              <div class="p-4 bg-industrial-card rounded border border-secondary border-opacity-25 h-100">
-
-                <i class="bi bi-arrow-repeat text-secondary fs-1 mb-3 d-block"></i>
-
-                <h4 class="fs-5 fw-bold mb-2">
-                  Circular Focus
-                </h4>
-
-                <p class="fs-7 text-secondary mb-0">
+              <div class="about-card">
+                <i class="bi bi-arrow-repeat fs-1 mb-3 d-block" aria-hidden="true" style="color:var(--rx-green);"></i>
+                <h4 class="fs-5 fw-bold mb-2">Circular Focus</h4>
+                <p style="font-size:0.82rem; color:var(--rx-muted); margin:0; line-height:1.65;">
                   Supporting the movement of recovered materials back into
                   productive use.
                 </p>
-
               </div>
-
             </div>
 
           </div>
@@ -1264,26 +1236,24 @@
 
 
   <!-- =========================================================
-       RESOURCES
+       RESOURCES / DOCUMENTATION
   ========================================================== -->
   <section
     id="resources"
-    class="py-6 bg-industrial-dark text-white border-top border-dark-subtle"
+    class="py-6 bg-industrial-darker text-white"
   >
 
     <div class="container py-4">
 
       <div class="text-center mb-5 animate-on-scroll">
 
-        <span class="text-success fw-bold text-uppercase fs-7 tracking-widest">
-          Documentation
-        </span>
+        <div class="section-label">Documentation</div>
 
         <h2 class="display-5 fw-bold mb-3">
-          Company & Material Information
+          Company &amp; Material Information
         </h2>
 
-        <p class="text-secondary fs-5 max-w-700 mx-auto fw-light">
+        <p class="fs-5 max-w-700 mx-auto fw-light" style="color:var(--rx-muted);">
           Request current company information or material specifications
           directly from our team.
         </p>
@@ -1294,80 +1264,54 @@
       <div class="row g-4 animate-on-scroll">
 
         <div class="col-md-4">
-
-          <div class="glass-card p-4 rounded-2 border border-secondary border-opacity-25 h-100 text-center">
-
-            <i class="bi bi-building text-success fs-1 mb-3 d-block"></i>
-
-            <h4 class="fs-5 fw-bold mb-2">
-              Company Profile
-            </h4>
-
-            <p class="fs-7 text-secondary mb-4">
+          <div class="resource-card">
+            <i class="bi bi-building fs-1 mb-3 d-block" aria-hidden="true" style="color:var(--rx-green);"></i>
+            <h4 class="fs-5 fw-bold mb-2">Company Profile</h4>
+            <p style="font-size:0.82rem; color:var(--rx-muted); margin-bottom:1.5rem; line-height:1.65;">
               Request current company and operational information.
             </p>
-
             <a
               href="#contact"
-              class="btn btn-outline-light btn-sm text-uppercase fw-bold"
+              class="btn btn-outline-light btn-sm text-uppercase fw-bold tracking-wider"
+              style="font-size:0.72rem;"
             >
               Request Profile
             </a>
-
           </div>
-
         </div>
 
-
         <div class="col-md-4">
-
-          <div class="glass-card p-4 rounded-2 border border-secondary border-opacity-25 h-100 text-center">
-
-            <i class="bi bi-file-earmark-text text-success fs-1 mb-3 d-block"></i>
-
-            <h4 class="fs-5 fw-bold mb-2">
-              Material Specifications
-            </h4>
-
-            <p class="fs-7 text-secondary mb-4">
+          <div class="resource-card">
+            <i class="bi bi-file-earmark-text fs-1 mb-3 d-block" aria-hidden="true" style="color:var(--rx-green);"></i>
+            <h4 class="fs-5 fw-bold mb-2">Material Specifications</h4>
+            <p style="font-size:0.82rem; color:var(--rx-muted); margin-bottom:1.5rem; line-height:1.65;">
               Request current material grade and batch information.
             </p>
-
             <a
               href="#contact"
-              class="btn btn-outline-light btn-sm text-uppercase fw-bold"
+              class="btn btn-outline-light btn-sm text-uppercase fw-bold tracking-wider"
+              style="font-size:0.72rem;"
             >
               Request Specifications
             </a>
-
           </div>
-
         </div>
 
-
         <div class="col-md-4">
-
-          <div class="glass-card p-4 rounded-2 border border-secondary border-opacity-25 h-100 text-center">
-
-            <i class="bi bi-chat-square-text text-success fs-1 mb-3 d-block"></i>
-
-            <h4 class="fs-5 fw-bold mb-2">
-              Business Inquiry
-            </h4>
-
-            <p class="fs-7 text-secondary mb-4">
+          <div class="resource-card">
+            <i class="bi bi-chat-square-text fs-1 mb-3 d-block" aria-hidden="true" style="color:var(--rx-green);"></i>
+            <h4 class="fs-5 fw-bold mb-2">Business Inquiry</h4>
+            <p style="font-size:0.82rem; color:var(--rx-muted); margin-bottom:1.5rem; line-height:1.65;">
               Discuss waste recovery, material sourcing or partnerships.
             </p>
-
             <a
               href="#contact"
-              class="btn btn-outline-light btn-sm text-uppercase fw-bold"
+              class="btn btn-outline-light btn-sm text-uppercase fw-bold tracking-wider"
+              style="font-size:0.72rem;"
             >
               Send Inquiry
             </a>
-
           </div>
-
         </div>
 
       </div>
@@ -1382,16 +1326,14 @@
   ========================================================== -->
   <section
     id="faq"
-    class="py-6 bg-industrial-darker text-white"
+    class="py-6 bg-industrial-dark text-white"
   >
 
     <div class="container py-4">
 
       <div class="text-center mb-5 animate-on-scroll">
 
-        <span class="text-success fw-bold text-uppercase fs-7 tracking-widest">
-          Common Questions
-        </span>
+        <div class="section-label">Common Questions</div>
 
         <h2 class="display-5 fw-bold mb-3">
           Frequently Asked Questions
@@ -1404,136 +1346,115 @@
 
         <div class="col-lg-8">
 
-          <div class="accordion accordion-flush" id="faqAccordion">
+          <div class="accordion" id="faqAccordion">
 
 
-            <div class="accordion-item bg-industrial-card border border-secondary border-opacity-25 mb-3 rounded">
-
-              <h2 class="accordion-header">
-
+            <div class="accordion-item mb-2">
+              <h3 class="accordion-header">
                 <button
-                  class="accordion-button collapsed bg-transparent text-white fw-bold fs-6"
+                  class="accordion-button collapsed fw-bold fs-6"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#faq1"
+                  aria-expanded="false"
+                  aria-controls="faq1"
                 >
                   What materials does Rixle handle?
                 </button>
-
-              </h2>
-
+              </h3>
               <div
                 id="faq1"
                 class="accordion-collapse collapse"
                 data-bs-parent="#faqAccordion"
               >
-
-                <div class="accordion-body text-secondary fs-7">
+                <div class="accordion-body">
                   Depending on the source and batch, Rixle works with
                   recovered polymers including PET, HDPE, LDPE, PP, HM,
                   MLP and PVC, along with paper, cardboard, glass, textile
                   waste and suitable industrial dry waste.
                 </div>
-
               </div>
-
             </div>
 
 
-            <div class="accordion-item bg-industrial-card border border-secondary border-opacity-25 mb-3 rounded">
-
-              <h2 class="accordion-header">
-
+            <div class="accordion-item mb-2">
+              <h3 class="accordion-header">
                 <button
-                  class="accordion-button collapsed bg-transparent text-white fw-bold fs-6"
+                  class="accordion-button collapsed fw-bold fs-6"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#faq2"
+                  aria-expanded="false"
+                  aria-controls="faq2"
                 >
                   Is AIRWSS commercially deployed?
                 </button>
-
-              </h2>
-
+              </h3>
               <div
                 id="faq2"
                 class="accordion-collapse collapse"
                 data-bs-parent="#faqAccordion"
               >
-
-                <div class="accordion-body text-secondary fs-7">
+                <div class="accordion-body">
                   AIRWSS is currently positioned as a research and development
                   initiative under development. The website does not represent
                   it as a commercially deployed production system.
                 </div>
-
               </div>
-
             </div>
 
 
-            <div class="accordion-item bg-industrial-card border border-secondary border-opacity-25 mb-3 rounded">
-
-              <h2 class="accordion-header">
-
+            <div class="accordion-item mb-2">
+              <h3 class="accordion-header">
                 <button
-                  class="accordion-button collapsed bg-transparent text-white fw-bold fs-6"
+                  class="accordion-button collapsed fw-bold fs-6"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#faq3"
+                  aria-expanded="false"
+                  aria-controls="faq3"
                 >
                   Are materials always available?
                 </button>
-
-              </h2>
-
+              </h3>
               <div
                 id="faq3"
                 class="accordion-collapse collapse"
                 data-bs-parent="#faqAccordion"
               >
-
-                <div class="accordion-body text-secondary fs-7">
+                <div class="accordion-body">
                   Availability, grade, condition, quantity and specification
                   vary by recovered batch. Current availability should be
                   confirmed with the Rixle team before any commercial
                   commitment.
                 </div>
-
               </div>
-
             </div>
 
 
-            <div class="accordion-item bg-industrial-card border border-secondary border-opacity-25 mb-3 rounded">
-
-              <h2 class="accordion-header">
-
+            <div class="accordion-item mb-2">
+              <h3 class="accordion-header">
                 <button
-                  class="accordion-button collapsed bg-transparent text-white fw-bold fs-6"
+                  class="accordion-button collapsed fw-bold fs-6"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#faq4"
+                  aria-expanded="false"
+                  aria-controls="faq4"
                 >
                   How can I contact Rixle?
                 </button>
-
-              </h2>
-
+              </h3>
               <div
                 id="faq4"
                 class="accordion-collapse collapse"
                 data-bs-parent="#faqAccordion"
               >
-
-                <div class="accordion-body text-secondary fs-7">
-                  Use the inquiry form below, email
-                  contact@rixle.co.in, call +91 86053 63682, or contact
-                  us through WhatsApp.
+                <div class="accordion-body">
+                  Use the inquiry form below, email contact@rixle.co.in,
+                  call +91 86053 63682, or contact us through WhatsApp.
                 </div>
-
               </div>
-
             </div>
 
 
@@ -1549,30 +1470,29 @@
 
 
   <!-- =========================================================
-       CTA
+       CTA — uses tech-env.jpg (visual contrast with hero)
   ========================================================== -->
-  <section
-    class="cta-section py-6 text-white position-relative"
-  >
+  <section class="cta-section py-6 text-white position-relative">
 
-    <div class="cta-overlay"></div>
+    <div class="cta-overlay" aria-hidden="true"></div>
 
-    <div class="container py-5 text-center position-relative z-2 animate-on-scroll">
+    <div class="container py-5 text-center position-relative animate-on-scroll" style="z-index:2;">
 
       <h2 class="display-3 fw-black mb-3 tracking-tight">
         Let's Build a Better Material Recovery Chain.
       </h2>
 
-      <p class="fs-4 text-light text-opacity-75 mb-5 max-w-700 mx-auto fw-light">
+      <p class="fs-4 mb-5 max-w-700 mx-auto fw-light" style="color:rgba(240,244,248,0.80);">
         Discuss waste recovery, recycled material sourcing, Textile Recycling
-        or AIRWSS  development with the Rixle team.
+        or AIRWSS development with the Rixle team.
       </p>
 
       <a
         href="#contact"
-        class="btn btn-success btn-lg px-5 py-3 fw-bold text-uppercase fs-6 tracking-wider shadow-lg"
+        class="btn btn-success btn-lg px-5 py-3 fw-bold text-uppercase tracking-wider"
+        style="font-size:0.9rem;"
       >
-        <i class="bi bi-chat-dots-fill me-2"></i>
+        <i class="bi bi-chat-dots-fill me-2" aria-hidden="true"></i>
         Contact Rixle
       </a>
 
@@ -1586,10 +1506,11 @@
        IMPORTANT:
        IDs/names below MUST remain compatible with app.js
        and supabase-client.js.
+       DO NOT change form id, field ids, or field names.
   ========================================================== -->
   <section
     id="contact"
-    class="py-6 bg-industrial-darker text-white border-top border-dark-subtle"
+    class="py-6 bg-industrial-darker text-white"
   >
 
     <div class="container py-4">
@@ -1600,15 +1521,13 @@
 
           <div class="text-center mb-5">
 
-            <span class="text-success fw-bold text-uppercase fs-7 tracking-widest">
-              Get In Touch
-            </span>
+            <div class="section-label">Get In Touch</div>
 
             <h2 class="display-5 fw-bold mb-3">
               Start a Business Inquiry
             </h2>
 
-            <p class="text-secondary fs-5 fw-light">
+            <p class="fs-5 fw-light" style="color:var(--rx-muted);">
               Tell us about your waste stream, material requirement or
               partnership requirement.
             </p>
@@ -1619,7 +1538,7 @@
           <!-- DO NOT CHANGE FORM ID -->
           <form
             id="contactForm"
-            class="glass-card p-4 p-md-5 rounded-2 border border-secondary border-opacity-25 needs-validation"
+            class="glass-card p-4 p-md-5 rounded-2 needs-validation"
             novalidate
           >
 
@@ -1631,16 +1550,13 @@
             ></div>
 
 
-            <!-- Honeypot -->
+            <!-- Honeypot — do not remove -->
             <div
               class="position-absolute"
               style="left:-9999px; top:-9999px;"
               aria-hidden="true"
             >
-              <label for="website">
-                Leave this field empty
-              </label>
-
+              <label for="website">Leave this field empty</label>
               <input
                 type="text"
                 id="website"
@@ -1656,17 +1572,15 @@
 
               <!-- Full Name -->
               <div class="col-md-6">
-
                 <label
                   for="fullName"
-                  class="form-label fs-7 text-uppercase tracking-wider text-secondary fw-semibold"
+                  class="form-label"
                 >
                   Full Name *
                 </label>
-
                 <input
                   type="text"
-                  class="form-control form-control-lg bg-dark text-white border-secondary border-opacity-50"
+                  class="form-control form-control-lg"
                   id="fullName"
                   name="fullName"
                   placeholder="Your full name"
@@ -1674,156 +1588,115 @@
                   maxlength="100"
                   required
                 >
-
-                <div class="invalid-feedback fs-8">
+                <div class="invalid-feedback" style="font-size:0.78rem;">
                   Please enter your full name.
                 </div>
-
               </div>
 
 
               <!-- Email -->
               <div class="col-md-6">
-
                 <label
                   for="email"
-                  class="form-label fs-7 text-uppercase tracking-wider text-secondary fw-semibold"
+                  class="form-label"
                 >
                   Work Email *
                 </label>
-
                 <input
                   type="email"
-                  class="form-control form-control-lg bg-dark text-white border-secondary border-opacity-50"
+                  class="form-control form-control-lg"
                   id="email"
                   name="email"
                   placeholder="name@company.com"
                   maxlength="150"
                   required
                 >
-
-                <div class="invalid-feedback fs-8">
+                <div class="invalid-feedback" style="font-size:0.78rem;">
                   Please enter a valid email address.
                 </div>
-
               </div>
 
 
               <!-- Phone -->
               <div class="col-md-6">
-
                 <label
                   for="phone"
-                  class="form-label fs-7 text-uppercase tracking-wider text-secondary fw-semibold"
+                  class="form-label"
                 >
                   Phone Number *
                 </label>
-
                 <input
                   type="tel"
-                  class="form-control form-control-lg bg-dark text-white border-secondary border-opacity-50"
+                  class="form-control form-control-lg"
                   id="phone"
                   name="phone"
                   placeholder="+91 98765 43210"
                   pattern="^[+]?[0-9\s-]{10,15}$"
                   required
                 >
-
-                <div class="invalid-feedback fs-8">
+                <div class="invalid-feedback" style="font-size:0.78rem;">
                   Please enter a valid phone number.
                 </div>
-
               </div>
 
 
               <!-- Company -->
               <div class="col-md-6">
-
                 <label
                   for="company"
-                  class="form-label fs-7 text-uppercase tracking-wider text-secondary fw-semibold"
+                  class="form-label"
                 >
                   Company Name
                 </label>
-
                 <input
                   type="text"
-                  class="form-control form-control-lg bg-dark text-white border-secondary border-opacity-50"
+                  class="form-control form-control-lg"
                   id="company"
                   name="company"
                   placeholder="Company / Organization"
                   maxlength="150"
                 >
-
               </div>
 
 
-              <!-- Subject -->
+              <!-- Subject / Inquiry Category -->
               <div class="col-12">
-
                 <label
                   for="subject"
-                  class="form-label fs-7 text-uppercase tracking-wider text-secondary fw-semibold"
+                  class="form-label"
                 >
                   Inquiry Category *
                 </label>
-
                 <select
-                  class="form-select form-select-lg bg-dark text-white border-secondary border-opacity-50"
+                  class="form-select form-select-lg"
                   id="subject"
                   name="subject"
                   required
                 >
-
-                  <option value="" selected disabled>
-                    Select inquiry category
-                  </option>
-
-                  <option value="Industrial Waste Collection">
-                    Waste Management / Collection
-                  </option>
-
-                  <option value="Material Purchase">
-                    Recycled Material Procurement
-                  </option>
-
-                  <option value="Textile Recycling">
-                    Textile Recycling
-                  </option>
-
-                  <option value="AIRWSS Systems">
-                    AIRWSS R&D / Technology
-                  </option>
-
-                  <option value="EPR Consulting">
-                    EPR / Circularity Advisory
-                  </option>
-
-                  <option value="General Inquiry">
-                    General Business Inquiry
-                  </option>
-
+                  <option value="" selected disabled>Select inquiry category</option>
+                  <option value="Industrial Waste Collection">Waste Management / Collection</option>
+                  <option value="Material Purchase">Recycled Material Procurement</option>
+                  <option value="Textile Recycling">Textile Recycling</option>
+                  <option value="AIRWSS Systems">AIRWSS R&amp;D / Technology</option>
+                  <option value="EPR Consulting">EPR / Circularity Advisory</option>
+                  <option value="General Inquiry">General Business Inquiry</option>
                 </select>
-
-                <div class="invalid-feedback fs-8">
+                <div class="invalid-feedback" style="font-size:0.78rem;">
                   Please select an inquiry category.
                 </div>
-
               </div>
 
 
               <!-- Message -->
               <div class="col-12">
-
                 <label
                   for="message"
-                  class="form-label fs-7 text-uppercase tracking-wider text-secondary fw-semibold"
+                  class="form-label"
                 >
                   Message / Requirement *
                 </label>
-
                 <textarea
-                  class="form-control form-control-lg bg-dark text-white border-secondary border-opacity-50"
+                  class="form-control form-control-lg"
                   id="message"
                   name="message"
                   rows="5"
@@ -1832,30 +1705,24 @@
                   maxlength="2000"
                   required
                 ></textarea>
-
-                <div class="invalid-feedback fs-8">
+                <div class="invalid-feedback" style="font-size:0.78rem;">
                   Please provide at least 10 characters.
                 </div>
-
               </div>
 
 
-              <!-- Turnstile -->
+              <!-- Turnstile — do not change data-sitekey -->
               <div class="col-12">
-
                 <div
                   class="cf-turnstile"
                   data-sitekey="0x4AAAAAAEMEnN4p_s4A78MT"
                 ></div>
-
               </div>
 
 
               <!-- Consent -->
               <div class="col-12">
-
                 <div class="form-check">
-
                   <input
                     class="form-check-input"
                     type="checkbox"
@@ -1863,15 +1730,15 @@
                     name="consent"
                     required
                   >
-
                   <label
-                    class="form-check-label fs-8 text-secondary"
+                    class="form-check-label"
                     for="consent"
+                    style="font-size:0.78rem; color:var(--rx-muted);"
                   >
                     I agree to the
                     <a
                       href="privacy-policy.html"
-                      class="text-success"
+                      style="color:var(--rx-green);"
                       target="_blank"
                       rel="noopener"
                     >
@@ -1880,39 +1747,31 @@
                     and consent to Rixle Pvt Ltd contacting me regarding
                     this inquiry. *
                   </label>
-
-                  <div class="invalid-feedback fs-8">
+                  <div class="invalid-feedback" style="font-size:0.78rem;">
                     You must accept the Privacy Policy.
                   </div>
-
                 </div>
-
               </div>
 
 
               <!-- Submit -->
               <div class="col-12 text-center mt-4">
-
                 <button
                   type="submit"
                   id="submitBtn"
                   class="btn btn-success btn-lg w-full py-3 fw-bold text-uppercase tracking-wider"
+                  style="font-size:0.85rem;"
                 >
-
                   <span
                     id="submitSpinner"
                     class="spinner-border spinner-border-sm d-none me-2"
                     role="status"
                     aria-hidden="true"
                   ></span>
-
-                  <span>
-                    Submit Inquiry
-                  </span>
-
+                  <span>Submit Inquiry</span>
                 </button>
-
               </div>
+
 
             </div>
 
@@ -1931,7 +1790,7 @@
        FOOTER
   ========================================================== -->
   <footer
-    class="bg-industrial-darker text-white pt-6 pb-4 border-top border-dark-subtle"
+    class="bg-industrial-darker text-white pt-6 pb-4"
   >
 
     <div class="container">
@@ -1952,40 +1811,40 @@
             class="mb-4"
           >
 
-          <p class="text-secondary fs-7 fw-light mb-3">
+          <p style="color:var(--rx-muted); font-size:0.875rem; font-weight:300; margin-bottom:1.25rem; line-height:1.7;">
             Rixle Pvt Ltd works across waste management, material recovery,
             recycled material trading, Textile Recycling and environmental
-            technology R&D.
+            technology R&amp;D.
           </p>
 
-          <div class="d-flex gap-3 fs-5">
+          <div class="d-flex gap-3" style="font-size:1.2rem;">
 
             <a
               href="https://www.linkedin.com/company/rixle/"
               target="_blank"
               rel="noopener"
-              class="text-secondary hover-text-success"
+              class="hover-text-success"
               aria-label="LinkedIn"
             >
-              <i class="bi bi-linkedin"></i>
+              <i class="bi bi-linkedin" aria-hidden="true"></i>
             </a>
 
             <a
               href="mailto:contact@rixle.co.in"
-              class="text-secondary hover-text-success"
+              class="hover-text-success"
               aria-label="Email"
             >
-              <i class="bi bi-envelope-fill"></i>
+              <i class="bi bi-envelope-fill" aria-hidden="true"></i>
             </a>
 
             <a
               href="https://wa.me/918605363682"
               target="_blank"
               rel="noopener"
-              class="text-secondary hover-text-success"
+              class="hover-text-success"
               aria-label="WhatsApp"
             >
-              <i class="bi bi-whatsapp"></i>
+              <i class="bi bi-whatsapp" aria-hidden="true"></i>
             </a>
 
           </div>
@@ -1993,136 +1852,84 @@
         </div>
 
 
-        <!-- Pillars -->
+        <!-- Business Links -->
         <div class="col-lg-2 col-6">
 
-          <h5 class="fs-6 fw-bold mb-3 text-uppercase text-light tracking-wider">
+          <h5 style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:var(--rx-muted-light); margin-bottom:1rem;">
             Business
           </h5>
 
-          <ul class="list-unstyled mb-0 fs-7 text-secondary">
-
+          <ul class="list-unstyled mb-0" style="font-size:0.82rem;">
             <li class="mb-2">
-              <a
-                href="#pillars"
-                class="text-decoration-none text-secondary hover-text-white"
-              >
-                Waste Management
-              </a>
+              <a href="#pillars">Waste Management</a>
             </li>
-
             <li class="mb-2">
-              <a
-                href="#materials"
-                class="text-decoration-none text-secondary hover-text-white"
-              >
-                Material Trading
-              </a>
+              <a href="#materials">Material Trading</a>
             </li>
-
             <li class="mb-2">
-              <a
-                href="#textile"
-                class="text-decoration-none text-secondary hover-text-white"
-              >
-                Textile Recycling
-              </a>
+              <a href="#textile">Textile Recycling</a>
             </li>
-
             <li class="mb-2">
-             <a
-  href="#technology"
-  class="text-decoration-none text-secondary hover-text-white"
->
-  Technology R&D
-</a>
-
+              <a href="#technology">Technology R&amp;D</a>
+            </li>
           </ul>
 
         </div>
 
 
-        <!-- Information -->
+        <!-- Information Links -->
         <div class="col-lg-2 col-6">
 
-          <h4 class="fs-6 fw-bold mb-3 text-uppercase text-light tracking-wider">
+          <h5 style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:var(--rx-muted-light); margin-bottom:1rem;">
             Information
-          </h4>
+          </h5>
 
-          <ul class="list-unstyled mb-0 fs-7 text-secondary">
-
+          <ul class="list-unstyled mb-0" style="font-size:0.82rem;">
             <li class="mb-2">
-              <a
-                href="#materials"
-                class="text-decoration-none text-secondary hover-text-white"
-              >
-                Materials
-              </a>
+              <a href="#materials">Materials</a>
             </li>
-
             <li class="mb-2">
-              <a
-                href="#resources"
-                class="text-decoration-none text-secondary hover-text-white"
-              >
-                Resources
-              </a>
+              <a href="#resources">Resources</a>
             </li>
-
             <li class="mb-2">
-              <a
-                href="#faq"
-                class="text-decoration-none text-secondary hover-text-white"
-              >
-                FAQ
-              </a>
+              <a href="#faq">FAQ</a>
             </li>
-
             <li class="mb-2">
-              <a
-                href="#contact"
-                class="text-decoration-none text-secondary hover-text-white"
-              >
-                Contact
-              </a>
+              <a href="#contact">Contact</a>
             </li>
-
           </ul>
 
         </div>
 
 
-        <!-- Contact -->
+        <!-- Contact Details -->
         <div class="col-lg-4 col-md-6">
 
-          <h4 class="fs-6 fw-bold mb-3 text-uppercase text-light tracking-wider">
+          <h5 style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:var(--rx-muted-light); margin-bottom:1rem;">
             Contact
-          </h4>
+          </h5>
 
-          <p class="text-secondary fs-7 mb-2">
-            <i class="bi bi-geo-alt-fill text-success me-2"></i>
+          <p style="font-size:0.82rem; color:var(--rx-muted); margin-bottom:0.5rem;">
+            <i class="bi bi-geo-alt-fill me-2" aria-hidden="true" style="color:var(--rx-green);"></i>
             Maharashtra, India
           </p>
 
-          <p class="text-secondary fs-7 mb-2">
-            <i class="bi bi-envelope-fill text-success me-2"></i>
+          <p style="font-size:0.82rem; color:var(--rx-muted); margin-bottom:0.5rem;">
+            <i class="bi bi-envelope-fill me-2" aria-hidden="true" style="color:var(--rx-green);"></i>
             contact@rixle.co.in
           </p>
 
-          <p class="text-secondary fs-7 mb-2">
-
-            <i class="bi bi-telephone-fill text-success me-2"></i>
-
+          <p style="font-size:0.82rem; color:var(--rx-muted); margin-bottom:0.75rem;">
+            <i class="bi bi-telephone-fill me-2" aria-hidden="true" style="color:var(--rx-green);"></i>
             <a
               href="tel:+918605363682"
-              class="text-secondary text-decoration-none hover-text-white"
+              style="color:var(--rx-muted); text-decoration:none;"
             >
               +91 86053 63682
             </a>
-
           </p>
 
-          <p class="text-secondary fs-7 mb-0">
+          <p style="font-size:0.78rem; color:var(--rx-muted); margin:0; line-height:1.6;">
             For current material availability and commercial requirements,
             please contact our team.
           </p>
@@ -2132,35 +1939,28 @@
       </div>
 
 
-      <hr class="border-secondary opacity-25">
+      <hr style="border-color:rgba(255,255,255,0.07); margin-bottom:1.5rem;">
 
 
-      <div class="row align-items-center fs-7 text-secondary">
+      <div class="row align-items-center" style="font-size:0.78rem; color:var(--rx-muted);">
 
         <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
-
-          <span>
-            &copy; 2026 Rixle Pvt Ltd. All Rights Reserved.
-          </span>
-
+          <span>&copy; 2026 Rixle Pvt Ltd. All Rights Reserved.</span>
         </div>
 
         <div class="col-md-6 text-center text-md-end">
-
           <a
             href="privacy-policy.html"
-            class="text-secondary text-decoration-none me-3 hover-text-white"
+            style="color:var(--rx-muted); text-decoration:none; margin-right:1.25rem;"
           >
             Privacy Policy
           </a>
-
           <a
             href="terms.html"
-            class="text-secondary text-decoration-none hover-text-white"
+            style="color:var(--rx-muted); text-decoration:none;"
           >
             Terms of Service
           </a>
-
         </div>
 
       </div>
@@ -2194,6 +1994,7 @@
   <script src="assets/js/supabase-client.js"></script>
 
   <script src="assets/js/app.js"></script>
+
 
 </body>
 </html>
