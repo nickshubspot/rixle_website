@@ -715,6 +715,11 @@ header.hero-cinematic .badge {
   max-width: calc(100vw - 40px);
 }
 
+/* Ensure page footer content remains completely clear of floating contact bar */
+footer {
+  padding-bottom: 5.5rem !important;
+}
+
 .quick-conversion-bar .conversion-btn {
   color: var(--rx-text) !important;
   text-decoration: none !important;
@@ -1175,7 +1180,9 @@ footer.bg-industrial-darker {
   transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
-.workflow-node-group.animated {
+.workflow-node-group.animated,
+.workflow-svg-wrapper.animated .workflow-node-group,
+.animate-on-scroll.animated .workflow-node-group {
   opacity: 1;
   transform: translateY(0);
 }
@@ -1209,8 +1216,16 @@ footer.bg-industrial-darker {
 
 .airwss-diagram-wrapper svg {
   display: block;
-  min-width: 480px;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
   margin: 0 auto;
+}
+
+@media (max-width: 480px) {
+  .airwss-diagram-wrapper svg {
+    min-width: 360px;
+  }
 }
 
 /* Animated data signal on AIRWSS path */
