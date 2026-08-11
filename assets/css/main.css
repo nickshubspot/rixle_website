@@ -1267,12 +1267,6 @@ footer.bg-industrial-darker {
    PILLAR CARDS — NUMBERED WATERMARK ENHANCEMENT
    ================================================================ */
 
-.pillar-card {
-  counter-reset: none; /* no counter needed — use data-num */
-  position: relative;
-  overflow: hidden;
-}
-
 .pillar-num-watermark {
   position: absolute;
   top: -0.25rem;
@@ -1285,4 +1279,143 @@ footer.bg-industrial-darker {
   pointer-events: none;
   user-select: none;
   font-variant-numeric: tabular-nums;
+}
+
+/* ================================================================
+   INSTITUTIONAL REDESIGN ADDITIONS
+   ================================================================ */
+
+/* Impact / Proof Point Stat Card */
+.stat-card {
+  background: var(--rx-bg-card);
+  border: 1px solid var(--rx-border);
+  border-radius: 8px;
+  padding: 1.75rem 1.5rem;
+  height: 100%;
+  position: relative;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--rx-border-accent);
+  box-shadow: 0 8px 24px rgba(45, 207, 107, 0.12);
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: var(--rx-green);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--rx-text);
+  margin-bottom: 0.35rem;
+}
+
+.stat-subtext {
+  font-size: 0.78rem;
+  color: var(--rx-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Case Study Card */
+.case-card {
+  background: var(--rx-bg-card);
+  border: 1px solid var(--rx-border);
+  border-radius: 8px;
+  padding: 1.75rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.case-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--rx-border-accent);
+}
+
+.case-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rx-green);
+  margin-bottom: 0.75rem;
+  display: inline-block;
+}
+
+.case-metric-pill {
+  display: inline-block;
+  background: rgba(45, 207, 107, 0.10);
+  border: 1px solid var(--rx-border-accent);
+  color: var(--rx-green);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+/* Recognition & Media Card */
+.recognition-card {
+  background: var(--rx-bg-card);
+  border: 1px solid var(--rx-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  height: 100%;
+  transition: border-color 0.25s ease;
+}
+
+.recognition-card:hover {
+  border-color: var(--rx-border-accent);
+}
+
+.recognition-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+.badge-media { background: rgba(110, 181, 255, 0.15); color: #6eb5ff; border: 1px solid rgba(110, 181, 255, 0.3); }
+.badge-program { background: rgba(245, 166, 35, 0.15); color: #f5a623; border: 1px solid rgba(245, 166, 35, 0.3); }
+.badge-recognition { background: rgba(45, 207, 107, 0.15); color: var(--rx-green); border: 1px solid var(--rx-border-accent); }
+
+/* Regulatory Disclaimer Banner */
+.disclaimer-banner {
+  background: rgba(12, 20, 32, 0.85);
+  border: 1px solid var(--rx-border);
+  border-left: 3px solid var(--rx-muted);
+  border-radius: 6px;
+  padding: 0.85rem 1.25rem;
+  font-size: 0.78rem;
+  color: var(--rx-muted);
+  line-height: 1.6;
+}
+
+/* Partner / Ecosystem Slot */
+.partner-slot {
+  background: rgba(16, 30, 46, 0.60);
+  border: 1px dashed var(--rx-border-light);
+  border-radius: 6px;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  transition: border-color 0.2s ease;
+}
+
+.partner-slot:hover {
+  border-color: var(--rx-border-accent);
 }
