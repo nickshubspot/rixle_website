@@ -15,7 +15,7 @@
   <meta property="og:description" content="Waste management, material recovery, recycled material trading, Textile Recycling and technology R&amp;D.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rixle.co.in/">
-  <meta property="og:image" content="https://rixle.co.in/assets/gallery/plant.jpg">
+  <meta property="og:image" content="https://rixle.co.in/assets/gallery/hero.jpg">
   <meta property="og:image:width" content="1536">
   <meta property="og:image:height" content="1024">
   <meta property="og:image:alt" content="Rixle industrial material recovery facility">
@@ -25,14 +25,14 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Rixle Pvt Ltd | Waste Management &amp; Circular Material Recovery">
   <meta name="twitter:description" content="Waste management, material recovery, recycled material trading, Textile Recycling and technology R&amp;D.">
-  <meta name="twitter:image" content="https://rixle.co.in/assets/gallery/plant.jpg">
+  <meta name="twitter:image" content="https://rixle.co.in/assets/gallery/hero.jpg">
 
   <link rel="canonical" href="https://rixle.co.in/">
   <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="apple-touch-icon" href="assets/logo.png">
 
   <!-- Preload hero image early for better LCP -->
-  <link rel="preload" as="image" href="assets/gallery/plant.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/gallery/hero.jpg" fetchpriority="high">
 
   <!-- Google Fonts — subset to used weights only -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -391,6 +391,7 @@
         <!-- Pillar 1 — Waste Management -->
         <div class="col-md-6 col-lg-3 animate-on-scroll">
           <div class="pillar-card">
+            <span class="pillar-num-watermark" aria-hidden="true">01</span>
             <div class="pillar-icon">
               <i class="bi bi-recycle" aria-hidden="true"></i>
             </div>
@@ -407,6 +408,7 @@
         <!-- Pillar 2 — Material Trading -->
         <div class="col-md-6 col-lg-3 animate-on-scroll">
           <div class="pillar-card">
+            <span class="pillar-num-watermark" aria-hidden="true">02</span>
             <div class="pillar-icon">
               <i class="bi bi-box-seam-fill" aria-hidden="true"></i>
             </div>
@@ -423,6 +425,7 @@
         <!-- Pillar 3 — Textile Recycling -->
         <div class="col-md-6 col-lg-3 animate-on-scroll">
           <div class="pillar-card">
+            <span class="pillar-num-watermark" aria-hidden="true">03</span>
             <div class="pillar-icon">
               <i class="bi bi-layers-fill" aria-hidden="true"></i>
             </div>
@@ -439,6 +442,7 @@
         <!-- Pillar 4 — Technology R&D -->
         <div class="col-md-6 col-lg-3 animate-on-scroll">
           <div class="pillar-card" style="border-color: rgba(255,255,255,0.05);">
+            <span class="pillar-num-watermark" aria-hidden="true">04</span>
             <div class="pillar-icon" style="background:rgba(255,255,255,0.04); border-color:rgba(255,255,255,0.08); color:var(--rx-muted-light);">
               <i class="bi bi-cpu-fill" aria-hidden="true"></i>
             </div>
@@ -487,7 +491,7 @@
 
       <div class="row g-4">
 
-        <!-- MRF — uses plant.jpg (industrial facility) -->
+        <!-- MRF — uses high-end automated industrial sorting visual (hero.jpg focal crop) -->
         <div class="col-md-6 col-lg-4 animate-on-scroll">
 
           <div class="industrial-card rounded-2 h-100">
@@ -495,13 +499,14 @@
             <div class="card-img-wrapper position-relative">
 
               <img
-                src="assets/gallery/plant.jpg"
-                alt="Material recovery facility operations — sorting and segregation"
+                src="assets/gallery/hero.jpg"
+                alt="Automated Material Recovery Facility Operations — industrial conveyor sorting line"
                 width="800"
                 height="533"
                 loading="lazy"
                 decoding="async"
                 class="card-img-top"
+                style="object-position: center 30%;"
               >
 
               <div class="card-badge">MRF Operations</div>
@@ -536,7 +541,7 @@
         </div>
 
 
-        <!-- Material Trading — uses vehicles.jpg (logistics/movement) -->
+        <!-- Material Trading — polymer bales warehouse -->
         <div class="col-md-6 col-lg-4 animate-on-scroll">
 
           <div class="industrial-card rounded-2 h-100">
@@ -544,8 +549,8 @@
             <div class="card-img-wrapper position-relative">
 
               <img
-                src="assets/gallery/vehicles.jpg"
-                alt="Industrial vehicles and logistics for recovered material movement"
+                src="assets/gallery/materials-bales.jpg"
+                alt="Organised rows of compressed recovered polymer material bales in industrial warehouse"
                 width="800"
                 height="533"
                 loading="lazy"
@@ -585,7 +590,7 @@
         </div>
 
 
-        <!-- Textile Recycling — uses plant.jpg (processing environment) -->
+        <!-- Textile Recycling — textile bales recovery facility -->
         <div
           class="col-md-6 col-lg-4 animate-on-scroll"
           id="textile"
@@ -596,14 +601,13 @@
             <div class="card-img-wrapper position-relative">
 
               <img
-                src="assets/gallery/plant.jpg"
-                alt="Industrial facility for textile and dry waste processing"
+                src="assets/gallery/textile-bales.jpg"
+                alt="Organised textile fabric bales and rolls in industrial recovery facility"
                 width="800"
                 height="533"
                 loading="lazy"
                 decoding="async"
                 class="card-img-top"
-                style="object-position: center 60%;"
               >
 
               <div class="card-badge">Textile Recycling</div>
@@ -685,22 +689,66 @@
 
         <div class="col-lg-5 animate-on-scroll">
 
-          <!-- tech-env.jpg used contextually in the technology section -->
-          <div style="position:relative; border-radius:10px; overflow:hidden; margin-bottom:1.5rem;">
-            <img
-              src="assets/gallery/tech-env.jpg"
-              alt="Technology and environmental R&D environment"
-              width="600"
-              height="400"
-              loading="lazy"
-              decoding="async"
-              style="width:100%; height:220px; object-fit:cover; display:block; filter:brightness(0.82);"
-            >
-            <div style="
-              position:absolute; inset:0;
-              background: linear-gradient(to top, rgba(6,10,15,0.85) 0%, transparent 55%);
-              pointer-events:none;
-            " aria-hidden="true"></div>
+          <!-- AIRWSS Conceptual Architecture Diagram — SVG (no real equipment depicted) -->
+          <div class="airwss-diagram-wrapper" role="img" aria-label="AIRWSS Conceptual System Architecture Diagram — R&D Initiative Under Development">
+
+            <p style="font-size:0.60rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--rx-muted); margin:0 0 1rem; text-align:center;">
+              AIRWSS — Conceptual System Overview &nbsp;·&nbsp; R&amp;D Initiative · Under Development
+            </p>
+
+            <svg viewBox="0 0 520 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="max-width:520px; width:100%;">
+              <defs>
+                <marker id="arrowA" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                  <path d="M0,0 L6,3 L0,6 Z" fill="rgba(45,207,107,0.6)"/>
+                </marker>
+                <filter id="glowA" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+
+              <!-- Connection paths -->
+              <line x1="89" y1="60" x2="123" y2="60" stroke="rgba(45,207,107,0.45)" stroke-width="1.5" marker-end="url(#arrowA)"/>
+              <line x1="201" y1="60" x2="235" y2="60" stroke="rgba(45,207,107,0.45)" stroke-width="1.5" marker-end="url(#arrowA)"/>
+              <line x1="313" y1="60" x2="347" y2="60" stroke="rgba(45,207,107,0.45)" stroke-width="1.5" marker-end="url(#arrowA)"/>
+              <line x1="425" y1="60" x2="459" y2="60" stroke="rgba(45,207,107,0.45)" stroke-width="1.5" marker-end="url(#arrowA)"/>
+
+              <!-- Animated signal dots along the paths -->
+              <circle r="3.5" fill="rgba(45,207,107,0.9)" filter="url(#glowA)">
+                <animateMotion dur="3.5s" repeatCount="indefinite" path="M89,60 L459,60"/>
+              </circle>
+
+              <!-- Node 1: Conveyor -->
+              <rect x="4" y="34" width="85" height="52" rx="6" fill="rgba(12,20,32,0.95)" stroke="rgba(45,207,107,0.30)" stroke-width="1"/>
+              <text x="46" y="56" font-family="Inter,sans-serif" font-size="8.5" font-weight="700" fill="rgba(45,207,107,0.95)" text-anchor="middle" letter-spacing="0.05em">CONVEYOR</text>
+              <text x="46" y="70" font-family="Inter,sans-serif" font-size="8" fill="rgba(240,244,248,0.95)" text-anchor="middle">Intake &amp; Feed</text>
+
+              <!-- Node 2: AI Vision -->
+              <rect x="128" y="34" width="73" height="52" rx="6" fill="rgba(12,20,32,0.95)" stroke="rgba(45,207,107,0.30)" stroke-width="1"/>
+              <text x="164" y="56" font-family="Inter,sans-serif" font-size="8.5" font-weight="700" fill="rgba(45,207,107,0.95)" text-anchor="middle" letter-spacing="0.05em">AI VISION</text>
+              <text x="164" y="70" font-family="Inter,sans-serif" font-size="8" fill="rgba(240,244,248,0.95)" text-anchor="middle">Camera Array</text>
+
+              <!-- Node 3: Classification -->
+              <rect x="238" y="34" width="75" height="52" rx="6" fill="rgba(12,20,32,0.95)" stroke="rgba(45,207,107,0.30)" stroke-width="1"/>
+              <text x="275" y="53" font-family="Inter,sans-serif" font-size="8.5" font-weight="700" fill="rgba(45,207,107,0.95)" text-anchor="middle" letter-spacing="0.04em">MATERIAL</text>
+              <text x="275" y="63" font-family="Inter,sans-serif" font-size="8.5" font-weight="700" fill="rgba(45,207,107,0.95)" text-anchor="middle" letter-spacing="0.04em">CLASS.</text>
+              <text x="275" y="75" font-family="Inter,sans-serif" font-size="8" fill="rgba(240,244,248,0.95)" text-anchor="middle">Identification</text>
+
+              <!-- Node 4: Sorting Gate -->
+              <rect x="350" y="34" width="75" height="52" rx="6" fill="rgba(12,20,32,0.95)" stroke="rgba(45,207,107,0.30)" stroke-width="1"/>
+              <text x="387" y="56" font-family="Inter,sans-serif" font-size="8.5" font-weight="700" fill="rgba(45,207,107,0.95)" text-anchor="middle" letter-spacing="0.04em">SORTING</text>
+              <text x="387" y="70" font-family="Inter,sans-serif" font-size="8" fill="rgba(240,244,248,0.95)" text-anchor="middle">Gate Control</text>
+
+              <!-- Node 5: Recovery -->
+              <rect x="460" y="34" width="56" height="52" rx="6" fill="rgba(12,20,32,0.95)" stroke="rgba(45,207,107,0.50)" stroke-width="1.5"/>
+              <text x="488" y="56" font-family="Inter,sans-serif" font-size="8.5" font-weight="700" fill="rgba(45,207,107,1)" text-anchor="middle" letter-spacing="0.04em">RECOV.</text>
+              <text x="488" y="70" font-family="Inter,sans-serif" font-size="8" fill="rgba(240,244,248,0.95)" text-anchor="middle">Stream</text>
+
+              <!-- Conceptual label bar -->
+              <rect x="4" y="100" width="512" height="16" rx="3" fill="rgba(45,207,107,0.06)"/>
+              <text x="260" y="112" font-family="Inter,sans-serif" font-size="7.5" fill="rgba(240,244,248,0.85)" text-anchor="middle" letter-spacing="0.12em">CONCEPTUAL OVERVIEW · NOT COMMERCIALLY DEPLOYED · R&amp;D INITIATIVE UNDER DEVELOPMENT</text>
+            </svg>
+
           </div>
 
           <div class="airwss-card">
@@ -761,112 +809,118 @@
       </div>
 
 
-      <div class="row g-3 animate-on-scroll">
+      <!-- SVG Workflow Process Flow — 8 steps with animated connecting path -->
+      <div class="workflow-svg-wrapper animate-on-scroll" role="img" aria-label="8-step material recovery workflow: Collection, Receiving, Sorting, Preparation, Quality Review, Storage, Downstream Recycling, Circular Supply">
+        <svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:100%; min-width:640px; display:block;">
+          <defs>
+            <marker id="wfArrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+              <path d="M0,0 L7,3.5 L0,7 Z" fill="rgba(45,207,107,0.50)"/>
+            </marker>
+            <filter id="wfGlow">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
 
-        <div class="col-6 col-md-3">
-          <div class="workflow-step text-center">
-            <div class="workflow-step-number">Step 1</div>
-            <div class="fs-2 mb-2" style="color:var(--rx-green);">
-              <i class="bi bi-truck-front-fill" aria-hidden="true"></i>
-            </div>
-            <h4 class="fs-6 fw-bold text-white mb-1">Collection</h4>
-            <p class="mb-0" style="font-size:0.75rem; color:var(--rx-muted);">
-              Waste received from applicable sources.
-            </p>
-          </div>
+          <!-- Horizontal rail connecting all nodes -->
+          <path d="M56,100 L844,100" stroke="rgba(45,207,107,0.15)" stroke-width="1" fill="none"/>
+
+          <!-- Animated flow line above rail -->
+          <path d="M56,100 L844,100" stroke="rgba(45,207,107,0.45)" stroke-width="1.5"
+            stroke-dasharray="8 6" fill="none" class="workflow-path-animated"/>
+
+          <!-- Animated dot signal -->
+          <circle r="4.5" fill="rgba(45,207,107,0.90)" filter="url(#wfGlow)">
+            <animateMotion dur="5s" repeatCount="indefinite" path="M56,100 L844,100"/>
+          </circle>
+
+          <!-- Step 1: Collection — cx=56 -->
+          <g class="workflow-node-group" style="transition-delay:0ms">
+            <circle class="wf-node-circle" cx="56" cy="100" r="32" fill="rgba(12,20,32,0.95)" stroke="rgba(45,207,107,0.40)" stroke-width="1.5"/>
+            <text x="56" y="95" font-family="Inter,sans-serif" font-size="7.5" font-weight="800" fill="rgba(45,207,107,0.90)" text-anchor="middle" letter-spacing="0.05em">01</text>
+            <text x="56" y="107" font-family="Inter,sans-serif" font-size="7" fill="rgba(240,244,248,0.85)" text-anchor="middle" font-weight="600">COLLECT</text>
+            <text x="56" y="148" font-family="Inter,sans-serif" font-size="8" fill="rgba(184,204,220,0.75)" text-anchor="middle">Collection</text>
+            <text x="56" y="160" font-family="Inter,sans-serif" font-size="7" fill="rgba(143,163,184,0.65)" text-anchor="middle">Waste Received</text>
+          </g>
+
+          <!-- Step 2: Receiving — cx=168 -->
+          <g class="workflow-node-group" style="transition-delay:60ms">
+            <circle class="wf-node-circle" cx="168" cy="100" r="32" fill="rgba(12,20,32,0.95)" stroke="rgba(45,207,107,0.35)" stroke-width="1.5"/>
+            <text x="168" y="95" font-family="Inter,sans-serif" font-size="7.5" font-weight="800" fill="rgba(45,207,107,0.90)" text-anchor="middle">02</text>
+            <text x="168" y="107" font-family="Inter,sans-serif" font-size="7" fill="rgba(240,244,248,0.85)" text-anchor="middle" font-weight="600">RECEIVE</text>
+            <text x="168" y="148" font-family="Inter,sans-serif" font-size="8" fill="rgba(184,204,220,0.75)" text-anchor="middle">Receiving</text>
+            <text x="168" y="160" font-family="Inter,sans-serif" font-size="7" fill="rgba(143,163,184,0.65)" text-anchor="middle">Inspect &amp; Handle</text>
+          </g>
+
+          <!-- Step 3: Sorting — cx=280 -->
+          <g class="workflow-node-group" style="transition-delay:120ms">
+            <circle class="wf-node-circle" cx="280" cy="100" r="32" fill="rgba(12,20,32,0.95)" stroke="rgba(45,207,107,0.40)" stroke-width="1.5"/>
+            <text x="280" y="95" font-family="Inter,sans-serif" font-size="7.5" font-weight="800" fill="rgba(45,207,107,0.90)" text-anchor="middle">03</text>
+            <text x="280" y="107" font-family="Inter,sans-serif" font-size="7" fill="rgba(240,244,248,0.85)" text-anchor="middle" font-weight="600">SORT</text>
+            <text x="280" y="148" font-family="Inter,sans-serif" font-size="8" fill="rgba(184,204,220,0.75)" text-anchor="middle">Sorting</text>
+            <text x="280" y="160" font-family="Inter,sans-serif" font-size="7" fill="rgba(143,163,184,0.65)" text-anchor="middle">By Category</text>
+          </g>
+
+          <!-- Step 4: Preparation — cx=392 -->
+          <g class="workflow-node-group" style="transition-delay:180ms">
+            <circle class="wf-node-circle" cx="392" cy="100" r="32" fill="rgba(12,20,32,0.95)" stroke="rgba(45,207,107,0.35)" stroke-width="1.5"/>
+            <text x="392" y="95" font-family="Inter,sans-serif" font-size="7.5" font-weight="800" fill="rgba(45,207,107,0.90)" text-anchor="middle">04</text>
+            <text x="392" y="107" font-family="Inter,sans-serif" font-size="7" fill="rgba(240,244,248,0.85)" text-anchor="middle" font-weight="600">PREPARE</text>
+            <text x="392" y="148" font-family="Inter,sans-serif" font-size="8" fill="rgba(184,204,220,0.75)" text-anchor="middle">Preparation</text>
+            <text x="392" y="160" font-family="Inter,sans-serif" font-size="7" fill="rgba(143,163,184,0.65)" text-anchor="middle">Baling &amp; Processing</text>
+          </g>
+
+          <!-- Step 5: Quality Review — cx=504 -->
+          <g class="workflow-node-group" style="transition-delay:240ms">
+            <circle class="wf-node-circle" cx="504" cy="100" r="32" fill="rgba(12,20,32,0.95)" stroke="rgba(45,207,107,0.35)" stroke-width="1.5"/>
+            <text x="504" y="95" font-family="Inter,sans-serif" font-size="7.5" font-weight="800" fill="rgba(45,207,107,0.90)" text-anchor="middle">05</text>
+            <text x="504" y="107" font-family="Inter,sans-serif" font-size="7" fill="rgba(240,244,248,0.85)" text-anchor="middle" font-weight="600">QUALITY</text>
+            <text x="504" y="148" font-family="Inter,sans-serif" font-size="8" fill="rgba(184,204,220,0.75)" text-anchor="middle">Quality Review</text>
+            <text x="504" y="160" font-family="Inter,sans-serif" font-size="7" fill="rgba(143,163,184,0.65)" text-anchor="middle">Batch Assessment</text>
+          </g>
+
+          <!-- Step 6: Storage — cx=616 -->
+          <g class="workflow-node-group" style="transition-delay:300ms">
+            <circle class="wf-node-circle" cx="616" cy="100" r="32" fill="rgba(12,20,32,0.95)" stroke="rgba(45,207,107,0.35)" stroke-width="1.5"/>
+            <text x="616" y="95" font-family="Inter,sans-serif" font-size="7.5" font-weight="800" fill="rgba(45,207,107,0.90)" text-anchor="middle">06</text>
+            <text x="616" y="107" font-family="Inter,sans-serif" font-size="7" fill="rgba(240,244,248,0.85)" text-anchor="middle" font-weight="600">STORE</text>
+            <text x="616" y="148" font-family="Inter,sans-serif" font-size="8" fill="rgba(184,204,220,0.75)" text-anchor="middle">Storage</text>
+            <text x="616" y="160" font-family="Inter,sans-serif" font-size="7" fill="rgba(143,163,184,0.65)" text-anchor="middle">Held for Dispatch</text>
+          </g>
+
+          <!-- Step 7: Downstream Recycling — cx=728 -->
+          <g class="workflow-node-group" style="transition-delay:360ms">
+            <circle class="wf-node-circle" cx="728" cy="100" r="32" fill="rgba(12,20,32,0.95)" stroke="rgba(45,207,107,0.40)" stroke-width="1.5"/>
+            <text x="728" y="95" font-family="Inter,sans-serif" font-size="7.5" font-weight="800" fill="rgba(45,207,107,0.90)" text-anchor="middle">07</text>
+            <text x="728" y="107" font-family="Inter,sans-serif" font-size="7" fill="rgba(240,244,248,0.85)" text-anchor="middle" font-weight="600">SUPPLY</text>
+            <text x="728" y="148" font-family="Inter,sans-serif" font-size="8" fill="rgba(184,204,220,0.75)" text-anchor="middle">Downstream</text>
+            <text x="728" y="160" font-family="Inter,sans-serif" font-size="7" fill="rgba(143,163,184,0.65)" text-anchor="middle">Into Recycling Chain</text>
+          </g>
+
+          <!-- Step 8: Circular Supply — cx=844, highlighted terminus -->
+          <g class="workflow-node-group" style="transition-delay:420ms">
+            <circle cx="844" cy="100" r="36" fill="rgba(45,207,107,0.08)" stroke="rgba(45,207,107,0.65)" stroke-width="2"/>
+            <circle class="wf-node-circle" cx="844" cy="100" r="28" fill="rgba(6,10,15,0.95)" stroke="rgba(45,207,107,0.90)" stroke-width="1.5"/>
+            <text x="844" y="95" font-family="Inter,sans-serif" font-size="7.5" font-weight="800" fill="rgba(45,207,107,1)" text-anchor="middle">08</text>
+            <text x="844" y="107" font-family="Inter,sans-serif" font-size="7" fill="rgba(240,244,248,0.90)" text-anchor="middle" font-weight="700">CIRCULAR</text>
+            <text x="844" y="150" font-family="Inter,sans-serif" font-size="8" fill="rgba(45,207,107,0.85)" text-anchor="middle" font-weight="600">Circular Supply</text>
+            <text x="844" y="162" font-family="Inter,sans-serif" font-size="7" fill="rgba(143,163,184,0.65)" text-anchor="middle">Back to Industry</text>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Mobile fallback list — visible only below 640px -->
+      <div class="d-sm-none mt-4">
+        <div class="row g-2">
+          <div class="col-6"><div class="workflow-step text-center"><div class="workflow-step-number">Step 1</div><h4 class="fs-6 fw-bold text-white mb-1 mt-2">Collection</h4><p class="mb-0" style="font-size:0.72rem; color:var(--rx-muted);">Waste received from applicable sources.</p></div></div>
+          <div class="col-6"><div class="workflow-step text-center"><div class="workflow-step-number">Step 2</div><h4 class="fs-6 fw-bold text-white mb-1 mt-2">Receiving</h4><p class="mb-0" style="font-size:0.72rem; color:var(--rx-muted);">Material inspection and handling.</p></div></div>
+          <div class="col-6"><div class="workflow-step text-center"><div class="workflow-step-number">Step 3</div><h4 class="fs-6 fw-bold text-white mb-1 mt-2">Sorting</h4><p class="mb-0" style="font-size:0.72rem; color:var(--rx-muted);">Segregation by material category.</p></div></div>
+          <div class="col-6"><div class="workflow-step text-center"><div class="workflow-step-number">Step 4</div><h4 class="fs-6 fw-bold text-white mb-1 mt-2">Preparation</h4><p class="mb-0" style="font-size:0.72rem; color:var(--rx-muted);">Baling or preparation where applicable.</p></div></div>
+          <div class="col-6"><div class="workflow-step text-center"><div class="workflow-step-number">Step 5</div><h4 class="fs-6 fw-bold text-white mb-1 mt-2">Quality Review</h4><p class="mb-0" style="font-size:0.72rem; color:var(--rx-muted);">Batch-level material assessment.</p></div></div>
+          <div class="col-6"><div class="workflow-step text-center"><div class="workflow-step-number">Step 6</div><h4 class="fs-6 fw-bold text-white mb-1 mt-2">Storage</h4><p class="mb-0" style="font-size:0.72rem; color:var(--rx-muted);">Prepared material held for dispatch.</p></div></div>
+          <div class="col-6"><div class="workflow-step text-center"><div class="workflow-step-number">Step 7</div><h4 class="fs-6 fw-bold text-white mb-1 mt-2">Downstream Recycling</h4><p class="mb-0" style="font-size:0.72rem; color:var(--rx-muted);">Supply into appropriate recycling chains.</p></div></div>
+          <div class="col-6"><div class="workflow-step text-center"><div class="workflow-step-number">Step 8</div><h4 class="fs-6 fw-bold text-white mb-1 mt-2">Circular Supply</h4><p class="mb-0" style="font-size:0.72rem; color:var(--rx-muted);">Recovered material returns to industry.</p></div></div>
         </div>
-
-        <div class="col-6 col-md-3">
-          <div class="workflow-step text-center">
-            <div class="workflow-step-number">Step 2</div>
-            <div class="fs-2 mb-2" style="color:var(--rx-green);">
-              <i class="bi bi-boxes" aria-hidden="true"></i>
-            </div>
-            <h4 class="fs-6 fw-bold text-white mb-1">Receiving</h4>
-            <p class="mb-0" style="font-size:0.75rem; color:var(--rx-muted);">
-              Material inspection and handling.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-6 col-md-3">
-          <div class="workflow-step text-center">
-            <div class="workflow-step-number">Step 3</div>
-            <div class="fs-2 mb-2" style="color:var(--rx-green);">
-              <i class="bi bi-funnel-fill" aria-hidden="true"></i>
-            </div>
-            <h4 class="fs-6 fw-bold text-white mb-1">Sorting</h4>
-            <p class="mb-0" style="font-size:0.75rem; color:var(--rx-muted);">
-              Segregation by material category.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-6 col-md-3">
-          <div class="workflow-step text-center">
-            <div class="workflow-step-number">Step 4</div>
-            <div class="fs-2 mb-2" style="color:var(--rx-green);">
-              <i class="bi bi-stack" aria-hidden="true"></i>
-            </div>
-            <h4 class="fs-6 fw-bold text-white mb-1">Preparation</h4>
-            <p class="mb-0" style="font-size:0.75rem; color:var(--rx-muted);">
-              Baling or preparation where applicable.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-6 col-md-3">
-          <div class="workflow-step text-center">
-            <div class="workflow-step-number">Step 5</div>
-            <div class="fs-2 mb-2" style="color:var(--rx-green);">
-              <i class="bi bi-clipboard-check" aria-hidden="true"></i>
-            </div>
-            <h4 class="fs-6 fw-bold text-white mb-1">Quality Review</h4>
-            <p class="mb-0" style="font-size:0.75rem; color:var(--rx-muted);">
-              Batch-level material assessment.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-6 col-md-3">
-          <div class="workflow-step text-center">
-            <div class="workflow-step-number">Step 6</div>
-            <div class="fs-2 mb-2" style="color:var(--rx-green);">
-              <i class="bi bi-building" aria-hidden="true"></i>
-            </div>
-            <h4 class="fs-6 fw-bold text-white mb-1">Storage</h4>
-            <p class="mb-0" style="font-size:0.75rem; color:var(--rx-muted);">
-              Prepared material held for dispatch.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-6 col-md-3">
-          <div class="workflow-step text-center">
-            <div class="workflow-step-number">Step 7</div>
-            <div class="fs-2 mb-2" style="color:var(--rx-green);">
-              <i class="bi bi-recycle" aria-hidden="true"></i>
-            </div>
-            <h4 class="fs-6 fw-bold text-white mb-1">Downstream Recycling</h4>
-            <p class="mb-0" style="font-size:0.75rem; color:var(--rx-muted);">
-              Supply into appropriate recycling chains.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-6 col-md-3">
-          <div class="workflow-step text-center">
-            <div class="workflow-step-number">Step 8</div>
-            <div class="fs-2 mb-2" style="color:var(--rx-green);">
-              <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
-            </div>
-            <h4 class="fs-6 fw-bold text-white mb-1">Circular Supply</h4>
-            <p class="mb-0" style="font-size:0.75rem; color:var(--rx-muted);">
-              Recovered material returns to industry.
-            </p>
-          </div>
-        </div>
-
       </div>
 
     </div>
@@ -906,7 +960,7 @@
         <div class="row g-3 mb-4">
 
           <div class="col-sm-6 col-md-4 col-lg-2">
-            <div class="material-card">
+            <div class="material-card material-cat-polymer" data-symbol="PET">
               <div class="material-card-tag">Polymer</div>
               <h3 class="fw-bold fs-4 text-white mb-1">PET</h3>
               <p style="font-size:0.78rem; color:var(--rx-muted); margin:0; line-height:1.55;">
@@ -916,7 +970,7 @@
           </div>
 
           <div class="col-sm-6 col-md-4 col-lg-2">
-            <div class="material-card">
+            <div class="material-card material-cat-polymer" data-symbol="HDPE">
               <div class="material-card-tag">Polymer</div>
               <h3 class="fw-bold fs-4 text-white mb-1">HDPE</h3>
               <p style="font-size:0.78rem; color:var(--rx-muted); margin:0; line-height:1.55;">
@@ -926,7 +980,7 @@
           </div>
 
           <div class="col-sm-6 col-md-4 col-lg-2">
-            <div class="material-card">
+            <div class="material-card material-cat-polymer" data-symbol="LDPE">
               <div class="material-card-tag">Polymer</div>
               <h3 class="fw-bold fs-4 text-white mb-1">LDPE</h3>
               <p style="font-size:0.78rem; color:var(--rx-muted); margin:0; line-height:1.55;">
@@ -936,7 +990,7 @@
           </div>
 
           <div class="col-sm-6 col-md-4 col-lg-2">
-            <div class="material-card">
+            <div class="material-card material-cat-polymer" data-symbol="PP">
               <div class="material-card-tag">Polymer</div>
               <h3 class="fw-bold fs-4 text-white mb-1">PP</h3>
               <p style="font-size:0.78rem; color:var(--rx-muted); margin:0; line-height:1.55;">
@@ -946,7 +1000,7 @@
           </div>
 
           <div class="col-sm-6 col-md-4 col-lg-2">
-            <div class="material-card">
+            <div class="material-card material-cat-polymer" data-symbol="HM">
               <div class="material-card-tag">Polymer</div>
               <h3 class="fw-bold fs-4 text-white mb-1">HM</h3>
               <p style="font-size:0.78rem; color:var(--rx-muted); margin:0; line-height:1.55;">
@@ -956,7 +1010,7 @@
           </div>
 
           <div class="col-sm-6 col-md-4 col-lg-2">
-            <div class="material-card">
+            <div class="material-card material-cat-polymer" data-symbol="PVC">
               <div class="material-card-tag">Polymer</div>
               <h3 class="fw-bold fs-4 text-white mb-1">PVC</h3>
               <p style="font-size:0.78rem; color:var(--rx-muted); margin:0; line-height:1.55;">
@@ -975,7 +1029,7 @@
         <div class="row g-3 mb-4">
 
           <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="material-card">
+            <div class="material-card material-cat-composite" data-symbol="MLP">
               <div class="material-card-tag">Composite</div>
               <h3 class="fw-bold fs-4 text-white mb-1">MLP</h3>
               <p style="font-size:0.78rem; color:var(--rx-muted); margin:0; line-height:1.55;">
@@ -994,7 +1048,7 @@
         <div class="row g-3 mb-4">
 
           <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="material-card">
+            <div class="material-card material-cat-fibre" data-symbol="Paper">
               <div class="material-card-tag">Fibre</div>
               <h3 class="fw-bold fs-4 text-white mb-1">Paper</h3>
               <p style="font-size:0.78rem; color:var(--rx-muted); margin:0; line-height:1.55;">
@@ -1004,7 +1058,7 @@
           </div>
 
           <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="material-card">
+            <div class="material-card material-cat-fibre" data-symbol="OCC">
               <div class="material-card-tag">Fibre</div>
               <h3 class="fw-bold fs-4 text-white mb-1">Cardboard / OCC</h3>
               <p style="font-size:0.78rem; color:var(--rx-muted); margin:0; line-height:1.55;">
@@ -1023,7 +1077,7 @@
         <div class="row g-3 mb-5">
 
           <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="material-card">
+            <div class="material-card material-cat-other" data-symbol="Glass">
               <div class="material-card-tag">Recovered Material</div>
               <h3 class="fw-bold fs-4 text-white mb-1">Glass</h3>
               <p style="font-size:0.78rem; color:var(--rx-muted); margin:0; line-height:1.55;">
@@ -1033,7 +1087,7 @@
           </div>
 
           <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="material-card">
+            <div class="material-card material-cat-textile" data-symbol="Textile">
               <div class="material-card-tag">Textile</div>
               <h3 class="fw-bold fs-4 text-white mb-1">Textile Waste</h3>
               <p style="font-size:0.78rem; color:var(--rx-muted); margin:0; line-height:1.55;">
@@ -1044,7 +1098,7 @@
           </div>
 
           <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="material-card">
+            <div class="material-card material-cat-other" data-symbol="RDF">
               <div class="material-card-tag">Dry Waste</div>
               <h3 class="fw-bold fs-4 text-white mb-1">Industrial Dry Waste / RDF</h3>
               <p style="font-size:0.78rem; color:var(--rx-muted); margin:0; line-height:1.55;">
@@ -1178,52 +1232,78 @@
 
         <div class="col-lg-6 animate-on-scroll">
 
-          <div class="row g-3">
+          <!-- Circular Economy SVG Loop Diagram -->
+          <div class="circular-diagram-wrapper" role="img" aria-label="Circular economy diagram: Waste In → Recovery → Material Out → Circular Supply → back to Waste In">
+            <svg viewBox="0 0 380 380" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <marker id="ceArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+                  <path d="M0,0 L8,4 L0,8 Z" fill="rgba(45,207,107,0.65)"/>
+                </marker>
+                <filter id="ceGlow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
 
-            <div class="col-md-6">
-              <div class="about-card">
-                <i class="bi bi-check-circle fs-1 mb-3 d-block" aria-hidden="true" style="color:var(--rx-green);"></i>
-                <h4 class="fs-5 fw-bold mb-2">Batch-Based Supply</h4>
-                <p style="font-size:0.82rem; color:var(--rx-muted); margin:0; line-height:1.65;">
-                  Material availability and specifications are confirmed
-                  before commercial supply.
-                </p>
-              </div>
-            </div>
+              <!-- Outer track ring -->
+              <circle cx="190" cy="190" r="140" fill="none" stroke="rgba(45,207,107,0.10)" stroke-width="28" stroke-dasharray="4 4"/>
 
-            <div class="col-md-6">
-              <div class="about-card">
-                <i class="bi bi-diagram-3 fs-1 mb-3 d-block" aria-hidden="true" style="color:var(--rx-green);"></i>
-                <h4 class="fs-5 fw-bold mb-2">Recovery Network</h4>
-                <p style="font-size:0.82rem; color:var(--rx-muted); margin:0; line-height:1.65;">
-                  Connecting waste streams with appropriate downstream
-                  recovery and recycling channels.
-                </p>
-              </div>
-            </div>
+              <!-- Animated orbit arc -->
+              <circle cx="190" cy="190" r="140" fill="none" stroke="rgba(45,207,107,0.22)" stroke-width="1.5"
+                stroke-dasharray="60 820" class="orbit-ring"/>
 
-            <div class="col-md-6">
-              <div class="about-card">
-                <i class="bi bi-cpu fs-1 mb-3 d-block" aria-hidden="true" style="color:var(--rx-muted-light);"></i>
-                <h4 class="fs-5 fw-bold mb-2" style="color:var(--rx-muted-light);">Technology R&amp;D</h4>
-                <p style="font-size:0.82rem; color:var(--rx-muted); margin:0; line-height:1.65;">
-                  AIRWSS remains positioned as a technology-development
-                  initiative under development.
-                </p>
-              </div>
-            </div>
+              <!-- Central hub -->
+              <circle cx="190" cy="190" r="46" fill="rgba(6,10,15,0.95)" stroke="rgba(45,207,107,0.50)" stroke-width="1.5"/>
+              <text x="190" y="185" font-family="Inter,sans-serif" font-size="11" font-weight="900" fill="rgba(45,207,107,1)" text-anchor="middle" letter-spacing="0.08em">RIXLE</text>
+              <text x="190" y="200" font-family="Inter,sans-serif" font-size="8" fill="rgba(184,204,220,0.70)" text-anchor="middle">Circular</text>
+              <text x="190" y="211" font-family="Inter,sans-serif" font-size="8" fill="rgba(184,204,220,0.70)" text-anchor="middle">Recovery</text>
 
-            <div class="col-md-6">
-              <div class="about-card">
-                <i class="bi bi-arrow-repeat fs-1 mb-3 d-block" aria-hidden="true" style="color:var(--rx-green);"></i>
-                <h4 class="fs-5 fw-bold mb-2">Circular Focus</h4>
-                <p style="font-size:0.82rem; color:var(--rx-muted); margin:0; line-height:1.65;">
-                  Supporting the movement of recovered materials back into
-                  productive use.
-                </p>
-              </div>
-            </div>
+              <!-- Arcs between nodes — drawn as curved paths -->
+              <!-- Top→Right -->
+              <path d="M 253,83 A 140,140 0 0 1 307,253" fill="none" stroke="rgba(45,207,107,0.35)" stroke-width="1.5" marker-end="url(#ceArrow)"/>
+              <!-- Right→Bottom -->
+              <path d="M 307,260 A 140,140 0 0 1 127,307" fill="none" stroke="rgba(45,207,107,0.35)" stroke-width="1.5" marker-end="url(#ceArrow)"/>
+              <!-- Bottom→Left -->
+              <path d="M 120,307 A 140,140 0 0 1 73,127" fill="none" stroke="rgba(45,207,107,0.35)" stroke-width="1.5" marker-end="url(#ceArrow)"/>
+              <!-- Left→Top -->
+              <path d="M 73,120 A 140,140 0 0 1 247,73" fill="none" stroke="rgba(45,207,107,0.35)" stroke-width="1.5" marker-end="url(#ceArrow)"/>
 
+              <!-- Animated signal dot on orbit -->
+              <circle r="5" fill="rgba(45,207,107,0.85)" filter="url(#ceGlow)" class="ce-node-pulse">
+                <animateMotion dur="7s" repeatCount="indefinite">
+                  <mpath href="#orbitPath"/>
+                </animateMotion>
+              </circle>
+              <path id="orbitPath" d="M330,190 A140,140 0 1 1 329.9,190" fill="none"/>
+
+              <!-- Node 1: Waste In — Top -->
+              <circle cx="190" cy="50" r="38" fill="rgba(12,20,32,0.96)" stroke="rgba(45,207,107,0.45)" stroke-width="1.5"/>
+              <text x="190" y="44" font-family="Inter,sans-serif" font-size="8.5" font-weight="700" fill="rgba(45,207,107,0.95)" text-anchor="middle">WASTE</text>
+              <text x="190" y="57" font-family="Inter,sans-serif" font-size="8.5" font-weight="700" fill="rgba(45,207,107,0.95)" text-anchor="middle">IN</text>
+              <text x="190" y="12" font-family="Inter,sans-serif" font-size="8.5" fill="rgba(184,204,220,0.80)" text-anchor="middle">Collection &amp;</text>
+              <text x="190" y="24" font-family="Inter,sans-serif" font-size="8.5" fill="rgba(184,204,220,0.80)" text-anchor="middle">Generation</text>
+
+              <!-- Node 2: Recovery — Right -->
+              <circle cx="330" cy="190" r="38" fill="rgba(12,20,32,0.96)" stroke="rgba(45,207,107,0.40)" stroke-width="1.5"/>
+              <text x="330" y="184" font-family="Inter,sans-serif" font-size="8.5" font-weight="700" fill="rgba(45,207,107,0.90)" text-anchor="middle">RECOV-</text>
+              <text x="330" y="197" font-family="Inter,sans-serif" font-size="8.5" font-weight="700" fill="rgba(45,207,107,0.90)" text-anchor="middle">ERY</text>
+              <text x="372" y="218" font-family="Inter,sans-serif" font-size="8" fill="rgba(184,204,220,0.75)" text-anchor="middle">MRF &amp;</text>
+              <text x="372" y="229" font-family="Inter,sans-serif" font-size="8" fill="rgba(184,204,220,0.75)" text-anchor="middle">Sorting</text>
+
+              <!-- Node 3: Material Out — Bottom -->
+              <circle cx="190" cy="330" r="38" fill="rgba(12,20,32,0.96)" stroke="rgba(45,207,107,0.40)" stroke-width="1.5"/>
+              <text x="190" y="324" font-family="Inter,sans-serif" font-size="8.5" font-weight="700" fill="rgba(45,207,107,0.90)" text-anchor="middle">MATERIAL</text>
+              <text x="190" y="337" font-family="Inter,sans-serif" font-size="8.5" font-weight="700" fill="rgba(45,207,107,0.90)" text-anchor="middle">OUT</text>
+              <text x="190" y="368" font-family="Inter,sans-serif" font-size="8.5" fill="rgba(184,204,220,0.75)" text-anchor="middle">Recovered</text>
+              <text x="190" y="379" font-family="Inter,sans-serif" font-size="8.5" fill="rgba(184,204,220,0.75)" text-anchor="middle">Commodity</text>
+
+              <!-- Node 4: Circular Supply — Left -->
+              <circle cx="50" cy="190" r="38" fill="rgba(12,20,32,0.96)" stroke="rgba(45,207,107,0.45)" stroke-width="1.5"/>
+              <text x="50" y="184" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="rgba(45,207,107,0.95)" text-anchor="middle">CIRCULAR</text>
+              <text x="50" y="197" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="rgba(45,207,107,0.95)" text-anchor="middle">SUPPLY</text>
+              <text x="8" y="218" font-family="Inter,sans-serif" font-size="8" fill="rgba(184,204,220,0.75)" text-anchor="middle">Back to</text>
+              <text x="8" y="229" font-family="Inter,sans-serif" font-size="8" fill="rgba(184,204,220,0.75)" text-anchor="middle">Industry</text>
+            </svg>
           </div>
 
         </div>
@@ -1470,7 +1550,7 @@
 
 
   <!-- =========================================================
-       CTA — uses tech-env.jpg (visual contrast with hero)
+       CTA — premium CSS gradient section (no image dependency)
   ========================================================== -->
   <section class="cta-section py-6 text-white position-relative">
 

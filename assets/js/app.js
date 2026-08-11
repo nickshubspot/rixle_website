@@ -132,15 +132,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ──────────────────────────────────────────────────────────────
   // 5. IMAGE ERROR FALLBACK (scoped — card images only)
-  //    Replaces broken card images with plant.jpg.
+  //    Replaces broken card images with hero.jpg fallback.
   //    Logo and nav images are intentionally excluded.
   // ──────────────────────────────────────────────────────────────
   const cardImages = document.querySelectorAll('.card-img-top, .card-img-sm');
   cardImages.forEach(img => {
     img.addEventListener('error', () => {
-      if (img.src !== window.location.origin + '/assets/gallery/plant.jpg') {
-        img.src = 'assets/gallery/plant.jpg';
-        img.alt = 'Rixle Facility Operations';
+      const fallbackSrc = 'assets/gallery/hero.jpg';
+      if (!img.src.endsWith(fallbackSrc)) {
+        img.src = fallbackSrc;
+        img.alt = 'Rixle Industrial Operations';
       }
     });
   });

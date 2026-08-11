@@ -294,18 +294,18 @@ header.hero-cinematic {
   position: relative;
   background-color: var(--rx-bg-base);
 
-  /* Lighter overlay so the industrial photo breathes */
+  /* hero.jpg — premium cinematic industrial recovery interior */
   background-image:
     linear-gradient(
       160deg,
-      rgba(6, 10, 15, 0.60) 0%,
-      rgba(6, 10, 15, 0.45) 50%,
-      rgba(6, 10, 15, 0.70) 100%
+      rgba(6, 10, 15, 0.65) 0%,
+      rgba(6, 10, 15, 0.38) 55%,
+      rgba(6, 10, 15, 0.60) 100%
     ),
-    url("../gallery/plant.jpg");
+    url("../gallery/hero.jpg");
 
   background-repeat: no-repeat;
-  background-position: center 35%;
+  background-position: center 40%;
   background-size: cover;
 
   min-height: 100vh;
@@ -476,11 +476,15 @@ header.hero-cinematic .badge {
 }
 
 .card-img-top {
-  height: 240px;
+  aspect-ratio: 16 / 10;
+  height: auto;
+  max-height: 250px;
 }
 
 .card-img-sm {
-  height: 210px;
+  aspect-ratio: 16 / 10;
+  height: auto;
+  max-height: 220px;
 }
 
 .industrial-card:hover .card-img-top,
@@ -572,6 +576,7 @@ header.hero-cinematic .badge {
 .material-card {
   background: var(--rx-bg-card);
   border: 1px solid var(--rx-border);
+  border-left: 3px solid var(--rx-green); /* overridden per category */
   border-radius: 8px;
   padding: 1.25rem 1.5rem;
   height: 100%;
@@ -579,11 +584,29 @@ header.hero-cinematic .badge {
     border-color 0.25s ease,
     box-shadow 0.25s ease,
     transform 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Monogram watermark behind card content */
+.material-card::after {
+  content: attr(data-symbol);
+  position: absolute;
+  right: -4px;
+  bottom: -12px;
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  opacity: 0.045;
+  color: var(--rx-text);
+  pointer-events: none;
+  line-height: 1;
+  user-select: none;
 }
 
 .material-card:hover {
   border-color: var(--rx-border-accent);
-  box-shadow: 0 4px 20px rgba(45, 207, 107, 0.10);
+  box-shadow: 0 4px 20px rgba(45, 207, 107, 0.12);
   transform: translateY(-3px);
 }
 
@@ -595,6 +618,13 @@ header.hero-cinematic .badge {
   color: var(--rx-green);
   margin-bottom: 0.35rem;
 }
+
+/* Category-specific left-border colours */
+.material-cat-polymer  { border-left-color: var(--rx-green) !important; }
+.material-cat-composite{ border-left-color: #f5a623 !important; }
+.material-cat-fibre    { border-left-color: #6eb5ff !important; }
+.material-cat-other    { border-left-color: #a0a8b8 !important; }
+.material-cat-textile  { border-left-color: #c89fdb !important; }
 
 /* ================================================================
    TECHNOLOGY SECTION
@@ -728,17 +758,30 @@ header.hero-cinematic .badge {
 
 .cta-section {
   position: relative;
-  min-height: 400px;
+  min-height: 420px;
   display: flex;
   align-items: center;
 
-  /* Use tech-env.jpg for visual contrast with hero */
+  /* Pure CSS gradient — no image dependency */
   background:
     linear-gradient(
-      rgba(6, 10, 15, 0.72),
-      rgba(6, 10, 15, 0.85)
-    ),
-    url("../gallery/tech-env.jpg") center / cover no-repeat;
+      160deg,
+      var(--rx-bg-base) 0%,
+      var(--rx-bg-section) 100%
+    );
+  border-top: 1px solid var(--rx-border);
+  overflow: hidden;
+}
+
+/* Industrial node-network texture via SVG in ::before */
+.cta-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(45,207,107,0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 30%, rgba(45,207,107,0.04) 0%, transparent 45%);
+  pointer-events: none;
 }
 
 .cta-overlay {
@@ -746,8 +789,8 @@ header.hero-cinematic .badge {
   inset: 0;
   background:
     radial-gradient(
-      circle at center,
-      rgba(45, 207, 107, 0.09),
+      ellipse at center,
+      rgba(45, 207, 107, 0.08) 0%,
       transparent 65%
     );
   pointer-events: none;
@@ -1096,4 +1139,150 @@ footer.bg-industrial-darker {
 .bg-industrial-dark *,
 .bg-industrial-darker * {
   border-color: inherit;
+}
+
+/* ================================================================
+   SVG WORKFLOW PROCESS FLOW
+   ================================================================ */
+
+.workflow-svg-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+}
+
+.workflow-svg-wrapper svg {
+  display: block;
+  min-width: 640px;
+  margin: 0 auto;
+}
+
+/* Animated flow path */
+.workflow-path-animated {
+  stroke-dasharray: 8 6;
+  stroke-dashoffset: 0;
+  animation: flowDash 2.4s linear infinite;
+}
+
+@keyframes flowDash {
+  to { stroke-dashoffset: -56; }
+}
+
+/* Stagger reveal for workflow nodes */
+.workflow-node-group {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.workflow-node-group.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Node highlight on hover */
+.workflow-node-group:hover .wf-node-circle {
+  filter: drop-shadow(0 0 10px rgba(45,207,107,0.45));
+}
+
+/* Mobile: smaller text inside SVG nodes */
+@media (max-width: 640px) {
+  .workflow-svg-wrapper {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+}
+
+/* ================================================================
+   AIRWSS CONCEPTUAL ARCHITECTURE DIAGRAM
+   ================================================================ */
+
+.airwss-diagram-wrapper {
+  background: rgba(6,10,15,0.70);
+  border: 1px solid var(--rx-border-accent);
+  border-radius: 10px;
+  padding: 1.5rem 1rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.airwss-diagram-wrapper svg {
+  display: block;
+  min-width: 480px;
+  margin: 0 auto;
+}
+
+/* Animated data signal on AIRWSS path */
+.airwss-signal {
+  animation: signalMove 2.8s linear infinite;
+}
+
+@keyframes signalMove {
+  0%   { stroke-dashoffset: 200; opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { stroke-dashoffset: 0;   opacity: 0; }
+}
+
+/* ================================================================
+   CIRCULAR ECONOMY SVG DIAGRAM (About section)
+   ================================================================ */
+
+.circular-diagram-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circular-diagram-wrapper svg {
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* Slow orbit ring rotation */
+.orbit-ring {
+  animation: orbitSpin 22s linear infinite;
+  transform-origin: 190px 190px;
+}
+
+@keyframes orbitSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Node pulse */
+.ce-node-pulse {
+  animation: nodePulse 3s ease-in-out infinite;
+}
+
+@keyframes nodePulse {
+  0%, 100% { opacity: 1;    transform: scale(1); }
+  50%       { opacity: 0.70; transform: scale(1.06); }
+}
+
+/* ================================================================
+   PILLAR CARDS — NUMBERED WATERMARK ENHANCEMENT
+   ================================================================ */
+
+.pillar-card {
+  counter-reset: none; /* no counter needed — use data-num */
+  position: relative;
+  overflow: hidden;
+}
+
+.pillar-num-watermark {
+  position: absolute;
+  top: -0.25rem;
+  right: 1rem;
+  font-size: 5.5rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  color: rgba(255,255,255,0.028);
+  pointer-events: none;
+  user-select: none;
+  font-variant-numeric: tabular-nums;
 }
