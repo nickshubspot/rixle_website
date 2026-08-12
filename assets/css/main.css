@@ -698,7 +698,7 @@ header.hero-cinematic .badge {
 
 .quick-conversion-bar {
   position: fixed;
-  bottom: 20px;
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
   right: 20px;
   left: auto;
   z-index: 1050;
@@ -712,12 +712,18 @@ header.hero-cinematic .badge {
   display: flex;
   align-items: center;
   gap: 6px;
-  max-width: calc(100vw - 40px);
+  max-width: calc(100vw - 32px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), bottom 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+}
+
+/* Lift bar smoothly above legal footer links when footer is active in viewport */
+.quick-conversion-bar.footer-active {
+  bottom: calc(75px + env(safe-area-inset-bottom, 0px));
 }
 
 /* Ensure page footer content remains completely clear of floating contact bar */
 footer {
-  padding-bottom: 5.5rem !important;
+  padding-bottom: 6.5rem !important;
 }
 
 .quick-conversion-bar .conversion-btn {
@@ -756,6 +762,97 @@ footer {
 .quick-conversion-bar .conversion-btn:active {
   transform: scale(0.96);
 }
+
+/* Responsive Floating Bar Adjustments (< 768px) */
+@media (max-width: 767.98px) {
+  .quick-conversion-bar {
+    right: 50%;
+    transform: translateX(50%);
+    padding: 5px 8px;
+    gap: 4px;
+    border-radius: 30px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .quick-conversion-bar.footer-active {
+    bottom: calc(70px + env(safe-area-inset-bottom, 0px));
+    transform: translateX(50%);
+  }
+
+  .quick-conversion-bar .conversion-btn {
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    min-height: 38px;
+  }
+
+  .quick-conversion-bar .conversion-btn span {
+    display: inline-block;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 400px) {
+  .quick-conversion-bar .conversion-btn span {
+    display: none; /* Icon-only compact mode on very small mobile screens */
+  }
+  .quick-conversion-bar .conversion-btn {
+    padding: 8px 12px;
+    border-radius: 50%;
+    min-width: 38px;
+    min-height: 38px;
+  }
+  .quick-conversion-bar .conversion-btn i {
+    font-size: 15px;
+    margin: 0;
+  }
+}
+
+/* ================================================================
+   SELECTED CLIENTS & ECOSYSTEM
+   ================================================================ */
+
+.ecosystem-card {
+  background-color: var(--rx-bg-card);
+  border: 1px solid var(--rx-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.ecosystem-card:hover {
+  border-color: var(--rx-border-light);
+  transform: translateY(-2px);
+}
+
+.ecosystem-slot-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ecosystem-placeholder-slot {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed var(--rx-border);
+  border-radius: 6px;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.78rem;
+  color: var(--rx-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.02em;
+  transition: background 0.2s ease;
+}
+
+.ecosystem-placeholder-slot:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
 
 /* ================================================================
    CTA SECTION

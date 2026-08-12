@@ -197,4 +197,70 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // ──────────────────────────────────────────────────────────────
+  // 8. FAQ ACCORDION HANDLER
+  //    Ensures FAQ items open on click/tap, close on second click/tap,
+  //    synchronize aria-expanded attributes, and support keyboard
+  //    accessibility with zero console errors. Uses stopPropagation()
+  //    to prevent event bubbling to Bootstrap's global listener.
+  // ──────────────────────────────────────────────────────────────
+  const faqAccordion = document.getElementById('faqAccordion');
+  if (faqAccordion) {
+    const faqButtons = faqAccordion.querySelectorAll('.accordion-button');
+    faqButtons.forEach(button => {
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const targetId = this.getAttribute('data-bs-target');
+        const targetEl = targetId ? document.querySelector(targetId) : null;
+        if (!targetEl) return;
+
+        const isCurrentlyOpen = targetEl.classList.contains('show');
+
+        // Close all accordion collapses in parent
+        const siblingButtons = faqAccordion.querySelectorAll('.accordion-button');
+        const siblingCollapses = faqAccordion.querySelectorAll('.accordion-collapse');
+        siblingCollapses.forEach(c => c.classList.remove('show'));
+        siblingButtons.forEach(b => {
+          b.classList.add('collapsed');
+          b.setAttribute('aria-expanded', 'false');
+        });
+
+        // Toggle current item
+        if (!isCurrentlyOpen) {
+          targetEl.classList.add('show');
+          this.classList.remove('collapsed');
+          this.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  }
+
+  // ──────────────────────────────────────────────────────────────
+  // 9. FLOATING CONTACT BAR FOOTER OBSERVER
+  //    Detects when page footer enters viewport and toggles
+  //    .footer-active on the floating bar so legal links remain
+  //    unobscured and 100% clickable at all times.
+  // ──────────────────────────────────────────────────────────────
+  const quickBar = document.getElementById('quickContactBar');
+  const pageFooter = document.querySelector('footer');
+  if (quickBar && pageFooter) {
+    const footerObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            quickBar.classList.add('footer-active');
+          } else {
+            quickBar.classList.remove('footer-active');
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0.02,
+      }
+    );
+    footerObserver.observe(pageFooter);
+  }
 });
