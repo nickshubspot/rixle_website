@@ -734,12 +734,231 @@
     state.selectedLeadId = null;
   }
 
+  /* ----------------------------------------------------------
+     JOB APPLICATIONS MANAGEMENT
+     ---------------------------------------------------------- */
+
+  const appState = {
+    search: '',
+    status: '',
+    applications: []
+  };
+
+  async function loadApplications() {
+    const client = getClient();
+    if (!client) return;
+
+    const tbody = document.getElementById('appTableBody');
+    if (!tbody) return;
+
+    tbody.innerHTML = '<tr><td colspan="6" class="text-center text-secondary py-4 fs-8"><span class="spinner-border spinner-border-sm me-2"></span>Loading applications…</td></tr>';
+
+    try {
+      let query = client
+        .from('job_applications')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (appState.status) {
+        query = query.eq('status', appState.status);
+      }
+
+      if (appState.search) {
+        const term = sanitizeSearchTerm(appState.search);
+        if (term) {
+          query = query.or(`full_name.ilike.%${term}%,email.ilike.%${term}%,phone.ilike.%${term}%,position.ilike.%${term}%`);
+        }
+      }
+
+      const { data, error } = await query;
+
+      if (error) {
+        console.error('Failed to fetch job applications:', error);
+        tbody.innerHTML = `<tr><td colspan="6" class="text-center text-danger py-4 fs-8">Error loading applications: ${RixleAdmin.escapeHtml(error.message)}</td></tr>`;
+        return;
+      }
+
+      appState.applications = data || [];
+      renderApplicationsTable();
+
+    } catch (err) {
+      console.error('Applications load exception:', err);
+      tbody.innerHTML = `<tr><td colspan="6" class="text-center text-danger py-4 fs-8">Unexpected error loading applications.</td></tr>`;
+    }
+  }
+
+  function renderApplicationsTable() {
+    const tbody = document.getElementById('appTableBody');
+    if (!tbody) return;
+
+    if (appState.applications.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="6" class="text-center text-secondary py-4 fs-8">No job applications found.</td></tr>';
+      return;
+    }
+
+    const rows = appState.applications.map((app) => {
+      const name = RixleAdmin.escapeHtml(app.full_name);
+      const email = RixleAdmin.escapeHtml(app.email);
+      const phone = RixleAdmin.escapeHtml(app.phone);
+      const position = RixleAdmin.escapeHtml(app.position);
+      const experience = RixleAdmin.escapeHtml(app.experience || 'N/A');
+      const location = RixleAdmin.escapeHtml(app.location || 'N/A');
+      const linkedin = app.linkedin_url ? RixleAdmin.escapeHtml(app.linkedin_url) : null;
+      const formattedDate = formatDateTime(app.created_at);
+      const status = app.status || 'New';
+      const badgeClass = statusBadgeClass(status);
+
+      return `
+        <tr data-app-id="${app.id}">
+          <td class="lead-name-cell">
+            <span class="lead-primary-text">${name}</span>
+            <span class="lead-secondary-text">
+              <a href="mailto:${email}" class="text-secondary text-decoration-none me-2"><i class="bi bi-envelope me-1"></i>${email}</a>
+              <a href="tel:${phone}" class="text-secondary text-decoration-none"><i class="bi bi-telephone me-1"></i>${phone}</a>
+            </span>
+            ${linkedin ? `<a href="${linkedin}" target="_blank" rel="noopener" class="badge text-bg-dark border border-secondary text-decoration-none mt-1" style="font-size:0.68rem;"><i class="bi bi-linkedin me-1 text-info"></i>LinkedIn</a>` : ''}
+          </td>
+          <td>
+            <span class="fw-semibold text-white fs-8">${position}</span>
+          </td>
+          <td>
+            <div class="fs-8 text-white">${experience}</div>
+            <div class="lead-secondary-text"><i class="bi bi-geo-alt me-1"></i>${location}</div>
+          </td>
+          <td class="text-secondary fs-8">${formattedDate}</td>
+          <td>
+            <select class="form-select form-select-sm bg-dark text-white border-secondary border-opacity-50 app-status-select" data-app-id="${app.id}" style="font-size:0.75rem; width:130px;">
+              <option value="New" ${status === 'New' ? 'selected' : ''}>New</option>
+              <option value="Reviewing" ${status === 'Reviewing' ? 'selected' : ''}>Reviewing</option>
+              <option value="Shortlisted" ${status === 'Shortlisted' ? 'selected' : ''}>Shortlisted</option>
+              <option value="Rejected" ${status === 'Rejected' ? 'selected' : ''}>Rejected</option>
+              <option value="Hired" ${status === 'Hired' ? 'selected' : ''}>Hired</option>
+            </select>
+          </td>
+          <td class="text-end">
+            <button type="button" class="btn btn-outline-success btn-sm download-resume-btn" data-resume-path="${RixleAdmin.escapeHtml(app.resume_path)}">
+              <i class="bi bi-file-earmark-arrow-down me-1"></i> Resume
+            </button>
+          </td>
+        </tr>
+      `;
+    }).join('');
+
+    tbody.innerHTML = rows;
+
+    // Attach event listeners for status select dropdowns & download buttons
+    tbody.querySelectorAll('.app-status-select').forEach((select) => {
+      select.addEventListener('change', async function () {
+        const appId = this.getAttribute('data-app-id');
+        const newStatus = this.value;
+        await updateApplicationStatus(appId, newStatus, this);
+      });
+    });
+
+    tbody.querySelectorAll('.download-resume-btn').forEach((btn) => {
+      btn.addEventListener('click', async function () {
+        const path = this.getAttribute('data-resume-path');
+        await viewResume(path, this);
+      });
+    });
+  }
+
+  async function updateApplicationStatus(appId, newStatus, selectEl) {
+    const client = getClient();
+    if (!client || !appId) return;
+
+    if (selectEl) selectEl.disabled = true;
+
+    try {
+      const { error } = await client
+        .from('job_applications')
+        .update({ status: newStatus })
+        .eq('id', appId);
+
+      if (error) {
+        showToast(`Failed to update status: ${error.message}`, 'error');
+        await loadApplications();
+      } else {
+        showToast(`Application status updated to ${newStatus}.`, 'success');
+      }
+    } catch (err) {
+      console.error('Status update error:', err);
+      showToast('Error updating status.', 'error');
+    } finally {
+      if (selectEl) selectEl.disabled = false;
+    }
+  }
+
+  async function viewResume(resumePath, btnEl) {
+    const client = getClient();
+    if (!client || !resumePath) return;
+
+    const originalHtml = btnEl ? btnEl.innerHTML : '';
+    if (btnEl) {
+      btnEl.disabled = true;
+      btnEl.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span> Loading...';
+    }
+
+    try {
+      // Create signed URL valid for 5 minutes
+      const { data, error } = await client.storage
+        .from('job-applications')
+        .createSignedUrl(resumePath, 300);
+
+      if (error || !data || !data.signedUrl) {
+        console.error('Failed to create signed URL:', error);
+        showToast('Unable to fetch resume file link. Please check permissions.', 'error');
+      } else {
+        window.open(data.signedUrl, '_blank');
+      }
+    } catch (err) {
+      console.error('Resume download error:', err);
+      showToast('Error downloading resume file.', 'error');
+    } finally {
+      if (btnEl) {
+        btnEl.disabled = false;
+        btnEl.innerHTML = originalHtml;
+      }
+    }
+  }
+
+  function wireApplicationsEvents() {
+    const searchInput = document.getElementById('appSearchInput');
+    const statusFilter = document.getElementById('appStatusFilter');
+    const refreshBtn = document.getElementById('refreshAppsBtn');
+
+    if (searchInput) {
+      searchInput.addEventListener('input', function () {
+        appState.search = this.value;
+        if (searchDebounceTimer) clearTimeout(searchDebounceTimer);
+        searchDebounceTimer = setTimeout(() => {
+          loadApplications();
+        }, 300);
+      });
+    }
+
+    if (statusFilter) {
+      statusFilter.addEventListener('change', function () {
+        appState.status = this.value;
+        loadApplications();
+      });
+    }
+
+    if (refreshBtn) {
+      refreshBtn.addEventListener('click', function () {
+        loadApplications();
+      });
+    }
+  }
+
   function init() {
     cacheEls();
     wireEventsOnce();
+    wireApplicationsEvents();
     switchPanel('panel-dashboard');
     loadMetrics();
     loadLeads();
+    loadApplications();
   }
 
   function teardown() {
@@ -750,7 +969,11 @@
     if (els.categoryBreakdown) {
       els.categoryBreakdown.innerHTML = '<div class="text-secondary fs-8">Loading breakdown…</div>';
     }
+    const appBody = document.getElementById('appTableBody');
+    if (appBody) {
+      appBody.innerHTML = '<tr><td colspan="6" class="text-center text-secondary py-4 fs-8">Loading applications...</td></tr>';
+    }
   }
 
-  window.AdminDashboard = { init, teardown };
+  window.AdminDashboard = { init, teardown, loadApplications };
 })();

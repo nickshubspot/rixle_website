@@ -97,6 +97,10 @@
             <i class="bi bi-people-fill" aria-hidden="true"></i>
             <span>Leads</span>
           </button>
+          <button type="button" class="sidebar-link" data-panel="panel-applications">
+            <i class="bi bi-briefcase-fill" aria-hidden="true"></i>
+            <span>Careers / Applications</span>
+          </button>
         </nav>
 
         <div class="sidebar-footer">
@@ -269,6 +273,61 @@
               <nav aria-label="Leads pagination">
                 <ul class="pagination pagination-sm mb-0" id="paginationControls"></ul>
               </nav>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============== Applications panel ============== -->
+        <section id="panel-applications" class="dashboard-panel d-none">
+          <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 mb-4">
+            <div>
+              <span class="text-success fw-bold text-uppercase fs-8 tracking-widest">Recruitment</span>
+              <h2 class="h3 fw-bold text-white mb-0">Job Applications</h2>
+            </div>
+            <button type="button" id="refreshAppsBtn" class="btn btn-outline-success btn-sm">
+              <i class="bi bi-arrow-clockwise me-1" aria-hidden="true"></i> Refresh List
+            </button>
+          </div>
+
+          <!-- Search & filters -->
+          <div class="glass-card rounded-3 p-3 border border-secondary border-opacity-25 mb-3">
+            <div class="row g-2 align-items-center">
+              <div class="col-12 col-md-6">
+                <input type="search" id="appSearchInput" class="form-control form-control-sm bg-dark text-white border-secondary border-opacity-50" placeholder="Search applicant name, email, phone, or position...">
+              </div>
+              <div class="col-12 col-md-6">
+                <select id="appStatusFilter" class="form-select form-select-sm bg-dark text-white border-secondary border-opacity-50">
+                  <option value="">All Statuses</option>
+                  <option value="New">New</option>
+                  <option value="Reviewing">Reviewing</option>
+                  <option value="Shortlisted">Shortlisted</option>
+                  <option value="Rejected">Rejected</option>
+                  <option value="Hired">Hired</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Table -->
+          <div class="glass-card rounded-3 border border-secondary border-opacity-25 overflow-hidden">
+            <div class="table-responsive">
+              <table class="table leads-table mb-0 align-middle">
+                <thead>
+                  <tr>
+                    <th>Applicant</th>
+                    <th>Position</th>
+                    <th>Exp &amp; Location</th>
+                    <th>Submitted</th>
+                    <th>Status</th>
+                    <th class="text-end">Resume &amp; Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="appTableBody">
+                  <tr>
+                    <td colspan="6" class="text-center py-4 text-secondary fs-8">Loading applications...</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </section>
