@@ -829,28 +829,30 @@ footer {
   transform: translateY(-2px);
 }
 
-.ecosystem-slot-container {
+.ecosystem-tag-container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 0.5rem;
 }
 
-.ecosystem-placeholder-slot {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px dashed var(--rx-border);
+.ecosystem-tag {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--rx-border);
   border-radius: 6px;
-  padding: 0.6rem 0.85rem;
-  font-size: 0.78rem;
-  color: var(--rx-muted);
-  display: flex;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--rx-text-muted, #94a3b8);
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  letter-spacing: 0.02em;
-  transition: background 0.2s ease;
+  letter-spacing: 0.01em;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
-.ecosystem-placeholder-slot:hover {
-  background: rgba(255, 255, 255, 0.06);
+.ecosystem-tag:hover {
+  background: rgba(45, 207, 107, 0.08);
+  border-color: var(--rx-green-dim);
+  color: var(--rx-text);
 }
 
 
