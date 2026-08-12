@@ -49,8 +49,7 @@ jobs:
           fi
 
           # Copy optional public root files
-          for file in CNAME 404.html .nojekyll robots.txt sitemap.xml privacy-policy.html terms.html; do
-            if [ -f "$file" ]; then
+          for file in CNAME 404.html .nojekyll robots.txt sitemap.xml privacy-policy.html terms.html careers.html; do            if [ -f "$file" ]; then
               cp "$file" dist/
             fi
           done
